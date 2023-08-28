@@ -1,0 +1,11 @@
+{% extends 'layout/basic.html' %}
+{% load static %}
+{% block title %}Моя страница{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<div>{{ user.last_name|default:'' }} {{ user.first_name|default:'' }} {{ user.profile.patronymic|default:'' }}</div>
+<div>{{ user.profile.telephone|default:'' }}</div>
+<div>{{ user.profile.telephone|default:'' }}</div>
+<div>{{ user.profile.telephone|default:'' }}</div>
+{% endif %}
+{% endblock %}

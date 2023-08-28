@@ -102,7 +102,19 @@ class Profile(models.Model):
         verbose_name = 'Профиль'
 
 
+class Region(models.Model):
+    name = models.CharField(max_length=100, db_index=True, verbose_name='Название')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'регионы'
+        verbose_name = 'Регион'
+
+
 class Unit(models.Model):
+    """Структурная единица"""
     name = models.CharField(max_length=100, db_index=True, verbose_name='Название')
     commander = models.OneToOneField(Profile, related_name='commander', null=True, blank=True, on_delete=models.PROTECT,
                                      verbose_name='Командир')
@@ -115,14 +127,8 @@ class Unit(models.Model):
     founding_date = models.DateField(blank=True, null=True, verbose_name='Дата основания')
     # Уровень Линейный отряд, Штаб учебного заведения, Региональное отделение, (Направление)
     # area = models.ForeignKey('Area', null=True, blank=True, on_delete=models.PROTECT, verbose_name='Направление')
-    # institution = models.ForeignKey('Institution', null=True, blank=True, on_delete=models.PROTECT,
-    #                                verbose_name='Учебное заведение')
-    flag = models.ImageField(upload_to='flags/%Y/%m/%d', blank=True, verbose_name='Флаг')
-
-
-
-
-
+    #
+    # flag = models.ImageField(upload_to='flags/%Y/%m/%d', blank=True, verbose_name='Флаг')
 
     def __str__(self):
         return self.name
@@ -131,3 +137,68 @@ class Unit(models.Model):
         verbose_name_plural = 'структурные единицы'
         verbose_name = 'Структурная единица'
 
+
+class Detachment(Unit):
+    area = models.CharField(max_length=50, blank=True, default='', verbose_name='Направление')
+    # регион
+    # institution = models.ForeignKey('Institution', null=True, blank=True, on_delete=models.PROTECT,
+    #                                verbose_name='Учебное заведение')
+    # город
+    # Местный штаб
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'отряды'
+        verbose_name = 'Отряд'
+
+
+# Штаб Образовательной Организации
+# Регион
+# Учебное заведение
+# Местный штаб
+#
+# МестныйШтаб
+# Регион
+# Номер участника в реестре
+# Дата участника в реестре
+#
+# Региональный Штаб
+# Регион
+# Год появления Отрядов в регионе
+# Дата учредительной конференции
+# Номер участника в реестре
+# Дата участника в реестре
+# Окружной штаб
+#
+# Окружной Штаб
+
+
+# class Event(models.Model):
+# Формат (онлайн)
+# Масштаб
+# Название
+# Адрес
+# Ссылка на конференцию
+# Количество участников
+# Баннер
+# О мероприятии
+# Направление (?)
+# Вид заявок
+# Кто может отправлять заявку
+# Многодневное
+# Дата начала
+# Время начала
+# Дата конца
+# Время конца
+# Дата и время окончания регистрации
+# Нужен паспорт
+# Нужен СНИЛС
+# Нужен ИНН
+# Нужна Трудовая книжка
+# Нужен Военный билет или приписное свидетельство
+# Нужно согласие на обработку персональных данных
+# Дополнительный вопрос 1
+# Дополнительный вопрос 2
+# Дополнительный вопрос 3
