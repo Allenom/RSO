@@ -1,0 +1,29 @@
+:root {
+  /* Основные цвета */
+  --dark_blue-color: #1c5c94;
+  --mostly-desaturated-dark-green-color: #608553;
+  --very-soft-yellow-color: #dbce9f;
+  --light_green-color: #5ca386;
+  --soft-yellow-color: #fbd350;
+  --soft-red-color: #eb574b;
+  /* Дополнительные цвета */
+  --dark_cyan-color: #29997E;
+  --very-soft-blue-c-color: #91C9F7;
+  --very-soft-blue-a-color: #ace1f8;
+  --bright-orange-color: #fc9c38;
+  --moderate-cyan-color: #33bdbd;
+  --pale-magenta-color: #ff9aee;
+  --light-grayish-red-color: #fed1d5;
+  /* Бэкграунд цвета для секций*/
+  --white-bg-color: #ffffff;
+  --gray-bg-color: #D1D5D8;
+  /* Бэкграунд цвета для кнопок */
+  --button-submit-color: #39BFBF;
+  /* Цвета компонентов форм */
+  --input-border-color: #a3a3a3;
+  --placeholder-color: #898989;
+  /* Цвета иконок в инпутах */
+  --icon-input-color: #898989;
+  /* Цвета p */
+  --white-text-color: #ffffff;
+}

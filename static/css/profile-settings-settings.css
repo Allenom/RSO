@@ -1,0 +1,457 @@
+/* Border */
+* {
+   margin: 0;
+   padding: 0;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+   }
+
+body {
+   margin: 0;
+   font-family: 'BertSans', sans-serif;
+   font-family: 'Akrobat', sans-serif;
+   font-family: 'inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+   padding: 0;
+   margin: 0;
+}
+
+/* указываем размер контейнера и позиционируем по центру с помощью margin:0; */
+:root {
+   --sub-text-p: #5E5C5C;
+   --sub-text-h: #35383F;
+   --unnamed: #1C5C94;
+   --white: #fff;
+   --button: #39BFBF;
+   --border: 1px solid rgba(0, 0, 0, 0.10);
+
+}
+
+.container {
+   max-width: 1180px;
+   margin: 0 auto;
+
+}
+
+/* Настройки профиля */
+
+.profile-settings-top {
+   padding-top: 40px;
+   margin-bottom: 40px;
+}
+
+.breadcrumbs-container ul {
+   display: flex;
+   list-style: none;
+}
+
+.breadcrumbs-slesh {
+   margin: 0 4px;
+}
+
+.breadcrumbs-container a {
+   display: block;
+   text-decoration: none;
+   /* хлебные_крошки */
+   font-family: 'Akrobat';
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   color: #35383F;
+}
+
+.breadcrumbs-container a.active {
+   display: block;
+   text-decoration: none;
+  /* хлебные_крошки */
+   font-family: Akrobat;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   color: #1F7CC0;
+}
+
+.ps__title {
+   margin: 40px 0;
+}
+
+.ps__title h2 {
+   /* Desktop/H-1 */
+   font-family: 'Akrobat';
+   font-size: 52px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   color: #35383F;
+}
+
+/* Баннер с данными пользователя */
+.user-metric {
+   width: 100%;
+   min-height: 424px;
+   margin-bottom: 40px;
+}
+
+.user-metric__top {
+   display: flex;
+   width: 100%;
+   height: 200px;
+   border-radius: 10px 10px 0px 0px;
+}
+
+.user-metric__top img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 10px 10px 0px 0px;
+}
+
+.user-metric__bottom {
+   /* position: absolute; */
+   display: flex;
+   height: 242px;
+   background-color: #ffffff;
+   /*  */
+   border-radius: 0px 0px 10px 10px;
+   border-right: 1px solid rgba(0, 0, 0, 0.10);
+   border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+   border-left: 1px solid rgba(0, 0, 0, 0.10);
+   background: rgba(244, 244, 244, 0.00);
+}
+
+.user-metric__avatar-wrapper {
+   /* border: 1px solid red; */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   bottom: 118px;
+   left: 40px;
+   width: 225px;
+   height: 228px;
+   background-color: #ffffff;
+   border-radius: 50%;
+}
+
+.user-metric__avatar {
+   /* position: relative; */
+   /* bottom: 100px;
+   left: 40px; */
+   /* position: absolute; */
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   border: 1px solid  rgba(0, 0, 0, 0.10);
+}
+
+.user-metric__avatar img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 50%;
+}
+
+/* Иконки редактирования аватар */
+/* Иконка Добавить аватар */
+.user-metric__avatar-add :first-child {
+   display: none;
+   position: relative;
+   float: right;
+   bottom: 40px;
+   margin-right: 10px;
+   width: 48px;
+   height: 48px;
+   border-radius: 50%;
+}
+
+/* Иконка Изменить аватар */
+.user-metric__avatar-add {
+   position: relative;
+   float: right;
+   bottom: 40px;
+   margin-right: 10px;
+   width: 48px;
+   height: 48px;
+   border-radius: 50%;
+}
+
+.user-metric__avatar-add {
+   width: 48px;
+   height: 48px;
+   border-radius: 50%;
+}
+
+/* Данные пользователя */
+.user-data__wrapper {
+   margin: 32px 0 32px 78px;
+}
+
+.user-data__name p {
+   /* Desktop/H-3 */
+   font-family: 'Akrobat';
+   font-size: 32px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   color: #35383F;
+}
+
+.user-data__list-wrapper {
+   display: flex;
+   max-width: 550px;
+   height: 50px;
+   margin: 32px 0;
+}
+
+.user-data__list-wrapper ul {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: flex-start;
+   list-style: none;
+}
+
+.user-data__list-wrapper li {
+   border-right: 1px solid #35383F;
+   height: auto;
+   margin-left: 5px;
+}
+
+.user-data__list-wrapper p {
+   font-family: 'BertSans';
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   margin-right: 5px;
+}
+
+/* Контакты пользователя */
+.user-data__contacts-wrapper {
+   display: flex;
+}
+
+/* ссылки на соцсети */
+.user-data__social-network {
+   display: flex;
+   margin-right: 40px;
+}
+
+.user-data__link-vk,
+.user-data__link-telegram,
+.user-data__link-share-link {
+   width: 24px;
+   height: 24px;
+}
+
+.user-data__link-telegram {
+   margin: 0 12px;
+}
+
+.user-data__link-vk img,
+.user-data__link-telegram img,
+.user-data__link-share-link img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+/* Телефон, почта пользователя */
+.user-data__personal-contacts {
+   display: flex;
+   align-items: center;
+}
+
+.user-data__phone {
+   margin-right: 20px;
+}
+
+.user-data__phone,
+.user-data__mail {
+   display: flex;
+}
+
+.user-data__phone img,
+.user-data__mail img  {
+   margin-right: 8px;
+}
+
+.user-data__phone a,
+.user-data__mail a {
+   display: block;
+   font-family: 'BertSans';
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   color: #35383F;
+   text-decoration: none;
+}
+
+/* ********************** */
+
+/* Настройки профиля */
+section.profile-settings {
+   margin-bottom: 40px;
+}
+.ps__navigation {
+   display: flex;
+}
+
+.ps__navigation ul {
+   list-style: none;
+   display: flex;
+}
+
+.ps__navigation li {
+   margin-right: 20px;
+}
+
+.ps__navigation a {
+   text-decoration: none;
+   text-align: center;
+   font-family: 'BertSans';
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 100%; /* 20px */
+   color: #1C5C94;
+   padding: 10px 24px;
+   border-radius: 30px;
+   border: 2px solid #1C5C94;
+}
+
+.ps__navigation li:hover {}
+
+.ps__navigation a:hover {
+   /* border-radius: 30px; */
+   background: #1C5C94;
+   color: #ffffff;
+}
+
+.ps__navigation li:active {
+   border-radius: 30px;
+   background: transparent #1C5C94;
+}
+.ps__navigation a:active {
+   border-radius: 30px;
+   background: #1C5C94;
+   padding: 10px 24px;
+   color: #ffffff;
+}
+/******************* конец меню таб******** **/
+
+.profile-settings__drop-down-list {
+   width: 600px;
+   min-height: 364px;
+   border-radius: 10px;
+   border: 1px solid #DEE2E5;
+   background: #FFF;
+   padding: 40px;
+}
+
+
+.profile-settings__select-wrapper {
+   display: flex;
+   justify-content: space-between;
+   height: 32px;
+   margin-bottom: 28px;
+}
+
+.profile-settings__select-wrapper:last-child {
+   margin-bottom: 40px;
+}
+
+.profile-settings__title {
+   color: #000;
+   font-family: 'Akrobat', sans-serif;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 120%;
+   padding: 4px 0;
+}
+
+.profile-settings__select-wrapper select {
+   color: #35383F;
+   font-family: 'BertSans', sans-serif;
+   font-size: 14px;
+   font-weight: 500;
+   align-items: center;
+   border-radius: 10px;
+   border: 1px solid #939393;
+   outline: none;
+   text-decoration: none;
+}
+select {
+   width: 172px;
+   display: block;
+   appearance: none;
+   overflow: hidden;
+   /* вставляем нужную */
+   background: url('../images/img/arrow-down.svg')no-repeat right;
+   padding: 4px 16px;
+   padding-right: 16px;
+   /* установила стрелку в том положении где нужно */
+   background-position: calc(100% - 10px) 0.15em;
+   /* 0.35em указывает высоту */
+}
+/* option p:hover{
+   background: #2DBBAF;
+} */
+
+
+.profile-settings__select-wrapper option:active {
+   outline: none;
+   text-decoration: underline;
+}
+
+/* кнопка */
+.profile-settings__btn {
+   padding: 16px 32px;
+   align-items: center;
+   border-radius: 10px;
+   background: #2DBBAF;
+   border: none;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+}
+
+.profile-settings__link {
+   color: #FFF;
+}
+
+.profile-settings__button {
+   display: flex;
+   justify-content: center;
+}
+
+@media screen and (max-width: 768){
+   .profile-settings__drop-down-list {
+  margin-right: 34px;
+  margin-left: 34px;
+   }
+}
+   

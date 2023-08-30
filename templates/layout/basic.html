@@ -7,11 +7,229 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} Страница в разработке {% endblock %}</title>
 
+
+    <!-- Подключаем шрифты Akrobat -->
+    <link rel="stylesheet" href="{% static 'fonts/akrobat/otf/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/akrobat/ttf/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/akrobat/web/stylesheet.css' %}">
+    <!-- Подключаем шрифты BertSans -->
+    <link rel="stylesheet" href="{% static 'fonts/bertsans/ttf/stylesheet.css' %}">
+    <!-- Подключаем шрифты Inter -->
+    <link rel="stylesheet" href="{% static 'fonts/inter/ttf/stylesheet.css' %}">
+    <!-- Подключаем шрифт Font Awesome для иконок -->
+    <link rel="stylesheet" href="{% static 'fontawesome/fontawesome-free-6.4.2-web/css/all.css' %}">
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
     {% block head %}{% endblock %}
 </head>
 <body>
-<header></header>
-<main>{% block content %}{% endblock %}</main>
-<footer></footer>
+<!-- Header user login -->
+    <header class="header">
+        <div class="container">
+            <div class="header__body-wrapper">
+                <div class="header__body">
+                    <!-- Логотипы -->
+                    <div class="header__logo">
+                        <!-- Логотип РСО -->
+                        <div class="header__logo-rco">
+                            <a href="#">
+                                <img src="/static/images/logo/rco-blue.svg" alt="">
+                            </a>
+                        </div>
+                        <!-- Логотип Труд Крут -->
+                        <div class="header__logo-labor-cool">
+                            <a href="#">
+                                <img src="/static/images/logo/labor-cool-dark.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Десктоп меню + 1024px-->
+                    <nav class="header__menu-top">
+                        <ul class="header__menu-top menu">
+                            <li class="item has-submenu">
+                                <a tabindex="0">Структура</a>
+                                <ul class="submenu">
+                                    <li class="subitem"><a href="#">ЛСО</a></li>
+                                    <li class="subitem"><a href="#">Штабы СО ОО</a></li>
+                                    <li class="subitem"><a href="#">Местные штабы</a></li>
+                                    <li class="subitem"><a href="#">Региональные штабы</a></li>
+                                    <li class="subitem"><a href="#">Окружные штабы</a></li>
+                                    <li class="subitem"><a href="#">Центральный штаб</a></li>
+                                </ul>
+                            </li>
+                                <li class="item"><a href="#">Мероприятия</a></li>
+                                <li class="item"><a href="#">Полезная информация</a>
+                            </li>
+                        </ul>
+                        <!-- Меню Бургер  -->
+                    <div class="toggle burger-menu">
+                        <!-- <img class="menuIcon" src="/static/images/icons/burger.svg" alt="">
+                        <img class="closeIcon mobile__menu-top-icon-closed" src="/static/images/icons/burger-closed.svg" alt=""> -->
+                        <!-- <div><img class="closeIcon mobile__menu-top-icon-closed" src="/static/images/icons/burger-closed.svg" alt=""></div> -->
+                            <!-- <div><img class="menuIcon" src="/static/images/icons/burger.svg" alt=""></div> -->
+                    </div>
+                    </nav>
+
+                    <!-- Правый блок меню -->
+                    <div class="header__block-user-info">
+                        <div class="header__revers">
+                            <!-- Счётчик заявок Контейнер -->
+                            <div class="header__application-count-container">
+                                <!-- Иконка колокольчик -->
+                                <img src="/static/images/icons/bell-light.svg" alt="">
+                                <!-- Счётчик заявок -->
+                                <div class="header__application-count">
+                                    <p class="text-p">99+</p>
+                                </div>
+                            </div>
+                            <!-- Региональное отделение пользователя -->
+                            <div class="header__regional-office-container">
+                                <!-- Иконка местоположения -->
+                                <div class="header__regional-dot">
+                                    <img src="/static/images/profile-settings/user-avatar.jpg" alt="">
+                                </div>
+                                <!-- Вывод названия регионального отделения -->
+                                <div class="header__regional-office">
+                                    <p class="text-p">
+                                        Карачаево-Черкесское региональное отделение
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Иконка или автар пользователя -->
+                        <div class="header__user-avatar-container">
+                            <!-- Автар пользователя -->
+                            <div class="header__user-avatar">
+                                <img src="/static/images/profile-settings/user-avatar.jpg" alt="">
+                            </div>
+                            <!-- Иконка, когда нет фото Пользователя -->
+                            <div class="header__user-icon">
+                                <img src="/static/images/icons/user-circle.svg" alt="">
+                            </div>
+                        </div>
+                        <!-- Мобильное меню Пользователя max-width:1024px-->
+                        <div class="header-mobile__menu-top-container">
+                            <nav class="header-mobile__menu-top">
+                                <ul class="header-mobile__menu-top">
+                                    <li><a href="#">Моя страница</a></li>
+                                    <li><a href="#">Мой отряд</a></li>
+                                    <li><a href="#">Штаб СО ОО</a></li>
+                                    <li><a href="#">Местный штаб</a></li>
+                                    <li><a href="#">Региональный штаб</a></li>
+                                    <li><a href="#">Окружной штаб</a></li>
+                                    <li><a href="#">Активные заявки</a></li>
+                                    <li><a href="#">Поиск участников</a></li>
+                                    <li><a href="#">Членский взнос</a></li>
+                                    <li><a href="#">Оформление справок</a></li>
+                                    <li><a href="#">Настройки профиля</a></li>
+                                    <li><a href="#">Выйти из ЛК</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Иконка выпадающего меню  -->
+                        <div class="header__drop-down-click">
+                            <img src="/static/images/icons/angel-down.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="/static/js/burger-menu.js"></script>
+
+{% block content %}{% endblock %}
+
+<!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <!-- Вехний контейнер футера -->
+                <div class="footer__top-container">
+                    <!-- Первая колонка  -->
+                    <!-- Логотип РСО -->
+                    <div class="footer__logo-wrapper">
+                    <div class="footer__logo-rco-img">
+                        <img src="/static/images/logo/rco-white.svg" alt="">
+                    </div>
+                    <!-- Иконки соцсетей -->
+                    <div class="footer__social-wrapper">
+                        <div class="footer__logo-vk-img">
+                            <a href="https://vk.com/rso_official" target="_blank">
+                                <img src="/static/images/icons/vk-white.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="footer__logo-telegram-img">
+                            <a href="https://t.me" target="_blank">
+                                <img src="/static/images/icons/telegram-white.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Вторая колонка Адрес-->
+                    <div class="footer__contacts-address">
+                    <p class="footer__text-p">105005, г. Москва, Лефортовский переулок, 8, строение 1</p>
+                    </div>
+                    <!-- Третья колонка Контакты-->
+                    <div class="footer__contacts-phone">
+                    <div class="footer__contacts-telephone">
+                        <a href="tel:+74992613345">8 499 261 33 45</a>
+                    </div>
+                    <div class="footer__contacts-telephone">
+                        <p class="footer__text-p">Горячая линия РСО:</p>
+                        <a href="tel:+78007700117">8 800 770 0 117</a>
+                    </div>
+                    <div class="footer__contacts-email">
+                        <a href="mailto:r.s.o@mail.ru">r.s.o@mail.ru</a>
+                    </div>
+                    </div>
+                    <!-- Четвёртая колонка Политика конфиденциальности Пользовательское соглашение -->
+                    <div class="footer__privacy-policy">
+                    <ul class="footer__privacy-policy-list">
+                        <li class="footer__privacy-policy-item">
+                            <a href="#">Политика конфиденциальности</a>
+                        </li>
+                        <li class="footer__user-agreement">
+                            <a href="#">Пользовательское соглашение</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <!-- Нижний контейнер футера -->
+                <div class="footer__bottom-container">
+                    <!-- Левая часть футера -->
+                    <div class="footer__all-rights-reserved">
+                    <p class="footer__texp-p">&copy; 1959-2023 РОССИЙСКИЕ СТУДЕНЧЕСКИЕ ОТРЯДЫ.</p>
+                    <p class="footer__texp-p">Все права защищены.</p>
+                    </div>
+                    <!-- Правая часть футера-->
+                    <div class="footer__developed">
+                    <p class="footer__texp-p">Сделано</p>
+                    <!-- Логотип 1Т -->
+                    <div class="footer__logo-1t-img">
+                        <a href="#">
+                            <img src="/static/images/logo/1t-club-whit.svg" alt="">
+                        </a>
+                    </div>
+                    <!-- Логотип Teamcode -->
+                    <div class="footer__logo-teamcode">
+                        <a href="#">Teamcode</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Предупреждение cookie  -->
+             <div class="cookie_notification">
+                <p class="footer__texp-p">Этот сайт использует Cookie для хранения данных. Продолжая использовать сайт или нажимая «Принять», вы даете согласие на работу с этими файлами.</p>
+                <a href="#politika">Подробнее</a>
+                <!-- Кнопка Принять Cookie -->
+                <button class="accept-cookies" id="cookie_close">
+                    <span class="button-text-accept-cookies">Принять</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+    <script src="/static/js/cookie.js"></script>
 </body>
 </html>

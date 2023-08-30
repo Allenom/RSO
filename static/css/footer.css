@@ -1,0 +1,489 @@
+/* Border */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    }
+
+body {
+    margin: 0;
+    font-family: 'BertSans', sans-serif;
+    font-family: 'Akrobat', sans-serif;
+    font-family: 'inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+    padding: 0;
+    margin: 0;
+}
+
+/* Цвета проекта */
+:root {
+    /* Основные цвета */
+    --dark_blue-color: #1c5c94;
+    --mostly-desaturated-dark-green-color: #608553;
+    --very-soft-yellow-color: #dbce9f;
+    --light_green-color: #5ca386;
+    --soft-yellow-color: #fbd350;
+    --soft-red-color: #eb574b;
+    /* Дополнительные цвета */
+    --dark_cyan-color: #29997E;
+    --very-soft-blue-c-color: #91C9F7;
+    --very-soft-blue-a-color: #ace1f8;
+    --bright-orange-color: #fc9c38;
+    --moderate-cyan-color: #33bdbd;
+    --pale-magenta-color: #ff9aee;
+    --light-grayish-red-color: #fed1d5;
+    /* Бэкграунд цвета для секций*/
+    --white-bg-color: #ffffff;
+    --gray-bg-color: #D1D5D8;
+    /* Бэкграунд цвета для кнопок */
+    --button-submit-color: #39BFBF;
+    /* Цвета компонентов форм */
+    --input-border-color: #a3a3a3;
+    --placeholder-color: #898989;
+    /* Цвета иконок в инпутах */
+    --icon-input-color: #898989;
+    /* Цвета текста */
+    --white-text-color: #ffffff;
+    /* Цвета ссылок по дефолту Селектор ссылки по тэгу a */
+    --link-top-menu-color: #35383F; /* Верхнее меню ссылки */
+    /* Цвета ссылок при наведении Псевдокласс :hover */
+    /* Цвета ссылок посещённых Псевдокласс :visited*/
+}
+
+/* Заголовки  */
+h1 {}
+
+h2 {
+    /* Desktop/H-2 */
+    font-family: 'Akrobat';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #35383F;
+}
+
+h3 {}
+
+h4 {}
+
+h5 {}
+
+h6 {}
+
+/* Текст */
+p {
+/* text */
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #35383F;
+}
+
+/* Ссылки */
+a {
+/* link */
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+a:visited { /* Цвет посещённой ссылки */}
+
+a:hover {/* Цвет ссылки при наведении на нее курсора мыши */}
+
+/* ******************** */
+
+/* Автор тэг  */
+address {}
+
+
+/* Компоненты форм  */
+
+input {
+/* text-indent: 13px; */
+}
+::placeholder {
+    color: var(--placeholder-color);
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Кнопки  */
+button {}
+
+button a {
+    color: var(--white-text-color);
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+button:hover {}
+
+button:active {}
+
+
+/* Основной контейнер */
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* Футер */
+.footer {
+    background-color: #1C5C94;
+}
+
+.footer_wrapper {}
+
+/* Вехний контейнер футера */
+.footer__top-container {
+    display: grid;
+    grid-template-columns: 200px repeat(3, 1fr);
+    padding-top: 48px;
+    margin-bottom: 40px;
+}
+
+/* Первая колонка */
+/* Логотип РСО */
+.footer__logo-wrapper {}
+
+.footer__logo-rco-img {
+    width: 78px;
+    height: 72px;
+    margin-bottom: 32px;
+}
+
+.footer__logo-rco-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Иконки соцсетей */
+.footer__social-wrapper {
+    display: flex;
+}
+
+.footer__logo-vk-img {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+}
+
+.footer__logo-vk-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer__logo-telegram-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.footer__logo-telegram-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Вторая колонка Адрес */
+.footer__contacts-address,
+.footer__contacts-phone,
+.footer__privacy-policy {
+    padding-top: 12px;
+}
+
+.footer__contacts-address p {
+    color: #ffffff;
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 125% */
+    /*  */
+    padding-right: 70px;
+}
+
+/* Третья колонка Контакты*/
+.footer__contacts-telephone a,
+.footer__contacts-telephone p,
+.footer__contacts-email a {
+    color: #ffffff;
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    /*  */
+    text-decoration: none;
+}
+
+.footer__contacts-email a {
+    text-decoration: underline;
+}
+
+.footer__contacts-email {}
+
+/* Четвёртая колонка Политика конфиденциальности 
+Пользовательское соглашение*/
+.footer__privacy-policy ul {
+    list-style: none;
+}
+
+.footer__privacy-policy ul a {
+    color: #ffffff;
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /*  */
+    text-decoration: none;
+}
+
+
+/* Нижний контейнер футера */
+.footer__bottom-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+}
+
+/* Левая часть футера */
+.footer__all-rights-reserved {
+    min-width: 396px;
+}
+
+.footer__all-rights-reserved p {
+    color: #ffffff;
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+}
+
+.footer__all-rights-reserved :first-child {
+    text-transform: uppercase;
+}
+
+/* Правая часть футера */
+.footer__developed {
+    display: flex;
+    align-items: center;
+}
+
+.footer__developed p {
+    color: #90959D;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.footer__developed a {}
+
+/* Логотип 1Т */
+.footer__logo-1t-img {
+    width: 80px;
+    height: 24px;
+    /*  */
+    margin: 0 12px 0 16px;
+}
+
+.footer__logo-1t-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Логотип Teamcode */
+.footer__logo-teamcode {
+    border-left: 1px solid #ffffff;
+}
+
+.footer__logo-teamcode a {
+    color: #ffffff;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    /*  */
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 12px;
+}
+
+/* Предупреждение cookie */
+.cookie_notification {
+    display: none;
+    position: fixed;
+    z-index: 9999999;
+    bottom: 295px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 15px;
+    font-family: Verdana, sans-serif;  
+    color: #000000;
+    background: #ffffff;
+    padding: 10px 20px; 
+    border-top: 4px solid #BFE2FF;
+    max-width: 520px;
+    min-height: 332px;
+}
+
+.cookie_notification p {
+    color: #35383F;
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 28.8px */
+}
+
+/* Оформление кнопок */
+.cookie_btn {
+    display: inline-block;
+    margin: 10px 6px 4px 6px;
+    text-decoration: none;
+    position: relative;
+    font-size: 13px;
+    padding: 4px 12px;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase; 
+    background: #337AB7;
+    border: 2px solid #BFE2FF;
+}
+.cookie_btn:hover {
+    color: #FFF;
+}
+.cookie_btn:after,
+.cookie_btn:before {
+    position: absolute;
+    height: 2px;
+    left: 50%;
+    background: #FFF;
+    bottom: -6px;
+    content: "";
+    transition: all 280ms ease-in-out;
+    width: 0;
+}
+.cookie_btn:before {
+    top: -6px;
+}
+.cookie_btn:hover:after,
+.cookie_btn:hover:before {
+    width: 100%;
+    left: 0;
+}
+
+/* Кнопка Принять Cookie */
+button.accept-cookies {
+    box-sizing: border-box;
+    width: 113px;
+    min-height: 52px;
+    border-radius: 10px;
+    background: #39BFBF;
+    border: none;
+    outline: none;
+  }
+
+button:hover {}
+
+button.active {}
+
+span.button-text-accept-cookies {
+    display: block;
+    /* padding: 16px 32px; */
+  }
+
+span.button-text-accept-cookies {
+        /* button_text */
+        font-family: 'BertSans';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 125% */
+        color: #ffffff;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .footer__top-container {
+        display: grid;
+        grid-template-columns: 0.5fr repeat(3, 1fr);
+        padding-top: 48px;
+        margin-bottom: 40px;
+    }
+
+    .footer__contacts-address p {
+        color: #ffffff;
+        font-family: 'BertSans';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .footer__top-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        padding-top: 48px;
+        margin-bottom: 40px;
+    }
+
+    .footer__bottom-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        align-items: center;
+        
+    }
+}

@@ -1,0 +1,30 @@
+/* default styles*/
+@import './base.css';
+/*colors styles*/
+@import './colors.css';
+/* footer  */
+@import './footer.css';
+/*Styles components*/
+@import './form-user-registration.css';
+/*Styles components*/
+@import './form-user-login-password-recovery.css';
+/*Styles components*/
+@import './form-user-login-password-change.css';
+/* header */
+@import './header-over.css';
+/* header user login */
+@import './header.css';
+/* Форма: Вход пользователя Старые стили */
+@import './form-user-login.css';
+/* Настройки профиля: Моя страница*/
+@import './profile-settings-my-page.css';
+/* Настройки профиля: Персональные данные */
+@import './profile-settings-personal-data.css';
+/* Настройки профиля: Смена логина и пароля */
+@import './profile-settings-password-login-change.css';
+/* Настройки профиля: Настройки приватности */
+@import './profile-settings-settings.css';
+
+
+
+

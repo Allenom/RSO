@@ -1,0 +1,420 @@
+/* Border */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  }
+
+body {
+  margin: 0;
+  font-family: 'BertSans', sans-serif;
+  font-family: 'Akrobat', sans-serif;
+  font-family: 'inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1180px;
+}
+/*  */
+
+
+.wrapper {
+  width: 100%;
+}
+/* Иконка выбора */
+.select-btn,
+li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.select-btn {
+  background: #fff;
+  border-radius: 10px;
+  justify-content: space-between;
+  border: 1px solid #a3a3a3;
+  font-size: 16px;
+  padding: 10px 10px 10px 16px;
+  margin-bottom: 18px;
+}
+
+.select-btn span {
+  color: grey;
+}
+.select-btn img {
+  font-size: 20px;
+  transition: transform 0.3s linear;
+}
+
+.wrapper.active .select-btn img {
+  transform: rotate(-180deg);
+}
+
+/* Поле поиска региона */
+.content {
+  display: none;
+  padding: 10px;
+  background: #fff;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.wrapper.active .content {
+  display: block;
+}
+.content .search {
+  position: relative;
+}
+.search input {
+  height: 35px;
+  display: block;
+  width: 95%;
+  outline: none;
+  margin: 0px auto;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 0 0 0 10px;
+  border: 1px solid #b3b3b3;
+}
+
+.search input:focus {
+  border: 2px solid #4285f4;
+}
+.search input::placeholder {
+  color: #bfbfbf;
+}
+
+/* Поле поиска региона список*/
+.content .options {
+  margin-top: 8px;
+  height: 100px;
+  overflow-y: auto;
+  padding-right: 7px;
+}
+.options::-webkit-scrollbar {
+  width: 7px;
+}
+.options::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.options::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+.options::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+.options li {
+  height: 25px;
+  padding: 0 13px;
+  font-size: 18px;
+}
+.options li:hover,
+li.selected {
+  border-radius: 5px;
+  background: #f2f2f2;
+}
+
+
+
+/* Разобраться с этими стилями откуда они и зачем */
+
+/* Регистрация пользователя */
+.body-forms {
+  background-color: #D1D5D8;
+}
+
+.registration,
+.user-registration {
+  /* min-height: 100vh; */
+  /* margin: 0; */
+  /* margin-top: 72px; */
+  background-image: url(/static/images/user-login-bg.jpg);
+  /* min-height: 734px; */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.user-registration__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.user-registration__form-wrapper {
+  background-color: #ffffff;
+  max-width: 580px;
+  min-height: 911px;
+  border-radius: 10px;
+  /* плашка */
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+  margin: 100px 0;
+}
+.form__wrapper,
+.user-registration__form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px; /*384px - текст не убирается в такую ширину*/
+  height: 731px;
+  padding: 90px 90px;
+}
+
+.user-registration__title {
+  margin-bottom: 40px;
+}
+
+.user-registration__title h2 {
+  text-align: left;
+  color: #35383F;
+  /* Desktop/H-2 */
+  font-family: 'Akrobat';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* Форма регистрации */
+.reg-form,
+.user__form-registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Стилизация списка  */
+.user-registration__select {
+  border: 1px solid #a3a3a3;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 40px;
+  text-indent: 16px;
+  outline: none;
+  font-family: 'BertSans';
+  font-weight: 500;
+  font-size: 16px;
+  color: #898989;
+  margin-bottom: 8px;
+}
+
+.user-registration__input-box {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  /* margin-bottom: 8px; */
+}
+
+#togglePassword,
+#togglePasswordConfirm,
+.user-registration__input-box img {
+  position: absolute;
+  float: right;
+  right: 16px;
+  top: 23%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  /*Эти стили будем использовать, 
+  если иконки fontawesome не подойдут 
+  и придётся использовать иконки из макета в формате svg*/
+}
+
+/* Стилизация input -ов */
+/* .form-field input, */
+.user-registration__input-surname,
+.user-registration__input-name,
+.user-registration__input-patronymic,
+.user-registration__input-phone,
+.user-registration__input-email,
+.user-registration__input-login,
+.user-registration__input-password,
+.user-registration__repeat-password {
+  border: 1px solid #a3a3a3;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 40px;
+  text-indent: 16px;
+  margin-bottom: 8px;
+}
+
+.user-registration__repeat-password {
+  margin-bottom: 20px;
+}
+
+.user-registration__input-surname,
+.user-registration__input-name,
+.user-registration__input-patronymic,
+.user-registration__input-phone,
+.user-registration__input-email,
+.user-registration__input-login,
+.user-registration__input-password {
+  /* margin-bottom: 8px; */
+}
+
+.user-registration__input-surname:focus,
+.user-registration__input-name:focus,
+.user-registration__input-patronymic:focus,
+.user-registration__input-phone:focus,
+.user-registration__input-email:focus,
+.user-registration__input-login:focus,
+.user-registration__input-password:focus,
+.user-registration__repeat-password:focus {
+  outline: none;
+}
+
+/* Стилизация placeholder  */
+.user-registration__input-surname::placeholder,
+.user-registration__input-name::placeholder,
+.user-registration__input-patronymic::placeholder,
+.user-registration__input-phone::placeholder,
+.user-registration__input-email::placeholder,
+.user-registration__input-login::placeholder,
+.user-registration__input-password::placeholder,
+.user-registration__repeat-password::placeholder {
+  text-overflow: ellipsis;
+  padding: 10px 0;
+  opacity: 1; transition: opacity 0.3s ease;
+    /*  */
+  color: #898989;
+  font-family: 'BertSans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.user-registration__input-surname:focus::placeholder,
+.user-registration__input-name:focus::placeholder,
+.user-registration__input-patronymic:focus::placeholder,
+.user-registration__input-phone:focus::placeholder,
+.user-registration__input-email:focus::placeholder,
+.user-registration__input-login:focus::placeholder,
+.user-registration__input-password:focus::placeholder,
+.user-registration__repeat-password:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Текст и background input-а об ошибке неверно введённого зачения */
+.form-field.error input,
+.form-field .error,
+.error,
+.user-registration__text-error {
+  color: #DB0000;
+    /* хлебные_крошки */
+  font-family: 'Akrobat';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  /*  */
+  min-height: 10px;
+  margin: 8px 0;
+}
+/* Верно введённые зачения background input-а */
+.form-field.success input {
+  border-color: green;
+}
+
+/* Иконки в инпуте */
+
+/* Даю согласие */
+.check-wrapper,
+.user-registration__approval {
+  display: flex;
+  width: 100%;
+  margin-bottom: 68px;
+}
+
+.user-registration__approval p {
+  font-family: "Akrobat";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 8px;
+  letter-spacing: 0.4px;
+}
+
+.check,
+.user-registration__approval-checkbox {
+  margin-bottom: 42px;
+  transform: scale(1.8);
+  opacity: 0.9;
+  cursor: pointer;
+}
+ 
+ .check {
+   /* margin: 12px;
+   transform : scale(2); */
+ }
+ 
+ /* Кнопка Зарегистрироваться */
+.reg-form__btn,
+.user-registrations__button-register {
+  display: block;
+  box-sizing: border-box;
+  width: 232px;
+  min-height: 52px;
+  border-radius: 10px;
+  background: #39BFBF;
+  border: none;
+  outline: none;
+  /*  */
+  word-wrap: break-word;
+  color: #ffffff;
+  padding: 16px 32px;
+  /* button_text */
+  font-family: 'BertSans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 125% */
+  /*  */
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* У меня уже есть аккаунт */
+.GoLogin a,
+.user-registrations__link-login a {
+  display: block;
+  text-align: center;
+  color: #35383F;
+  /* link */
+  font-family: 'BertSans';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+}

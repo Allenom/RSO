@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Verdana';
+    src: local('Verdana Bold'), local('Verdana-Bold'),
+        url('Verdana-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: local('Verdana Bold Italic'), local('Verdana-BoldItalic'),
+        url('Verdana-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: local('Verdana Italic'), local('Verdana-Italic'),
+        url('Verdana-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: local('Verdana'),
+        url('Verdana.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
