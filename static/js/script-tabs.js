@@ -28,10 +28,10 @@ let tab_items = document.querySelectorAll('.tab-item');
 for (let i = 0; i < filter_btn.length; i++) {
   filter_btn[i].addEventListener('click', function () {
     for (let j = 0; j < filter_btn.length; j++) {
-      filter_btn[j].classList.remove('active');
+      filter_btn[j].classList.remove('active-tab');
     }
     let select_tab = filter_btn[i].getAttribute('data-tab');
-    filter_btn[i].classList.add('active');
+    filter_btn[i].classList.add('active-tab');
     for (let t = 0; t < tab_items.length; t++) {
       document.querySelector('.tab-filter-item-container').style.height =
         tab_items[t].scrollHeight + 'px';

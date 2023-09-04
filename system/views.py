@@ -6,6 +6,11 @@ from system.forms import CreateUserForm
 from system.models import Profile
 
 
+def profile_edit(request):
+
+    return render(request, 'lk/settings.html')
+
+
 def lk_page(request):
     if not request.user.is_authenticated:
         return redirect('/login/?next=/lk/')
