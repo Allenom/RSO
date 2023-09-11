@@ -26,17 +26,19 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path("registration/", SignUp.as_view(), name='registration'),
-    # Восстановить пароль path("/recover_password",
+    path("recover_password/", page, {'template': 'recover_password.html'}, name='recover_password'),
 
     # Профиль
     path("profile/my_page/", lk_page, name='profile'),
 
     # Настройки профиля
     path("profile/profile_settings/my_page/", page, {'template': 'profile/profile_settings/my_page.html'},
-         name='settings_my_page'),
-    # path("profile/personal/", ProfileEditView.as_view(), name='lk_settings'),
-    # path("profile/system", lk_system, name='lk_system'),
-    path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='lk_privacy'),
+         name='profile_settings_my_page'),
+    path("profile/profile_settings/personal/", page, {'template': 'profile/profile_settings/personal.html'},
+         name='profile_settings_personal'),
+    path("profile/profile_settings/system", page, {'template': 'profile/profile_settings/system.html'},
+         name='profile_settings_system'),
+    path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='profile_settings_privacy'),
 
     # Доп страницы
     path("404/", page, {'template': '404.html'}, name='page_not_found'),
