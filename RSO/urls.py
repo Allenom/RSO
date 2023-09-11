@@ -27,8 +27,8 @@ urlpatterns = [
     path("signup/", SignUp.as_view(), name='signup'),
 
     # path("profile/", profile_page, name='profile'), СДЕЛАТЬ ЛК
-    # path("profile/profile_settings/", ProfileEditView.as_view(), name='profile_settings'),
-    path("profile/profile_settings/", profile_edit, name='profile_settings'),
+    # path("profile/profile_settings/", ProfileEditView.as_view(), name='settings'),
+    path("profile/profile_settings/my_page", profile_edit, name='settings_my_page'),
     # page personal login/password privacy
     path("profile/", lk_page, name='profile'),
     # path("profile/personal/", ProfileEditView.as_view(), name='lk_settings'),
