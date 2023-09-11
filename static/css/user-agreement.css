@@ -1,0 +1,237 @@
+/* base */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'BertSans', sans-serif;
+    font-family: 'Akrobat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+h2 {
+    /* Desktop/H-2 */
+    font-family: 'Akrobat';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #35383F;
+}
+
+p {
+    /* text */
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #35383F;
+}
+
+a {
+    /* link */
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+::placeholder {
+    color: #898989;
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+button a {
+    color: #ffffff;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1180px;
+}
+
+.form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field input {
+    border: 2px solid #a3a3a3;
+    border-radius: 10px;
+    display: block;
+    font-size: 12px;
+    padding: 10px 0px 10px 16px;
+}
+
+.form-field input:focus {
+    outline: 0;
+}
+
+.form-field.success input {
+    border-color: green;
+}
+
+.form-field.error input {
+    border-color: red;
+}
+
+.form-field .error {
+    color: red;
+    font-size: 11px;
+    height: 18px;
+}
+
+.form__wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form__title {
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+/* Страница Пользовательское соглашение */
+.user-agreement {
+    min-height: 623px;
+}
+
+.user-agreement__container {
+    padding: 40px 40px 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+.user-agreement h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.user-agreement p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.user-agreement a {
+    font-size: 16px;
+    color: #1F7CC0;
+}
+
+.user-agreement__conditions {
+    list-style-position: inside;
+    font-family: "BertSans";
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.user-agreement__conditions-title {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #35383F;
+}
+
+.user-agreement__conditions-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 10px;
+}
+
+.user-agreement__conditions-enumeration {
+    font-weight: 400;
+    list-style-type: "— ";
+    margin-bottom: 10px;
+}
+
+.enumeration-indent {
+    margin-top: 10px;
+}
+
+
+/* Адаптив Страница Пользовательское соглашение*/
+
+/* 1024px */
+@media(max-width:1200px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        width: 892px;
+    }
+}
+
+/* 768 */
+@media(max-width:950px) {
+    .user-agreement__container {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .container {
+        width: 700px;
+    }
+}
+
+/* 360px */
+@media(max-width:480px) {
+    .container {
+        width: 328px;
+    }
+
+    .user-agreement__container {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 20px 16px 10px 16px;
+
+    }
+
+    .user-agreement h2 {
+        font-size: 34px;
+    }
+
+    .user-agreement p {
+        font-size: 14px;
+    }
+}

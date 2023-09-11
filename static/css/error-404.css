@@ -1,0 +1,220 @@
+/* base */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'BertSans', sans-serif;
+    font-family: 'Akrobat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+h2 {
+    /* Desktop/H-2 */
+    font-family: 'Akrobat';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #35383F;
+}
+
+p {
+    /* text */
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #35383F;
+}
+
+a {
+    /* link */
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+::placeholder {
+    color: #898989;
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+button a {
+    color: #ffffff;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1180px;
+}
+
+.form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field input {
+    border: 2px solid #a3a3a3;
+    border-radius: 10px;
+    display: block;
+    font-size: 12px;
+    padding: 10px 0px 10px 16px;
+}
+
+.form-field input:focus {
+    outline: 0;
+}
+
+.form-field.success input {
+    border-color: green;
+}
+
+.form-field.error input {
+    border-color: red;
+}
+
+.form-field .error {
+    color: red;
+    font-size: 11px;
+    height: 18px;
+}
+
+.form__wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form__title {
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+/* Страница Ошибка 404 */
+.error-404 {
+    min-height: 660px;
+}
+
+.error-404__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-top: 172px;
+    padding-bottom: 100px;
+    max-width: 730px;
+    min-height: 116px;
+}
+
+.error-404 h1 {
+    font-family: "Inter";
+    color: #91C9F7;
+    font-style: normal;
+    font-size: 232px;
+    font-weight: 700;
+    border: #39BFBF99;
+    margin-bottom: 40px;
+}
+
+.error-404 div {
+    display: flex;
+    justify-content: center;
+}
+
+.error-404 p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.error-404__button {
+    display: block;
+    box-sizing: border-box;
+    width: 306px;
+    min-height: 52px;
+    border-radius: 10px;
+    background: #39BFBF;
+    border: none;
+    outline: none;
+}
+
+/* Адаптив Страница Ошибка 404*/
+
+/* 1024px */
+@media(max-width:1100px) {
+    .error-404 h1 {
+        font-size: 260px;
+    }
+}
+
+/* 768px */
+@media (max-width:768px) {
+    .error-404__container {
+        width: 584px;
+    }
+
+    .error-404 h1 {
+        font-size: 232px;
+    }
+
+    .error-404 p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:600px) {
+    .error-404__container {
+        width: 287px;
+    }
+}
+
+/* 360px */
+@media(max-width:480px) {
+    .error-404 h1 {
+        font-size: 140px;
+    }
+
+    .error-404 p {
+        font-size: 14px;
+    }
+}

@@ -1,10 +1,27 @@
 {% extends 'layout/basic.html' %}
 {% load static %}
-
-{% block title %}Востановление пароля{% endblock %}
+{% block title %}Ошибка 404{% endblock %}
 {% block head %}
-<!--Стили добавить если нужно-->
+<link rel="stylesheet" href="../static/css/error-404.css">
+<link rel="stylesheet" href="{% static 'css/forms.css' %}" />
 {% endblock %}
 {% block content %}
-<main></main>
+    <!-- Страница Ошибка 404 -->
+    <section class="error-404">
+        <div class="container">
+            <div class="error-404__container">
+                <!-- Текстовая информация об ошибке -->
+                <h1>404</h1>
+                <p>Такой страницы не существует или она перемещена по другому адресу</p>
+                <!-- Кнопка с предложением вернуться в ЛК -->
+                <button class="error-404__button">
+                    <a href="">Вернуться в личный кабинет</a>
+                </button>
+            </div>
+        </div>
+
+        </div>
+
+    </section>
+
 {% endblock %}
