@@ -9,21 +9,21 @@ from system.models import Profile
 
 def profile_edit(request):
 
-    return render(request, 'lk/settings.html')
+    return render(request, 'profile/profile_settings/my_page.html')
 
 
 def lk_page(request):
     if not request.user.is_authenticated:
-        return redirect('/login/?next=/lk/')
+        return redirect('/login/?next=/profile/')
     context = {}
 
-    return render(request, 'lk.html', context)
+    return render(request, 'profile.html', context)
 
 
 class SignUp(CreateView):
     form_class = CreateUserForm
     success_url = reverse_lazy("login")
-    template_name = "signup.html"
+    template_name = "registration.html"
 
     def form_valid(self, form):
         c = {'form': form, }
@@ -50,7 +50,7 @@ class SignUp(CreateView):
 
 class ProfilePrivacyEditView(UpdateView):
     form_class = ProfilePrivacyEditForm
-    template_name = "lk/settings/privacy.html"
+    template_name = "profile/profile_settings/privacy.html"
     model = Profile
     success_url = reverse_lazy("lk_privacy")
     # def form_valid(self, form):

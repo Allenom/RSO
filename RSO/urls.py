@@ -27,12 +27,12 @@ urlpatterns = [
     path("signup/", SignUp.as_view(), name='signup'),
 
     # path("profile/", profile_page, name='profile'), СДЕЛАТЬ ЛК
-    # path("profile/settings/", ProfileEditView.as_view(), name='profile_settings'),
-    path("profile/settings/", profile_edit, name='profile_settings'),
+    # path("profile/profile_settings/", ProfileEditView.as_view(), name='profile_settings'),
+    path("profile/profile_settings/", profile_edit, name='profile_settings'),
     # page personal login/password privacy
-    path("lk/", lk_page, name='lk'),
-    # path("lk/personal/", ProfileEditView.as_view(), name='lk_settings'),
-    # path("lk/system", lk_system, name='lk_system'),
-    path("lk/settings/privacy/", ProfilePrivacyEditView.as_view(), name='lk_privacy'),
+    path("profile/", lk_page, name='profile'),
+    # path("profile/personal/", ProfileEditView.as_view(), name='lk_settings'),
+    # path("profile/system", lk_system, name='lk_system'),
+    path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='lk_privacy'),
 
 ]
