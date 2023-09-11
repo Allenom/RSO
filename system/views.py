@@ -8,7 +8,6 @@ from system.models import Profile
 
 
 def profile_edit(request):
-
     return render(request, 'profile/profile_settings/my_page.html')
 
 
@@ -17,7 +16,7 @@ def lk_page(request):
         return redirect('/login/?next=/profile/')
     context = {}
 
-    return render(request, 'profile.html', context)
+    return render(request, 'profile/my_page.html', context)
 
 
 class SignUp(CreateView):
@@ -60,3 +59,7 @@ class ProfilePrivacyEditView(UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user.profile
+
+
+def page_not_found(request):
+    return render(request, '404.html')

@@ -1,0 +1,247 @@
+/* base */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'BertSans', sans-serif;
+    font-family: 'Akrobat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+h2 {
+    /* Desktop/H-2 */
+    font-family: 'Akrobat';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #35383F;
+}
+
+p {
+    /* text */
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #35383F;
+}
+
+a {
+    /* link */
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+::placeholder {
+    color: #898989;
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+button a {
+    color: #ffffff;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1180px;
+}
+
+.form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field input {
+    border: 2px solid #a3a3a3;
+    border-radius: 10px;
+    display: block;
+    font-size: 12px;
+    padding: 10px 0px 10px 16px;
+}
+
+.form-field input:focus {
+    outline: 0;
+}
+
+.form-field.success input {
+    border-color: green;
+}
+
+.form-field.error input {
+    border-color: red;
+}
+
+.form-field .error {
+    color: red;
+    font-size: 11px;
+    height: 18px;
+}
+
+.form__wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form__title {
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+/* Страница Политика конфиденциальности */
+.privacy-policy__container {
+    padding: 40px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+}
+
+.privacy-policy__container h2 {
+    margin-bottom: 50px;
+}
+
+.privacy-policy__container h3 {
+    font-family: 'Akrobat';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 40px;
+    width: 800px;
+}
+
+.privacy-policy__info a {
+    font-size: 16px;
+    color: #1F7CC0;
+}
+
+ol {
+    counter-reset: li;
+    list-style: none;
+}
+
+li:before {
+    counter-increment: li;
+    content: counters(li, ".") ". ";
+}
+
+.privacy-policy__info {
+    list-style-position: inside;
+}
+
+.privacy-policy__info-title {
+    font-family: 'BertSans';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+
+}
+
+.privacy-policy__info-subtitle {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.privacy-policy__info-sub-items {
+    list-style-position: inside;
+}
+
+.privacy-policy__info-enumeration {
+    margin-top: 20px;
+}
+
+.enumeration-indent {
+    margin-bottom: 50px;
+}
+
+/* Адаптив Страницы Политика конфиденциальности */
+/* 1024px */
+@media(max-width:1200px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        width: 812px;
+    }
+}
+
+/* 768 */
+@media(max-width:950px) {
+    .privacy-policy__container {
+        width: 620px;
+    }
+
+    .privacy-policy__container h3 {
+        width: 585px;
+    }
+}
+
+/* 360px */
+@media(max-width:400px) {
+    .container {
+        width: 328px;
+    }
+
+    .privacy-policy__container {
+        width: 296px;
+        margin-top: 40px;
+        margin-bottom: 60px;
+        padding: 20px 16px 20px 20px;
+    }
+
+    .privacy-policy__container h2 {
+        font-size: 32px;
+    }
+
+    .privacy-policy__container h3 {
+        width: 280px;
+        font-size: 20px;
+    }
+
+    .privacy-policy__info-title {
+        font-size: 15px;
+    }
+}
