@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
-from system.views import SignUp, lk_page, profile_edit, ProfilePrivacyEditView, page_not_found
+from system.views import SignUp, lk_page, ProfilePrivacyEditView, page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,13 +28,16 @@ urlpatterns = [
 
     # path("profile/", profile_page, name='profile'), СДЕЛАТЬ ЛК
     # path("profile/profile_settings/", ProfileEditView.as_view(), name='settings'),
-    path("profile/profile_settings/my_page", profile_edit, name='settings_my_page'),
+    path("profile/profile_settings/my_page/", page, {'template': 'profile/profile_settings/my_page.html'}, name='settings_my_page'),
     # page personal login/password privacy
-    path("profile/my_page", lk_page, name='profile'),
+    path("profile/my_page/", lk_page, name='profile'),
     # path("profile/personal/", ProfileEditView.as_view(), name='lk_settings'),
     # path("profile/system", lk_system, name='lk_system'),
     path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='lk_privacy'),
 
-    path("404", page_not_found, name='page_not_found'),
+    path("404/", page, {'template': '404.html'}, name='page_not_found'),
+    path("privacy_policy/", page, {'template': 'privacy_policy.html'}, name='privacy_policy'),
+    path("user_agreement/", page, {'template': 'user_agreement.html'}, name='user_agreement'),
+
 
 ]

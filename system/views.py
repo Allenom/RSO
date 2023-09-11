@@ -7,8 +7,8 @@ from system.forms import CreateUserForm, ProfilePrivacyEditForm
 from system.models import Profile
 
 
-def profile_edit(request):
-    return render(request, 'profile/profile_settings/my_page.html')
+def page(request, template):
+    return render(request, template)
 
 
 def lk_page(request):
@@ -60,6 +60,3 @@ class ProfilePrivacyEditView(UpdateView):
     def get_object(self, queryset=None):
         return self.request.user.profile
 
-
-def page_not_found(request):
-    return render(request, '404.html')
