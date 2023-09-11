@@ -725,15 +725,6 @@ textarea {
   font-size: 24px;
   font-weight: normal;
 }
-.accordion-item-header::after {
-  content: "\002B";
-  font-size: 2rem;
-  position: absolute;
-  right: 1rem;
-}
-.accordion-item-header.active::after {
-  content: "\2212";
-}
 .accordion-item-body {
   max-height: 0;
   overflow: hidden;
