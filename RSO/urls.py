@@ -30,7 +30,7 @@ urlpatterns = [
     # path("profile/profile_settings/", ProfileEditView.as_view(), name='settings'),
     path("profile/profile_settings/my_page", profile_edit, name='settings_my_page'),
     # page personal login/password privacy
-    path("profile/", lk_page, name='profile'),
+    path("profile/my_page", lk_page, name='profile'),
     # path("profile/personal/", ProfileEditView.as_view(), name='lk_settings'),
     # path("profile/system", lk_system, name='lk_system'),
     path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='lk_privacy'),
