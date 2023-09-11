@@ -17,7 +17,7 @@ def lk_page(request):
         return redirect('/login/?next=/profile/')
     context = {}
 
-    return render(request, 'profile.html', context)
+    return render(request, 'profile/my_page.html', context)
 
 
 class SignUp(CreateView):
