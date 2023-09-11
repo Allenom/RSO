@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
-from system.views import SignUp, lk_page, profile_edit, ProfilePrivacyEditView
+from system.views import SignUp, lk_page, profile_edit, ProfilePrivacyEditView, page_not_found
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +34,7 @@ urlpatterns = [
     # path("profile/personal/", ProfileEditView.as_view(), name='lk_settings'),
     # path("profile/system", lk_system, name='lk_system'),
     path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='lk_privacy'),
+
+    path("404", page_not_found, name='page_not_found'),
 
 ]
