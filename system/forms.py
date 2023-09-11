@@ -17,6 +17,7 @@ from .models import Profile, Region
 
 
 class CreateUserForm(forms.ModelForm):
+    """Регистрация"""
     region = forms.ModelChoiceField(required=False, queryset=Region.objects)
 
     password = forms.CharField(widget=forms.PasswordInput, label='Пароль', help_text='Минимум 8 символов, не простой '                                                                             'и не распространенный')
@@ -42,3 +43,11 @@ class CreateUserForm(forms.ModelForm):
             'username',
             'password',
         ]
+
+
+class ProfilePrivacyEditForm(forms.ModelForm):
+    """Настройки приватности"""
+    class Meta:
+        model = Profile
+        fields = ('privacy_telephone', 'privacy_email', 'privacy_social', 'privacy_about', 'privacy_photo')
+        
