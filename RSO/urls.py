@@ -22,22 +22,25 @@ from system.views import SignUp, lk_page, ProfilePrivacyEditView, page
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    # Аутентификация
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path("signup/", SignUp.as_view(), name='signup'),
+    path("registration/", SignUp.as_view(), name='registration'),
+    # Восстановить пароль path("/recover_password",
 
-    # path("profile/", profile_page, name='profile'), СДЕЛАТЬ ЛК
-    # path("profile/profile_settings/", ProfileEditView.as_view(), name='settings'),
-    path("profile/profile_settings/my_page/", page, {'template': 'profile/profile_settings/my_page.html'}, name='settings_my_page'),
-    # page personal login/password privacy
+    # Профиль
     path("profile/my_page/", lk_page, name='profile'),
+
+    # Настройки профиля
+    path("profile/profile_settings/my_page/", page, {'template': 'profile/profile_settings/my_page.html'},
+         name='settings_my_page'),
     # path("profile/personal/", ProfileEditView.as_view(), name='lk_settings'),
     # path("profile/system", lk_system, name='lk_system'),
     path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='lk_privacy'),
 
+    # Доп страницы
     path("404/", page, {'template': '404.html'}, name='page_not_found'),
     path("privacy_policy/", page, {'template': 'privacy_policy.html'}, name='privacy_policy'),
     path("user_agreement/", page, {'template': 'user_agreement.html'}, name='user_agreement'),
-
 
 ]
