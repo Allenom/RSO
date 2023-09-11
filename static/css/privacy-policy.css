@@ -161,7 +161,7 @@ ol {
     counter-reset: li;
     list-style: none;
 }
-//proverka
+
 .privacy-policy__info li:before {
     counter-increment: li;
     content: counters(li, ".") ". ";
