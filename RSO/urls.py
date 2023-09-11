@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
-from system.views import SignUp, lk_page, profile_edit
+from system.views import SignUp, lk_page, profile_edit, ProfilePrivacyEditView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +33,6 @@ urlpatterns = [
     path("lk/", lk_page, name='lk'),
     # path("lk/personal/", ProfileEditView.as_view(), name='lk_settings'),
     # path("lk/system", lk_system, name='lk_system'),
-    # path("lk/privacy", lk_privacy, name='lk_privacy'),
+    path("lk/settings/privacy/", ProfilePrivacyEditView.as_view(), name='lk_privacy'),
 
 ]

@@ -50,4 +50,3 @@ class ProfilePrivacyEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('privacy_telephone', 'privacy_email', 'privacy_social', 'privacy_about', 'privacy_photo')
-        

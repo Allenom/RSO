@@ -1,8 +1,9 @@
+from django.db import transaction
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 
-from system.forms import CreateUserForm
+from system.forms import CreateUserForm, ProfilePrivacyEditForm
 from system.models import Profile
 
 
@@ -44,3 +45,17 @@ class SignUp(CreateView):
         Profile.objects.create(user=user, telephone=telephone, patronymic=patronymic, date_of_birth=date_of_birth)
 
         return super(SignUp, self).form_valid(form)
+
+
+class ProfilePrivacyEditView(UpdateView):
+    form_class = ProfilePrivacyEditForm
+    template_name = "lk/settings/privacy.html"
+    model = Profile
+    success_url = reverse_lazy("lk_privacy")
+    # def form_valid(self, form):
+    #     if form.is_valid():
+    #         form.save()
+    #     return super(ProfilePrivacyEditView, self).form_valid(form)
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile
