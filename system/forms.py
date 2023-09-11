@@ -45,6 +45,36 @@ class CreateUserForm(forms.ModelForm):
         ]
 
 
+class ProfilePageEditForm(forms.ModelForm):
+    """Настройки страницы лк"""
+    class Meta:
+        model = Profile
+        fields = ('about', 'photo1', 'photo2', 'photo3', 'photo4')
+
+
+class ProfilePersonalEditForm(forms.ModelForm):
+    """Настройки личных данных"""
+    # член рсо (по его мнению)
+    # Фамилия, имя, отчество, пол, фамилия(лат), имя(лат), отчество (лат), дата рождения
+    # *Законный представитель несовершеннолетнего*
+    # телефон, почта, *соцсети, адрес совпадает, *адрес регистрации, *адрес проживания
+    # гражданство РФ, номер и серия, дата выдачи, выдан, снилс, инн, трудовая, загран, воинский, серия номер воинского
+    # оо, факультет, курс, специальность
+    # *файлы*
+    # откуда узнали про рсо
+    class Meta:
+        model = Profile
+        fields = ('about', 'photo1', 'photo2', 'photo3', 'photo4')
+
+
+class ProfileSystemEditForm(forms.ModelForm):
+    """Настройки системные"""
+    # логин пароль
+    class Meta:
+        model = User
+        fields = ('username', 'password')
+
+
 class ProfilePrivacyEditForm(forms.ModelForm):
     """Настройки приватности"""
     class Meta:

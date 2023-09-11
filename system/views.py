@@ -30,6 +30,7 @@ class SignUp(CreateView):
         user = form.save(commit=False)
         # Cleaned(normalized) data
         # institution = form.cleaned_data['institution']
+        region = form.cleaned_data['region']
         telephone = form.cleaned_data['telephone']
         password = form.cleaned_data['password']
         patronymic = form.cleaned_data['patronymic']
@@ -42,7 +43,7 @@ class SignUp(CreateView):
         user.save()
 
         # Create UserProfile model
-        Profile.objects.create(user=user, telephone=telephone, patronymic=patronymic, date_of_birth=date_of_birth)
+        Profile.objects.create(user=user, region=region, telephone=telephone, patronymic=patronymic, date_of_birth=date_of_birth)
 
         return super(SignUp, self).form_valid(form)
 

@@ -20,7 +20,9 @@
         <h3 class="form__h3">Регистрация</h3>
 
         <div style="color:red;">{{ form.non_field_errors }}</div>
-
+        <span class="form__wrap">
+            {{form.region}}
+        </span>
         <span class="form__wrap">
             <div style="color:red;">{{ form.last_name.errors }}</div>
             <label class="form__label">Фамилия*</label>

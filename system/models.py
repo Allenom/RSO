@@ -12,7 +12,7 @@ class Profile(models.Model):
     patronymic_lat = models.CharField(max_length=40, blank=True, default='', verbose_name='Отчество (латиница)')
 
     # regional_office
-    # region
+    region = models.ForeignKey('Region', null=True, on_delete=models.PROTECT, verbose_name='Регион')
     GENDERS = [('', '-'), ('Мужской', 'Мужской'), ('Женский', 'Женский')]
     gender = models.CharField(max_length=10, blank=True, choices=GENDERS, default='', verbose_name='Пол')
     date_of_birth = models.DateField(verbose_name='Дата рождения')
@@ -46,11 +46,11 @@ class Profile(models.Model):
     social_vk = models.CharField(max_length=50, blank=True, default='https://vk.com/', verbose_name='Ссылка на ВК')
     social_tg = models.CharField(max_length=50, blank=True, default='', verbose_name='Ссылка на Телеграм')
 
-    photo = models.ImageField(upload_to='users/%Y/%m/%d', blank=True, verbose_name='Аватарка')
-    # photo1
-    # photo2
-    # photo3
-    # photo4
+    photo = models.ImageField(upload_to='users/avatar/%Y/%m/%d', blank=True, verbose_name='Аватарка')
+    photo1 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 1')
+    photo2 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 2')
+    photo3 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 3')
+    photo4 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 4')
 
     # document1_title
     # document1
