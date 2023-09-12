@@ -162,7 +162,7 @@ ol {
     list-style: none;
 }
 
-li:before {
+.privacy-policy__info li:before {
     counter-increment: li;
     content: counters(li, ".") ". ";
 }

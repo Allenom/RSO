@@ -17,24 +17,32 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
-from system.views import SignUp, lk_page, profile_edit, ProfilePrivacyEditView, page_not_found
+from system.views import SignUp, lk_page, ProfilePrivacyEditView, page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    # Аутентификация
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path("signup/", SignUp.as_view(), name='signup'),
+    path("registration/", SignUp.as_view(), name='registration'),
+    path("recover_password/", page, {'template': 'recover_password.html'}, name='recover_password'),
 
-    # path("profile/", profile_page, name='profile'), СДЕЛАТЬ ЛК
-    # path("profile/profile_settings/", ProfileEditView.as_view(), name='settings'),
-    path("profile/profile_settings/my_page", profile_edit, name='settings_my_page'),
-    # page personal login/password privacy
-    path("profile/my_page", lk_page, name='profile'),
-    # path("profile/personal/", ProfileEditView.as_view(), name='lk_settings'),
-    # path("profile/system", lk_system, name='lk_system'),
-    path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='lk_privacy'),
+    # Профиль
+    path("profile/my_page/", lk_page, name='profile'),
 
-    path("404", page_not_found, name='page_not_found'),
+    # Настройки профиля
+    path("profile/profile_settings/my_page/", page, {'template': 'profile/profile_settings/my_page.html'},
+         name='profile_settings_my_page'),
+    path("profile/profile_settings/personal/", page, {'template': 'profile/profile_settings/personal.html'},
+         name='profile_settings_personal'),
+    path("profile/profile_settings/system", page, {'template': 'profile/profile_settings/system.html'},
+         name='profile_settings_system'),
+    path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='profile_settings_privacy'),
+
+    # Доп страницы
+    path("404/", page, {'template': '404.html'}, name='page_not_found'),
+    path("privacy_policy/", page, {'template': 'privacy_policy.html'}, name='privacy_policy'),
+    path("user_agreement/", page, {'template': 'user_agreement.html'}, name='user_agreement'),
 
 ]
