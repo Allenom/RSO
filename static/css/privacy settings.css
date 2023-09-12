@@ -1,0 +1,239 @@
+/* Border */
+* {
+   margin: 0;
+   padding: 0;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+}
+
+body {
+   margin: 0;
+   font-family: 'BertSans', sans-serif;
+   font-family: 'Akrobat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+   padding: 0;
+   margin: 0;
+}
+
+label {
+   margin: 0;
+   padding: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+.container {
+   max-width: 1180px;
+   margin: 0 auto;
+   align-items: start;
+}
+
+.profile-settings__drop-down-list {
+   max-width: 600px;
+   min-height: 364px;
+   border-radius: 10px;
+   border: 1px solid #DEE2E5;
+   background: #FFF;
+   padding: 40px;
+}
+
+
+.profile-settings__select-wrapper {
+   display: flex;
+   justify-content: space-between;
+   height: 32px;
+   margin-bottom: 28px;
+}
+
+.profile-settings__select-wrapper:last-child {
+   margin-bottom: 40px;
+}
+
+.profile-settings__title {
+   color: #000;
+   font-family: 'Akrobat', sans-serif;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 120%;
+   padding: 4px 0;
+}
+
+.profile-settings__select-wrapper select {
+   color: #35383F;
+   font-family: 'BertSans', sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+   align-items: center;
+   border-radius: 10px;
+   border: 1px solid #939393;
+   outline: none;
+   text-decoration: none;
+}
+
+select {
+   width: 172px;
+   max-width: 100%;
+   display: block;
+   appearance: none;
+   overflow: hidden;
+   /* вставляем нужную */
+   background: url('../images/img/arrow-down.svg')no-repeat right;
+   padding: 4px 16px;
+   padding-right: 16px;
+   /* установила стрелку в том положении где нужно */
+   background-position: calc(100% - 10px) 0.15em;
+   /* 0.35em указывает высоту */
+}
+
+option{
+   color: #35383F;
+   font-family: 'BertSans',sans-serif;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}
+
+
+.profile-settings__select-wrapper option:active {
+   outline: none;
+   text-decoration: underline;
+}
+
+/* кнопка */
+.profile-settings__btn {
+   padding: 16px 32px;
+   align-items: center;
+   border-radius: 10px;
+   background: #2DBBAF;
+   border: none;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+}
+
+.profile-settings__link {
+   color: #FFF;
+font-family: 'BertSans',sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+}
+
+.profile-settings__button {
+   display: flex;
+   justify-content: center;
+}
+
+@media screen and (max-width: 1300px) {
+   .profile-settings__drop-down-list {
+      margin: 0 11.4%;
+   }
+
+}
+
+@media screen and (max-width: 1030px) {
+   .profile-settings__drop-down-list {
+      margin: 0 66px;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .profile-settings__drop-down-list {
+      margin: 0 34px 80px 34px;
+      max-width: 700px;
+
+   }
+
+}
+
+@media screen and (max-width: 690px) {
+   .profile-settings__drop-down-list {
+      margin: 20px 16px 80px;
+      text-align: center;
+   }
+
+   .profile-settings__select-wrapper {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      padding-bottom: 28px;
+      text-align: center;
+   }
+
+   .profile-settings__title {
+      padding-bottom: 12px;
+   }
+
+   select {
+      width: 94%;
+   }
+}
+
+@media screen and (max-width: 606px) {
+   select {
+      width: 92%;
+   }
+}
+
+@media screen and (max-width: 500px) {
+
+   .profile-settings__drop-down-list {
+      margin:20px 16px 80px 16px;
+      padding: 20px 16px 40px 16px;
+   }
+}
+
+@media screen and (max-width: 474px) {
+
+   select {
+      width: 91%;
+   }
+}
+@media screen and (max-width: 408px) {
+
+   select {
+      width: 89%;
+   }
+}
+@media screen and (max-width: 354px) {
+
+   select {
+      width: 88%;
+   }
+   .profile-settings__title{
+font-size: 16px;
+   }
+}
+@media screen and (max-width: 332px) {
+
+   select {
+      width: 86%;
+   }
+}
+@media screen and (max-width: 293px) {
+
+   select {
+      width: 84%;
+   }
+}
