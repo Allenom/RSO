@@ -426,16 +426,6 @@ section.profile-settings {
 }
 
 /* удаляет полосу прокрутки и обводку    resize: none; не дает двигаться*/
-textarea {
-   outline: none;
-   overflow: hidden;
-   padding: 16px 60px 26px 16px;
-   text-align: left;
-   resize: none;
-   border-radius: 10px;
-   border: 1px solid rgba(0, 0, 0, 0.10);
-   background: #FFF;
-}
 
 ::placeholder {
    color: #5E5C5C;
@@ -568,6 +558,8 @@ textarea {
   background-color: #91C9F7;
   border-radius: 100%;
   cursor: pointer;
+  position: absolute;
+  right: 1rem;
 }
 
 .round svg {
@@ -575,6 +567,9 @@ textarea {
 }
 
 
+.accordion-item-header.active .round svg {
+  transform: rotate(-180deg);
+}
 .parents-wrapper {
   margin-top: 40px;
   border: 1px solid #1c5c94;
@@ -591,6 +586,13 @@ textarea {
  display: flex;
 }
 
+.checkbox-title {
+  font-size: 16px;
+  color: #35383F;
+  margin-bottom: 8px;
+  font-weight: 600;
+   font-family: 'Bert-Sans', sans-serif;
+}
 .parents-wrapper__title {
   font-size: 24px;
   padding: 40px 40px 0px;
@@ -598,9 +600,11 @@ textarea {
 
 .addres {
   margin-top: 55px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
   margin-bottom: 20px;
+   font-family: 'Bert-Sans', sans-serif;
+   font-weight: 600;
 }
 
 .nav-btn__wrapper {
@@ -677,7 +681,7 @@ textarea {
 .RSO {
   border: 1px solid #a3a3a3;
   border-radius: 10px;
-  padding: 40px 40px 0px 40px;
+  padding: 40px 40px 40px 40px;
   margin-bottom: 40px;
 }
 
@@ -689,6 +693,7 @@ textarea {
 
 .pass-details__wrapper {
   display: flex;
+  justify-content: space-between;
 }
 
 .other-docs__wrapper {
@@ -723,8 +728,10 @@ textarea {
 
 .accordion-item-header p {
   font-size: 24px;
-  font-weight: normal;
+  font-weight: 600;
+  font-family: AKROBAT;
 }
+
 .accordion-item-body {
   max-height: 0;
   overflow: hidden;
@@ -733,6 +740,283 @@ textarea {
 .accordion-item-body-content {
   padding: 1rem;
   line-height: 1.5rem;
+}
+
+.accordion-block-title {
+  font-size: 24px;
+  color: #35383F;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.small {
+  font-size: 18px;
+  margin: 0;
+   font-family: 'BertSans', sans-serif;
+   font-weight: 600;
+}
+
+.form-field label {
+  font-size: 16px;
+  font-family: BERTSANS;
+  font-weight: 600;
+   margin-bottom: 8px;
+}
+
+.accordion-title {
+  font-size: 20px;
+  color: #35383F;
+  font-weight: 700;
+  font-family: BERTSANS;
+}
+.checkbox {
+  font-size: 16px;
+  font-weight: 600;
+  color: #35383F;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 15px;
+  margin-right: 6px;
+}
+
+.right-check {
+  margin-left: 18px;
+}
+
+
+.select-small {
+  border: 2px solid #a3a3a3;
+  border-radius: 10px;
+  width: 268px;
+  min-height: 35px;
+  text-indent: 16px;
+  outline: none;
+  font-family: "BertSans";
+  font-weight: 500;
+  font-size: 16px;
+  color: #898989;
+}
+
+.select-big {
+  border: 2px solid #a3a3a3;
+  border-radius: 10px;
+  width: 513px;
+  min-height: 35px;
+  text-indent: 16px;
+  outline: none;
+  font-family: "BertSans";
+  font-weight: 500;
+  font-size: 16px;
+  color: #898989;
+}
+
+.passport {
+  margin-top: 22px;
+}
+
+.add-social {
+  margin-bottom: 20px;
+  margin-top: 12px;
+  display: block;
+  color: #35383F;
+  border: none;
+  font-size: 12px;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.add-doc {
+  display: block;
+  color: #35383F;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.add-education {
+  display: block;
+  color: #35383F;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.one {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-bottom: 16px;
+}
+
+.agree-check {
+  display: flex;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.agree-check p {
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+.user-data__btn {
+  display: block;
+  margin: 0px auto;
+  border: none;
+  border-radius: 10px;
+  background-color: #39bfbf;
+  padding: 16px 32px;
+  color: white;
+  cursor: pointer
+}
+
+/*#know {*/
+/*  border: 1px solid #a3a3a3;*/
+/*  margin-top: 8px;*/
+/*      outline: none;*/
+/*   overflow: hidden;*/
+/*   padding: 16px 60px 26px 16px;*/
+/*   text-align: left;*/
+/*   resize: none;*/
+/*   border-radius: 10px;*/
+/*   background: #FFF;*/
+/*}*/
+
+
+.file-choose {
+  color: #1c5c94;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 6px;
+  font-family: AKROBAT;
+}
+
+#file-chosen{
+  margin-left: 0.8rem;
+  font-size: 14px;
+}
+.file-chosen {
+  margin-left: 0.8rem;
+  font-size: 14px;
+}
+
+.download-blanks {
+   border: none;
+   background: none;
+   color: #1c5c94;
+   cursor: pointer;
+   font-size: 16px;
+   font-family: AKROBAT;
+}
+
+.education-wrapper {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 82px;
+}
+
+.another-education-field {
+  margin-top: 16px;
+}
+
+.form-field svg {
+  position: absolute;
+  right: 2rem;
+  top: 2.4rem;
+  cursor: pointer;
+}
+
+.small-svg svg {
+  position: absolute;
+  right: 17.7rem;
+  top: 2.4rem;
+  cursor: pointer;
+}
+
+.full-svg svg {
+  position: absolute;
+  right: 1rem;
+  top: 2.4rem;
+  cursor: pointer;
+}
+
+.file-error {
+  font-size: 12px;
+  color: red;
+}
+
+.input-big {
+  width: 500px;
+}
+
+.input-small {
+  width: 250px;
+}
+
+.input-full {
+  width: 98.3%;
+}
+
+.rso-question__title {
+  margin-bottom: 8px;
+}
+
+.rso-question {
+   margin-bottom: 40px;
+   width: 300px;
+   padding: 40px;
+   border: 1px solid rgba(0, 0, 0, 0.10);
+}
+.data-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 52px;
+  padding: 30px;
+  border: 1px solid #a3a3a3;
+  border-radius: 10px;
+}
+  .none {
+  border: none;
+}
+
+.simple {
+  display: block;
+}
+
+.select-small {
+  border: 2px solid #a3a3a3;
+  border-radius: 10px;
+  width: 268px;
+  min-height: 35px;
+  text-indent: 16px;
+  outline: none;
+  font-family: "BertSans";
+  font-weight: 500;
+  font-size: 16px;
+  color: #898989;
+}
+
+.select-big {
+  border: 2px solid #a3a3a3;
+  border-radius: 10px;
+  width: 513px;
+  min-height: 35px;
+  text-indent: 16px;
+  outline: none;
+  font-family: "BertSans";
+  font-weight: 500;
+  font-size: 16px;
+  color: #898989;
 }
 
   .izm {
