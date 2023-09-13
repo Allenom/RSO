@@ -184,36 +184,36 @@
                 {% csrf_token %}
                <!-- Выподающий список кто видит мой номер телефона-->
                <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title" for="tel">Кто видит мой номер телефона</h4>
+                  <h4 class="profile-settings__title">Кто видит мой номер телефона</h4>
                    {{form.privacy_telephone}}
                </div>
                <!-- Выподающий список кто видит мою электронную почту-->
                <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title" for="mail">Кто видит мою электронную почту</h4>
+                  <h4 class="profile-settings__title">Кто видит мою электронную почту</h4>
                   {{form.privacy_email}}
                </div>
                <!-- выподающий список кто видит мои ссылки на соцсети -->
                <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title" for="social network">Кто видит мои ссылки на соцсети</h4>
+                  <h4 class="profile-settings__title">Кто видит мои ссылки на соцсети</h4>
                   {{form.privacy_social}}
                </div>
                <!-- выподающий список кто видит информацию обо мне -->
                <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title" for="info">Кто видит информацию обо мне</h4>
+                  <h4 class="profile-settings__title">Кто видит информацию обо мне</h4>
                   {{form.privacy_about}}
                </div>
 
                <!-- выподающий список кто видит мои фото -->
                <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title" for="foto">Кто видит мои фотографии</h4>
+                  <h4 class="profile-settings__title">Кто видит мои фотографии</h4>
                   {{form.privacy_photo}}
                </div>
-            </form>
+
             <!-- кнопка отправка формы -->
             <div class="profile-settings__button">
-               <button class="profile-settings__btn" disabled="disabled" class="btn__save"  type="submit"
-                  formtarget=" _self"><a class="profile-settings__link" href="#">Сохранить</a></button>
+               <button class="profile-settings__btn btn__save profile-settings__link" type="submit">Сохранить</button>
             </div>
+                </form>
          </div>
       </div>
    </section>
