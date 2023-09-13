@@ -43,6 +43,6 @@ urlpatterns = [
     # Доп страницы
     path("404/", page, {'template': '404.html'}, name='page_not_found'),
     path("privacy_policy/", page, {'template': 'privacy_policy.html'}, name='privacy_policy'),
-    path("user_agreement/", page, {'template': 'user_agreement.html'}, name='user_agreement'),
+    path("terms_of_use/", page, {'template': 'terms_of_use.html'}, name='terms_of_use'),
 
 ]
