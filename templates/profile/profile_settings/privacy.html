@@ -163,69 +163,50 @@
       </div>
     </section>
 
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <h4>Кто видит мой номер телефона</h4>
-    {{form.privacy_telephone}}
-    <h4>Кто видит мою электронную почту</h4>
-    {{form.privacy_email}}
-    <h4>Кто видит мои ссылки на соцсети</h4>
-    {{form.privacy_social}}
-    <h4>Кто видит информацию обо мне</h4>
-    {{form.privacy_about}}
-    <h4>Кто видит мои фотографии</h4>
-    {{form.privacy_photo}}
-    <button type="submit">Сохранить</button>
-  </form>
+<!--  <form method="post" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    <h4>Кто видит мой номер телефона</h4>-->
+<!--    {{form.privacy_telephone}}-->
+<!--    <h4>Кто видит мою электронную почту</h4>-->
+<!--    {{form.privacy_email}}-->
+<!--    <h4>Кто видит мои ссылки на соцсети</h4>-->
+<!--    {{form.privacy_social}}-->
+<!--    <h4>Кто видит информацию обо мне</h4>-->
+<!--    {{form.privacy_about}}-->
+<!--    <h4>Кто видит мои фотографии</h4>-->
+<!--    {{form.privacy_photo}}-->
+<!--    <button type="submit">Сохранить</button>-->
+<!--  </form>-->
 <section class="profile-settings">
       <div class="container">
          <div class="profile-settings__drop-down-list">
-            <form class="profile-settings__form" action="#" method="post">
+            <form class="profile-settings__form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
                <!-- Выподающий список кто видит мой номер телефона-->
                <div class="profile-settings__select-wrapper">
                   <h4 class="profile-settings__title" for="tel">Кто видит мой номер телефона</h4>
-                  <select name="sees the number">
-                     <option value="all">Все</option>
-                     <option value="my squad">Мой отряд</option>
-                     <option value="managers only">Только руководители</option>
-                  </select>
+                   {{form.privacy_telephone}}
                </div>
                <!-- Выподающий список кто видит мою электронную почту-->
                <div class="profile-settings__select-wrapper">
                   <h4 class="profile-settings__title" for="mail">Кто видит мою электронную почту</h4>
-                  <select name="Who sees my email">
-                     <option value="all">Все</option>
-                     <option value="my squad">Мой отряд</option>
-                     <option value="managers only">Только руководители</option>
-                  </select>
+                  {{form.privacy_email}}
                </div>
                <!-- выподающий список кто видит мои ссылки на соцсети -->
                <div class="profile-settings__select-wrapper">
                   <h4 class="profile-settings__title" for="social network">Кто видит мои ссылки на соцсети</h4>
-                  <select name="my links to social networks">
-                     <option value="all">Все</option>
-                     <option value="my squad">Мой отряд</option>
-                     <option value="managers only">Только руководители</option>
-                  </select>
+                  {{form.privacy_social}}
                </div>
                <!-- выподающий список кто видит информацию обо мне -->
                <div class="profile-settings__select-wrapper">
                   <h4 class="profile-settings__title" for="info">Кто видит информацию обо мне</h4>
-                  <select name="information about me" >
-                     <option value="all">Все</option>
-                     <option value="my squad">Мой отряд</option>
-                     <option value="managers only">Только руководители</option>
-                  </select>
+                  {{form.privacy_about}}
                </div>
 
                <!-- выподающий список кто видит мои фото -->
                <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title" for="foto">Кто видит мои фотографии</p>
-                  <select name="my photos">
-                     <option value="all">Все</option>
-                     <option value="my squad">Мой отряд</option>
-                     <option value="managers only">Только руководители</option>
-                  </select>
+                  <h4 class="profile-settings__title" for="foto">Кто видит мои фотографии</h4>
+                  {{form.privacy_photo}}
                </div>
             </form>
             <!-- кнопка отправка формы -->
