@@ -1,0 +1,208 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+}
+
+body {
+   margin: 0;
+   font-family: 'BertSans', sans-serif;
+   font-family: 'Akrobat', sans-serif;
+}
+
+a {
+   text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+   padding: 0;
+   margin: 0;
+}
+
+.my-page-verification__title h3 {
+   color: #35383F;
+   font-family: 'Akrobat', sans-serif;
+   font-size: 32px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   margin-bottom: 40px;
+}
+
+.my-page-verification__text p {
+   color: #35383F;
+   font-family: 'BertSans', sans-serif;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   max-width: 835px;
+   min-height: 72px;
+   margin-bottom: 40px;
+}
+
+.my-page-verification__info-text p {
+   color: #35383F;
+   font-family: 'BertSans', sans-serif;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   max-width: 835px;
+   min-height: 72px;
+}
+
+a {
+   color: #FFF;
+   font-family: 'BertSans', sans-serif;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+}
+
+/* верификация данных */
+.container {
+   max-width: 1180px;
+   margin: 0 auto;
+   align-items: start;
+}
+
+/* отступы */
+.my-page-verification__info,
+.my-page-verification__wrapper {
+   margin-top: 60px;
+}
+
+/* стилизация кнопки */
+.my-page-verification__button {
+   max-width: 345px;
+   max-height: 48px;
+   padding: 10.5px 62px;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   background: #39BFBF;
+   border: none;
+}
+
+.my-page-verification__info {
+   margin-bottom: 80px;
+}
+
+.my-page-verification__foto {
+   margin-top: 40px;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 20px;
+}
+
+.my-page-verification__foto img {
+   width: 100%;
+   height: 100%;
+   display: block;
+   overflow: hidden;
+   border-radius: 10px;
+}
+
+/* ********************  адаптив   ************************ */
+@media screen and (max-width:1300px) {
+
+   .my-page-verification__wrapper,
+   .my-page-verification__info {
+      margin-right: 7%;
+      margin-left: 7%;
+   }
+}
+
+@media screen and (max-width:768px) {
+
+   .my-page-verification__wrapper,
+   .my-page-verification__info {
+      margin-right: 66px;
+      margin-left: 66px;
+   }
+}
+
+@media screen and (max-width:650px) {
+   .my-page-verification__foto {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .my-page-verification__wrapper,
+   .my-page-verification__info {
+      margin-right: 32px;
+      margin-left: 32px;
+   }
+}
+
+@media screen and (max-width:412px) {
+   .my-page-verification__button {
+     max-width: 328px;
+      max-height: 48px;
+      padding-left: 53.5px;
+      padding-right: 53.5px;
+   }
+   .my-page-verification__wrapper,
+   .my-page-verification__info {
+      margin-right: 16px;
+      margin-left: 16px;
+   }
+}
+
+@media screen and (max-width:360px) {
+   .my-page-verification__button {
+      max-width: 328px;
+      max-height: 48px;
+      padding-left: 50px;
+      padding-right: 50px;
+      justify-content: center;
+   }
+   .my-page-verification__button a {
+      font-size: 20px;
+   }
+   .my-page-verification__foto {
+      grid-template-columns: repeat(1, 1fr);
+   }
+}
+
+@media screen and (max-width:355px) {
+   .my-page-verification__button a {
+      font-size: 18px;
+   }
+}
+@media screen and (max-width:340px) {
+   .my-page-verification__title h3 {
+      font-size: 28px;
+   }
+   .my-page-verification__button {
+      padding: 12px 40px;
+   }
+}
+@media screen and (max-width:320px) {
+   .my-page-verification__button {
+      padding: 12px 32px;
+   }
+}
+@media screen and (max-width:298px) {
+   .my-page-verification__button {
+      padding: 12px 24px;
+   }
+   
+}

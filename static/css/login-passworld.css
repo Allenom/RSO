@@ -1,0 +1,347 @@
+/* Border */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'BertSans', sans-serif;
+    font-family: 'Akrobat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+/* Цвета проекта */
+:root {
+    /* Основные цвета */
+    --dark_blue-color: #1c5c94;
+    --mostly-desaturated-dark-green-color: #608553;
+    --very-soft-yellow-color: #dbce9f;
+    --light_green-color: #5ca386;
+    --soft-yellow-color: #fbd350;
+    --soft-red-color: #eb574b;
+    /* Дополнительные цвета */
+    --dark_cyan-color: #29997E;
+    --very-soft-blue-c-color: #91C9F7;
+    --very-soft-blue-a-color: #ace1f8;
+    --bright-orange-color: #fc9c38;
+    --moderate-cyan-color: #33bdbd;
+    --pale-magenta-color: #ff9aee;
+    --light-grayish-red-color: #fed1d5;
+    /* Бэкграунд цвета для секций*/
+    --white-bg-color: #ffffff;
+    --gray-bg-color: #D1D5D8;
+    /* Бэкграунд цвета для кнопок */
+    --button-submit-color: #39BFBF;
+    /* Цвета компонентов форм */
+    --input-border-color: #a3a3a3;
+    --placeholder-color: #898989;
+    /* Цвета иконок в инпутах */
+    --icon-input-color: #898989;
+    /* Цвета текста */
+    --white-text-color: #ffffff;
+    /* Цвета ссылок по дефолту Селектор ссылки по тэгу a */
+    --link-top-menu-color: #35383F;
+    /* Верхнее меню ссылки */
+    /* Цвета ссылок при наведении Псевдокласс :hover */
+    /* Цвета ссылок посещённых Псевдокласс :visited*/
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.settings-proffail__wraper {
+    max-width: 480px;
+}
+
+/* Форма входа */
+.settings-proffail__login-wrap {
+    max-height: 240px;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/*  нижний блок  пароль*/
+.settings-proffail__login-button {
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    text-align: center;
+
+}
+
+/* картинка и текст изменить */
+.settings-proffail__login-to-change-img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 2px;
+}
+
+.settings-proffail__login-to-change {
+    color: #1F7CC0;
+    font-family: 'Akrobat', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* изменить */
+.settings-proffail__login-to-change-text {
+    padding-left: 4px;
+}
+
+.settings-proffail__login-to-change-text a {
+    text-decoration: none;
+    color: #1F7CC0;
+}
+
+/* forma ввода логина и пароля*/
+.settings-proffail__form-login,
+.settings-proffail__form-password {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.settings-proffail__form-login:first-child {
+    margin-bottom: 0;
+}
+
+.settings-proffail__form-password {
+    margin-bottom: 40px;
+}
+
+.settings-proffail__form-login {
+    margin-bottom: 40px;
+}
+
+/* кнопка */
+.settings-proffail__button-link {
+    text-decoration: none;
+    color: #FFF;
+    font-family: 'BertSans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+
+}
+
+.settings-proffail__button-submit {
+    display: block;
+    box-sizing: border-box;
+    width: 151px;
+    min-height: 52px;
+    border-radius: 10px;
+    background: #2DBBAF;
+    border: none;
+    outline: none;
+}
+
+.settings-proffail__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-proffail__button-submit a {
+    padding: 16px 32px;
+}
+
+/* разделы паролей */
+.settings-proffail__input-box {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    height: 42px;
+    margin-bottom: 8px;
+}
+
+.settings-proffail__input-box:last-child{
+    margin-bottom: 0;
+}
+
+.settings-proffail__input-box img {
+    position: absolute;
+    right: 16px;
+    top: 21px;
+    transform: translateY(-50%);
+}
+
+/* Стилизация input -ов */
+/* инпут ввод логина и пароля */
+
+.settings-proffail__input-login,
+.settings-proffail__input-password {
+    border: 1px solid #939393;
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+    text-indent: 16px;
+    color: #898989;
+    font-family: 'BertSans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+}
+
+.settings-proffail__input-login:focus,
+.settings-proffail__input-password:focus {
+    outline: none;
+}
+
+/* Стилизация placeholder  */
+.settings-proffail__input-login::placeholder,
+.settings-proffail__input-password::placeholder {
+    text-overflow: ellipsis;
+    padding: 10px 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.settings-proffail__input-login:focus::placeholder,
+.settings-proffail__input-password:focus::placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* блок ваш логин */
+.settings-proffail__login-top-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+/* заголовок логин */
+.settings-proffail__login-top-heading {
+    color: #35383F;
+    font-family: 'Akrobat', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    display: inline;
+}
+
+/* заголовок формы пароля */
+
+.settings-proffail__login-button-heading {
+    color: #35383F;
+    font-family: 'Akrobat', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 40px;
+
+}
+
+/* ************************    Адаптив        ****************************** */
+@media screen and (max-width:1300px) {
+    .settings-proffail__wraper {
+        margin: 0 8%;
+    }
+}
+
+@media screen and (max-width:1030px) {
+    .settings-proffail__wraper {
+        margin: 0 66px;
+    }
+}
+
+@media screen and (max-width:587px) {
+    .settings-proffail__wraper {
+        margin: 0 16px 80px 16px;
+    }
+
+    .settings-proffail__login-top-wrap {
+        max-width: 296px;
+    }
+    .settings-proffail__login-wrap,
+    .settings-proffail__login-button-heading {
+        margin-bottom: 20px;
+    }
+
+    .settings-proffail__login-wrap,
+    .settings-proffail__login-button {
+        padding: 20px 16px 40px 16px;
+    }
+
+    .settings-proffail__login-button {
+        padding: 20px 16px 40px 16px;
+    }
+
+    .settings-proffail__login-to-change-text {
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width:357px) {
+    .settings-proffail__login-top-heading,
+    .settings-proffail__login-button-heading {
+        font-size: 22px;
+    }
+    .settings-proffail__button-img img,
+    .settings-proffail__login-to-change-img,
+    .settings-proffail__btn-eye img {
+        width: 20px;
+    }
+    .settings-proffail__input-login,
+    .settings-proffail__input-password {
+        text-indent: 5px;
+    }
+
+    .settings-proffail__input-box img {
+        right: 5px;
+    }
+}
+
+@media screen and (max-width:311px) {
+    .settings-proffail__input-password {
+        font-size: 14px;
+    }
+
+    .settings-proffail__login-top-heading,
+    .settings-proffail__login-button-heading {
+        font-size: 20px;
+    }
+
+    
+
+}

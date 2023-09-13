@@ -1,8 +1,8 @@
-{% extends 'layout/basic.html' %}
+ {% extends 'layout/basic.html' %}
 {% load static %}
 {% block title %}Настройка приватности профиля{% endblock %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/privacy settings.css' %}">
+  <link rel="stylesheet" href="{% static 'css/my-page-verification.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <link rel="stylesheet" href="{% static 'css/forms.css' %}" />
 {% endblock %}
@@ -162,68 +162,38 @@
         </nav>
       </div>
     </section>
-
-<!--  <form method="post" enctype="multipart/form-data">-->
-<!--    {% csrf_token %}-->
-<!--    <h4>Кто видит мой номер телефона</h4>-->
-<!--    {{form.privacy_telephone}}-->
-<!--    <h4>Кто видит мою электронную почту</h4>-->
-<!--    {{form.privacy_email}}-->
-<!--    <h4>Кто видит мои ссылки на соцсети</h4>-->
-<!--    {{form.privacy_social}}-->
-<!--    <h4>Кто видит информацию обо мне</h4>-->
-<!--    {{form.privacy_about}}-->
-<!--    <h4>Кто видит мои фотографии</h4>-->
-<!--    {{form.privacy_photo}}-->
-<!--    <button type="submit">Сохранить</button>-->
-<!--  </form>-->
-<section class="profile-settings">
-      <div class="container">
-         <div class="profile-settings__drop-down-list">
-            <form class="profile-settings__form" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-               <!-- Выподающий список кто видит мой номер телефона-->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит мой номер телефона</h4>
-                   {{form.privacy_telephone}}
-               </div>
-               <!-- Выподающий список кто видит мою электронную почту-->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит мою электронную почту</h4>
-                  {{form.privacy_email}}
-               </div>
-               <!-- выподающий список кто видит мои ссылки на соцсети -->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит мои ссылки на соцсети</h4>
-                  {{form.privacy_social}}
-               </div>
-               <!-- выподающий список кто видит информацию обо мне -->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит информацию обо мне</h4>
-                  {{form.privacy_about}}
-               </div>
-
-               <!-- выподающий список кто видит мои фото -->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит мои фотографии</h4>
-                  {{form.privacy_photo}}
-               </div>
-
-            <!-- кнопка отправка формы -->
-            <div class="profile-settings__button">
-               <button class="profile-settings__btn btn__save profile-settings__link" type="submit">Сохранить</button>
+  <article class="my-page-verification">
+      <section class="my-page-verification__wrapper">
+         <div class="container">
+            <div class="my-page-verification__title">
+               <h3>Верификация данных</h3>
             </div>
-                </form>
+            <div class="my-page-verification__text">
+               <p >Уважаемый пользователь, для того, чтобы использовать полный
+                  функционал
+                  личного кабинета, пройдите, пожалуйста, верификацию. Верификация — это документальное подтверждение
+                  ваших
+                  личных данных. Она займет всего несколько минут.</p>
+            </div>
+            <button class="my-page-verification__button"><a href="#">Пройти верификацию</a></button>
          </div>
-      </div>
-   </section>
-
-
-  <script src="{% static 'js/script-tabs.js' %}"></script>
-  <script src="{% static 'js/accardions.js' %}"></script>
-  <script src="{% static 'js/upload.js' %}"></script>
-  <script src="{% static 'js/dropdown.js' %}"></script>
-  <script src="{% static 'js/counter.js' %}"></script>
-  <script src="{% static 'js/add-field.js' %}"></script>
-
-{% endblock %}
+      </section>
+      <section class="my-page-verification__info">
+         <div class="container">
+            <div class="my-page-verification__info-text">
+               <p>Привет! Меня зовут Светлана. Я учусь в университете, ищу красоту в
+                  каждом дне. Люблю читать книги,
+                  путешествовать в исторические эпохи и мечтать. Вдохновляюсь природой и музыкой, которые заставляют
+                  меня
+                  радоваться и наполняют энергией. Стремлюсь быть сильной и одновременно доброй, готова поддержать и
+                  поделиться радостью.</p>
+               <div class="my-page-verification__foto">
+                  <img src="{% static 'images/img/my-page-verification-1.png' %}" alt="foto">
+                  <img src="{% static 'images/img/my-page-verification-2.png' %}" alt="foto">
+                  <img src="{% static 'images/img/my-page-verification-3.png' %}" alt="foto">
+                  <img src="{% static 'images/img/my-page-verification-4.png' %}" alt="foto">
+               </div>
+            </div>
+         </div>
+      </section>
+   </article>

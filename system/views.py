@@ -51,7 +51,7 @@ class ProfilePrivacyEditView(UpdateView):
     form_class = ProfilePrivacyEditForm
     template_name = "profile/profile_settings/privacy.html"
     model = Profile
-    success_url = reverse_lazy("lk_privacy")
+    success_url = reverse_lazy("profile_settings_privacy")
     # def form_valid(self, form):
     #     if form.is_valid():
     #         form.save()
