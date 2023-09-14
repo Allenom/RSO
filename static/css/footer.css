@@ -135,7 +135,7 @@ li {
 
 .footer__contacts-email {}
 
-/* Четвёртая колонка Политика конфиденциальности
+/* Четвёртая колонка Политика конфиденциальности 
 Пользовательское соглашение*/
 .footer__privacy-policy ul {
     list-style: none;
@@ -255,7 +255,7 @@ li {
 
 .cookie_notification {
     position: relative;
-    margin: 40px 60px;
+    margin: 40px 60px; 
 
 }
 .cookie_notification h4 {
@@ -379,7 +379,7 @@ li {
     .footer__bottom-container {
         padding-bottom: 40px;
     }
-
+    
     .footer__developed {
         margin-bottom: 32px;
     }
