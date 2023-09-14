@@ -35,127 +35,6 @@ li {
     margin: 0;
 }
 
-/* Цвета проекта */
-:root {
-    /* Основные цвета */
-    --dark_blue-color: #1c5c94;
-    --mostly-desaturated-dark-green-color: #608553;
-    --very-soft-yellow-color: #dbce9f;
-    --light_green-color: #5ca386;
-    --soft-yellow-color: #fbd350;
-    --soft-red-color: #eb574b;
-    /* Дополнительные цвета */
-    --dark_cyan-color: #29997E;
-    --very-soft-blue-c-color: #91C9F7;
-    --very-soft-blue-a-color: #ace1f8;
-    --bright-orange-color: #fc9c38;
-    --moderate-cyan-color: #33bdbd;
-    --pale-magenta-color: #ff9aee;
-    --light-grayish-red-color: #fed1d5;
-    /* Бэкграунд цвета для секций*/
-    --white-bg-color: #ffffff;
-    --gray-bg-color: #D1D5D8;
-    /* Бэкграунд цвета для кнопок */
-    --button-submit-color: #39BFBF;
-    /* Цвета компонентов форм */
-    --input-border-color: #a3a3a3;
-    --placeholder-color: #898989;
-    /* Цвета иконок в инпутах */
-    --icon-input-color: #898989;
-    /* Цвета текста */
-    --white-text-color: #ffffff;
-    /* Цвета ссылок по дефолту Селектор ссылки по тэгу a */
-    --link-top-menu-color: #35383F; /* Верхнее меню ссылки */
-    /* Цвета ссылок при наведении Псевдокласс :hover */
-    /* Цвета ссылок посещённых Псевдокласс :visited*/
-}
-
-/* Заголовки  */
-h1 {}
-
-h2 {
-    /* Desktop/H-2 */
-    font-family: 'Akrobat';
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    color: #35383F;
-}
-
-h3 {}
-
-h4 {}
-
-h5 {}
-
-h6 {}
-
-/* Текст */
-p {
-/* text */
-    font-family: 'BertSans';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #35383F;
-}
-
-/* Ссылки */
-a {
-/* link */
-    font-family: 'BertSans';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-decoration-line: underline;
-}
-
-a:visited { /* Цвет посещённой ссылки */}
-
-a:hover {/* Цвет ссылки при наведении на нее курсора мыши */}
-
-/* ******************** */
-
-/* Автор тэг  */
-address {}
-
-
-/* Компоненты форм  */
-
-input {
-/* text-indent: 13px; */
-}
-::placeholder {
-    color: var(--placeholder-color);
-    font-family: 'BertSans';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-/* Кнопки  */
-button {}
-
-button a {
-    color: var(--white-text-color);
-    /* button_text */
-    font-family: 'BertSans';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 20px;
-    text-decoration: none;
-}
-
-button:hover {}
-
-button:active {}
-
-
 /* Основной контейнер */
 .container {
     max-width: 1180px;
@@ -167,11 +46,10 @@ button:active {}
     background-color: #1C5C94;
 }
 
-.footer_wrapper {}
-
 /* Вехний контейнер футера */
 .footer__top-container {
     display: grid;
+    column-gap: 10px;
     grid-template-columns: 200px repeat(3, 1fr);
     padding-top: 48px;
     margin-bottom: 40px;
@@ -179,15 +57,13 @@ button:active {}
 
 /* Первая колонка */
 /* Логотип РСО */
-.footer__logo-wrapper {}
-
-.footer__logo-rco-img {
+.footer__logo-rco {
     width: 78px;
     height: 72px;
     margin-bottom: 32px;
 }
 
-.footer__logo-rco-img img {
+.footer__logo-rco img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -237,8 +113,6 @@ button:active {}
     font-style: normal;
     font-weight: 500;
     line-height: 20px; /* 125% */
-    /*  */
-    padding-right: 70px;
 }
 
 /* Третья колонка Контакты*/
@@ -261,7 +135,7 @@ button:active {}
 
 .footer__contacts-email {}
 
-/* Четвёртая колонка Политика конфиденциальности 
+/* Четвёртая колонка Политика конфиденциальности
 Пользовательское соглашение*/
 .footer__privacy-policy ul {
     list-style: none;
@@ -338,6 +212,7 @@ button:active {}
 
 /* Логотип Teamcode */
 .footer__logo-teamcode {
+    display: flex;
     border-left: 1px solid #ffffff;
 }
 
@@ -355,26 +230,62 @@ button:active {}
 }
 
 /* Предупреждение cookie */
-.cookie_notification {
+.cookie {
+    max-width: 520px;
+    min-height: 332px;
     display: none;
     position: fixed;
     z-index: 9999999;
-    bottom: 295px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 15px;
-    font-family: Verdana, sans-serif;  
-    color: #000000;
+    top: 70px;
+    right: 20px;
+    float: right;
     background: #ffffff;
-    padding: 10px 20px; 
-    border-top: 4px solid #BFE2FF;
-    max-width: 520px;
-    min-height: 332px;
+    border-radius: 10px;
+    border: 1px solid #898989;
+}
+
+.cookie img {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    float: right;
+    top: 16px;
+    right: 16px;
+}
+
+.cookie_notification {
+    position: relative;
+    margin: 40px 60px;
+
+}
+.cookie_notification h4 {
+    color: #35383F;
+    /*  */
+    font-family: 'BertSans';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 116.667% */
+    /*  */
+    margin-bottom: 24px;
 }
 
 .cookie_notification p {
     color: #35383F;
+    /*  */
+    font-family: 'BertSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 28.8px */
+    /*  */
+    margin-bottom: 32px;
+}
+
+.cookie_notification a {
+    text-decoration: underline;
+    color: #35383F;
+    /*  */
     font-family: 'BertSans';
     font-size: 18px;
     font-style: normal;
@@ -383,93 +294,98 @@ button:active {}
 }
 
 /* Оформление кнопок */
-.cookie_btn {
-    display: inline-block;
-    margin: 10px 6px 4px 6px;
-    text-decoration: none;
-    position: relative;
-    font-size: 13px;
-    padding: 4px 12px;
-    color: #FFF;
-    font-weight: bold;
-    text-transform: uppercase; 
-    background: #337AB7;
-    border: 2px solid #BFE2FF;
-}
-.cookie_btn:hover {
-    color: #FFF;
-}
-.cookie_btn:after,
-.cookie_btn:before {
-    position: absolute;
-    height: 2px;
-    left: 50%;
-    background: #FFF;
-    bottom: -6px;
-    content: "";
-    transition: all 280ms ease-in-out;
-    width: 0;
-}
-.cookie_btn:before {
-    top: -6px;
-}
-.cookie_btn:hover:after,
-.cookie_btn:hover:before {
-    width: 100%;
-    left: 0;
-}
-
-/* Кнопка Принять Cookie */
-button.accept-cookies {
-    box-sizing: border-box;
-    width: 113px;
-    min-height: 52px;
-    border-radius: 10px;
-    background: #39BFBF;
+.btn__accept {
     border: none;
     outline: none;
-  }
-
-button:hover {}
-
-button.active {}
-
-span.button-text-accept-cookies {
     display: block;
-    /* padding: 16px 32px; */
-  }
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 134px;
+    min-height: 52px;
+    background: #39BFBF;
+    margin: 0 auto;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
 
-span.button-text-accept-cookies {
-        /* button_text */
-        font-family: 'BertSans';
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 20px; /* 125% */
-        color: #ffffff;
+.btn__accept:hover,
+.btn__accept:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+
+@media screen and (max-width: 1290px) {
+    .footer__wrapper {
+        margin: 0 20px;
+    }
+    .cookie {
+        margin-left: 20px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
-
     .footer__top-container {
         display: grid;
         grid-template-columns: 0.5fr repeat(3, 1fr);
         padding-top: 48px;
         margin-bottom: 40px;
     }
+}
 
-    .footer__contacts-address p {
-        color: #ffffff;
-        font-family: 'BertSans';
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 20px;
-        padding-right: 0;
+@media screen and (max-width: 768px) {
+    .footer p,
+    .footer li a,
+    .footer a {
+        font-size: 14px;
+    }
+
+        /* Логотип 1Т */
+    .footer__logo-1t-img {
+        width: 60px;
+        height: 18px;
+        /*  */
+        margin: 0 12px 0 16px;
+    }
+
+    .footer__logo-1t-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cookie p,
+    .cookie a {
+        font-size: 14px;
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 680px) {
+    .footer__bottom-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+    }
+
+    /* Нижний контейнер футера */
+    .footer__bottom-container {
+        padding-bottom: 40px;
+    }
+
+    .footer__developed {
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 500px) {
 
     .footer__top-container {
         display: grid;
@@ -478,12 +394,64 @@ span.button-text-accept-cookies {
         padding-top: 48px;
         margin-bottom: 40px;
     }
+}
 
-    .footer__bottom-container {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-        align-items: center;
-        
+@media screen and (max-width: 380px) {
+
+    .footer__all-rights-reserved p {
+        font-size: 12px;
+    }
+    .cookie h4 {
+        font-size: 20px;
+    }
+    .cookie p,
+    .cookie a {
+        font-size: 12px;
+    }
+    .btn__accept {
+        border: none;
+        outline: none;
+        display: block;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 114px;
+        min-height: 40px;
+        background: #39BFBF;
+        margin: 0 auto;
+        /*  */
+        color: #ffffff;
+        padding: 10px 30px;
+        /* button_text */
+        font-family: 'BertSans';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 166.667% */
+    }
+}
+
+@media screen and (max-width: 340px) {
+
+    .footer p,
+    .footer li a,
+    .footer a {
+        font-size: 12px;
+    }
+    .footer__all-rights-reserved p {
+        font-size: 10px;
+    }
+    .cookie h4 {
+        font-size: 18px;
+    }
+    .cookie p,
+    .cookie a {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .cookie {
+        margin-left: 10px;
+        right: 10px;
     }
 }
