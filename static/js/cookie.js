@@ -8,7 +8,7 @@ function getCookie(name) {
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
-let cookiecook = getCookie("cookiecook"),
+let cookiecook = getCookie("cookie"),
 cookiewin = document.getElementsByClassName('cookie')[0];
 // проверяем, есть ли у нас cookie, с которой мы не показываем окно и если нет, запускаем показ
 if (cookiecook != "no") {
