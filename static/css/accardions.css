@@ -494,3 +494,14 @@ input[type="radio"] {
   #yes-RSO{
     display: none;
   }
+
+  #no-passport-parent {
+    display: none;
+  }
+  #no-RSO-foreign {
+    display: none;
+  }
+
+  #yes-RSO-foreign {
+    display: none;
+  }
