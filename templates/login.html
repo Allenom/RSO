@@ -2,55 +2,106 @@
 {% load static %}
 {% block title %}Вход{% endblock %}
 {% block head %}
-<link rel="stylesheet" href="/static/css/form-user-login.css">
+<link rel="stylesheet" href="/static/css/login.css">
+<link rel="stylesheet" href="/static/css/buttons.css">
+
 {% endblock %}
 {% block content %}
-
-    <!-- Вход пользователя -->
-        <main class="user-login">
-            <div class="container">
-                <div class="user-login__container">
-                    <div class="user-login__form-wrapper">
-                        <div class="user-login__form-container">
-                            <div class="user-login__title">
-                                <h2>Вход в личный кабинет</h2>
-                            </div>
+ <!-- Вход пользователя -->
+        <article class="user-login" style="background-image: url(/static/images/user-login-bg.jpg);">
+            <section class="user-login">
+                <div class="wrapper">
+                    <!-- Форма входа -->
+                    <form id="user_login" method="post" action="#" enctype="multipart/form-data" spellcheck="true">
+                        {% csrf_token %}
+                        <fieldset form="user_login">
+                            <legend class="title">Вход в личный кабинет</legend>
                             <!-- Преложение создать аккаунт  -->
-                            <div class="user-login__question-register">
+                            <div class="question-register">
                                 <p>У вас еще нет аккаунта?</p>
                                 <a href="/templates/form-user-registration.html">Зарегистрироваться</a>
                             </div>
-                            <!-- Форма входа -->
-                            <form class="user-login__form-entry" id="#" method="post" action="#">
-                                {% csrf_token %}
-                                <div style="color:red;">{{ form.non_field_errors }}</div>
-                                <!-- Поле Логин  -->
-                                <div style="color:red;">{{ form.username.errors }}</div>
-                                <input type="text" name="username" id="id_username" class="user-login__input-login" value="{% if not form.username.value == None %}{{form.username.data}}{% endif %}" required >
-
-                                <!-- Поле Пароль  -->
-                                <div class="user-login__input-box">
-                                    <div style="color:red;">{{ form.password.errors }}</div>
-                                    <input type="password" name="password" id="id_password" class="user-login__input-password" required>
-
-                                    <!-- Иконки в инпуте -->
-                                    <img class="icon user-login__icon-eye-slash" src="/static/images/icons/eye-slash.svg" alt="">
-                                    <!-- <img class="icon user-login__icon-eye-open" src="/static/images/icons/eye-open.svg" alt=""> -->
-                                </div>
-                                <!-- Кнопка Войти -->
-                                <button class="user-login__button-enter" type="submit" formtarget=" _self">
-                                    Войти
-                                </button>
-                            </form>
-                            <!-- Предложение восстановить пароль  -->
-                            <div class="user-login__question-recover">
+                            <!-- Сообщение о неверно введенном логине или пароле -->
+                            <div class="invalid-password">
+                                <p>Неверное имя пользователя или пароль. Проверьте правильность введенных данных</p>
+                            </div>
+                            <!-- Поле Логин  -->
+                            <label for="username">Логин</label>
+                            <input form="user_login" id="username" type="text" placeholder="Логин" name="username" autofocus="" autocapitalize="none" required="true" autocomplete="username">
+                            <!-- Поле Пароль  -->
+                            <div class="input-box">
+                                <label for="password">Пароль</label>
+                                <input form="user_login" id="password" type="password" placeholder="Пароль" name="password" required="true" autocomplete="current-password">
+                                <!-- Иконки в инпуте -->
+                                <img class="icon-eye-slash" src="/static/images/icons/eye-slash.svg" alt="">
+                            </div>
+                            <!-- Кнопка Войти -->
+                            <button disabled="{{buttonDisabled}}" class="btn__enter" id="#" type="submit" formtarget=" _self">
+                                Войти
+                            </button>
+                                <!-- Предложение восстановить пароль  -->
+                            <div class="question-recover">
                                 <p>Забыли пароль?</p>
                                 <a href="/templates/form-user-login-password-recovery.html">Восстановить</a>
                             </div>
-                        </div>
-                    </div>
+                        </fieldset>
+                    </form>
                 </div>
-            </div>
-        </main>
+            </section>
+        </article>
+    <!-- <script src="/static/js/user-login.js"></script>  -->
+    <!-- Для работы скрипта раскомментируйте строку -->
+
+
+
+
+
+<!--Старый вариант Вход пользователя -->
+
+<!--       <main class="user-login">-->
+<!--            <div class="container">-->
+<!--                <div class="user-login__container">-->
+<!--                    <div class="user-login__form-wrapper">-->
+<!--                        <div class="user-login__form-container">-->
+<!--                            <div class="user-login__title">-->
+<!--                                <h2>Вход в личный кабинет</h2>-->
+<!--                            </div>-->
+                            <!-- Преложение создать аккаунт  -->
+<!--                            <div class="user-login__question-register">-->
+<!--                                <p>У вас еще нет аккаунта?</p>-->
+<!--                                <a href="/templates/form-user-registration.html">Зарегистрироваться</a>-->
+<!--                            </div>-->
+                            <!-- Форма входа -->
+<!--                            <form class="user-login__form-entry" id="#" method="post" action="#">-->
+<!--                                {% csrf_token %}-->
+<!--                                <div style="color:red;">{{ form.non_field_errors }}</div>-->
+                                <!-- Поле Логин  -->
+<!--                                <div style="color:red;">{{ form.username.errors }}</div>-->
+<!--                                <input type="text" name="username" id="id_username" class="user-login__input-login" value="{% if not form.username.value == None %}{{form.username.data}}{% endif %}" required >-->
+
+                                <!-- Поле Пароль  -->
+<!--                                <div class="user-login__input-box">-->
+<!--                                    <div style="color:red;">{{ form.password.errors }}</div>-->
+<!--                                    <input type="password" name="password" id="id_password" class="user-login__input-password" required>-->
+
+                                    <!-- Иконки в инпуте -->
+<!--                                    <img class="icon user-login__icon-eye-slash" src="/static/images/icons/eye-slash.svg" alt="">-->
+                                    <!-- <img class="icon user-login__icon-eye-open" src="/static/images/icons/eye-open.svg" alt=""> -->
+<!--                                </div>-->
+                                <!-- Кнопка Войти -->
+<!--                                <button class="user-login__button-enter" type="submit" formtarget=" _self">-->
+                                    <!--Войти-->
+<!--                                </button>-->
+<!--                            </form>-->
+                            <!-- Предложение восстановить пароль  -->
+<!--                            <div class="user-login__question-recover">-->
+<!--                                <p>Забыли пароль?</p>-->
+<!--                                <a href="/templates/form-user-login-password-recovery.html">Восстановить</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </main>-->
 
 {% endblock %}
