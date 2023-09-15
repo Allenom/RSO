@@ -1,0 +1,1092 @@
+/* Buttons Styles */
+
+button {
+    border: none;
+    outline: none;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+button {
+    /* margin: 10px 50px 20px; */
+}
+
+.button__title p {
+    color: darkgreen;
+    padding-left: 50px;
+    font-size: 20px;
+}
+
+/*  Выбрать другой 212*52 Нет состояния Disabled */
+.btn__cha {
+    width: 212px;
+    min-height: 52px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 16px 38px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__cha:hover,
+.btn__cha:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Выбрать другой 138*40 Нет состояния Disabled */
+.btn__cha-s {
+    width: 138px;
+    min-height: 40px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 10px 16px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__cha-s:hover,
+.btn__cha-s:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Принять 134*52 Нет состояния Disabled */
+.btn__accept {
+    width: 134px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__accept:hover,
+.btn__accept:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Принять 114*40 Нет состояния Disabled */
+.btn__accept-s {
+    width: 114px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 30px; /*padding change*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__accept-s:hover,
+.btn__accept-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Да, всё верно 175*52 Нет состояния Disabled */
+.btn__yes-right {
+    width: 175px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__yes-right:hover,
+.btn__yes-right:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/* Да, всё верно 114*40 Нет состояния Disabled */
+.btn__yes-right-s {
+    width: 114px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 14px; /*padding change*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__yes-right-s:hover,
+.btn__yes-right-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Сбросить 158*52 Нет состояния Disabled */
+.btn__th-off {
+    width: 158px;
+    min-height: 52px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 16px 38px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__th-off:hover,
+.btn__th-off:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Сбросить 138*40 Нет состояния Disabled */
+.btn__th-off-s {
+    width: 138px;
+    min-height: 40px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 10px 38px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__th-off-s:hover,
+.btn__th-off-s:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Отправить данные на верификацию 358*52 В сотоянии Disabled Пока не заполнены поля */
+.btn__sdv {
+    width: 358px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__sdv:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__sdv:hover,
+.btn__sdv:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Отправить данные на верификацию 328*52 В сотоянии Disabled Пока не заполнены поля */
+.btn__sdv-m {
+    width: 328px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 8px; /*change psdding*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__sdv-m:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__sdv-m:hover,
+.btn__sdv-m:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Отправить данные на верификацию 250*40 В сотоянии Disabled Пока не заполнены поля */
+.btn__sdv-s {
+    width: 250px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 12px; /*change psdding*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__sdv-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__sdv-s:hover,
+.btn__sdv-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Данные отправлены на верификацию 373*52 Переходит в сотояние Disabled после отправки данных */
+.btn__dsv:disabled {
+    width: 373px;
+    min-height: 52px;
+    background: #898989;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+/*  Данные отправлены на верификацию 328*52 Переходит в сотояние Disabled после отправки данных */
+.btn__dsv-m:disabled {
+    width: 328px;
+    min-height: 52px;
+    background: #898989;
+    /*  */
+    color: #ffffff;
+    padding: 16px 8px; /*padding change*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+/*  Данные отправлены на верификацию 250*40 Переходит в сотояние Disabled после отправки данных */
+.btn__dsv-s:disabled {
+    width: 250px;
+    min-height: 40px;
+    background: #898989;
+    /*  */
+    color: #ffffff;
+    padding: 10px 8px; /*padding change*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+/*  Сохранить 151*52 В сотоянии Disabled Пока не заполнены поля */
+.btn__save {
+    width: 151px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__save:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__save:hover,
+.btn__save:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Сохранить 114*40 В сотоянии Disabled Пока не заполнены поля */
+.btn__save-s {
+    width: 114px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 24px;/*padding change*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__save-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__save-s:hover,
+.btn__save-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+
+/*  Сохранить изменения 244*52 В сотоянии Disabled Пока не заполнены поля */
+.btn__save-ch {
+    width: 244px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__save-ch:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__save-ch:hover,
+.btn__save-ch:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Сохранить изменения 152*40 В сотоянии Disabled Пока не заполнены поля */
+.btn__save-ch-s {
+    width: 152px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 8px;/*padding change*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__save-ch-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__save-ch-s:hover,
+.btn__save-ch-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Изменения сохранены 249*52 По умолчанию Disabled */
+.btn__ch-saved:disabled {
+    width: 249px;
+    min-height: 52px;
+    background: #898989;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+/*  Изменения сохранены 158*40 По умолчанию Disabled */
+.btn__ch-saved-s:disabled {
+    width: 158px;
+    min-height: 40px;
+    background: #898989;
+    /*  */
+    color: #ffffff;
+    padding: 10px 8px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+/*  Вернуться в личный кабинет 300*52 Нет состояния Disabled */
+.btn__ba-acc {
+    width: 300px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__ba-acc:hover,
+.btn__ba-acct:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Вернуться в личный кабинет 194*40 Нет состояния Disabled */
+.btn__ba-acc-s {
+    width: 194px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 8px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__ba-acc-s:hover,
+.btn__ba-acc-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+
+/*  Показать ещё 178*52 В сотоянии Disabled Если нечего показывать, что-то не загружено */
+.btn__show-more {
+    width: 178px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__show-more:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__show-more:hover,
+.btn__show-more:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Показать ещё 114*40 В сотоянии Disabled Если нечего показывать, что-то не загружено */
+.btn__show-more-s {
+    width: 114px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color:  #ffffff;
+    padding: 10px 14px; /*change padding*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__show-more-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__show-more-s:hover,
+.btn__show-more-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Одобрить 144*52 В сотоянии Disabled Если нечего одобрять */
+.btn__approve {
+    width: 144px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__approve:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__approve:hover,
+.btn__approve:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Одобрить 114*40 В сотоянии Disabled Если нечего одобрять */
+.btn__approve-s {
+    width: 114px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    
+    color: #ffffff;
+    padding: 10px 26px;/*change padding*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__approve-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__approve-s:hover,
+.btn__approve-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Подать заявку 184*52 В сотоянии Disabled До определённого момента */
+.btn__submit-application {
+    width: 184px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */    
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__submit-application:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__submit-application:hover,
+.btn__submit-application:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Подать заявку 114*40 В сотоянии Disabled До определённого момента */
+.btn__submit-application-s {
+    width: 114px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    
+    color: #ffffff;
+    padding: 10px 8px; /* change padding */
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__submit-application-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__submit-application-s:hover,
+.btn__submit-application-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Создать 132*52 В сотоянии Disabled До определённого момента */
+.btn__create {
+    width: 132px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__create:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__create:hover,
+.btn__create:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Создать 114*40 В сотоянии Disabled До определённого момента */
+.btn__create-s {
+    width: 114px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__create-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__create-s:hover,
+.btn__create-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Зарегистрироваться 232*52 В сотоянии Disabled Пока не заполнены поля */
+.btn__register {
+    width: 232px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__register:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__register:hover,
+.btn__register:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Зарегистрироваться 140*40 В сотоянии Disabled Пока не заполнены поля */
+.btn__register-s {
+    width: 148px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 12px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__register-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__register-s:hover,
+.btn__register-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+
+/*  Войти 113*52* В сотоянии Disabled Пока не заполнены поля */
+.btn__enter {
+    width: 113px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__enter:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__enter:hover,
+.btn__enter:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Войти 114*40 В сотоянии Disabled Пока не заполнены поля */
+.btn__enter-s {
+    width: 114px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__enter-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__enter-s:hover,
+.btn__enter-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Редактировать штаб 235*52 Нет сотояния Disabled */
+.btn__edit-headquarters {
+    width: 235px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__edit-headquarters:hover,
+.btn__edit-headquarters:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+/*  Редактировать штаб 146*40 Нет сотояния Disabled */
+.btn__edit-headquarters-s {
+    width: 146px;
+    min-height: 40px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 10px 8px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__edit-headquarters-s:disabled {
+    cursor: default;
+    background: #898989;
+}
+
+.btn__edit-headquarters-s:hover,
+.btn__edit-headquarters-s:active {
+    cursor: pointer;
+    background-color: #129393;
+}
+
+
+/*  Отклонить 152*52 Нет состояния Disabled */
+.btn__reject {
+    width: 152px;
+    min-height: 52px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 16px 22px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__reject:hover,
+.btn__reject:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Отклонить 114*40 Нет состояния Disabled */
+.btn__reject-s {
+    width: 114px;
+    min-height: 40px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 10px 22px; /*change padding*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__reject-s:hover,
+.btn__reject-s:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Предпросмотр 168*48 Нет состояния Disabled */
+.btn__preview {
+    width: 168px;
+    min-height: 48px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 16px 21px; /*change psdding*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__preview:hover,
+.btn__preview:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Предпросмотр 114*40 Нет состояния Disabled */
+.btn__preview-s {
+    width: 114px;
+    min-height: 40px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 10px 9px; /*change padding*/
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__preview-s:hover,
+.btn__preview-s:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Далее 131*52 Нет состояния Disabled*/
+.btn__further {
+    width: 131px;
+    min-height: 52px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 16px 40px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__further:hover,
+.btn__further:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Далее 114*40 Нет состояния Disabled */
+.btn__further-s {
+    width: 114px;
+    min-height: 40px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 10px 24px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__further-s:hover,
+.btn__further-s:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+
+/*  Назад 131*52 Нет состояния Disabled */
+.btn__back {
+    width: 131px;
+    min-height: 52px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 16px 40px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.btn__back:hover,
+.btn__back:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+/*  Назад 114*40 Нет состояния Disabled */
+.btn__back-s {
+    width: 114px;
+    min-height: 40px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 10px 24px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 166.667% */
+}
+
+.btn__back-s:hover,
+.btn__back-s:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
