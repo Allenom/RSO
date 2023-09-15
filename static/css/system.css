@@ -9,7 +9,9 @@
 *::after {
    box-sizing: inherit;
 }
-
+button{
+border:none;
+}
 img {
    display: block;
    max-width: 100%;
@@ -38,8 +40,11 @@ p {
 }
 
 /* Форма входа */
-.login-password-my-page__wraper {
+.login-password-my-page__wrapper {
    max-width: 480px;
+   margin-top:40px;
+   margin-bottom:60px;
+
 }
 
 .login-password-my-page__login-top-wrap {
@@ -102,7 +107,7 @@ p {
 }
 
 /* заголовок формы пароля */
-.settings-proffail__login-wrap-button h3 {
+.login-password-my-page__login-wrap-button h3 {
    color: #35383F;
    font-family: 'Akrobat', sans-serif;
    font-size: 24px;
@@ -157,14 +162,18 @@ p {
    font-weight: 400;
    line-height: 125%;
 }
+.login-password-my-page__btn-eye img{
+  cursor: pointer;
+}
 
 /* кнопка */
 .login-password-my-page__button {
-   display: flex;
+ display: flex;
    justify-content: center;
+   align-items: center;
 }
 
-.login-password-my-page__button-link {
+.login-password-my-page__button-submit p {
    text-decoration: none;
    color: #FFF;
    font-family: 'BertSans', sans-serif;
@@ -172,6 +181,7 @@ p {
    font-style: normal;
    font-weight: 600;
    line-height: 20px;
+    padding: 16px 32px;
 }
 
 /* кнопка сохранить */
@@ -184,16 +194,7 @@ p {
    background: #2DBBAF;
    border: none;
    outline: none;
-}
-
-.login-password-my-page__button {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.login-password-my-page__button-submit a {
-   padding: 16px 32px;
+  cursor: pointer;
 }
 
 /* разделы паролей */
@@ -240,24 +241,26 @@ p {
 
 /* ************************    Адаптив        ****************************** */
 @media screen and (max-width:1300px) {
-   .login-password-my-page__wraper {
-      margin: 0 8%;
+   .login-password-my-page__wrapper {
+      margin-left: 8%;
+      margin-right: 8%;
    }
 }
 
 @media screen and (max-width:1030px) {
-   .login-password-my-page__wraper {
-      margin: 0 66px;
+   .login-password-my-page__wrapper {
+        margin-left: 66px;
+      margin-right: 66px;
    }
 }
 
 @media screen and (max-width:587px) {
-   .login-password-my-page__wraper {
-      margin: 0 16px 80px 16px;
+   .login-password-my-page__wrapper {
+      margin: 40px 16px 80px 16px;
    }
  
     .login-password-my-page__login-button {
-      padding: 20px 16px 20px 16px;
+      padding: 20px 16px 40px 16px;
    } 
 
     .login-password-my-page__login-top-wrap {
@@ -274,9 +277,8 @@ p {
 }
 
 @media screen and (max-width:357px) {
-
-   .login-password-my-page__login-top-heading,
-   .login-password-my-page__login-button-heading {
+   .login-password-my-page__login-top-heading h2, p,
+   .login-password-my-page__login-wrap-button h3{
       font-size: 22px;
    }
 
@@ -298,11 +300,24 @@ p {
    ::placeholder {
       font-size: 14px;
    }
-
-   .login-password-my-page__login-top-heading h2,
-   p,
-   .settings-proffail__login-wrap-button h3 {
-      font-size: 20px;
+.login-password-my-page__login-button {
+      padding: 20px 10px 40px 10px;
    }
 
+    .login-password-my-page__login-top-wrap {
+      padding: 20px 10px 20px 10px;
+   }
+   .login-password-my-page__login-top-heading h2,
+   p,
+   .login-password-my-page__login-wrap-button h3 {
+      font-size: 18px;
+   }
+
+.login-password-my-page__button-submit p {
+     padding: 10px 10px;
+}
+/* кнопка сохранить */
+.login-password-my-page__button-submit {
+   width: 125px;
+}
 }

@@ -177,46 +177,46 @@
 <!--    {{form.privacy_photo}}-->
 <!--    <button type="submit">Сохранить</button>-->
 <!--  </form>-->
-<section class="profile-settings">
-      <div class="container">
-         <div class="profile-settings__drop-down-list">
-            <form class="profile-settings__form" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-               <!-- Выподающий список кто видит мой номер телефона-->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит мой номер телефона</h4>
-                   {{form.privacy_telephone}}
-               </div>
-               <!-- Выподающий список кто видит мою электронную почту-->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит мою электронную почту</h4>
-                  {{form.privacy_email}}
-               </div>
-               <!-- выподающий список кто видит мои ссылки на соцсети -->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит мои ссылки на соцсети</h4>
-                  {{form.privacy_social}}
-               </div>
-               <!-- выподающий список кто видит информацию обо мне -->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит информацию обо мне</h4>
-                  {{form.privacy_about}}
-               </div>
+    <section class="profile-settings">
+          <div class="container">
+             <div class="profile-settings__drop-down-list">
+                <form class="profile-settings__form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                   <!-- Выподающий список кто видит мой номер телефона-->
+                   <div class="profile-settings__select-wrapper">
+                      <h4 class="profile-settings__title">Кто видит мой номер телефона</h4>
+                       {{form.privacy_telephone}}
+                   </div>
+                   <!-- Выподающий список кто видит мою электронную почту-->
+                   <div class="profile-settings__select-wrapper">
+                      <h4 class="profile-settings__title">Кто видит мою электронную почту</h4>
+                      {{form.privacy_email}}
+                   </div>
+                   <!-- выподающий список кто видит мои ссылки на соцсети -->
+                   <div class="profile-settings__select-wrapper">
+                      <h4 class="profile-settings__title">Кто видит мои ссылки на соцсети</h4>
+                      {{form.privacy_social}}
+                   </div>
+                   <!-- выподающий список кто видит информацию обо мне -->
+                   <div class="profile-settings__select-wrapper">
+                      <h4 class="profile-settings__title">Кто видит информацию обо мне</h4>
+                      {{form.privacy_about}}
+                   </div>
 
-               <!-- выподающий список кто видит мои фото -->
-               <div class="profile-settings__select-wrapper">
-                  <h4 class="profile-settings__title">Кто видит мои фотографии</h4>
-                  {{form.privacy_photo}}
-               </div>
+                   <!-- выподающий список кто видит мои фото -->
+                   <div class="profile-settings__select-wrapper">
+                      <h4 class="profile-settings__title">Кто видит мои фотографии</h4>
+                      {{form.privacy_photo}}
+                   </div>
+                 </form>
+                <!-- кнопка отправка формы -->
+                <div class="profile-settings__button">
+                   <button class="profile-settings__btn btn__save profile-settings__link" type="submit">Сохранить</button>
+                </div>
 
-            <!-- кнопка отправка формы -->
-            <div class="profile-settings__button">
-               <button class="profile-settings__btn btn__save profile-settings__link" type="submit">Сохранить</button>
-            </div>
-                </form>
-         </div>
-      </div>
-   </section>
+             </div>
+          </div>
+    </section>
 
 
   <script src="{% static 'js/script-tabs.js' %}"></script>

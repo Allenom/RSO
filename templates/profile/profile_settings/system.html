@@ -1,10 +1,76 @@
 {% extends 'layout/basic.html' %}
 {% load static %}
-
 {% block title %}Востановление пароля{% endblock %}
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/system.css' %}">
 <!--Стили добавить если нужно-->
 {% endblock %}
 {% block content %}
-<main></main>
+<main class="login-password-my-page">
+      <section class="login-password-my-page__login-top">
+         <div class="container">
+            <div class="login-password-my-page__wrapper">
+
+               <div class="login-password-my-page__login-top-wrap">
+                  <div class="login-password-my-page__login-top-heading">
+                     <h2>Ваш логин: </h2>
+                     <p>login</p>
+                  </div>
+                  <!-- карандаш, изменить -->
+                  <div class="login-password-my-page__login-to-change">
+                     <img src="{% static 'images/icons/edit_duotone_line.svg' %}" alt="logo">
+                     <p><a href="#">Изменить</a></p>
+                  </div>
+               </div>
+
+               <div class="login-password-my-page__login-button">
+                  <div class="login-password-my-page__login-wrap-button">
+                     <h3>Изменить пароль</h3>
+                     <!-- Форма входа -->
+                     <form class="login-password-my-page__form-password" id="password-chanch" method="post"
+                        enctype="multipart/form-data">
+                        <!-- Поле Пароль  -->
+                        <fieldset form="password-chanch">
+                           <div class="login-password-my-page__input-box">
+                              <!-- Введите старый пароль -->
+                              <input  id="password-chanch"  type="password" name="password"
+                                 autocomplete="current-password" required=""
+                                 placeholder="Введите старый пароль">
+                              <button class="login-password-my-page__btn-eye">
+                                 <img src="{% static 'images/img/eye.svg' %}" alt="eye">
+                              </button>
+                           </div>
+                           <!-- Придумайте новый пароль -->
+                           <div class="login-password-my-page__input-box">
+                              <input  id="password-chanch"  type="password" name="password"
+                                 autocomplete="current-password" required=""
+                                 placeholder="Придумайте новый пароль">
+                              <button class="login-password-my-page__btn-eye">
+                                 <img src="{% static 'images/img/eye.svg' %}" alt="eye">
+                              </button>
+                           </div>
+                           <!-- Повторите пароль -->
+                           <div class="login-password-my-page__input-box">
+                              <input id="password-chanch"  type="password" name="password"
+                                 autocomplete="current-password" required=""
+                                 placeholder="Повторите пароль">
+                              <button class="login-password-my-page__btn-eye">
+                                 <img src="{% static 'images/img/eye.svg' %}" alt="eye">
+                              </button>
+                           </div>
+                        </fieldset>
+                     </form>
+                     <!-- кнопка отправки формы -->
+                     <div class="login-password-my-page__button">
+                        <button class="login-password-my-page__button-submit" disabled="disabled"
+                          type="submit" formtarget=" _self">
+                           <p>Сохранить</p>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+  </main>
 {% endblock %}

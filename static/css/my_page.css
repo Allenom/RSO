@@ -20,14 +20,6 @@ img {
    max-width: 100%;
 }
 
-a {
-   margin: 0;
-   padding: 0;
-   text-decoration: none;
-   color: var(--unnamed);
-   display: block;
-}
-
 button {
    border: none;
 }
@@ -56,9 +48,12 @@ body {
    margin: 0 auto;
 
 }
-
-
-/* ****************Блок about*************** */
+/* ****************ps-my-page*************** */
+.ps-my-page__wrapper {
+   border-radius: 10px;
+   margin-bottom: 80px;
+   border: 1px solid rgba(0, 0, 0, 0.10);
+}
 
 .ps-my-page__title {
    margin: 0;
@@ -75,89 +70,45 @@ body {
    line-height: 28px;
    margin-bottom: 20px;
 }
-
-.ps-my-page__wraper {
-   border-radius: 10px;
-   margin-bottom: 80px;
-   border: 1px solid rgba(0, 0, 0, 0.10);
-}
-
-.ps-my-page__counter {
-   color: #898989;
-   font-family: 'Verdana', sans-serif;
-   font-size: 14px;
-   font-weight: 400;
-}
-
-.ps-my-page__btn {
-   display: flex;
-   justify-content: center;
-}
-
-
-.ps-my-page__btn a {
-   color: #FFF;
-}
-
-.ps-my-page__save {
-   padding: 16px 32px;
-   align-items: center;
-   border-radius: 10px;
-   background: #39BFBF;
-   font-family: 'BertSans', sans-serif;
-   font-size: 16px;
-   font-weight: 600;
-   cursor: pointer;
-
-}
-
 /* раздел поля ввода текста textarea */
-
-.ps-my-page__textarea {
-   max-width: 822px;
-   min-height: 116px;
-   color: #5E5C5C;
-   font-size: 16px;
-   font-weight: 400;
-   overflow: hidden;
-   margin-bottom: 20px;
-}
-
 .ps-my-page__textarea-wrap {
-   max-width: 788px;
-   min-height: 84px;
+   max-width: 820px;
+   min-height: 116px;
    border-radius: 10px;
    border: 1px solid rgba(0, 0, 0, 0.10);
    background: #FFF;
-   padding: 16px;
+     overflow: hidden;
    display: flex;
+    margin-bottom:16px;
+    padding:16px;
+   position: relative;
+   width: 100%;
+   align-items: center;
 }
 
 /* удаляет полосу прокрутки и обводку    resize: none; не дает двигаться*/
-textarea {
+.ps-my-page__textarea-text {
    max-width: 744px;
    min-height: 84px;
+    border-radius:none;
    border: none;
    outline: none;
    text-align: left;
    resize: none;
-   margin-right: 20px;
    font-size: 16px;
    font-weight: 400;
    color: #5E5C5C;
-  
-  
+   padding: 0px 20px 0px 0px;
+   margin-right:20px;
 }
 
-::value {
+.ps-my-page__textarea-wrap value {
    font-family: 'BertSans', sans-serif;
    color: #5E5C5C;
    font-size: 16px;
    font-weight: 400;
    line-height: normal;
    text-align: left;
-   max-width: 744px;
-   min-height: 84px;
 
 }
 /*  иконка component*/
@@ -173,25 +124,45 @@ textarea {
 .ps-my-page__component {
    position: absolute;
    right: 16px;
-   top: 26px;
+   top: 29px;
    transform: translateY(-50%);
 
 }
 
-.ps-my-page__textarea-wrap {
-   position: relative;
-   width: 100%;
-   align-items: center;
+.ps-my-page__counter {
+   color: #898989;
+   font-family: 'Verdana', sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+}
+
+.ps-my-page__btn {
+   display: flex;
+   justify-content: center;
 }
 
 
+.ps-my-page__btn p {
+   color: #FFF;
+}
 
-
+.ps-my-page__save {
+   padding: 16px 32px;
+   align-items: center;
+   border-radius: 10px;
+   background: #39BFBF;
+   font-family: 'BertSans', sans-serif;
+   font-size: 16px;
+   font-weight: 600;
+   cursor: pointer;
+}
 /************************     конец раздела ps-my-page    ***********************/
 /************************     about-user-photos     *********************************************** */
 
-
-.ps-my-page-photos-stub__heading {
+.ps-my-page-photos-stub__title{
+   margin: 40px;
+ }
+ .ps-my-page-photos-stub__heading {
    margin-bottom: 40px;
    color: #35383F;
    font-family: 'Akrobat', sans-serif;
@@ -199,9 +170,7 @@ textarea {
    font-weight: 600;
    line-height: 28px;
 }
-.ps-my-page-photos-stub__title{
-   margin: 40px;
- }
+
 .ps-my-page-photos-stub__wrap {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
@@ -219,20 +188,15 @@ textarea {
    position: relative;
 }
 
-/* форма инпут */
-/* убрала инпуту ввод данных окошко */
-input {
-   display: none;
-}
-
 .ps-my-page-photos-stub__btn {
    position: absolute;
    align-items: end;
    margin-top: -57px;
-   right: 0px;
+   right: 8px;
 }
 .ps-my-page-photos-stub__file{
 background: none;
+   cursor:pointer;
 }
 
 
@@ -240,60 +204,56 @@ background: none;
 /* ***************************     Адаптив       ******************************* */
 
 @media screen and (max-width:1300px) {
-   .ps-my-page__wraper {
-      margin: 0 7%;
+   .ps-my-page__wrapper {
+   margin-right:7%;
+    margin-left:7%;
    }
-
 }
 
 @media screen and (max-width:1030px) {
-   .ps-my-page__wraper {
-      margin: 0 66px;
-   }
-   textarea {
-      min-height: 125px;
+   .ps-my-page__wrapper {
+        margin-right: 66px;
+    margin-left: 66px;
    }
    .ps-my-page-photos-stub__heading {
       margin-bottom: 20px;
    }
+      .ps-my-page-photos-stub__file img {
+      width: 36px;
+      height: 36px;
+   }
+   .ps-my-page-photos-stub__btn {
+   margin-top: -45px;
 }
 
-@media screen and (max-width:900px) {
-   .ps-my-page__title {
-      max-width: 820px;
-   }
-   textarea {
-      width: 620px;
-      min-height: 114px;
-      height: 100%;
-   }
-}
-@media screen and (max-width:815px) {
-   textarea {
-      min-height: 165px;
-   }
+@media screen and (max-width:900px){
+.ps-my-page-photos-stub__wrap{
+     display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      }
 }
 
 @media screen and (max-width:768px) {
-   .ps-my-page__title {
-      max-width: 820px;
-   }
-   .ps-my-page__wraper {
+   .ps-my-page__wrapper {
       margin: 0 34px 80px;
    }
-
-   textarea {
-      min-height: 165px;
-      padding-right: 0px;
+   .ps-my-page__textarea-text{
+      min-height: 170px;
+      padding-right: 20px;
    }
+     .ps-my-page-photos-stub__wrap{
+      grid-template-columns: repeat(2, 1fr);
+
+      }
 }
 
 @media screen and (max-width:657px) {
    .ps-my-page__title {
      padding: 0 0 20px 0;
-     margin-top: 20px;
+     margin-top: 40px;
    }
-   .ps-my-page__wraper{
+   .ps-my-page__wrapper{
    border: none;
 }
 .ps-my-page-photos-stub__title {
@@ -302,52 +262,70 @@ background: none;
 }
 
 @media screen and (max-width:587px) {
-   textarea {
+   .ps-my-page__textarea-text {
       min-height: 180px;
+           padding-right: 10px;
    }
    .ps-my-page-photos-stub__wrap {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+         gap:16px;
    }
-   .ps-my-page__wraper {
+   .ps-my-page__wrapper {
       border: none;
       margin: 20px 16px 20px 16px;
    }
    .ps-my-page-photos-stub__title {
       margin: 20px 0 80px 0;
    }
-   .ps-my-page-photos-stub__btn img {
-      width: 36px;
-      height: 36px;
-   }
+
    .ps-my-page-photos-stub__btn {
-      right: 0px;
+      right: 10px;
       bottom: 8px;
    }
 }
 @media screen and (max-width:500px) {
-   textarea {
+   .ps-my-page__textarea-text {
       min-height: 205px;
    }
 }
 
 @media screen and (max-width:470px) {
-   textarea {
+   .ps-my-page__textarea-text {
       min-height: 232px;
    }
 }
 
 @media screen and (max-width:400px) {
-   textarea {
-      min-height: 252px;
+  .ps-my-page__textarea-text{
+      min-height: 262px;
    }
+
 }
 @media screen and (max-width:360px) {
-   textarea {
-      min-height: 272px;
+  .ps-my-page__textarea-text{
+      min-height: 300px;
+   }
+   .ps-my-page__textarea-wrap {
+   min-height:350px;
    }
    .ps-my-page-photos-stub__wrap {
       grid-template-columns: repeat(1, 1fr);
+   }
+
+}
+@media screen and (max-width:338px){
+.ps-my-page__textarea-wrap {
+ min-height: 400px;
+}
+ .ps-my-page__textarea-text {
+   min-height:360px;
+   }
+}
+@media screen and (max-width:305px){
+.ps-my-page__textarea-wrap {
+ min-height: 440px;
+}
+ .ps-my-page__textarea-text {
+   min-height:420px;
    }
 }

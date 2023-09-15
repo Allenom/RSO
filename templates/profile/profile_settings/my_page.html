@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}Профиль{% endblock %}
 {% block head %}
- <link rel="stylesheet" href="{% static 'css/user-page.css' %}">
+ <link rel="stylesheet" href="{% static 'css/my_page.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <link rel="stylesheet" href="{% static 'css/forms.css' %}" />
 {% endblock %}
@@ -163,77 +163,74 @@
       </div>
     </section>
 
-   <section class="user-page">
+   <section class="ps-my-page">
       <div class="container">
-         <div class="user-page__wraper">
-            <div class="user-page__title">
-               <h3 class="user-page__heading">Кратко о себе</h3>
+         <div class="ps-my-page__wrapper">
+            <div class="ps-my-page__title">
+               <h3 class="ps-my-page__heading">Кратко о себе</h3>
                <!-- ввод текста о себе -->
-               <div class="user-page__textarea">
-                  <div class="user-page__textarea-wrap">
-                     <textarea name="text" value=""  cols="300" rows="4" maxlength="400"></textarea>
-                     <button class="user-page__textarea-button" type="submit">
-                        <img class="user-page__component" src="{% static 'images/img/component 31.svg' %}" alt="component">
+                  <div class="ps-my-page__textarea-wrap">
+                     <textarea class="ps-my-page__textarea-text" name="text" value=""  cols="300" rows="4" maxlength="400"></textarea>
+                     <button class="ps-my-page__textarea-button" type="submit"><img class="ps-my-page__component"
+                           src="{% static 'images/img/component 31.svg' %}" alt="component">
                      </button>
                   </div>
-               </div>
-               <div class="user-page__counter">
+               <div class="ps-my-page__counter">
                   341/400
                </div>
             </div>
-            <div class="user-page__btn">
-               <button class="user-page__save" disabled="disabled" class="btn__save"  type="submit"
-                  formtarget=" _self"><a href="#">Сохранить</a></button>
+
+            <div class="ps-my-page__btn">
+               <button class="ps-my-page__save" disabled="disabled" type="submit"
+                  formtarget=" _self"><p>Сохранить</p></button>
             </div>
             <!-- раздел с фотографиями -->
-            <div class="user-page-photos">
-               <div class="user-page-photos__title">
-                  <h3 class="user-page-photos__heading">Мои фото</h3>
-                  <div class="user-page-photos__wrap">
+            <div class="ps-my-page-photos-stub">
+               <div class="ps-my-page-photos-stub__title">
+                  <h3 class="ps-my-page-photos-stub__heading">Мои фото</h3>
+                  <div class="ps-my-page-photos-stub__wrap">
                      <!-- 4 фото -->
-                     <div class="user-page-photos__img">
-                        <img src="{% static 'images/img/guitar player1.png' %}" alt="img">
-
-                        <div class="user-page-photos__button">
-                           <button class="user-page-photos__btn" type="submit">
-                              <a href="#"> <img class="user-page-photos" src="{% static 'images/img/pencil.png' %}"
-                                    alt="кнопка добавить фотографию"></a>
+                     <!-- заглушка фото и форма загрузки фото -->
+                     <div class="ps-my-page-photos-stub__img">
+                        <img src="{% static 'images/img/plug.png' %}" alt="foto">
+                        <div class="ps-my-page-photos-stub__btn">
+                           <button class="ps-my-page-photos-stub__file" type="submit">
+                              <img src="{% static 'images/img/cross.png' %}"alt="">
                            </button>
                         </div>
                      </div>
-                     <div class="user-page-photos__img">
-                        <img src="{% static 'images/img/guitar player2.png' %}" alt="девушка на фоне цветов">
-                        <div class="user-page-photos__button">
-                           <button class="user-page-photos__btn" type="submit">
-                              <a href="#"> <img class="user-page-photos" src="{% static 'images/img/pencil.png' %}"
-                                    alt="кнопка добавить фотографию"></a>
+                     <!-- заглушка  фото -->
+                     <div class="ps-my-page-photos-stub__img">
+                        <img src="{% static 'images/img/plug.png' %}" alt="foto">
+                        <div class="ps-my-page-photos-stub__btn">
+                           <button class="ps-my-page-photos-stub__file" type="submit">
+                              <img src="{% static 'images/img/cross.png' %}" alt="">
                            </button>
                         </div>
                      </div>
-                     <div class="user-page-photos__img">
-                        <img src="{% static 'images/img/guitar player3.png' %}"
-                           alt="белокурая девушка на фоне людей с яблоками">
-                        <div class="user-page-photos__button">
-                           <button class="user-page-photos__btn" type="submit">
-                              <a href="#"> <img class="user-page-photos" src="{% static 'images/img/pencil.png' %}"
-                                    alt="кнопка добавить фотографию"></a>
+                     <!-- заглушка фото и форма загрузки фото -->
+                     <div class="ps-my-page-photos-stub__img">
+                        <img src="{% static 'images/img/plug.png' %}" alt="foto">
+                        <div class="ps-my-page-photos-stub__btn">
+                           <button class="ps-my-page-photos-stub__file" type="submit">
+                              <img src="{% static 'images/img/cross.png' %}" alt="">
                            </button>
                         </div>
                      </div>
-                     <div class="user-page-photos__img">
-                        <img src="{% static 'images/img/guitar player4.png' %}"
-                           alt="две девушки, одна из них держит блокнот">
-                        <div class="user-page-photos__button">
-                           <button class="user-page-photos__btn" type="submit">
-                              <a href="#"> <img class="user-page-photos" src="{% static 'images/img/pencil.png' %}"
-                                    alt="кнопка добавить фотографию"></a>
+                     <!-- заглушка фото и форма загрузки фото -->
+                     <div class="ps-my-page-photos-stub__img">
+                        <img src="{% static 'images/img/plug.png' %}"
+                           alt="foto">
+                        <div class="ps-my-page-photos-stub__btn">
+                           <button class="ps-my-page-photos-stub__file" type="submit">
+                             <img src="{% static 'images/img/cross.png' %}" alt="">
                            </button>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-          </div>
-        </div>
-      </section>
+         </div>
+      </div>
+   </section>
 {% endblock %}

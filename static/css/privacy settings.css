@@ -32,11 +32,6 @@ p {
    margin: 0;
 }
 
-label {
-   margin: 0;
-   padding: 0;
-}
-
 a {
    text-decoration: none;
 }
@@ -45,6 +40,8 @@ a {
    max-width: 1180px;
    margin: 0 auto;
    align-items: start;
+
+
 }
 
 .profile-settings__drop-down-list {
@@ -54,6 +51,8 @@ a {
    border: 1px solid #DEE2E5;
    background: #FFF;
    padding: 40px;
+
+
 }
 
 
@@ -149,14 +148,16 @@ line-height: 20px;
 
 @media screen and (max-width: 1300px) {
    .profile-settings__drop-down-list {
-      margin: 0 11.4%;
+      margin-left: 11.4%;
+      margin-right: 11.4%
    }
 
 }
 
 @media screen and (max-width: 1030px) {
    .profile-settings__drop-down-list {
-      margin: 0 66px;
+      margin-left: 66px;
+      margin-right: 66px;
    }
 }
 
