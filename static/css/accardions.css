@@ -342,17 +342,17 @@ input[type="radio"] {
   cursor: pointer
 }
 
-/*#know {*/
-/*  border: 1px solid #a3a3a3;*/
-/*  margin-top: 8px;*/
-/*      outline: none;*/
-/*   overflow: hidden;*/
-/*   padding: 16px 60px 26px 16px;*/
-/*   text-align: left;*/
-/*   resize: none;*/
-/*   border-radius: 10px;*/
-/*   background: #FFF;*/
-/*}*/
+#know {
+  border: 1px solid #a3a3a3;
+  margin-top: 8px;
+      outline: none;
+   overflow: hidden;
+   padding: 16px 0px 16px 16px;
+   text-align: left;
+   resize: none;
+   border-radius: 10px;
+   background: #FFF;
+}
 
 
 .file-choose {
@@ -505,3 +505,14 @@ input[type="radio"] {
   #yes-RSO-foreign {
     display: none;
   }
+.add-doc-foreign {
+    display: block;
+    color: #35383F;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
