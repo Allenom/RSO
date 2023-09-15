@@ -549,7 +549,7 @@ function addrFact(val) {
 }
 
 
-const textarea = document.querySelector(".area");
+const textarea = document.querySelector("#know");
 const counter = document.querySelector(".current");
 const maxlength = 200;
 
