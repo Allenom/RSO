@@ -243,8 +243,8 @@ li.selected {
   width: 24px;
   height: 24px;
   cursor: pointer;
-  /*Эти стили будем использовать, 
-  если иконки fontawesome не подойдут 
+  /*Эти стили будем использовать,
+  если иконки fontawesome не подойдут
   и придётся использовать иконки из макета в формате svg*/
 }
 
@@ -372,12 +372,12 @@ li.selected {
   opacity: 0.9;
   cursor: pointer;
 }
- 
+
  .check {
    /* margin: 12px;
    transform : scale(2); */
  }
- 
+
  /* Кнопка Зарегистрироваться */
 .reg-form__btn,
 .user-registrations__button-register {
