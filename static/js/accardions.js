@@ -560,3 +560,13 @@ function onInput(event) {
   const length = event.target.value.length;
   counter.textContent = length;
 }
+
+function checkBox(){
+  let button = document.getElementById("submit-btn");
+  if(button.disabled) {
+  button.disabled = false;
+  } else {
+  button.disabled = true;
+  }
+
+}

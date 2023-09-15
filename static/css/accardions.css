@@ -339,7 +339,8 @@ input[type="radio"] {
   background-color: #39bfbf;
   padding: 16px 32px;
   color: white;
-  cursor: pointer
+  cursor: pointer;
+  margin-bottom: 80px;
 }
 
 #know {
@@ -515,4 +516,9 @@ input[type="radio"] {
     text-decoration: underline;
     cursor: pointer;
     margin-bottom: 15px;
+}
+
+.user-data__btn[disabled] {
+    background: #898989;
+    cursor: not-allowed;
 }
