@@ -35,11 +35,141 @@ form.addEventListener("submit", (e) => {
   uploadFiles();
 });
 
-let btnClear = document.querySelector(".clear");
-let inputs = document.querySelectorAll("input");
-btnClear.addEventListener("click", () => {
-  inputs.forEach((input) => (input.value = ""));
+// делаем по id
+
+let clearSurname = document.getElementById("clear-surname");
+let clearSurnameLat = document.getElementById("clear-surname-lat");
+let clearName = document.getElementById("clear-name");
+let clearNameLat = document.getElementById("clear-name-lat");
+let clearPatronomyc = document.getElementById("clear-patronomyc");
+let clearPatronomycLat = document.getElementById("clear-patronomyc-lat");
+let clearSurnameParent = document.getElementById("clear-surname-parent");
+let clearNameParent = document.getElementById("clear-name-parent");
+let clearPatronomycParent = document.getElementById("clear-patronomyc-parent");
+let clearPhoneParent= document.getElementById("clear-phone-parent");
+let clearPassNumParent = document.getElementById("clear-pass-num-parent");
+let clearPassIdParent = document.getElementById("clear-pass-id-parent");
+let clearLocalityParent = document.getElementById("clear-locality-parent");
+let clearAdresParent = document.getElementById("clear-addres-parent");
+let clearPassNum = document.getElementById("clear-pass-num");
+let clearWorkBook = document.getElementById("clear-work-book");
+let clearForeignPass = document.getElementById("clear-foreign-pass");
+let clearMilitaryId = document.getElementById("clear-military-id");
+let clearPassId = document.getElementById("clear-pass-id");
+let clearEducationOrg = document.getElementById("clear-education-org");
+let clearFacultet = document.getElementById("clear-facultet");
+let clearCourse = document.getElementById("clear-course");
+let clearSpeciality = document.getElementById("clear-speciality");
+
+
+let surnameInput = document.getElementById("surname");
+let surnameLatInput = document.getElementById("surname-lat");
+let nameInput = document.getElementById("name");
+let nameLatInput = document.getElementById("name-lat");
+let patronomycInput = document.getElementById("patronomyc");
+let patronomycLatInput = document.getElementById("patronomyc-lat");
+let surnameParentInput = document.getElementById("surname-parent");
+let nameParentInput = document.getElementById("name-parent");
+let patronomycParentInput = document.getElementById("patronomyc-parent");
+let phoneParentInput = document.getElementById("phone-parent");
+let passNumParentInput= document.getElementById("pass-num-parent");
+let passIdParentInput = document.getElementById("pass-id-parent");
+let localityParentInput = document.getElementById("locality-parent");
+let addresParentInput = document.getElementById("addres-parent");
+let PassNum = document.getElementById("pass-num");
+let WorkBook = document.getElementById("work-book");
+let ForeignPass = document.getElementById("foreign-pass");
+let MilitaryId = document.getElementById("military-id");
+let PassId = document.getElementById("pass-id");
+let EducationOrg = document.getElementById("education-org");
+let Facultet = document.getElementById("facultet");
+let Course = document.getElementById("course");
+let Speciality = document.getElementById("speciality");
+
+
+clearSurname.addEventListener("click", () => {
+  surnameInput.value = "";
 });
+
+clearSurnameLat.addEventListener("click", () => {
+  surnameLatInput.value = "";
+});
+clearName.addEventListener("click", () => {
+  nameInput.value = "";
+});
+clearNameLat.addEventListener("click", () => {
+  nameLatInput.value = "";
+});
+clearPatronomyc.addEventListener("click", () => {
+  patronomycInput.value = "";
+});
+clearPatronomycLat.addEventListener("click", () => {
+  patronomycLatInput.value = "";
+});
+
+clearSurnameParent.addEventListener("click", () => {
+  surnameParentInput.value = "";
+});
+clearNameParent.addEventListener("click", () => {
+  nameParentInput.value = "";
+});
+clearPatronomycParent.addEventListener("click", () => {
+  patronomycParentInput.value = "";
+});
+clearPassNumParent.addEventListener("click", () => {
+  passNumParentInput.value = "";
+});
+clearPassIdParent.addEventListener("click", () => {
+  passIdParentInput.value = "";
+});
+clearLocalityParent.addEventListener("click", () => {
+  localityParentInput.value = "";
+});
+clearPhoneParent.addEventListener("click", () => {
+  phoneParentInput.value = "";
+});
+clearAdresParent.addEventListener("click", () => {
+  addresParentInput.value = "";
+});
+
+clearPassNum.addEventListener("click", () => {
+  PassNum.value = "";
+});
+
+clearPassId.addEventListener("click", () => {
+  PassId.value = "";
+});
+
+clearWorkBook.addEventListener("click", () => {
+  WorkBook.value = "";
+});
+
+clearForeignPass.addEventListener("click", () => {
+  ForeignPass.value = "";
+});
+
+clearMilitaryId.addEventListener("click", () => {
+  MilitaryId.value = "";
+});
+
+clearEducationOrg.addEventListener("click", () => {
+  EducationOrg.value = "";
+});
+
+clearFacultet.addEventListener("click", () => {
+  Facultet.value = "";
+});
+
+clearCourse.addEventListener("click", () => {
+  Course.value = "";
+});
+
+clearSpeciality.addEventListener("click", () => {
+  Speciality.value = "";
+});
+
+
+
 
 function add_social_field() {
   let html = `
@@ -142,26 +272,26 @@ function add_document_field() {
 //загрузка файла//
 
 const actualBtn = document.getElementById("actual-btn");
-// const workBook = document.getElementById("children-data");
-// const militaryTicket = document.getElementById("personal-data");
-// const statementRSO = document.getElementById("statementRSO");
+const workBook = document.getElementById("children-data");
+const militaryTicket = document.getElementById("personal-data");
+const statementRSO = document.getElementById("statementRSO");
 const fileChosen = document.querySelector(".file-chosen");
 
 actualBtn.addEventListener("change", function () {
   fileChosen.textContent = this.files[0].name;
 });
 
-// workBook.addEventListener("change", () => {
-//   fileChosen.textContent = this.files[0].name;
-// });
+workBook.addEventListener("change", () => {
+  fileChosen.textContent = this.files[0].name;
+});
 
-// militaryTicket.addEventListener("change", () => {
-//   fileChosen.textContent = this.files[0].name;
-// });
+militaryTicket.addEventListener("change", () => {
+  fileChosen.textContent = this.files[0].name;
+});
 
-// statementRSO.addEventListener("change", () => {
-//   fileChosen.textContent = this.files[0].name;
-// });
+statementRSO.addEventListener("change", () => {
+  fileChosen.textContent = this.files[0].name;
+});
 
 actualBtn.addEventListener("change", () => {
   let files = actualBtn.files;
@@ -262,9 +392,16 @@ function changeBlockPassport(val) {
   if (val == 1) {
     document.getElementById("yes-passport").style.display = "grid";
     document.getElementById("no-passport").style.display = "none";
+    document.getElementById("checkbox").style.display = "block";
+    document.getElementById("addr-fact").style.display = "block";
+    document.querySelector(".parents-wrapper").style.display ="block"
+
   } else if (val == 2) {
     document.getElementById("yes-passport").style.display = "none";
     document.getElementById("no-passport").style.display = "grid";
+    document.getElementById("checkbox").style.display = "none";
+    document.getElementById("addr-fact").style.display = "none";
+    document.querySelector(".parents-wrapper").style.display ="none"
   }
 }
 
@@ -272,8 +409,17 @@ function changeRSOpeople(val) {
   if (val == 1) {
     document.getElementById("yes-RSO").style.display = "block";
     document.getElementById("no-RSO").style.display = "none";
+    document.get;
   } else if (val == 2) {
     document.getElementById("yes-RSO").style.display = "none";
     document.getElementById("no-RSO").style.display = "block";
+  }
+}
+
+function addrFact(val) {
+  if (val == 1) {
+    document.getElementById("addr-fact").style.display = "none";
+  } else if (val == 2) {
+    document.getElementById("addr-fact").style.display = "block";
   }
 }

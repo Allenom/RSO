@@ -27,6 +27,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path("registration/", SignUp.as_view(), name='registration'),
     path("recover_password/", page, {'template': 'recover_password.html'}, name='recover_password'),
+    path("change_password/", page, {'template': 'change_password.html'}, name='change_password'),
 
     # Профиль
     path("profile/my_page/", lk_page, name='profile'),
