@@ -442,7 +442,6 @@
                           type="text"
                           id="surname-parent"
                           name="surname"
-                          required
                           pattern="[А-Яа-яЁё]{3,}"
                           class="input-big"
                           placeholder="Введите фамилию"
@@ -476,7 +475,7 @@
                       </div>
                       <div class="form-field">
                         <label for="">Кем является</label>
-                        <select class="select-small" name="select" required>
+                        <select class="select-small" name="select" >
                           <option
                             value="0"
                             class="user-registration__select-text"
@@ -524,11 +523,10 @@
                         <div class="error"></div>
                       </div>
                       <div class="form-field">
-                        <label for="date">Дата рождения</label>
+                        <label for="date-parent">Дата рождения</label>
                         <input
                           type="date"
-                          name="date"
-                          required
+                          name="date-parent"
                           class="input-small"
                         />
                         <div class="error"></div>
@@ -539,7 +537,6 @@
                           type="text"
                           name="name"
                           id="name-parent"
-                          required
                           pattern="[А-Яа-яЁё]{2,}"
                           class="input-big"
                           placeholder="Введите имя"
@@ -579,7 +576,6 @@
                           id="phone-parent"
                           name="phone"
                           class="input-small phone"
-                          required
                           placeholder="+7(__) __ __ _"
                         />
                         <button class="small-svg clear" id="clear-phone-parent">
@@ -615,7 +611,6 @@
                         <input
                           type="radio"
                           id="yes"
-                          required
                           name="passport"
                           value="yes"
                           onclick="changeBlockPassportParent(1)"
@@ -627,7 +622,6 @@
                           class="right-check"
                           type="radio"
                           id="no"
-                          required
                           name="passport"
                           value="no"
                           onclick="changeBlockPassportParent(2)"
@@ -644,7 +638,6 @@
                             id="pass-num-parent"
                             name="passInput"
                             class="input-small"
-                            required
                             pattern="[0-9]{11,11}"
                             placeholder="__ __ ____"
                           />
@@ -685,7 +678,6 @@
                             class="select-big"
                             name="select"
                             id="region-parent"
-                            required
                           >
                             <option
                               value="0"
@@ -704,7 +696,6 @@
                             type="date"
                             id="pass-date-parent"
                             name="date"
-                            required
                             class="input-small"
                           />
                           <div class="error"></div>
@@ -716,7 +707,6 @@
                             type="text"
                             name="addres"
                             id="locality-parent"
-                            required
                             pattern="[А-Яа-яЁё]{6,}"
                             class="input-big"
                             placeholder="Москва"
@@ -755,7 +745,6 @@
                             type="text"
                             id="pass-id-parent"
                             class="input-big"
-                            required
                             pattern="[А-Яа-яЁё]{6,}"
                             placeholder="Название организации"
                           />
@@ -793,7 +782,6 @@
                             type="text"
                             name="addres"
                             id="addres-parent"
-                            required
                             class="input-big"
                             placeholder="Москва"
                           />
@@ -835,7 +823,6 @@
                           <input
                             type="text"
                             id="pass-num-parent-foreign"
-                            required
                             pattern="[А-Яа-яЁё]{6,}"
                             class="input-full"
                             placeholder="документ"
@@ -879,7 +866,6 @@
                             type="date"
                             name="pass-date-parent-foreign"
                             class="input-small"
-                            required
                           />
                           <div class="error"></div>
                         </div>
@@ -930,7 +916,6 @@
                           <input
                             type="text"
                             id="org-id-parent-foreign"
-                            required
                             pattern="[А-Яа-яЁё]{6,}"
                             class="input-full"
                             placeholder="страна"
@@ -1509,7 +1494,6 @@
                           <input
                             type="text"
                             id="pass-num"
-                            required
                             pattern="[0-9]{11,11}"
                             class="input-big"
                             placeholder="__ __ ____"
@@ -1548,7 +1532,6 @@
                             type="date"
                             name="date"
                             class="input-small"
-                            required
                           />
                           <div class="error"></div>
                         </div>
@@ -1559,7 +1542,6 @@
                             type="text"
                             id="pass-id"
                             class="input-full"
-                            required
                             pattern="[А-Яа-яЁё]{6,}"
                             placeholder="Название организации"
                           />
@@ -1795,7 +1777,6 @@
                           >
                           <input
                             type="text"
-                            required
                             pattern="[А-Яа-яЁё]{6,}"
                             class="input-full"
                             placeholder="документ"
@@ -1834,21 +1815,20 @@
                             type="date"
                             name="pass-date"
                             class="input-small"
-                            required
                           />
                           <div class="error"></div>
                         </div>
 
                         <div class="form-field">
-                          <label for="pass-id">серия номер</label>
+                          <label for="pass-id-foreign">серия номер</label>
                           <input
                             type="text"
-                            id="pass-id"
+                            id="pass-id-foreign"
                             class="input-small"
                             pattern="[0-9]{11,11}"
                             placeholder="__ ___ ____"
                           />
-                          <button class="small-svg clear">
+                          <button class="small-svg clear" id="clear-pass-id-foreign">
                             <svg
                               width="24"
                               height="24"
@@ -1876,16 +1856,15 @@
                           <div class="error"></div>
                         </div>
                         <div class="form-field one">
-                          <label for="org-id">Кем выдан</label>
+                          <label for="org-id-foreign">Кем выдан</label>
                           <input
                             type="text"
-                            id="org-id"
-                            required
+                            id="org-id-foreign"
                             pattern="[А-Яа-яЁё]{6,}"
                             class="input-full"
                             placeholder="страна"
                           />
-                          <button class="clear">
+                          <button class="clear" id="clear-org-id-foreign">
                             <svg
                               width="24"
                               height="24"
@@ -1912,6 +1891,16 @@
                           </button>
                           <!-- <div class="error"></div> -->
                         </div>
+                           <div class="NoPass one"></div>
+                          <div class="one">
+                                   <button
+                            class="add-doc-foreign"
+                            onclick="add_document_field_NoPass()"
+                          >
+                            +Добавить документ
+                          </button>
+                          </div>
+
                         <div class="form-field">
                           <label for="work-book"
                             >Трудовая книжка: серия, номер
@@ -2324,13 +2313,13 @@
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
 
                               <label for="RSO-statement" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-statement">Файл не выбран</span>
                               <span class="file-error"></span>
                             </div>
                           </div>
@@ -2417,12 +2406,12 @@
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
                               <label for="personal-data" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span class="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" class="file-chosen-personal">Файл не выбран</span>
                               <span class="file-error"></span>
                             </div>
                           </div>
@@ -2510,13 +2499,13 @@
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
                               <label for="children-data" class="file-choose"
                                 >Выбрать файл</label
                               >
 
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-children">Файл не выбран</span>
                               <span class="file-error"></span>
                             </div>
                           </div>
@@ -2605,17 +2594,16 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="actual-btn"
+                                id="pass-upload"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
                               />
-                              <label for="actual-btn" class="file-choose"
+                              <label for="pass-upload" class="file-choose"
                                 >Выбрать файл</label
                               >
                               <span class="file-error"></span>
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-pass">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -2674,18 +2662,18 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="actual-btn"
+                                id="parrent-pass-upload"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
 
-                              <label for="actual-btn" class="file-choose"
+                              <label for="parrent-pass-upload" class="file-choose"
                                 >Выбрать файл</label
                               >
                               <span class="file-error"></span>
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-parent-pass">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -2749,16 +2737,15 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="SNILS"
+                                id="SNILS-upload"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
                               />
-                              <label for="SNILS" class="file-choose"
+                              <label for="SNILS-upload" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-snils">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -2819,12 +2806,12 @@
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
                               <label for="militaryTicket" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-military">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -2881,16 +2868,16 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="actual-btn"
+                                id="INN-upload"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
-                              <label for="actual-btn" class="file-choose"
+                              <label for="INN-upload" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-INN">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -2947,16 +2934,16 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="actual-btn"
+                                id="foreign-pass-upload"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
-                              <label for="actual-btn" class="file-choose"
+                              <label for="foreign-pass-upload" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-foreign-pass">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -3017,12 +3004,12 @@
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
                               <label for="workbook" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-workbook">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -3136,17 +3123,16 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="actual-btn"
+                                id="pass-yesRSO"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
                               />
 
-                              <label for="actual-btn" class="file-choose"
+                              <label for="pass-yesRSO" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span class="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-pass-yesRSO">Файл не выбран</span>
                               <span class="file-error"></span>
                             </div>
                           </div>
@@ -3204,16 +3190,16 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="actual-btn"
+                                id="statement-yesRSO"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
-                              <label for="actual-btn" class="file-choose"
+                              <label for="statement-yesRSO" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span class="file-chosen">Файл не выбран</span>
+                              <span   class="file-chosen" id="file-chosen-statement-yesRSO">Файл не выбран</span>
                               <span class="file-error"></span>
                             </div>
                           </div>
@@ -3278,16 +3264,16 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="SNILS"
+                                id="SNILS-yesRSO"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
-                              <label for="SNILS" class="file-choose"
+                              <label for="SNILS-yesRSO" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span  class="file-chosen" id="file-chosen-SNILS-yesRSO">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -3344,16 +3330,16 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="militaryTicket"
+                                id="militaryTicket-yesRSO"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
-                              <label for="militaryTicket" class="file-choose"
+                              <label for="militaryTicket-yesRSO" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-yesRSO">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -3410,16 +3396,16 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="actual-btn"
+                                id="INN-yesRSO"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
-                              <label for="actual-btn" class="file-choose"
+                              <label for="INN-yesRSO" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-INN-yesRSO">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -3476,549 +3462,16 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="actual-btn"
+                                id="foreignPass-yesRSO"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
-                              />
-                              <label for="actual-btn" class="file-choose"
-                                >Выбрать файл</label
-                              >
-                              <span id="file-chosen">Файл не выбран</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="other-docs__item">
-                          <p class="statement-title">Трудовая книжка</p>
-                          <div class="statement-wrapper">
-                            <div class="statement-item">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M13.1716 3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V8.82843C19 8.41968 19 8.2153 18.9239 8.03153C18.8478 7.84776 18.7032 7.70324 18.4142 7.41421L14.5858 3.58579C14.2968 3.29676 14.1522 3.15224 13.9685 3.07612C13.7847 3 13.5803 3 13.1716 3Z"
-                                  stroke="#35383F"
-                                />
-                                <path
-                                  d="M9 13L15 13"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M9 17L13 17"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M13 3V7C13 7.94281 13 8.41421 13.2929 8.70711C13.5858 9 14.0572 9 15 9H19"
-                                  stroke="#35383F"
-                                />
-                              </svg>
-                              <p>
-                                Файл в формате pdf, png, jpeg размером не более
-                                7 мб
-                              </p>
-                            </div>
-                            <div class="statement-item">
-                              <svg
-                                width="16"
-                                height="17"
-                                viewBox="0 0 16 17"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M11.8355 1.25844C12.6113 1.37294 13.3318 1.73974 13.8824 2.30713C15.2454 3.71146 15.2287 5.94982 13.8449 7.33361L13.5759 7.60259L10.4638 10.7146L6.98631 14.1921C5.66848 15.5099 3.52973 15.503 2.22047 14.1766C0.919578 12.8588 0.930576 10.7367 2.24506 9.43237L7.34427 4.37262C7.90114 3.82005 8.79998 3.82178 9.35473 4.37649C9.91102 4.93275 9.91104 5.83466 9.35476 6.39094L4.00621 11.7395L4.71332 12.4466L10.0619 7.09805C11.0087 6.15124 11.0087 4.61614 10.0618 3.66936C9.11761 2.72522 7.58774 2.72228 6.63991 3.66277L1.5407 8.72253C-0.165097 10.4151 -0.179369 13.169 1.50879 14.8791C3.20781 16.6003 5.98326 16.6093 7.69341 14.8992L11.1709 11.4217L14.283 8.3097L14.552 8.04072C16.3222 6.27052 16.3436 3.40714 14.6 1.61067C13.8612 0.849372 12.8834 0.370366 11.8355 0.25V1.25844Z"
-                                  fill="#1F7CC0"
-                                />
-                              </svg>
-                              <input
-                                type="file"
-                                name="file"
-                                id="workbook"
-                                hidden
-                                multiple
-                                accept=".pdf, .jpeg, .png"
-                                required
-                              />
-                              <label for="workbook" class="file-choose"
-                                >Выбрать файл</label
-                              >
-                              <span id="file-chosen">Файл не выбран</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="other-docs__item">
-                          <div class="addDoc"></div>
-                          <button
-                            class="add-doc"
-                            onclick="add_document_field()"
-                          >
-                            +Добавить документ
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item" id="no-RSO-foreign">
-                <div class="accordion-item-header">
-                  <p>Заявление о вступлении в РСО и скан-копии документов</p>
-                  <div class="round">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M19.9201 8.94922L13.4001 15.4692C12.6301 16.2392 11.3701 16.2392 10.6001 15.4692L4.08008 8.94922"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    <div class="RSO-blanks RSO" id="Blanks">
-                      <p class="RSO-blanks__title RSO-title">
-                        Скачайте бланки, распечатайте. Отсканируйте и прикрепите
-                        заполненные заявления (оригиналы отнесите в Региональное
-                        отделение).
-                      </p>
-                      <div class="blanks-wrapper">
-                        <div class="RSO-statement">
-                          <p class="statement-title">
-                            Заявление на вступление в РСО
-                          </p>
-                          <div class="statement-wrapper">
-                            <div class="statement-item">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M13.1716 3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V8.82843C19 8.41968 19 8.2153 18.9239 8.03153C18.8478 7.84776 18.7032 7.70324 18.4142 7.41421L14.5858 3.58579C14.2968 3.29676 14.1522 3.15224 13.9685 3.07612C13.7847 3 13.5803 3 13.1716 3Z"
-                                  stroke="#35383F"
-                                />
-                                <path
-                                  d="M9 13L15 13"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M9 17L13 17"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M13 3V7C13 7.94281 13 8.41421 13.2929 8.70711C13.5858 9 14.0572 9 15 9H19"
-                                  stroke="#35383F"
-                                />
-                              </svg>
-                              <p>
-                                Файл в формате pdf, png, jpeg размером не более
-                                7 мб
-                              </p>
-                            </div>
-                            <div class="statement-item">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M12 14L11.6464 14.3536L12 14.7071L12.3536 14.3536L12 14ZM12.5 5C12.5 4.72386 12.2761 4.5 12 4.5C11.7239 4.5 11.5 4.72386 11.5 5L12.5 5ZM6.64645 9.35355L11.6464 14.3536L12.3536 13.6464L7.35355 8.64645L6.64645 9.35355ZM12.3536 14.3536L17.3536 9.35355L16.6464 8.64645L11.6464 13.6464L12.3536 14.3536ZM12.5 14L12.5 5L11.5 5L11.5 14L12.5 14Z"
-                                  fill="#1F7CC0"
-                                />
-                                <path
-                                  d="M5 16L5 17C5 18.1046 5.89543 19 7 19L17 19C18.1046 19 19 18.1046 19 17V16"
-                                  stroke="#1F7CC0"
-                                />
-                              </svg>
-                              <button id="statement" class="download-blanks">
-                                Скачать бланк
-                              </button>
-                            </div>
-                            <div class="statement-item">
-                              <svg
-                                width="16"
-                                height="17"
-                                viewBox="0 0 16 17"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M11.8355 1.25844C12.6113 1.37294 13.3318 1.73974 13.8824 2.30713C15.2454 3.71146 15.2287 5.94982 13.8449 7.33361L13.5759 7.60259L10.4638 10.7146L6.98631 14.1921C5.66848 15.5099 3.52973 15.503 2.22047 14.1766C0.919578 12.8588 0.930576 10.7367 2.24506 9.43237L7.34427 4.37262C7.90114 3.82005 8.79998 3.82178 9.35473 4.37649C9.91102 4.93275 9.91104 5.83466 9.35476 6.39094L4.00621 11.7395L4.71332 12.4466L10.0619 7.09805C11.0087 6.15124 11.0087 4.61614 10.0618 3.66936C9.11761 2.72522 7.58774 2.72228 6.63991 3.66277L1.5407 8.72253C-0.165097 10.4151 -0.179369 13.169 1.50879 14.8791C3.20781 16.6003 5.98326 16.6093 7.69341 14.8992L11.1709 11.4217L14.283 8.3097L14.552 8.04072C16.3222 6.27052 16.3436 3.40714 14.6 1.61067C13.8612 0.849372 12.8834 0.370366 11.8355 0.25V1.25844Z"
-                                  fill="#1F7CC0"
-                                />
-                              </svg>
-                              <input
-                                type="file"
-                                name="file"
-                                id="RSO-statement"
-                                hidden
-                                multiple
-                                accept=".pdf, .jpeg, .png"
-                                required
-                              />
 
-                              <label for="RSO-statement" class="file-choose"
-                                >Выбрать файл</label
-                              >
-                              <span class="file-chosen">Файл не выбран</span>
-                              <span class="file-error"></span>
-                            </div>
-                          </div>
-                          <p class="statement-title">
-                            Согласие на обработку персональных данных
-                          </p>
-                          <div class="statement-wrapper">
-                            <div class="statement-item">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M13.1716 3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V8.82843C19 8.41968 19 8.2153 18.9239 8.03153C18.8478 7.84776 18.7032 7.70324 18.4142 7.41421L14.5858 3.58579C14.2968 3.29676 14.1522 3.15224 13.9685 3.07612C13.7847 3 13.5803 3 13.1716 3Z"
-                                  stroke="#35383F"
-                                />
-                                <path
-                                  d="M9 13L15 13"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M9 17L13 17"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M13 3V7C13 7.94281 13 8.41421 13.2929 8.70711C13.5858 9 14.0572 9 15 9H19"
-                                  stroke="#35383F"
-                                />
-                              </svg>
-                              <p>
-                                Файл в формате pdf, png, jpeg размером не более
-                                7 мб
-                              </p>
-                            </div>
-                            <div class="statement-item">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M12 14L11.6464 14.3536L12 14.7071L12.3536 14.3536L12 14ZM12.5 5C12.5 4.72386 12.2761 4.5 12 4.5C11.7239 4.5 11.5 4.72386 11.5 5L12.5 5ZM6.64645 9.35355L11.6464 14.3536L12.3536 13.6464L7.35355 8.64645L6.64645 9.35355ZM12.3536 14.3536L17.3536 9.35355L16.6464 8.64645L11.6464 13.6464L12.3536 14.3536ZM12.5 14L12.5 5L11.5 5L11.5 14L12.5 14Z"
-                                  fill="#1F7CC0"
-                                />
-                                <path
-                                  d="M5 16L5 17C5 18.1046 5.89543 19 7 19L17 19C18.1046 19 19 18.1046 19 17V16"
-                                  stroke="#1F7CC0"
-                                />
-                              </svg>
-                              <button
-                                id="consent-personal"
-                                class="download-blanks"
-                              >
-                                Скачать бланк
-                              </button>
-                            </div>
-                            <div class="statement-item">
-                              <svg
-                                width="16"
-                                height="17"
-                                viewBox="0 0 16 17"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M11.8355 1.25844C12.6113 1.37294 13.3318 1.73974 13.8824 2.30713C15.2454 3.71146 15.2287 5.94982 13.8449 7.33361L13.5759 7.60259L10.4638 10.7146L6.98631 14.1921C5.66848 15.5099 3.52973 15.503 2.22047 14.1766C0.919578 12.8588 0.930576 10.7367 2.24506 9.43237L7.34427 4.37262C7.90114 3.82005 8.79998 3.82178 9.35473 4.37649C9.91102 4.93275 9.91104 5.83466 9.35476 6.39094L4.00621 11.7395L4.71332 12.4466L10.0619 7.09805C11.0087 6.15124 11.0087 4.61614 10.0618 3.66936C9.11761 2.72522 7.58774 2.72228 6.63991 3.66277L1.5407 8.72253C-0.165097 10.4151 -0.179369 13.169 1.50879 14.8791C3.20781 16.6003 5.98326 16.6093 7.69341 14.8992L11.1709 11.4217L14.283 8.3097L14.552 8.04072C16.3222 6.27052 16.3436 3.40714 14.6 1.61067C13.8612 0.849372 12.8834 0.370366 11.8355 0.25V1.25844Z"
-                                  fill="#1F7CC0"
-                                />
-                              </svg>
-                              <input
-                                type="file"
-                                name="file"
-                                id="personal-data"
-                                class="file-upload"
-                                hidden
-                                multiple
-                                accept=".pdf, .jpeg, .png"
-                                required
                               />
-                              <label for="personal-data" class="file-choose"
+                              <label for="foreignPass-yesRSO" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span class="file-chosen">Файл не выбран</span>
-                              <span class="file-error"></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="dowmload-all">
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M12 14L11.6464 14.3536L12 14.7071L12.3536 14.3536L12 14ZM12.5 5C12.5 4.72386 12.2761 4.5 12 4.5C11.7239 4.5 11.5 4.72386 11.5 5L12.5 5ZM6.64645 9.35355L11.6464 14.3536L12.3536 13.6464L7.35355 8.64645L6.64645 9.35355ZM12.3536 14.3536L17.3536 9.35355L16.6464 8.64645L11.6464 13.6464L12.3536 14.3536ZM12.5 14L12.5 5L11.5 5L11.5 14L12.5 14Z"
-                              fill="#1F7CC0"
-                            />
-                            <path
-                              d="M5 16L5 17C5 18.1046 5.89543 19 7 19L17 19C18.1046 19 19 18.1046 19 17V16"
-                              stroke="#1F7CC0"
-                            />
-                          </svg>
-                          <button
-                            class="download-blanks"
-                            onclick="downloadAll()"
-                          >
-                            Скачать все бланки
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pass-details RSO">
-                      <p class="pass-details__title RSO-title">
-                        Загрузите копию паспорта
-                      </p>
-                      <div class="pass-details__wrapper">
-                        <div class="pass-details__item">
-                          <p class="statement-title">
-                            Паспорт иностранного гражданина
-                          </p>
-                          <div class="statement-wrapper">
-                            <div class="statement-item">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M13.1716 3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V8.82843C19 8.41968 19 8.2153 18.9239 8.03153C18.8478 7.84776 18.7032 7.70324 18.4142 7.41421L14.5858 3.58579C14.2968 3.29676 14.1522 3.15224 13.9685 3.07612C13.7847 3 13.5803 3 13.1716 3Z"
-                                  stroke="#35383F"
-                                />
-                                <path
-                                  d="M9 13L15 13"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M9 17L13 17"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M13 3V7C13 7.94281 13 8.41421 13.2929 8.70711C13.5858 9 14.0572 9 15 9H19"
-                                  stroke="#35383F"
-                                />
-                              </svg>
-                              <p>
-                                Файл в формате pdf, png, jpeg размером не более
-                                7 мб
-                              </p>
-                            </div>
-                            <div class="statement-item">
-                              <svg
-                                width="16"
-                                height="17"
-                                viewBox="0 0 16 17"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M11.8355 1.25844C12.6113 1.37294 13.3318 1.73974 13.8824 2.30713C15.2454 3.71146 15.2287 5.94982 13.8449 7.33361L13.5759 7.60259L10.4638 10.7146L6.98631 14.1921C5.66848 15.5099 3.52973 15.503 2.22047 14.1766C0.919578 12.8588 0.930576 10.7367 2.24506 9.43237L7.34427 4.37262C7.90114 3.82005 8.79998 3.82178 9.35473 4.37649C9.91102 4.93275 9.91104 5.83466 9.35476 6.39094L4.00621 11.7395L4.71332 12.4466L10.0619 7.09805C11.0087 6.15124 11.0087 4.61614 10.0618 3.66936C9.11761 2.72522 7.58774 2.72228 6.63991 3.66277L1.5407 8.72253C-0.165097 10.4151 -0.179369 13.169 1.50879 14.8791C3.20781 16.6003 5.98326 16.6093 7.69341 14.8992L11.1709 11.4217L14.283 8.3097L14.552 8.04072C16.3222 6.27052 16.3436 3.40714 14.6 1.61067C13.8612 0.849372 12.8834 0.370366 11.8355 0.25V1.25844Z"
-                                  fill="#1F7CC0"
-                                />
-                              </svg>
-                              <input
-                                type="file"
-                                name="file"
-                                id="actual-btn"
-                                hidden
-                                multiple
-                                accept=".pdf, .jpeg, .png"
-                                required
-                              />
-                              <label for="actual-btn" class="file-choose"
-                                >Выбрать файл</label
-                              >
-                              <span class="file-error"></span>
-                              <span id="file-chosen">Файл не выбран</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="others-docs RSO">
-                      <p class="other-docs__title RSO-title">
-                        Дополнительные документы
-                      </p>
-                      <div class="other-docs__wrapper">
-                        <div class="other-docs__item">
-                          <p class="statement-title">СНИЛС</p>
-                          <div class="statement-wrapper">
-                            <div class="statement-item">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M13.1716 3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V8.82843C19 8.41968 19 8.2153 18.9239 8.03153C18.8478 7.84776 18.7032 7.70324 18.4142 7.41421L14.5858 3.58579C14.2968 3.29676 14.1522 3.15224 13.9685 3.07612C13.7847 3 13.5803 3 13.1716 3Z"
-                                  stroke="#35383F"
-                                />
-                                <path
-                                  d="M9 13L15 13"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M9 17L13 17"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M13 3V7C13 7.94281 13 8.41421 13.2929 8.70711C13.5858 9 14.0572 9 15 9H19"
-                                  stroke="#35383F"
-                                />
-                              </svg>
-                              <p>
-                                Файл в формате pdf, png, jpeg размером не более
-                                7 мб
-                              </p>
-                            </div>
-                            <div class="statement-item">
-                              <svg
-                                width="16"
-                                height="17"
-                                viewBox="0 0 16 17"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M11.8355 1.25844C12.6113 1.37294 13.3318 1.73974 13.8824 2.30713C15.2454 3.71146 15.2287 5.94982 13.8449 7.33361L13.5759 7.60259L10.4638 10.7146L6.98631 14.1921C5.66848 15.5099 3.52973 15.503 2.22047 14.1766C0.919578 12.8588 0.930576 10.7367 2.24506 9.43237L7.34427 4.37262C7.90114 3.82005 8.79998 3.82178 9.35473 4.37649C9.91102 4.93275 9.91104 5.83466 9.35476 6.39094L4.00621 11.7395L4.71332 12.4466L10.0619 7.09805C11.0087 6.15124 11.0087 4.61614 10.0618 3.66936C9.11761 2.72522 7.58774 2.72228 6.63991 3.66277L1.5407 8.72253C-0.165097 10.4151 -0.179369 13.169 1.50879 14.8791C3.20781 16.6003 5.98326 16.6093 7.69341 14.8992L11.1709 11.4217L14.283 8.3097L14.552 8.04072C16.3222 6.27052 16.3436 3.40714 14.6 1.61067C13.8612 0.849372 12.8834 0.370366 11.8355 0.25V1.25844Z"
-                                  fill="#1F7CC0"
-                                />
-                              </svg>
-                              <input
-                                type="file"
-                                name="file"
-                                id="SNILS"
-                                hidden
-                                multiple
-                                accept=".pdf, .jpeg, .png"
-                                required
-                              />
-                              <label for="SNILS" class="file-choose"
-                                >Выбрать файл</label
-                              >
-                              <span id="file-chosen">Файл не выбран</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="other-docs__item">
-                          <p class="statement-title">СНИЛС</p>
-                          <div class="statement-wrapper">
-                            <div class="statement-item">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M13.1716 3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V8.82843C19 8.41968 19 8.2153 18.9239 8.03153C18.8478 7.84776 18.7032 7.70324 18.4142 7.41421L14.5858 3.58579C14.2968 3.29676 14.1522 3.15224 13.9685 3.07612C13.7847 3 13.5803 3 13.1716 3Z"
-                                  stroke="#35383F"
-                                />
-                                <path
-                                  d="M9 13L15 13"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M9 17L13 17"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M13 3V7C13 7.94281 13 8.41421 13.2929 8.70711C13.5858 9 14.0572 9 15 9H19"
-                                  stroke="#35383F"
-                                />
-                              </svg>
-                              <p>
-                                Файл в формате pdf, png, jpeg размером не более
-                                7 мб
-                              </p>
-                            </div>
-                            <div class="statement-item">
-                              <svg
-                                width="16"
-                                height="17"
-                                viewBox="0 0 16 17"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M11.8355 1.25844C12.6113 1.37294 13.3318 1.73974 13.8824 2.30713C15.2454 3.71146 15.2287 5.94982 13.8449 7.33361L13.5759 7.60259L10.4638 10.7146L6.98631 14.1921C5.66848 15.5099 3.52973 15.503 2.22047 14.1766C0.919578 12.8588 0.930576 10.7367 2.24506 9.43237L7.34427 4.37262C7.90114 3.82005 8.79998 3.82178 9.35473 4.37649C9.91102 4.93275 9.91104 5.83466 9.35476 6.39094L4.00621 11.7395L4.71332 12.4466L10.0619 7.09805C11.0087 6.15124 11.0087 4.61614 10.0618 3.66936C9.11761 2.72522 7.58774 2.72228 6.63991 3.66277L1.5407 8.72253C-0.165097 10.4151 -0.179369 13.169 1.50879 14.8791C3.20781 16.6003 5.98326 16.6093 7.69341 14.8992L11.1709 11.4217L14.283 8.3097L14.552 8.04072C16.3222 6.27052 16.3436 3.40714 14.6 1.61067C13.8612 0.849372 12.8834 0.370366 11.8355 0.25V1.25844Z"
-                                  fill="#1F7CC0"
-                                />
-                              </svg>
-                              <input
-                                type="file"
-                                name="file"
-                                id="militaryTicket"
-                                hidden
-                                multiple
-                                accept=".pdf, .jpeg, .png"
-                                required
-                              />
-                              <label for="militaryTicket" class="file-choose"
-                                >Выбрать файл</label
-                              >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-foreignPass-yesRSO">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
@@ -4075,108 +3528,28 @@
                               <input
                                 type="file"
                                 name="file"
-                                id="actual-btn"
+                                id="workbook-yesRSO"
                                 hidden
                                 multiple
                                 accept=".pdf, .jpeg, .png"
-                                required
+
                               />
-                              <label for="actual-btn" class="file-choose"
+                              <label for="workbook-yesRSO" class="file-choose"
                                 >Выбрать файл</label
                               >
-                              <span id="file-chosen">Файл не выбран</span>
+                              <span class="file-chosen" id="file-chosen-workbook-yesRSO">Файл не выбран</span>
                             </div>
                           </div>
                         </div>
                         <div class="other-docs__item">
-                          <p class="statement-title">ИНН</p>
-                          <div class="statement-wrapper">
-                            <div class="statement-item">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M13.1716 3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V8.82843C19 8.41968 19 8.2153 18.9239 8.03153C18.8478 7.84776 18.7032 7.70324 18.4142 7.41421L14.5858 3.58579C14.2968 3.29676 14.1522 3.15224 13.9685 3.07612C13.7847 3 13.5803 3 13.1716 3Z"
-                                  stroke="#35383F"
-                                />
-                                <path
-                                  d="M9 13L15 13"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M9 17L13 17"
-                                  stroke="#35383F"
-                                  stroke-linecap="round"
-                                />
-                                <path
-                                  d="M13 3V7C13 7.94281 13 8.41421 13.2929 8.70711C13.5858 9 14.0572 9 15 9H19"
-                                  stroke="#35383F"
-                                />
-                              </svg>
-                              <p>
-                                Файл в формате pdf, png, jpeg размером не более
-                                7 мб
-                              </p>
-                            </div>
-                            <div class="statement-item">
-                              <svg
-                                width="16"
-                                height="17"
-                                viewBox="0 0 16 17"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M11.8355 1.25844C12.6113 1.37294 13.3318 1.73974 13.8824 2.30713C15.2454 3.71146 15.2287 5.94982 13.8449 7.33361L13.5759 7.60259L10.4638 10.7146L6.98631 14.1921C5.66848 15.5099 3.52973 15.503 2.22047 14.1766C0.919578 12.8588 0.930576 10.7367 2.24506 9.43237L7.34427 4.37262C7.90114 3.82005 8.79998 3.82178 9.35473 4.37649C9.91102 4.93275 9.91104 5.83466 9.35476 6.39094L4.00621 11.7395L4.71332 12.4466L10.0619 7.09805C11.0087 6.15124 11.0087 4.61614 10.0618 3.66936C9.11761 2.72522 7.58774 2.72228 6.63991 3.66277L1.5407 8.72253C-0.165097 10.4151 -0.179369 13.169 1.50879 14.8791C3.20781 16.6003 5.98326 16.6093 7.69341 14.8992L11.1709 11.4217L14.283 8.3097L14.552 8.04072C16.3222 6.27052 16.3436 3.40714 14.6 1.61067C13.8612 0.849372 12.8834 0.370366 11.8355 0.25V1.25844Z"
-                                  fill="#1F7CC0"
-                                />
-                              </svg>
-                              <input
-                                type="file"
-                                name="file"
-                                id="actual-btn"
-                                hidden
-                                multiple
-                                accept=".pdf, .jpeg, .png"
-                                required
-                              />
-                              <label for="actual-btn" class="file-choose"
-                                >Выбрать файл</label
-                              >
-                              <span id="file-chosen">Файл не выбран</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="other-docs__item">
-                          <div class="addDoc"></div>
+                          <div class="addDoc  yessRso"></div>
                           <button
                             class="add-doc"
-                            onclick="add_document_field()"
+                            onclick="add_document_field_yesRso()"
                           >
                             +Добавить документ
                           </button>
                         </div>
-                      </div>
-                    </div>
-                    <div class="know-RSO">
-                      <p class="know-RSO-title">Откуда вы узнали про РСО</p>
-                      <textarea
-                        name="know"
-                        id="know"
-                        cols="1"
-                        rows="1"
-                        class="input-full area"
-                      ></textarea>
-                      <div class="counter">
-                        <span class="current">0</span>&nbsp;/
-                        <span class="total">200</span>
                       </div>
                     </div>
                   </div>
@@ -4198,7 +3571,8 @@
           </form>
         </div>
       </section>
-      <script src="/static/js/accardions.js"></script>
-          <script src="/static/js/date-valid.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="/static/js/accardions.js"></script>
+    <script src="/static/js/date-valid.js"></script>
+
 {% endblock %}

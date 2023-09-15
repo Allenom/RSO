@@ -56,10 +56,23 @@ let clearWorkBook = document.getElementById("clear-work-book");
 let clearForeignPass = document.getElementById("clear-foreign-pass");
 let clearMilitaryId = document.getElementById("clear-military-id");
 let clearPassId = document.getElementById("clear-pass-id");
+let clearPhoneContact = document.getElementById("clear-phone-contact");
+let clearAdressContact = document.getElementById("clear-addres-contact");
+let clearEmailContact = document.getElementById("clear-email-contact");
+let clearAdressFact = document.getElementById("clear-addres-fact");
+let clearLocalityContact = document.getElementById("clear-locality-contact");
+let clearSocials = document.getElementById("clear-socials");
+let clearLocalityFact = document.getElementById("clear-locality-fact");
 let clearEducationOrg = document.getElementById("clear-education-org");
 let clearFacultet = document.getElementById("clear-facultet");
 let clearCourse = document.getElementById("clear-course");
 let clearSpeciality = document.getElementById("clear-speciality");
+
+let clearAnother = document.getElementById("clear-another");
+let clearPassIdForeign = document.getElementById("clear-pass-id-foreign");
+let clearOrgIdForeign = document.getElementById("clear-org-id-foreign");
+
+
 
 
 let surnameInput = document.getElementById("surname");
@@ -85,6 +98,16 @@ let EducationOrg = document.getElementById("education-org");
 let Facultet = document.getElementById("facultet");
 let Course = document.getElementById("course");
 let Speciality = document.getElementById("speciality");
+let PhoneContact = document.getElementById("phone-contact");
+let AdressContact = document.getElementById("addres-contact");
+let EmailContact = document.getElementById("email-contact");
+let AdressFact = document.getElementById("addres-fact");
+let LocalityContact = document.getElementById("locality-contact");
+let Socials = document.getElementById("socials");
+let LocalityFact = document.getElementById("locality-fact");
+let Another = document.getElementById("another");
+let PassIdForeign = document.getElementById("pass-id-foreign");
+let OrgIdForeign = document.getElementById("org-id-foreign");
 
 
 clearSurname.addEventListener("click", () => {
@@ -168,7 +191,40 @@ clearSpeciality.addEventListener("click", () => {
   Speciality.value = "";
 });
 
+clearAdressContact.addEventListener("click", () => {
+  AdressContact.value = "";
+});
+clearEmailContact.addEventListener("click", () => {
+  EmailContact.value = "";
+});
+clearSocials.addEventListener("click", () => {
+  Socials.value = "";
+});
+clearLocalityContact.addEventListener("click", () => {
+  LocalityContact.value = "";
+});
+clearPhoneContact.addEventListener("click", () => {
+  PhoneContact.value = "";
+});
+clearAdressFact.addEventListener("click", () => {
+  AdressFact.value = "";
+});
+clearLocalityFact.addEventListener("click", () => {
+ LocalityFact.value = "";
+});
 
+
+clearAnother.addEventListener("click", () => {
+  Another.value = "";
+});
+
+clearPassIdForeign.addEventListener("click", () => {
+ PassIdForeign.value = "";
+});
+
+clearOrgIdForeign.addEventListener("click", () => {
+  OrgIdForeign.value = "";
+});
 
 
 function add_social_field() {
@@ -256,7 +312,7 @@ function add_document_field() {
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8355 1.25844C12.6113 1.37294 13.3318 1.73974 13.8824 2.30713C15.2454 3.71146 15.2287 5.94982 13.8449 7.33361L13.5759 7.60259L10.4638 10.7146L6.98631 14.1921C5.66848 15.5099 3.52973 15.503 2.22047 14.1766C0.919578 12.8588 0.930576 10.7367 2.24506 9.43237L7.34427 4.37262C7.90114 3.82005 8.79998 3.82178 9.35473 4.37649C9.91102 4.93275 9.91104 5.83466 9.35476 6.39094L4.00621 11.7395L4.71332 12.4466L10.0619 7.09805C11.0087 6.15124 11.0087 4.61614 10.0618 3.66936C9.11761 2.72522 7.58774 2.72228 6.63991 3.66277L1.5407 8.72253C-0.165097 10.4151 -0.179369 13.169 1.50879 14.8791C3.20781 16.6003 5.98326 16.6093 7.69341 14.8992L11.1709 11.4217L14.283 8.3097L14.552 8.04072C16.3222 6.27052 16.3436 3.40714 14.6 1.61067C13.8612 0.849372 12.8834 0.370366 11.8355 0.25V1.25844Z" fill="#1F7CC0"/>
                                 </svg>
      <input type="file" name="file" id="actual-btn" hidden />
-     <label for="actual-btn" id="file-choose">Выбрать файл</label>
+     <label for="actual-btn" class="file-choose">Выбрать файл</label>
      <span id="file-chosen">Файл не выбран</span>
  </div>
 </div>`;
@@ -265,9 +321,89 @@ function add_document_field() {
   documents.insertAdjacentHTML("beforeend", documentsHTML);
 }
 
-// function add_foreign_document_field() {
-//   let foreignDocs = ``
-// }
+function  add_document_field_yesRso() {
+  let documentsHTML = `<div class="form-field">
+  <input
+    type="text"
+    id="documents"
+    class="input-big"
+    placeholder="название документа"
+  />
+ </div>
+ <div class="statement-wrapper">
+ <div class="statement-item">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <path d="M13.1716 3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V8.82843C19 8.41968 19 8.2153 18.9239 8.03153C18.8478 7.84776 18.7032 7.70324 18.4142 7.41421L14.5858 3.58579C14.2968 3.29676 14.1522 3.15224 13.9685 3.07612C13.7847 3 13.5803 3 13.1716 3Z" stroke="#35383F"/>
+ <path d="M9 13L15 13" stroke="#35383F" stroke-linecap="round"/>
+ <path d="M9 17L13 17" stroke="#35383F" stroke-linecap="round"/>
+ <path d="M13 3V7C13 7.94281 13 8.41421 13.2929 8.70711C13.5858 9 14.0572 9 15 9H19" stroke="#35383F"/>
+ </svg>
+   <p>
+     Файл в формате pdf, png, jpeg размером не более 7 мб
+   </p>
+ </div>
+ <div class="statement-item">
+ <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8355 1.25844C12.6113 1.37294 13.3318 1.73974 13.8824 2.30713C15.2454 3.71146 15.2287 5.94982 13.8449 7.33361L13.5759 7.60259L10.4638 10.7146L6.98631 14.1921C5.66848 15.5099 3.52973 15.503 2.22047 14.1766C0.919578 12.8588 0.930576 10.7367 2.24506 9.43237L7.34427 4.37262C7.90114 3.82005 8.79998 3.82178 9.35473 4.37649C9.91102 4.93275 9.91104 5.83466 9.35476 6.39094L4.00621 11.7395L4.71332 12.4466L10.0619 7.09805C11.0087 6.15124 11.0087 4.61614 10.0618 3.66936C9.11761 2.72522 7.58774 2.72228 6.63991 3.66277L1.5407 8.72253C-0.165097 10.4151 -0.179369 13.169 1.50879 14.8791C3.20781 16.6003 5.98326 16.6093 7.69341 14.8992L11.1709 11.4217L14.283 8.3097L14.552 8.04072C16.3222 6.27052 16.3436 3.40714 14.6 1.61067C13.8612 0.849372 12.8834 0.370366 11.8355 0.25V1.25844Z" fill="#1F7CC0"/>
+                                </svg>
+     <input type="file" name="file" id="actual-btn" hidden />
+     <label for="actual-btn" class="file-choose">Выбрать файл</label>
+     <span id="file-chosen">Файл не выбран</span>
+ </div>
+</div>`;
+
+  let documents = document.querySelector(".yessRso");
+  documents.insertAdjacentHTML("beforeend", documentsHTML);
+}
+
+function add_document_field_NoPass() {
+  let foreignDocs = ` <div class="form-field one">
+ <input
+   type="text"
+   id="document-name"
+   class="input-full"
+   placeholder="название документа"
+ />
+</div>
+<div class="form-field one">
+ <input
+   type="text"
+   id="another"
+   class="input-full"
+   placeholder="Номер, дата и т.д"
+ />
+  <button class="clear" id="clear-another">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C13.1819 3 14.3522 3.23279 15.4442 3.68508C16.5361 4.13738 17.5282 4.80031 18.364 5.63604C19.1997 6.47177 19.8626 7.46392 20.3149 8.55585C20.7672 9.64778 21 10.8181 21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4441 20.3149C14.3522 20.7672 13.1819 21 12 21L12 21Z"
+                                stroke="#898989"
+                                stroke-linecap="round"
+                              />
+                              <path
+                                d="M9 9L15 15"
+                                stroke="#898989"
+                                stroke-linecap="round"
+                              />
+                              <path
+                                d="M15 9L9 15"
+                                stroke="#898989"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </button>
+</div>`
+
+  let foreign = document.querySelector(".NoPass");
+  foreign.insertAdjacentHTML("beforeend", foreignDocs);
+
+}
+
 
 //загрузка файла//
 
@@ -376,18 +512,6 @@ document.getElementById("consent-child").onclick = function () {
   );
 };
 
-const textarea = document.querySelector(".area");
-const counter = document.querySelector(".current");
-const maxlength = 200;
-
-textarea.addEventListener("input", onInput);
-
-function onInput(event) {
-  event.target.value = event.target.value.substr(0, maxlength); // обрезаем текст до 360 символов
-  const length = event.target.value.length;
-  counter.textContent = length;
-}
-
 function changeBlockPassport(val) {
   if (val == 1) {
     document.getElementById("yes-passport").style.display = "grid";
@@ -422,4 +546,17 @@ function addrFact(val) {
   } else if (val == 2) {
     document.getElementById("addr-fact").style.display = "block";
   }
+}
+
+
+const textarea = document.querySelector("#know");
+const counter = document.querySelector(".current");
+const maxlength = 200;
+
+textarea.addEventListener("input", onInput);
+
+function onInput(event) {
+  event.target.value = event.target.value.substr(0, maxlength); // обрезаем текст до 360 символов
+  const length = event.target.value.length;
+  counter.textContent = length;
 }
