@@ -232,6 +232,10 @@
   font-weight: 700;
   font-family: BERTSANS;
 }
+
+.parents  {
+  padding: 30px;
+}
 .checkbox {
   font-size: 16px;
   font-weight: 600;
@@ -339,7 +343,8 @@ input[type="radio"] {
   background-color: #39bfbf;
   padding: 16px 32px;
   color: white;
-  cursor: pointer
+  cursor: pointer;
+  margin-bottom: 80px;
 }
 
 #know {
@@ -516,3 +521,9 @@ input[type="radio"] {
     cursor: pointer;
     margin-bottom: 15px;
 }
+
+.user-data__btn[disabled] {
+    background: #898989;
+    cursor: not-allowed;
+}
+
