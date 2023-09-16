@@ -232,6 +232,10 @@
   font-weight: 700;
   font-family: BERTSANS;
 }
+
+.parents  {
+  padding: 30px;
+}
 .checkbox {
   font-size: 16px;
   font-weight: 600;
@@ -522,3 +526,4 @@ input[type="radio"] {
     background: #898989;
     cursor: not-allowed;
 }
+

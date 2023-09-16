@@ -511,23 +511,46 @@ document.getElementById("consent-child").onclick = function () {
     "gooleAnalytics.js"
   );
 };
-
-function changeBlockPassport(val) {
+function changeBlockPassportParent(val) {
   if (val == 1) {
+    document.getElementById("pass-no-addr").style.display = "block";
+    document.getElementById("pass-no-pass-id").style.display = "block";
+    document.getElementById("pass-no-date").style.display = "block";
+    document.getElementById("pass-no-locality").style.display = "block";
+    document.getElementById("pass-no-pass").style.display = "block";
+           document.getElementById("pass-no-reg").style.display = "block";
+    document.getElementById("pass-no-street").style.display = "block";
+    document.getElementById("no-passport-parent").style.display = "none";
+  } else if (val == 2) {
+ document.getElementById("pass-no-addr").style.display = "none";
+    document.getElementById("pass-no-pass-id").style.display = "none";
+    document.getElementById("pass-no-date").style.display = "none";
+    document.getElementById("pass-no-locality").style.display = "none";
+    document.getElementById("pass-no-pass").style.display = "none";
+    document.getElementById("pass-no-street").style.display = "none";
+       document.getElementById("pass-no-reg").style.display = "none";
+    document.getElementById("no-passport-parent").style.display = "grid";
+  }
+}
+function changeBlockPassport(val) {
+  if (val == 1 ) {
     document.getElementById("yes-passport").style.display = "grid";
     document.getElementById("no-passport").style.display = "none";
     document.getElementById("checkbox").style.display = "block";
     document.getElementById("addr-fact").style.display = "block";
-    document.querySelector(".parents-wrapper").style.display ="block"
 
   } else if (val == 2) {
     document.getElementById("yes-passport").style.display = "none";
     document.getElementById("no-passport").style.display = "grid";
     document.getElementById("checkbox").style.display = "none";
     document.getElementById("addr-fact").style.display = "none";
-    document.querySelector(".parents-wrapper").style.display ="none"
   }
+  // else if (val == 1 && changeRSOpeople(val == 1)) {
+  //        document.getElementById("yes-RSO-foreign").style.display = "block";
+  //   document.getElementById("no-RSO").style.display = "none";
+  // }
 }
+
 
 function changeRSOpeople(val) {
   if (val == 1) {
@@ -568,5 +591,4 @@ function checkBox(){
   } else {
   button.disabled = true;
   }
-
 }
