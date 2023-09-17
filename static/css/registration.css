@@ -1,50 +1,7 @@
-/* Border */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  }
-
-body {
-  margin: 0;
-  font-family: 'BertSans', sans-serif;
-  font-family: 'Akrobat', sans-serif;
-  font-family: 'inter', sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-li {
-  padding: 0;
-  margin: 0;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 1180px;
-}
-/*  */
-
-
 .wrapper {
   width: 100%;
 }
+
 /* Иконка выбора */
 .select-btn,
 li {
@@ -52,6 +9,7 @@ li {
   align-items: center;
   cursor: pointer;
 }
+
 .select-btn {
   background: #fff;
   border-radius: 10px;
@@ -65,6 +23,7 @@ li {
 .select-btn span {
   color: grey;
 }
+
 .select-btn img {
   font-size: 20px;
   transition: transform 0.3s linear;
@@ -82,12 +41,15 @@ li {
   border-radius: 6px;
   margin-bottom: 10px;
 }
+
 .wrapper.active .content {
   display: block;
 }
+
 .content .search {
   position: relative;
 }
+
 .search input {
   height: 35px;
   display: block;
@@ -103,6 +65,7 @@ li {
 .search input:focus {
   border: 2px solid #4285f4;
 }
+
 .search input::placeholder {
   color: #bfbfbf;
 }
@@ -114,25 +77,31 @@ li {
   overflow-y: auto;
   padding-right: 7px;
 }
+
 .options::-webkit-scrollbar {
   width: 7px;
 }
+
 .options::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 25px;
 }
+
 .options::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 25px;
 }
+
 .options::-webkit-scrollbar-thumb:hover {
   background: #b3b3b3;
 }
+
 .options li {
   height: 25px;
   padding: 0 13px;
   font-size: 18px;
 }
+
 .options li:hover,
 li.selected {
   border-radius: 5px;
@@ -141,23 +110,17 @@ li.selected {
 
 
 
-/* Разобраться с этими стилями откуда они и зачем */
+
 
 /* Регистрация пользователя */
-.body-forms {
-  background-color: #D1D5D8;
-}
-
 .registration,
 .user-registration {
-  /* min-height: 100vh; */
-  /* margin: 0; */
-  /* margin-top: 72px; */
   background-image: url(/static/images/user-login-bg.jpg);
-  /* min-height: 734px; */
+  min-height: 977px;
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: cover;
+  background-size: auto;
+  background-color: #D1D5D8;
 }
 
 .user-registration__container {
@@ -169,20 +132,22 @@ li.selected {
 .user-registration__form-wrapper {
   background-color: #ffffff;
   max-width: 580px;
-  min-height: 911px;
+  /* min-height: 911px; */
   border-radius: 10px;
   /* плашка */
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
-  margin: 100px 0;
+  margin: 60px 0;
 }
+
 .form__wrapper,
 .user-registration__form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 400px; /*384px - текст не убирается в такую ширину*/
-  height: 731px;
-  padding: 90px 90px;
+  width: 400px;
+  /*384px - текст не убирается в такую ширину*/
+  max-height: 1000px;
+  padding: 60px 90px;
 }
 
 .user-registration__title {
@@ -230,19 +195,18 @@ li.selected {
   position: relative;
   width: 100%;
   height: 40px;
-  /* margin-bottom: 8px; */
 }
 
-#togglePassword,
-#togglePasswordConfirm,
-.user-registration__input-box img {
+.form-field {
+  margin-bottom: 8px;
+}
+
+.user-registration__input-box svg {
   position: absolute;
   float: right;
   right: 16px;
   top: 23%;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+
   /*Эти стили будем использовать,
   если иконки fontawesome не подойдут
   и придётся использовать иконки из макета в формате svg*/
@@ -264,20 +228,6 @@ li.selected {
   min-height: 40px;
   text-indent: 16px;
   margin-bottom: 8px;
-}
-
-.user-registration__repeat-password {
-  margin-bottom: 20px;
-}
-
-.user-registration__input-surname,
-.user-registration__input-name,
-.user-registration__input-patronymic,
-.user-registration__input-phone,
-.user-registration__input-email,
-.user-registration__input-login,
-.user-registration__input-password {
-  /* margin-bottom: 8px; */
 }
 
 .user-registration__input-surname:focus,
@@ -302,8 +252,9 @@ li.selected {
 .user-registration__repeat-password::placeholder {
   text-overflow: ellipsis;
   padding: 10px 0;
-  opacity: 1; transition: opacity 0.3s ease;
-    /*  */
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  /*  */
   color: #898989;
   font-family: 'BertSans';
   font-size: 16px;
@@ -330,7 +281,7 @@ li.selected {
 .error,
 .user-registration__text-error {
   color: #DB0000;
-    /* хлебные_крошки */
+  /* хлебные_крошки */
   font-family: 'Akrobat';
   font-size: 14px;
   font-style: normal;
@@ -338,8 +289,13 @@ li.selected {
   line-height: normal;
   /*  */
   min-height: 10px;
-  margin: 8px 0;
+  /* margin: 8px 0; */
 }
+
+.form-field.error input {
+  min-height: 40px;
+}
+
 /* Верно введённые зачения background input-а */
 .form-field.success input {
   border-color: green;
@@ -353,6 +309,11 @@ li.selected {
   display: flex;
   width: 100%;
   margin-bottom: 68px;
+  margin-top: 20px;
+}
+
+#check {
+  margin: 0px 5px 35px 7px;
 }
 
 .user-registration__approval p {
@@ -361,7 +322,7 @@ li.selected {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-left: 8px;
+  margin-left: 12px;
   letter-spacing: 0.4px;
 }
 
@@ -373,12 +334,12 @@ li.selected {
   cursor: pointer;
 }
 
- .check {
-   /* margin: 12px;
+.check {
+  /* margin: 12px;
    transform : scale(2); */
- }
+}
 
- /* Кнопка Зарегистрироваться */
+/* Кнопка Зарегистрироваться */
 .reg-form__btn,
 .user-registrations__button-register {
   display: block;
@@ -398,7 +359,8 @@ li.selected {
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 20px; /* 125% */
+  line-height: 20px;
+  /* 125% */
   /*  */
   margin-bottom: 20px;
   cursor: pointer;
