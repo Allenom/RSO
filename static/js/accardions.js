@@ -1,30 +1,32 @@
-const accordionItemHeaders = document.querySelectorAll(
-  ".accordion-item-header"
-);
+// const accordionItemHeaders = document.querySelectorAll(
+//   ".accordion-item-header"
+// );
+//
+// accordionItemHeaders.forEach((accordionItemHeader) => {
+//   accordionItemHeader.addEventListener("click", (event) => {
+//     // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
+//
+//     const currentlyActiveAccordionItemHeader = document.querySelector(
+//       ".accordion-item-header.active"
+//     );
+//     if (
+//       currentlyActiveAccordionItemHeader &&
+//       currentlyActiveAccordionItemHeader !== accordionItemHeader
+//     ) {
+//       currentlyActiveAccordionItemHeader.classList.toggle("active");
+//       currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+//     }
+//     accordionItemHeader.classList.toggle("active");
+//     const accordionItemBody = accordionItemHeader.nextElementSibling;
+//     if (accordionItemHeader.classList.contains("active")) {
+//       accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+//     } else {
+//       accordionItemBody.style.maxHeight = 0;
+//     }
+//   });
+// });
 
-accordionItemHeaders.forEach((accordionItemHeader) => {
-  accordionItemHeader.addEventListener("click", (event) => {
-    // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-
-    const currentlyActiveAccordionItemHeader = document.querySelector(
-      ".accordion-item-header.active"
-    );
-    if (
-      currentlyActiveAccordionItemHeader &&
-      currentlyActiveAccordionItemHeader !== accordionItemHeader
-    ) {
-      currentlyActiveAccordionItemHeader.classList.toggle("active");
-      currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-    }
-    accordionItemHeader.classList.toggle("active");
-    const accordionItemBody = accordionItemHeader.nextElementSibling;
-    if (accordionItemHeader.classList.contains("active")) {
-      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-    } else {
-      accordionItemBody.style.maxHeight = 0;
-    }
-  });
-});
+let nextButton = document.getElementById("main-info-next");
 
 const form = document.getElementById("accordion-form");
 const submitButton = document.querySelector(".user-data__btn");
@@ -520,7 +522,9 @@ function changeBlockPassportParent(val) {
     document.getElementById("pass-no-pass").style.display = "block";
            document.getElementById("pass-no-reg").style.display = "block";
     document.getElementById("pass-no-street").style.display = "block";
+    // document.getElementById("checkbox-parent-pass").style.display = "block";
     document.getElementById("no-passport-parent").style.display = "none";
+    // document.getElementById("passport-parent-yes").style.display= 'grid';
   } else if (val == 2) {
  document.getElementById("pass-no-addr").style.display = "none";
     document.getElementById("pass-no-pass-id").style.display = "none";
@@ -529,6 +533,7 @@ function changeBlockPassportParent(val) {
     document.getElementById("pass-no-pass").style.display = "none";
     document.getElementById("pass-no-street").style.display = "none";
        document.getElementById("pass-no-reg").style.display = "none";
+            // document.getElementById("passport-parent-yes").style.display= 'none';
     document.getElementById("no-passport-parent").style.display = "grid";
   }
 }
@@ -572,6 +577,10 @@ function addrFact(val) {
 }
 
 
+
+
+
+
 const textarea = document.querySelector("#know");
 const counter = document.querySelector(".current");
 const maxlength = 200;
@@ -592,3 +601,4 @@ function checkBox(){
   button.disabled = true;
   }
 }
+
