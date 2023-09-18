@@ -14,7 +14,7 @@ function togglePass() {
     } else {
         passInput.type = 'password';
         hide.style.display = 'inline';
-        show.style.display = 'none';
+//        show.style.display = 'none';
     }
 }
 function repeatTogglePass() {
@@ -25,6 +25,6 @@ function repeatTogglePass() {
     } else {
         repeatPassInput.type = 'password';
         hide_repeat.style.display = 'inline';
-        show_repeat.style.display = 'none';
+//        show_repeat.style.display = 'none';
     }
 }
