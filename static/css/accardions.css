@@ -399,21 +399,21 @@ input[type="radio"] {
 
 .form-field svg {
   position: absolute;
-  right: 2rem;
+  right: 6rem;
   top: 2.4rem;
   cursor: pointer;
 }
 
 .small-svg svg {
   position: absolute;
-  right: 17.7rem;
+  right: 21.7rem;
   top: 2.4rem;
   cursor: pointer;
 }
 
 .full-svg svg {
   position: absolute;
-  right: 1rem;
+  right: 3rem;
   top: 2.4rem;
   cursor: pointer;
 }
@@ -527,3 +527,10 @@ input[type="radio"] {
     cursor: not-allowed;
 }
 
+#no-passport-parent {
+  margin-top: 18px;
+}
+
+#no-passport {
+  grid-column-gap: 50px;
+}

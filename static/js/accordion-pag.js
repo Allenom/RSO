@@ -40,21 +40,49 @@
 //     }
 // });
 
-
-
-
- // jQuery(document).ready(function() {
- //    jQuery(".accordion .accordion-item").click(function() {
- //      if(jQuery(this).next("div").is(":visible")){
- //        jQuery(this).next("div").slideUp("slow");
- //      } else {
- //        jQuery(".accordion .accordion-item-body-content").slideUp("slow");
- //        jQuery(this).next("div").slideToggle("slow");
- //      }
- //    });
- //     jQuery(".accordion .nav-next").click(function(){
- //        jQuery(".accordion .accordion-item-body-content").slideUp("slow");
- //        jQuery(this).parent().siblings().next().show();
- //
- //     });
- //  });
+$("#main-info-next").on("click", function() {
+$("#contacts").accordionItemHeaders.show();
+$("#main-info").hide();
+$(".accordion-item-header").removeClass("active")
+});
+//Primary Buttons
+// $("#primaryNextBtn").on("click", function() {
+// $("#collapseSuccess").collapse('show');
+// $("#collapsePrimary").collapse('hide');
+// });
+// $("#primaryPrevBtn").on("click", function() {
+// $("#collapseDefault").collapse('show');
+// $("#collapsePrimary").collapse('hide');
+// });
+// //Success Buttons
+// $("#successNextBtn").on("click", function() {
+// $("#collapseInfo").collapse('show');
+// $("#collapseSuccess").collapse('hide');
+// });
+// $("#successPrevBtn").on("click", function() {
+// $("#collapsePrimary").collapse('show');
+// $("#collapseSuccess").collapse('hide');
+// });
+// //Info Buttons
+// $("#infoNextBtn").on("click", function() {
+// $("#collapseWarning").collapse('show');
+// $("#collapseInfo").collapse('hide');
+// });
+// $("#infoPrevBtn").on("click", function() {
+// $("#collapseSuccess").collapse('show');
+// $("#collapseInfo").collapse('hide');
+// });
+// //Warning Buttons
+// $("#warningNextBtn").on("click", function() {
+// $("#collapseDanger").collapse('show');
+// $("#collapseWarning").collapse('hide');
+// });
+// $("#warningPrevBtn").on("click", function() {
+// $("#collapseInfo").collapse('show');
+// $("#collapseWarning").collapse('hide');
+// });
+// //DangerButtons
+// $("#dangerPrevBtn").on("click", function() {
+// $("#collapseWarning").collapse('show');
+// $("#collapseDanger").collapse('hide');
+// });
