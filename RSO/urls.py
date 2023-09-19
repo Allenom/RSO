@@ -36,7 +36,7 @@ urlpatterns = [
     path("profile/profile_settings/my_page/", page, {'template': 'profile/profile_settings/my_page.html'},
          name='profile_settings_my_page'),
     path("profile/profile_settings/personal/", ProfilePersonalEditView.as_view(), name='profile_settings_personal'),
-    path("profile/profile_settings/system",
+    path("profile/profile_settings/system/",
          PasswordChangeView.as_view(template_name='profile/profile_settings/system.html',
                                     success_url=reverse_lazy("profile")),
          name='profile_settings_system'),
