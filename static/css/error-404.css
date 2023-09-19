@@ -180,6 +180,11 @@ button a {
 
 /* Адаптив Страница Ошибка 404*/
 
+@media(max-width:1290px){
+.error-404{
+margin:0 20px;
+}
+}
 /* 1024px */
 @media(max-width:1100px) {
     .error-404 h1 {
@@ -189,10 +194,6 @@ button a {
 
 /* 768px */
 @media (max-width:768px) {
-    .error-404__container {
-        width: 584px;
-    }
-
     .error-404 h1 {
         font-size: 232px;
     }
@@ -201,19 +202,17 @@ button a {
         font-size: 16px;
     }
 }
-
-@media (max-width:600px) {
-    .error-404__container {
-        width: 287px;
+@media(max-width:515px){
+.error-404 h1 {
+        font-size: 200px;
     }
 }
 
-/* 360px */
+
 @media(max-width:480px) {
     .error-404 h1 {
         font-size: 140px;
     }
-
     .error-404 p {
         font-size: 14px;
     }
