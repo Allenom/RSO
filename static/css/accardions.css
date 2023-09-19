@@ -1,37 +1,5 @@
-/* .accordion-container {
-  position: relative;
-  max-width: 100%;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding-top: 40px;
-}
-
-.accrodion-block__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 40px;
-} */
-
-.round {
-  width: 32px;
-  height: 32px;
-  background-color: #91C9F7;
-  border-radius: 100%;
-  cursor: pointer;
-  position: absolute;
-  right: 1rem;
-}
-
-.round svg {
-  margin: 4px;
-}
-
-
-.accordion-item-header.active .round svg {
-  transform: rotate(-180deg);
+p {
+  margin: 0px;
 }
 .parents-wrapper {
   margin-top: 40px;
@@ -74,7 +42,7 @@
   padding-top: 40px;
   display: flex;
   justify-content: center;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 .nav-prev, .nav-next {
@@ -139,6 +107,7 @@
 .statement-wrapper {
   display: flex;
   margin-bottom: 40px;
+  align-items: center;
 }
 
 .RSO {
@@ -164,59 +133,17 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.accordion {
-  max-width: 100%;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 40px;
-}
-.accordion-item {
-  background-color: #fff;
-  color: #111;
-  margin: 1rem 0;
-  border-bottom: 1px solid grey;
-}
-.accordion-item-header {
-  padding: 0.5rem 3rem 0.5rem 1rem;
-  min-height: 3.5rem;
-  line-height: 1.25rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-}
-
-.accordion-item-header p {
-  font-size: 24px;
-  font-weight: 600;
-  font-family: AKROBAT;
-}
-
-.accordion-item-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-.accordion-item-body-content {
-  padding: 1rem;
-  line-height: 1.5rem;
-}
-
-.accordion-block-title {
-  font-size: 24px;
-  color: #35383F;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-
 .small {
   font-size: 18px;
   margin: 0;
    font-family: 'BertSans', sans-serif;
    font-weight: 600;
+}
+.accordion-block-title {
+  font-size: 24px;
+  color: #35383F;
+  margin-bottom: 20px;
+  font-weight: 500;
 }
 
 .form-field label {
@@ -225,12 +152,21 @@
   font-weight: 600;
    margin-bottom: 8px;
 }
-
+.parents-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 182px;
+}
 .accordion-title {
   font-size: 20px;
   color: #35383F;
   font-weight: 700;
+  margin-bottom: 40px;
   font-family: BERTSANS;
+}
+
+.parents  {
+  padding: 30px;
 }
 .checkbox {
   font-size: 16px;
@@ -247,7 +183,6 @@ input[type="radio"] {
 .right-check {
   margin-left: 18px;
 }
-
 
 .select-small {
   border: 2px solid #a3a3a3;
@@ -325,7 +260,9 @@ input[type="radio"] {
   margin-top: 64px;
   margin-bottom: 64px;
 }
-
+#socials {
+  margin-bottom: 15px;
+}
 .agree-check p {
   font-size: 14px;
   margin-left: 20px;
@@ -354,8 +291,6 @@ input[type="radio"] {
    border-radius: 10px;
    background: #FFF;
 }
-
-
 .file-choose {
   color: #1c5c94;
   cursor: pointer;
@@ -409,7 +344,7 @@ input[type="radio"] {
 
 .full-svg svg {
   position: absolute;
-  right: 1rem;
+  right: 2rem;
   top: 2.4rem;
   cursor: pointer;
 }
@@ -420,7 +355,7 @@ input[type="radio"] {
 }
 
 .input-big {
-  width: 500px;
+  width: 510px;
 }
 
 .input-small {
@@ -428,7 +363,7 @@ input[type="radio"] {
 }
 
 .input-full {
-  width: 98.3%;
+  width: 100%;
 }
 
 .rso-question__title {
@@ -443,9 +378,9 @@ input[type="radio"] {
 }
 .data-form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 52px;
-  padding: 30px;
+  grid-template-columns: 1.5fr 1fr;
+  column-gap: 160px;
+  padding: 40px;
   border: 1px solid #a3a3a3;
   border-radius: 10px;
 }
@@ -473,7 +408,7 @@ input[type="radio"] {
 .select-big {
   border: 2px solid #a3a3a3;
   border-radius: 10px;
-  width: 513px;
+  width: 510px;
   min-height: 35px;
   text-indent: 16px;
   outline: none;
@@ -485,8 +420,8 @@ input[type="radio"] {
 
   .izm {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 52px;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 182px;
   }
   #no-passport {
     display: none;
@@ -521,4 +456,33 @@ input[type="radio"] {
 .user-data__btn[disabled] {
     background: #898989;
     cursor: not-allowed;
+}
+
+#no-passport-parent {
+  margin-top: 18px;
+  column-gap: 182px;
+}
+
+#no-passport {
+  grid-column-gap: 157px;
+}
+
+.card {
+  border: none;
+  border-bottom: 1px solid grey;
+  border-radius: inherit;
+}
+.accordion-button {
+  font-size: 24px;
+  font-family: AKROBAT;
+  font-weight: 500;
+  color: #35383F;
+}
+.accordion-button:focus {
+  border-color: white;
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+  background-color: white;
+    color: #35383F;
 }

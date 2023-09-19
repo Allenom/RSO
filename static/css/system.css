@@ -211,7 +211,20 @@ p {
 }
 
 /* расположение глаза */
-.login-password-my-page__input-box img {
+#oulshow {
+    display: none;
+}
+
+#repshow {
+    display: none;
+}
+
+#show {
+    display: none;
+}
+
+
+.login-password-my-page__input-box svg {
    position: absolute;
    right: 16px;
    top: 21px;

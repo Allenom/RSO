@@ -33,33 +33,125 @@
                         <fieldset form="password-chanch">
                            <div class="login-password-my-page__input-box">
                               <!-- Введите старый пароль -->
-                              <input  id="password-chanch"  type="password" name="password"
-                                 autocomplete="current-password" required=""
+                              <input type="password" name="password" id="oul"
                                  placeholder="Введите старый пароль">
-                              <button class="login-password-my-page__btn-eye">
-                                 <img src="{% static 'images/img/eye.svg' %}" alt="eye">
-                              </button>
+                                 <svg width="24" height="25" viewBox="0 0 20 20" fill="none" onclick="oulPass()" id="oulshow"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <g id="vuesax/linear/eye_oul">
+                                    <g id="eye_oul">
+                                       <path id="Vector_7"
+                                          d="M12.9842 10.0009C12.9842 11.6509 11.6509 12.9842 10.0009 12.9842C8.35091 12.9842 7.01758 11.6509 7.01758 10.0009C7.01758 8.35091 8.35091 7.01758 10.0009 7.01758C11.6509 7.01758 12.9842 8.35091 12.9842 10.0009Z"
+                                          stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                       <path id="Vector_8"
+                                          d="M9.99987 16.8913C12.9415 16.8913 15.6832 15.1579 17.5915 12.1579C18.3415 10.9829 18.3415 9.00794 17.5915 7.83294C15.6832 4.83294 12.9415 3.09961 9.99987 3.09961C7.0582 3.09961 4.31654 4.83294 2.4082 7.83294C1.6582 9.00794 1.6582 10.9829 2.4082 12.1579C4.31654 15.1579 7.0582 16.8913 9.99987 16.8913Z"
+                                          stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                    </g>
+                                 </g>
+                              </svg>
+
+                              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                 onclick="oulPass()" class="fa-eye-slash" id="oulhide">
+                                 <path
+                                    d="M14.5309 9.97188L9.4709 15.0319C8.8209 14.3819 8.4209 13.4919 8.4209 12.5019C8.4209 10.5219 10.0209 8.92188 12.0009 8.92188C12.9909 8.92188 13.8809 9.32188 14.5309 9.97188Z"
+                                    stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path
+                                    d="M17.8198 6.26852C16.0698 4.94852 14.0698 4.22852 11.9998 4.22852C8.46984 4.22852 5.17984 6.30852 2.88984 9.90852C1.98984 11.3185 1.98984 13.6885 2.88984 15.0985C3.67984 16.3385 4.59984 17.4085 5.59984 18.2685"
+                                    stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path
+                                    d="M8.4209 20.0297C9.5609 20.5097 10.7709 20.7697 12.0009 20.7697C15.5309 20.7697 18.8209 18.6897 21.1109 15.0897C22.0109 13.6797 22.0109 11.3097 21.1109 9.89969C20.7809 9.37969 20.4209 8.88969 20.0509 8.42969"
+                                    stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path d="M15.5095 13.2012C15.2495 14.6112 14.0995 15.7612 12.6895 16.0212" stroke="#898989"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path d="M9.46902 15.0293L1.99902 22.4993" stroke="#898989" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                 <path d="M21.9993 2.5L14.5293 9.97" stroke="#898989" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+
                            </div>
                            <!-- Придумайте новый пароль -->
                            <div class="login-password-my-page__input-box">
-                              <input  id="password-chanch"  type="password" name="password"
-                                 autocomplete="current-password" required=""
+                              <input type="password" name="password" id="password"
                                  placeholder="Придумайте новый пароль">
-                              <button class="login-password-my-page__btn-eye">
-                                 <img src="{% static 'images/img/eye.svg' %}" alt="eye">
-                              </button>
+                                 <svg width="24" height="25" viewBox="0 0 20 20" fill="none" onclick="togglePass()" id="show"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <g id="vuesax/linear/eye">
+                                    <g id="eye">
+                                       <path id="Vector"
+                                          d="M12.9842 10.0009C12.9842 11.6509 11.6509 12.9842 10.0009 12.9842C8.35091 12.9842 7.01758 11.6509 7.01758 10.0009C7.01758 8.35091 8.35091 7.01758 10.0009 7.01758C11.6509 7.01758 12.9842 8.35091 12.9842 10.0009Z"
+                                          stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                       <path id="Vector_2"
+                                          d="M9.99987 16.8913C12.9415 16.8913 15.6832 15.1579 17.5915 12.1579C18.3415 10.9829 18.3415 9.00794 17.5915 7.83294C15.6832 4.83294 12.9415 3.09961 9.99987 3.09961C7.0582 3.09961 4.31654 4.83294 2.4082 7.83294C1.6582 9.00794 1.6582 10.9829 2.4082 12.1579C4.31654 15.1579 7.0582 16.8913 9.99987 16.8913Z"
+                                          stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                    </g>
+                                 </g>
+                              </svg>
+
+                              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                 onclick="togglePass()" class="fa-eye-slash" id="hide">
+                                 <path
+                                    d="M14.5309 9.97188L9.4709 15.0319C8.8209 14.3819 8.4209 13.4919 8.4209 12.5019C8.4209 10.5219 10.0209 8.92188 12.0009 8.92188C12.9909 8.92188 13.8809 9.32188 14.5309 9.97188Z"
+                                    stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path
+                                    d="M17.8198 6.26852C16.0698 4.94852 14.0698 4.22852 11.9998 4.22852C8.46984 4.22852 5.17984 6.30852 2.88984 9.90852C1.98984 11.3185 1.98984 13.6885 2.88984 15.0985C3.67984 16.3385 4.59984 17.4085 5.59984 18.2685"
+                                    stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path
+                                    d="M8.4209 20.0297C9.5609 20.5097 10.7709 20.7697 12.0009 20.7697C15.5309 20.7697 18.8209 18.6897 21.1109 15.0897C22.0109 13.6797 22.0109 11.3097 21.1109 9.89969C20.7809 9.37969 20.4209 8.88969 20.0509 8.42969"
+                                    stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path d="M15.5095 13.2012C15.2495 14.6112 14.0995 15.7612 12.6895 16.0212" stroke="#898989"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path d="M9.46902 15.0293L1.99902 22.4993" stroke="#898989" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                 <path d="M21.9993 2.5L14.5293 9.97" stroke="#898989" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
                            </div>
                            <!-- Повторите пароль -->
                            <div class="login-password-my-page__input-box">
-                              <input id="password-chanch"  type="password" name="password"
-                                 autocomplete="current-password" required=""
+                              <input type="password" name="password" id="repeat_password"
                                  placeholder="Повторите пароль">
-                              <button class="login-password-my-page__btn-eye">
-                                 <img src="{% static 'images/img/eye.svg' %}" alt="eye">
-                              </button>
+                                 <svg width="24" height="25" viewBox="0 0 20 20" fill="none" onclick="repeaPass()" id="repshow"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <g id="vuesax/linear/eye_rep">
+                                    <g id="eye_rep">
+                                       <path id="Vector_10"
+                                          d="M12.9842 10.0009C12.9842 11.6509 11.6509 12.9842 10.0009 12.9842C8.35091 12.9842 7.01758 11.6509 7.01758 10.0009C7.01758 8.35091 8.35091 7.01758 10.0009 7.01758C11.6509 7.01758 12.9842 8.35091 12.9842 10.0009Z"
+                                          stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                       <path id="Vector_12"
+                                          d="M9.99987 16.8913C12.9415 16.8913 15.6832 15.1579 17.5915 12.1579C18.3415 10.9829 18.3415 9.00794 17.5915 7.83294C15.6832 4.83294 12.9415 3.09961 9.99987 3.09961C7.0582 3.09961 4.31654 4.83294 2.4082 7.83294C1.6582 9.00794 1.6582 10.9829 2.4082 12.1579C4.31654 15.1579 7.0582 16.8913 9.99987 16.8913Z"
+                                          stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                    </g>
+                                 </g>
+                              </svg>
+
+                              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                 onclick="repeaPass()" class="fa-eye-slash" id="rephide">
+                                 <path
+                                    d="M14.5309 9.97188L9.4709 15.0319C8.8209 14.3819 8.4209 13.4919 8.4209 12.5019C8.4209 10.5219 10.0209 8.92188 12.0009 8.92188C12.9909 8.92188 13.8809 9.32188 14.5309 9.97188Z"
+                                    stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path
+                                    d="M17.8198 6.26852C16.0698 4.94852 14.0698 4.22852 11.9998 4.22852C8.46984 4.22852 5.17984 6.30852 2.88984 9.90852C1.98984 11.3185 1.98984 13.6885 2.88984 15.0985C3.67984 16.3385 4.59984 17.4085 5.59984 18.2685"
+                                    stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path
+                                    d="M8.4209 20.0297C9.5609 20.5097 10.7709 20.7697 12.0009 20.7697C15.5309 20.7697 18.8209 18.6897 21.1109 15.0897C22.0109 13.6797 22.0109 11.3097 21.1109 9.89969C20.7809 9.37969 20.4209 8.88969 20.0509 8.42969"
+                                    stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path d="M15.5095 13.2012C15.2495 14.6112 14.0995 15.7612 12.6895 16.0212" stroke="#898989"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 <path d="M9.46902 15.0293L1.99902 22.4993" stroke="#898989" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                 <path d="M21.9993 2.5L14.5293 9.97" stroke="#898989" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
                            </div>
                         </fieldset>
                      </form>
+
                      <!-- кнопка отправки формы -->
                      <div class="login-password-my-page__button">
                         <button class="login-password-my-page__button-submit" disabled="disabled"
@@ -73,4 +165,5 @@
          </div>
       </section>
   </main>
+  <script src="/static/js/login_pass.js"></script>
 {% endblock %}
