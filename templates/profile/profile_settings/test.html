@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form style="margin-bottom: 30px" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+        <div style="color:red;">{{ form.old_password.errors }}</div>
+        <label class="" for="id_old_password">Старый пароль</label>
+        <input class="" type="password" name="old_password" id="id_old_password" autocomplete="current-password" required>
+
+        <div style="color:red;">{{ form.new_password1.errors }}</div>
+        <label class="" for="id_new_password1">Новый пароль</label>
+        <input class="" type="password" name="new_password1" id="id_new_password1" autocomplete="new-password" required>
+        <p class="">
+            Пароль не должен быть слишком похож на другую вашу личную информацию, содержать минимум 8 символов.
+           <span>
+            Пароль не должен быть слишком простым и распространенным.
+            </span>
+            <span>
+            Пароль не может состоять только из цифр.
+            </span>
+        </p>
+
+        <div style="color:red;">{{ form.repeat_password.errors }}</div>
+        <label class="" for="id_new_password2">Повтор пароля</label>
+        <input class="" type="password" name="new_password2" id="id_new_password2" autocomplete="new-password" required>
+        <p class="">
+            Для подтверждения нового пароля введите его ещё раз.
+        </p>
+
+      <button type="submit">Сохранить</button>
+   </form>
+</body>
+</html>
