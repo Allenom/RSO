@@ -189,7 +189,7 @@ section.user-registration-form .wrapper {
   align-items: center;
   cursor: pointer;
   position: absolute;
-  bottom: 32px;
+  bottom: 40px;
   /* z-index: 1; */
   justify-content: space-between;
 }
