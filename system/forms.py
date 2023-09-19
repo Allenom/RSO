@@ -33,7 +33,8 @@ class CreateUserForm(forms.ModelForm):
 
     telephone = forms.CharField(label='Телефон')
     patronymic = forms.CharField(label='Отчество')
-    date_of_birth = forms.DateField(label='Дата рождения')
+    date_of_birth = forms.DateField(label='Дата рождения',
+                                    widget=forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'))
 
     # institution = forms.ModelChoiceField(required=False, queryset=Institution.objects)
 
@@ -80,6 +81,7 @@ class ProfilePersonalEditForm(forms.ModelForm):
 
 class UserPersonalEditForm(forms.ModelForm):
     """Настройки личных данных пользователя"""
+
     class Meta:
         model = User
         fields = ('last_name', 'first_name')
@@ -95,9 +97,6 @@ class ProfilePrivacyEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('privacy_telephone', 'privacy_email', 'privacy_social', 'privacy_about', 'privacy_photo')
-
-
-
 
 # class UserLoginEditForm(forms.Form):
 #     """Настройки системные логин"""
