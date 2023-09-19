@@ -58,6 +58,7 @@ class ProfilePageEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('about', 'photo1', 'photo2', 'photo3', 'photo4')
+        widgets = {'about': forms.Textarea(attrs={'rows': 3}), }
 
 
 class ProfilePersonalEditForm(forms.ModelForm):
@@ -74,6 +75,7 @@ class ProfilePersonalEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('patronymic', 'last_name_lat', 'first_name_lat', 'patronymic_lat', 'date_of_birth', 'gender')
+        widgets = {'date_of_birth': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'), }
 
 
 class UserPersonalEditForm(forms.ModelForm):
