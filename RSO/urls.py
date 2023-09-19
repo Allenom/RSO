@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
-from django.urls import path
+from django.urls import path, reverse_lazy
 
 from system.views import SignUp, lk_page, ProfilePrivacyEditView, page
 
@@ -37,7 +37,9 @@ urlpatterns = [
          name='profile_settings_my_page'),
     path("profile/profile_settings/personal/", page, {'template': 'profile/profile_settings/personal.html'},
          name='profile_settings_personal'),
-    path("profile/profile_settings/system", PasswordChangeView.as_view(template_name='profile/profile_settings/test.html'),
+    path("profile/profile_settings/system",
+         PasswordChangeView.as_view(template_name='profile/profile_settings/system.html',
+                                    success_url=reverse_lazy("profile")),
          name='profile_settings_system'),
     path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='profile_settings_privacy'),
 
