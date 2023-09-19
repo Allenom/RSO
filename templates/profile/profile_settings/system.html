@@ -45,13 +45,13 @@
                <div class="login-password-my-page__login-top-wrap">
                   <div class="login-password-my-page__login-top-heading">
                      <h2>Ваш логин: </h2>
-                     <p>login</p>
+                     <p>{{request.user.username}}</p>
                   </div>
-                  <!-- карандаш, изменить -->
-                  <div class="login-password-my-page__login-to-change">
-                     <img src="{% static 'images/icons/edit_duotone_line.svg' %}" alt="logo">
-                     <p><a href="#">Изменить</a></p>
-                  </div>
+                  <!-- карандаш, изменить, пока спрятал -->
+<!--                  <div class="login-password-my-page__login-to-change">-->
+<!--                     <img src="{% static 'images/icons/edit_duotone_line.svg' %}" alt="logo">-->
+<!--                     <p><a href="#">Изменить</a></p>-->
+<!--                  </div>-->
                </div>
 
                <div class="login-password-my-page__login-button">
