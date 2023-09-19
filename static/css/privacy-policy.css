@@ -144,12 +144,13 @@ button a {
 }
 
 .privacy-policy__container h3 {
+    max-width: 800px;
     font-family: 'Akrobat';
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
     margin-bottom: 40px;
-    width: 800px;
+    color: #35383F;
 }
 
 .privacy-policy__info a {
@@ -176,6 +177,7 @@ ol {
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
+    color: #35383F;
 
 }
 
@@ -199,49 +201,63 @@ ol {
 }
 
 /* Адаптив Страницы Политика конфиденциальности */
-/* 1024px */
-@media(max-width:1200px) {
-    .container {
-        display: flex;
-        justify-content: center;
-        width: 812px;
-    }
+
+@media(max-width:1290px) {
+.privacy-policy__container{
+margin: 60px 20px;
+}
 }
 
-/* 768 */
-@media(max-width:950px) {
-    .privacy-policy__container {
-        width: 620px;
-    }
-
-    .privacy-policy__container h3 {
-        width: 585px;
-    }
+@media(max-width:600px) {
+.privacy-policy__container{
+padding: 40px 30px
+}
+.privacy-policy__container h2{
+ font-size: 34px;
 }
 
-/* 360px */
-@media(max-width:400px) {
-    .container {
-        width: 328px;
-    }
+.privacy-policy__container h3{
+font-size: 26px;
+}
+}
 
-    .privacy-policy__container {
-        width: 296px;
-        margin-top: 40px;
-        margin-bottom: 60px;
-        padding: 20px 16px 20px 20px;
-    }
+@media(max-width:420px){
+.privacy-policy__container h2{
+ font-size: 27px;
+}
+.privacy-policy__container h3{
+font-size: 19px;
+}
 
-    .privacy-policy__container h2 {
-        font-size: 32px;
-    }
+.privacy-policy__info-title{
+font-size: 15px;
+}
 
-    .privacy-policy__container h3 {
-        width: 280px;
-        font-size: 20px;
-    }
+.privacy-policy__info-subtitle{
+font-size: 12px;
+}
+.privacy-policy__info a{
+font-size: 12px;
+}
+}
 
-    .privacy-policy__info-title {
-        font-size: 15px;
-    }
+@media(max-width:344px){
+.privacy-policy__container h2{
+ font-size: 20px;
+ margin-bottom: 30px;
+}
+.privacy-policy__container h3{
+font-size: 16px;
+margin-bottom: 30px;
+}
+
+.privacy-policy__info-title{
+font-size: 12px;
+}
+.privacy-policy__info-subtitle{
+font-size: 10px;
+}
+.privacy-policy__info a{
+font-size: 10px;
+}
 }
