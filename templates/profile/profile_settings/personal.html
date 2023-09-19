@@ -21,6 +21,11 @@
 <!--Стили добавить если нужно-->
 {% endblock %}
 {% block content %}
+<form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
      <!-- Настройки профиля -->
      <section class="profile-settings-top">
       <div class="container">
@@ -164,6 +169,7 @@
             Для вступления в РСО внесите ниже персональные данные
           </p>
           <form action="#" method="post"  id="accordion-form" enctype="multipart/form-data">
+              {% csrf_token %}
        <div class="accordion" id="insurance-steps">
         <div class="card">
           <div class="accordion-header" id="headingOne">
@@ -341,6 +347,7 @@
                 <div class="form-field">
                   <label for="patronymic">Отчество</label>
                   <input
+                    name = "patronymic"
                     type="text"
                     id="patronomyc"
                     class="input-big"
@@ -4174,7 +4181,7 @@
       </p>
     </div>
     <button type="submit" class="user-data__btn" id="submit-btn" disabled>
-      Отправить данные на верификацию
+      Сохранить изменения
     </button>
     </form>
         </div>

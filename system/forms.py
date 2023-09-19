@@ -61,7 +61,7 @@ class ProfilePageEditForm(forms.ModelForm):
 
 
 class ProfilePersonalEditForm(forms.ModelForm):
-    """Настройки личных данных"""
+    """Настройки личных данных профиля"""
 
     # член рсо (по его мнению)
     # Фамилия, имя, отчество, пол, фамилия(лат), имя(лат), отчество (лат), дата рождения
@@ -73,7 +73,14 @@ class ProfilePersonalEditForm(forms.ModelForm):
     # откуда узнали про рсо
     class Meta:
         model = Profile
-        fields = ('about', 'photo1', 'photo2', 'photo3', 'photo4')
+        fields = ('patronymic', 'last_name_lat', 'first_name_lat', 'patronymic_lat', 'date_of_birth', 'gender')
+
+
+class UserPersonalEditForm(forms.ModelForm):
+    """Настройки личных данных пользователя"""
+    class Meta:
+        model = User
+        fields = ('last_name', 'first_name')
 
 
 class UserPasswordEditForm(PasswordChangeForm):
