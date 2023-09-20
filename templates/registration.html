@@ -9,6 +9,11 @@
 {% endblock %}
 {% block content %}
 
+<form enctype="multipart/form-data" method="post">
+	{% csrf_token %}
+    {{ form.as_p }}
+	<button type="submit" style="padding: 10px">Зарегаться</button>
+</form>
 <!--        <div class="form_wrapper">
             <h1 class="page_title">Регистрация</h1>
 
@@ -18,190 +23,152 @@
             </form>
         </div>-->
 <!-- Форма регистрации  -->
-<article class="user-reg">
-	<section class="user-registration registration">
-		<div class="container">
-			<div class="user-registration__container ">
-				<div class="user-registration__form-wrapper">
-					<div class="user-registration__form-container form__wrapper">
-						<form action="#" class="user__form-registration reg-form" id="form">
-							<div class="user-registration__title">
-								<h2>Регистрация</h2>
+<article class="user-registration">
+		<section class="user-registration-form">
+			<div class="wrapper-form">
+				<!-- Форма регистрации  -->
+				<form class="form user-registration" id="registration" method="post" action="#"
+					enctype="multipart/form-data" spellcheck="true">
+					<fieldset form="registration">
+						<legend>Регистрация</legend>
+						<!-- Поле поиска региона -->
+						<div class="wrapper">
+							<div class="select-btn">
+								<span>
+									<p>Выберите регион обучения</p>
+								</span>
+								<img src="/static/images/icons/angel-down-form.svg" alt="">
 							</div>
-							<div class="wrapper">
-								<div class="select-btn">
-									<span>Выберите регион</span>
-									<img src="/static/images/icons/angel-up.svg" alt="">
+							<div class="content">
+								<div class="search">
+									<label for="region-search">Найти регион</label>
+									<input form="registration" spellcheck="false" list="region" type="search"
+										id="region-search" name="q" autocomplete="address-level1"
+										placeholder="Начинай набирать.." />
 								</div>
-								<!-- Поле поиска региона -->
-								<div class="content">
-									<div class="search">
-										<input spellcheck="false" type="text" placeholder="search" />
-									</div>
-									<ul class="options"></ul>
+								<!-- <div class="region-list"> -->
+								<ul id="region" class="options">
+									<p></p>
+								</ul>
+								<!-- </div> -->
+							</div>
+						</div>
+
+						<!-- Фамилия -->
+						<div class="form-field">
+							<label for="surname">Фамилия</label>
+							<input form="registration" type="text" name="surname" id="surname"
+								autocomplete="family-name" placeholder="Фамилия" />
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<div class="error"></div>
+						</div>
+
+						<!-- Имя -->
+						<div class="form-field">
+							<label for="name">Имя</label>
+							<input form="registration" type="text" name="name" id="name" autocomplete="name"
+								placeholder="Имя" />
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<div class="error"></div>
+						</div>
+
+						<!-- Отчество -->
+						<div class="form-field">
+							<label for="patronymic">Отчество</label>
+							<input form="registration" type="text" name="patronymic" id="patronymic"
+								autocomplete="patronymic" placeholder="Отчество (при наличии)" />
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<div class="error"></div>
+						</div>
+
+						<!-- Номер телефона -->
+						<div class="form-field">
+							<label for="phone">Введите номер телефона</label>
+							<input form="registration" type="number" name="phone" id="phone" autocomplete="tel"
+								placeholder="+7 (999) 999-99-99" />
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<div class="error"></div>
+						</div>
+
+						<!--Почта-->
+						<div class="form-field">
+							<label for="email">Укажите электронную почту</label>
+							<input form="registration" type="text" name="email" id="email" autocomplete="email"
+								placeholder="Электронная почта" />
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<div class="error"></div>
+						</div>
+
+						<!-- Придумайте логин -->
+						<div class="form-field">
+							<label for="username">Придумайте логин</label>
+							<input form="registration" type="text" name="username" id="username" autocomplete="username"
+								placeholder="Придумайте логин" />
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<div class="error"></div>
+						</div>
+
+						<!-- Придумайте пароль -->
+						<div class="input-box">
+							<label for="password">Придумайте пароль</label>
+							<input form="registration" type="password" name="password" id="password"
+								autocomplete="password" placeholder="Придумайте пароль" />
+							<div class="icon-show">
+								<!-- <img id="togglePassword" src="/static/images/icons/eye-slash.svg" alt=""
+									onclick="togglePass()" id="show"> -->
+								<img src="/static/images/icons/eye-slash.svg" alt="" onclick="togglePass()" id="hide">
+								<img src="/static/images/icons/eye-open.svg" alt="" onclick="togglePass()" id="show">
+							</div>
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<div class="error"></div>
+						</div>
+
+						<!-- Повторите пароль -->
+						<div class="input-box">
+							<div class="repeat-password">
+								<label for="repeat-password">Повторите пароль</label>
+								<input form="registration" type="password" name="repeat-password" id="repeat-password"
+									autocomplete="password" placeholder="Повторите пароль" />
+								<div class="icon-show">
+									<!-- <img id="togglePasswordConfirm" src="/static/images/icons/eye-slash.svg" alt=""
+										onclick="togglePassConfirm()" id="show_repeat"> -->
+									<img src="/static/images/icons/eye-slash.svg" alt="" onclick="togglePassConfirm()"
+										id="hide_repeat">
+									<img src="/static/images/icons/eye-open.svg" alt="" onclick="togglePassConfirm()"
+										id="show_repeat">
 								</div>
 							</div>
-							<!-- Фамилия -->
-							<div class="user-registration__input-box form-field">
-								<input class="user-registration__input-surname" type="text" name="surname" id="surname"
-									placeholder="Фамилия" />
-								<!-- JS Текст об ошибке неверно введённого зачения -->
-								<!-- <div class="user-registration__text-error error"></div> -->
-							</div>
-							<!-- Имя -->
-							<div class="user-registration__input-box form-field">
-								<input class="user-registration__input-name" type="text" name="name" id="name"
-									placeholder="Имя" />
-								<!-- JS Текст об ошибке неверно введённого зачения -->
-								<!-- <div class="user-registration__text-error error"></div> -->
-							</div>
-							<!-- Отчество -->
-							<div class="user-registration__input-box form-field">
-								<input class="user-registration__input-patronymic" type="text" name="patronymic"
-									id="patronymic" placeholder="Отчество (не обязательно для заполнения)" />
-								<!-- JS Текст об ошибке неверно введённого зачения -->
-								<!-- <div class="user-registration__text-error error"></div> -->
-							</div>
-							<!-- Номер телефона -->
-							<div class="user-registration__input-box user-registration__input-box form-field">
-								<input class="user-registration__input-phone" type="text" name="phone" id="phone"
-									placeholder="+7 (999) 999-99-99" />
-								<!-- JS Текст об ошибке неверно введённого зачения -->
-								<!-- <div class="user-registration__text-error error"></div> -->
-							</div>
-							<!--Почта-->
-							<div class="user-registration__input-box form-field">
-								<input class="user-registration__input-email" type="text" name="email" id="email"
-									placeholder="Электронная почта" />
-								<!-- JS Текст об ошибке неверно введённого зачения -->
-								<!-- <div class="user-registration__text-error error"></div> -->
-							</div>
-							<!-- Придумайте логин -->
-							<div class="user-registration__input-box form-field">
-								<input class="user-registration__input-login" type="text" name="username" id="username"
-									placeholder="Придумайте логин" />
-								<!-- JS Текст об ошибке неверно введённого зачения -->
-								<!-- <div class="user-registration__text-error error"></div> -->
-							</div>
-							<!-- Придумайте пароль -->
-							<div class="user-registration__input-box form-field">
-								<input class="user-registration__input-password" type="password" name="password"
-									id="password" placeholder="Придумайте пароль" />
-								<svg width="24" height="25" viewBox="0 0 20 20" fill="none" onclick="togglePass()"
-									id="show" xmlns="http://www.w3.org/2000/svg">
-									<g id="vuesax/linear/eye">
-										<g id="eye">
-											<path id="Vector"
-												d="M12.9842 10.0009C12.9842 11.6509 11.6509 12.9842 10.0009 12.9842C8.35091 12.9842 7.01758 11.6509 7.01758 10.0009C7.01758 8.35091 8.35091 7.01758 10.0009 7.01758C11.6509 7.01758 12.9842 8.35091 12.9842 10.0009Z"
-												stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-											<path id="Vector_2"
-												d="M9.99987 16.8913C12.9415 16.8913 15.6832 15.1579 17.5915 12.1579C18.3415 10.9829 18.3415 9.00794 17.5915 7.83294C15.6832 4.83294 12.9415 3.09961 9.99987 3.09961C7.0582 3.09961 4.31654 4.83294 2.4082 7.83294C1.6582 9.00794 1.6582 10.9829 2.4082 12.1579C4.31654 15.1579 7.0582 16.8913 9.99987 16.8913Z"
-												stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-										</g>
-									</g>
-								</svg>
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<div class="error"></div>
+						</div>
 
-								<svg width="24" height="25" viewBox="0 0 24 25" fill="none"
-									xmlns="http://www.w3.org/2000/svg" onclick="togglePass()" class="fa-eye-slash"
-									id="hide">
-									<path
-										d="M14.5309 9.97188L9.4709 15.0319C8.8209 14.3819 8.4209 13.4919 8.4209 12.5019C8.4209 10.5219 10.0209 8.92188 12.0009 8.92188C12.9909 8.92188 13.8809 9.32188 14.5309 9.97188Z"
-										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-										stroke-linejoin="round" />
-									<path
-										d="M17.8198 6.26852C16.0698 4.94852 14.0698 4.22852 11.9998 4.22852C8.46984 4.22852 5.17984 6.30852 2.88984 9.90852C1.98984 11.3185 1.98984 13.6885 2.88984 15.0985C3.67984 16.3385 4.59984 17.4085 5.59984 18.2685"
-										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-										stroke-linejoin="round" />
-									<path
-										d="M8.4209 20.0297C9.5609 20.5097 10.7709 20.7697 12.0009 20.7697C15.5309 20.7697 18.8209 18.6897 21.1109 15.0897C22.0109 13.6797 22.0109 11.3097 21.1109 9.89969C20.7809 9.37969 20.4209 8.88969 20.0509 8.42969"
-										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-										stroke-linejoin="round" />
-									<path d="M15.5095 13.2012C15.2495 14.6112 14.0995 15.7612 12.6895 16.0212"
-										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-										stroke-linejoin="round" />
-									<path d="M9.46902 15.0293L1.99902 22.4993" stroke="#898989" stroke-width="1.5"
-										stroke-linecap="round" stroke-linejoin="round" />
-									<path d="M21.9993 2.5L14.5293 9.97" stroke="#898989" stroke-width="1.5"
-										stroke-linecap="round" stroke-linejoin="round" />
-								</svg>
-								<!-- <i class="fa-regular fa-eye-slash" id="togglePassword"></i> -->
-								<!-- JS Текст об ошибке неверно введённого зачения -->
-								<!-- <div class="user-registration__text-error error"></div> -->
-							</div>
-							<!-- Повторите пароль -->
-							<div class="user-registration__input-box form-field">
-								<input class="user-registration__input-password" type="password" name="repeat-password"
-									id="repeat-password" placeholder="Повторите пароль" />
-								<svg width="24" height="25" viewBox="0 0 20 20" fill="none"
-									onclick="togglePassConfirm()" id="show_repeat" xmlns="http://www.w3.org/2000/svg">
-									<g id="vuesax/linear/eye">
-										<g id="eye">
-											<path id="Vector"
-												d="M12.9842 10.0009C12.9842 11.6509 11.6509 12.9842 10.0009 12.9842C8.35091 12.9842 7.01758 11.6509 7.01758 10.0009C7.01758 8.35091 8.35091 7.01758 10.0009 7.01758C11.6509 7.01758 12.9842 8.35091 12.9842 10.0009Z"
-												stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-											<path id="Vector_2"
-												d="M9.99987 16.8913C12.9415 16.8913 15.6832 15.1579 17.5915 12.1579C18.3415 10.9829 18.3415 9.00794 17.5915 7.83294C15.6832 4.83294 12.9415 3.09961 9.99987 3.09961C7.0582 3.09961 4.31654 4.83294 2.4082 7.83294C1.6582 9.00794 1.6582 10.9829 2.4082 12.1579C4.31654 15.1579 7.0582 16.8913 9.99987 16.8913Z"
-												stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-												stroke-linejoin="round" />
-										</g>
-									</g>
-								</svg>
-
-								<svg width="24" height="25" viewBox="0 0 24 25" fill="none"
-									xmlns="http://www.w3.org/2000/svg" onclick="togglePassConfirm()"
-									class="fa-eye-slash" id="hide_repeat">
-									<path
-										d="M14.5309 9.97188L9.4709 15.0319C8.8209 14.3819 8.4209 13.4919 8.4209 12.5019C8.4209 10.5219 10.0209 8.92188 12.0009 8.92188C12.9909 8.92188 13.8809 9.32188 14.5309 9.97188Z"
-										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-										stroke-linejoin="round" />
-									<path
-										d="M17.8198 6.26852C16.0698 4.94852 14.0698 4.22852 11.9998 4.22852C8.46984 4.22852 5.17984 6.30852 2.88984 9.90852C1.98984 11.3185 1.98984 13.6885 2.88984 15.0985C3.67984 16.3385 4.59984 17.4085 5.59984 18.2685"
-										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-										stroke-linejoin="round" />
-									<path
-										d="M8.4209 20.0297C9.5609 20.5097 10.7709 20.7697 12.0009 20.7697C15.5309 20.7697 18.8209 18.6897 21.1109 15.0897C22.0109 13.6797 22.0109 11.3097 21.1109 9.89969C20.7809 9.37969 20.4209 8.88969 20.0509 8.42969"
-										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-										stroke-linejoin="round" />
-									<path d="M15.5095 13.2012C15.2495 14.6112 14.0995 15.7612 12.6895 16.0212"
-										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
-										stroke-linejoin="round" />
-									<path d="M9.46902 15.0293L1.99902 22.4993" stroke="#898989" stroke-width="1.5"
-										stroke-linecap="round" stroke-linejoin="round" />
-									<path d="M21.9993 2.5L14.5293 9.97" stroke="#898989" stroke-width="1.5"
-										stroke-linecap="round" stroke-linejoin="round" />
-								</svg>
-								<!-- <i class="fa-regular fa-eye-slash" id="togglePasswordConfirm"></i> -->
-								<!-- JS Текст об ошибке неверно введённого зачения -->
-								<!-- <div class="user-registration__text-error error"></div> -->
-							</div>
-							<!-- Даю согласия чек-бокс -->
-							<div class="user-registration__approval check-wrapper">
-								<input class="user-registration__approval-checkbox check" type="checkbox" id="check"
-									value="check" />
-								<p>
-									Даю согласие на обработку моих персональных данных в соответствии с законом от
+						<!-- Даю согласия чек-бокс -->
+						<div class="form-field-checkbox">
+							<label for="checkbox">
+								<input form="registration" class="checkbox" type="checkbox" id="checkbox"
+									value="checkbox" />
+								<p>Даю согласие на обработку моих персональных данных в соответствии с законом от
 									27.07.2006 года № 152-ФЗ «О персональных данных», на условиях и для целей,
-									определенных в Согласии на обработку персональных данных*.
-								</p>
-							</div>
-							<!-- Кнопка Зарегистрироваться -->
-							<button class="user-registrations__button-register reg-form__btn" type="submit">
-								Зарегистрироваться
-							</button>
-							<!-- У меня уже есть аккаунт  -->
-							<div class="user-registrations__link-login GoLogin_wrapper">
-								<a href="#">У меня уже есть аккаунт</a>
-							</div>
-						</form>
-					</div>
-				</div>
+									определенных в Согласии на обработку персональных данных*.</p>
+							</label>
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<div class="error"></div>
+						</div>
+
+						<!-- Кнопка Зарегистрироваться -->
+						<!-- Зарегистрироваться 232*52 В сотоянии Disabled Пока не заполнены поля -->
+						<button class="btn__register" id="registration" type="submit" formtarget="#">
+							Зарегистрироваться
+						</button>
+						<!-- У меня уже есть аккаунт  -->
+						<div class="link-login GoLogin_wrapper GoLogin">
+							<a href="/templates/user-login.html">У меня уже есть аккаунт</a>
+						</div>
+					</fieldset>
+				</form>
 			</div>
-		</div>
-	</section>
-</article>
+		</section>
+	</article>
  <script src="/static/js/script_registration.js"></script>
 <script src="/static/js/form-user-registration.js"></script>
     <!--<form class="main__form" method="post">
@@ -310,3 +277,188 @@
     }
 </script>-->
 {% endblock %}
+<!--
+<article class="user-reg">
+	<section class="user-registration registration">
+		<div class="container">
+			<div class="user-registration__container ">
+				<div class="user-registration__form-wrapper">
+					<div class="user-registration__form-container form__wrapper">
+						<form action="#" class="user__form-registration reg-form" id="form">
+							<div class="user-registration__title">
+								<h2>Регистрация</h2>
+							</div>
+							<div class="wrapper">
+								<div class="select-btn">
+									<span>Выберите регион</span>
+									<img src="/static/images/icons/angel-up.svg" alt="">
+								</div>
+								&lt;!&ndash; Поле поиска региона &ndash;&gt;
+								<div class="content">
+									<div class="search">
+										<input spellcheck="false" type="text" placeholder="search" />
+									</div>
+									<ul class="options"></ul>
+								</div>
+							</div>
+							&lt;!&ndash; Фамилия &ndash;&gt;
+							<div class="user-registration__input-box form-field">
+								<input class="user-registration__input-surname" type="text" name="surname" id="surname"
+									placeholder="Фамилия" />
+								&lt;!&ndash; JS Текст об ошибке неверно введённого зачения &ndash;&gt;
+								&lt;!&ndash; <div class="user-registration__text-error error"></div> &ndash;&gt;
+							</div>
+							&lt;!&ndash; Имя &ndash;&gt;
+							<div class="user-registration__input-box form-field">
+								<input class="user-registration__input-name" type="text" name="name" id="name"
+									placeholder="Имя" />
+								&lt;!&ndash; JS Текст об ошибке неверно введённого зачения &ndash;&gt;
+								&lt;!&ndash; <div class="user-registration__text-error error"></div> &ndash;&gt;
+							</div>
+							&lt;!&ndash; Отчество &ndash;&gt;
+							<div class="user-registration__input-box form-field">
+								<input class="user-registration__input-patronymic" type="text" name="patronymic"
+									id="patronymic" placeholder="Отчество (не обязательно для заполнения)" />
+								&lt;!&ndash; JS Текст об ошибке неверно введённого зачения &ndash;&gt;
+								&lt;!&ndash; <div class="user-registration__text-error error"></div> &ndash;&gt;
+							</div>
+							&lt;!&ndash; Номер телефона &ndash;&gt;
+							<div class="user-registration__input-box user-registration__input-box form-field">
+								<input class="user-registration__input-phone" type="text" name="phone" id="phone"
+									placeholder="+7 (999) 999-99-99" />
+								&lt;!&ndash; JS Текст об ошибке неверно введённого зачения &ndash;&gt;
+								&lt;!&ndash; <div class="user-registration__text-error error"></div> &ndash;&gt;
+							</div>
+							&lt;!&ndash;Почта&ndash;&gt;
+							<div class="user-registration__input-box form-field">
+								<input class="user-registration__input-email" type="text" name="email" id="email"
+									placeholder="Электронная почта" />
+								&lt;!&ndash; JS Текст об ошибке неверно введённого зачения &ndash;&gt;
+								&lt;!&ndash; <div class="user-registration__text-error error"></div> &ndash;&gt;
+							</div>
+							&lt;!&ndash; Придумайте логин &ndash;&gt;
+							<div class="user-registration__input-box form-field">
+								<input class="user-registration__input-login" type="text" name="username" id="username"
+									placeholder="Придумайте логин" />
+								&lt;!&ndash; JS Текст об ошибке неверно введённого зачения &ndash;&gt;
+								&lt;!&ndash; <div class="user-registration__text-error error"></div> &ndash;&gt;
+							</div>
+							&lt;!&ndash; Придумайте пароль &ndash;&gt;
+							<div class="user-registration__input-box form-field">
+								<input class="user-registration__input-password" type="password" name="password"
+									id="password" placeholder="Придумайте пароль" />
+								<svg width="24" height="25" viewBox="0 0 20 20" fill="none" onclick="togglePass()"
+									id="show" xmlns="http://www.w3.org/2000/svg">
+									<g id="vuesax/linear/eye">
+										<g id="eye">
+											<path id="Vector"
+												d="M12.9842 10.0009C12.9842 11.6509 11.6509 12.9842 10.0009 12.9842C8.35091 12.9842 7.01758 11.6509 7.01758 10.0009C7.01758 8.35091 8.35091 7.01758 10.0009 7.01758C11.6509 7.01758 12.9842 8.35091 12.9842 10.0009Z"
+												stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+											<path id="Vector_2"
+												d="M9.99987 16.8913C12.9415 16.8913 15.6832 15.1579 17.5915 12.1579C18.3415 10.9829 18.3415 9.00794 17.5915 7.83294C15.6832 4.83294 12.9415 3.09961 9.99987 3.09961C7.0582 3.09961 4.31654 4.83294 2.4082 7.83294C1.6582 9.00794 1.6582 10.9829 2.4082 12.1579C4.31654 15.1579 7.0582 16.8913 9.99987 16.8913Z"
+												stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</g>
+									</g>
+								</svg>
+
+								<svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+									xmlns="http://www.w3.org/2000/svg" onclick="togglePass()" class="fa-eye-slash"
+									id="hide">
+									<path
+										d="M14.5309 9.97188L9.4709 15.0319C8.8209 14.3819 8.4209 13.4919 8.4209 12.5019C8.4209 10.5219 10.0209 8.92188 12.0009 8.92188C12.9909 8.92188 13.8809 9.32188 14.5309 9.97188Z"
+										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path
+										d="M17.8198 6.26852C16.0698 4.94852 14.0698 4.22852 11.9998 4.22852C8.46984 4.22852 5.17984 6.30852 2.88984 9.90852C1.98984 11.3185 1.98984 13.6885 2.88984 15.0985C3.67984 16.3385 4.59984 17.4085 5.59984 18.2685"
+										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path
+										d="M8.4209 20.0297C9.5609 20.5097 10.7709 20.7697 12.0009 20.7697C15.5309 20.7697 18.8209 18.6897 21.1109 15.0897C22.0109 13.6797 22.0109 11.3097 21.1109 9.89969C20.7809 9.37969 20.4209 8.88969 20.0509 8.42969"
+										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M15.5095 13.2012C15.2495 14.6112 14.0995 15.7612 12.6895 16.0212"
+										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M9.46902 15.0293L1.99902 22.4993" stroke="#898989" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M21.9993 2.5L14.5293 9.97" stroke="#898989" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+								&lt;!&ndash; <i class="fa-regular fa-eye-slash" id="togglePassword"></i> &ndash;&gt;
+								&lt;!&ndash; JS Текст об ошибке неверно введённого зачения &ndash;&gt;
+								&lt;!&ndash; <div class="user-registration__text-error error"></div> &ndash;&gt;
+							</div>
+							&lt;!&ndash; Повторите пароль &ndash;&gt;
+							<div class="user-registration__input-box form-field">
+								<input class="user-registration__input-password" type="password" name="repeat-password"
+									id="repeat-password" placeholder="Повторите пароль" />
+								<svg width="24" height="25" viewBox="0 0 20 20" fill="none"
+									onclick="togglePassConfirm()" id="show_repeat" xmlns="http://www.w3.org/2000/svg">
+									<g id="vuesax/linear/eye">
+										<g id="eye">
+											<path id="Vector"
+												d="M12.9842 10.0009C12.9842 11.6509 11.6509 12.9842 10.0009 12.9842C8.35091 12.9842 7.01758 11.6509 7.01758 10.0009C7.01758 8.35091 8.35091 7.01758 10.0009 7.01758C11.6509 7.01758 12.9842 8.35091 12.9842 10.0009Z"
+												stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+											<path id="Vector_2"
+												d="M9.99987 16.8913C12.9415 16.8913 15.6832 15.1579 17.5915 12.1579C18.3415 10.9829 18.3415 9.00794 17.5915 7.83294C15.6832 4.83294 12.9415 3.09961 9.99987 3.09961C7.0582 3.09961 4.31654 4.83294 2.4082 7.83294C1.6582 9.00794 1.6582 10.9829 2.4082 12.1579C4.31654 15.1579 7.0582 16.8913 9.99987 16.8913Z"
+												stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</g>
+									</g>
+								</svg>
+
+								<svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+									xmlns="http://www.w3.org/2000/svg" onclick="togglePassConfirm()"
+									class="fa-eye-slash" id="hide_repeat">
+									<path
+										d="M14.5309 9.97188L9.4709 15.0319C8.8209 14.3819 8.4209 13.4919 8.4209 12.5019C8.4209 10.5219 10.0209 8.92188 12.0009 8.92188C12.9909 8.92188 13.8809 9.32188 14.5309 9.97188Z"
+										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path
+										d="M17.8198 6.26852C16.0698 4.94852 14.0698 4.22852 11.9998 4.22852C8.46984 4.22852 5.17984 6.30852 2.88984 9.90852C1.98984 11.3185 1.98984 13.6885 2.88984 15.0985C3.67984 16.3385 4.59984 17.4085 5.59984 18.2685"
+										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path
+										d="M8.4209 20.0297C9.5609 20.5097 10.7709 20.7697 12.0009 20.7697C15.5309 20.7697 18.8209 18.6897 21.1109 15.0897C22.0109 13.6797 22.0109 11.3097 21.1109 9.89969C20.7809 9.37969 20.4209 8.88969 20.0509 8.42969"
+										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M15.5095 13.2012C15.2495 14.6112 14.0995 15.7612 12.6895 16.0212"
+										stroke="#898989" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M9.46902 15.0293L1.99902 22.4993" stroke="#898989" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M21.9993 2.5L14.5293 9.97" stroke="#898989" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+								&lt;!&ndash; <i class="fa-regular fa-eye-slash" id="togglePasswordConfirm"></i> &ndash;&gt;
+								&lt;!&ndash; JS Текст об ошибке неверно введённого зачения &ndash;&gt;
+								&lt;!&ndash; <div class="user-registration__text-error error"></div> &ndash;&gt;
+							</div>
+							&lt;!&ndash; Даю согласия чек-бокс &ndash;&gt;
+							<div class="user-registration__approval check-wrapper">
+								<input class="user-registration__approval-checkbox check" type="checkbox" id="check"
+									value="check" />
+								<p>
+									Даю согласие на обработку моих персональных данных в соответствии с законом от
+									27.07.2006 года № 152-ФЗ «О персональных данных», на условиях и для целей,
+									определенных в Согласии на обработку персональных данных*.
+								</p>
+							</div>
+							&lt;!&ndash; Кнопка Зарегистрироваться &ndash;&gt;
+							<button class="user-registrations__button-register reg-form__btn" type="submit">
+								Зарегистрироваться
+							</button>
+							&lt;!&ndash; У меня уже есть аккаунт  &ndash;&gt;
+							<div class="user-registrations__link-login GoLogin_wrapper">
+								<a href="#">У меня уже есть аккаунт</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</article>-->

@@ -193,45 +193,98 @@ button a {
 
 /* Адаптив Страница Пользовательское соглашение*/
 
-/* 1024px */
-@media(max-width:1200px) {
-    .container {
-        display: flex;
-        justify-content: center;
-        width: 892px;
-    }
+@media(max-width:1290px) {
+.user-agreement__container{
+margin: 60px 20px;
+}
 }
 
-/* 768 */
-@media(max-width:950px) {
-    .user-agreement__container {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-
-    .container {
-        width: 700px;
-    }
+@media(max-width:600px) {
+.user-agreement__container{
+padding: 40px 30px
 }
 
-/* 360px */
-@media(max-width:480px) {
-    .container {
-        width: 328px;
-    }
+.user-agreement__container h2{
+ font-size: 34px;
+}
 
-    .user-agreement__container {
-        margin-left: 16px;
-        margin-right: 16px;
-        padding: 20px 16px 10px 16px;
+.user-agreement__container h3{
+font-size: 26px;
+}
+}
 
-    }
 
-    .user-agreement h2 {
-        font-size: 34px;
-    }
+@media(max-width:420px){
+.user-agreement__container h2{
+ font-size: 27px;
+}
+.user-agreement p{
+font-size: 14px;
+}
+.user-agreement a{
+font-size: 14px;
+}
 
-    .user-agreement p {
-        font-size: 14px;
-    }
+.user-agreement__conditions-title {
+font-size: 16px;
+}
+
+.user-agreement__conditions-subtitle{
+font-size: 14px;
+}
+}
+
+@media(max-width:420px){
+.user-agreement__container h2{
+ font-size: 22px;
+ margin-bottom: 40px;
+}
+
+.user-agreement p{
+font-size: 12px;
+}
+.user-agreement a{
+font-size: 12px;
+}
+
+.user-agreement__conditions-title {
+font-size: 12px;
+}
+
+.user-agreement__conditions-subtitle{
+font-size: 12px;
+}
+
+.user-agreement__conditions-title{
+margin-top: 30px;
+}
+}
+
+@media(max-width:300px){
+.user-agreement__container h2{
+ font-size: 20px;
+}
+
+.user-agreement p{
+font-size: 10px;
+}
+.user-agreement a{
+font-size: 10px;
+}
+
+.user-agreement__conditions-title {
+font-size: 12px;
+}
+
+.user-agreement__conditions-subtitle{
+font-size: 10px;
+}
+
+.user-agreement__conditions-enumeration{
+margin-bottom:0px;
+}
+
+.user-agreement__conditions-title{
+margin-top: 22px;
+}
 }

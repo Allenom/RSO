@@ -10,6 +10,6 @@ function togglePass() {
     } else {
         passInput.type = 'password';
         hide.style.display = 'inline';
-        show.style.display = 'none';
+//        show.style.display = 'none';
     }
 }
