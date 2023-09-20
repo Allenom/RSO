@@ -49,15 +49,19 @@ body {
 
 }
 /* ****************ps-my-page*************** */
+section.ps-my-page{
+border:1px solid #222222;
+margin-bottom:80px;
+}
 .ps-my-page__wrapper {
+/*margin:40px;*/
    border-radius: 10px;
-   margin-bottom: 80px;
    border: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 .ps-my-page__title {
    margin: 0;
-   padding: 40px 40px 20px 40px;
+ /*  padding: 40px 40px 20px 40px;*/
 }
 
 .ps-my-page__heading {
@@ -89,7 +93,9 @@ body {
 /* удаляет полосу прокрутки и обводку    resize: none; не дает двигаться*/
 .ps-my-page__textarea-text {
    max-width: 744px;
-   min-height: 84px;
+ /*  min-height: 84px;*/
+ /*height-content:auto;*/
+ height: fit-content;
     border-radius:none;
    border: none;
    outline: none;
@@ -203,13 +209,12 @@ background: none;
 /* -*************************    конец раздела мое фото        ********************** */
 /* ***************************     Адаптив       ******************************* */
 
-@media screen and (max-width:1300px) {
-   .ps-my-page__wrapper {
-   margin-right:7%;
-    margin-left:7%;
-   }
+@media (max-width:1290px){
+section.ps-my-page{
+margin-right:20px;
+margin-left:20px;
 }
-
+}
 @media screen and (max-width:1030px) {
    .ps-my-page__wrapper {
         margin-right: 66px;
@@ -236,11 +241,8 @@ background: none;
 
 @media screen and (max-width:768px) {
    .ps-my-page__wrapper {
-      margin: 0 34px 80px;
-   }
-   .ps-my-page__textarea-text{
-      min-height: 170px;
-      padding-right: 20px;
+          margin-right: 34px;
+    margin-left: 34px;
    }
      .ps-my-page-photos-stub__wrap{
       grid-template-columns: repeat(2, 1fr);
@@ -258,24 +260,21 @@ background: none;
 }
 .ps-my-page-photos-stub__title {
  margin: 0;
+ margin-top: 20px;
 }
 }
 
 @media screen and (max-width:587px) {
-   .ps-my-page__textarea-text {
-      min-height: 180px;
-           padding-right: 10px;
-   }
+
    .ps-my-page-photos-stub__wrap {
       grid-template-columns: repeat(2, 1fr);
          gap:16px;
    }
    .ps-my-page__wrapper {
-      border: none;
       margin: 20px 16px 20px 16px;
    }
    .ps-my-page-photos-stub__title {
-      margin: 20px 0 80px 0;
+    /*  margin: 20px 0 80px 0;*/
    }
 
    .ps-my-page-photos-stub__btn {
@@ -283,49 +282,11 @@ background: none;
       bottom: 8px;
    }
 }
-@media screen and (max-width:500px) {
-   .ps-my-page__textarea-text {
-      min-height: 205px;
-   }
-}
 
-@media screen and (max-width:470px) {
-   .ps-my-page__textarea-text {
-      min-height: 232px;
-   }
-}
-
-@media screen and (max-width:400px) {
-  .ps-my-page__textarea-text{
-      min-height: 262px;
-   }
-
-}
 @media screen and (max-width:360px) {
-  .ps-my-page__textarea-text{
-      min-height: 300px;
-   }
-   .ps-my-page__textarea-wrap {
-   min-height:350px;
-   }
    .ps-my-page-photos-stub__wrap {
       grid-template-columns: repeat(1, 1fr);
    }
 
 }
-@media screen and (max-width:338px){
-.ps-my-page__textarea-wrap {
- min-height: 400px;
-}
- .ps-my-page__textarea-text {
-   min-height:360px;
-   }
-}
-@media screen and (max-width:305px){
-.ps-my-page__textarea-wrap {
- min-height: 440px;
-}
- .ps-my-page__textarea-text {
-   min-height:420px;
-   }
-}
+

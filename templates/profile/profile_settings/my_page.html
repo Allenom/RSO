@@ -164,7 +164,7 @@
                <h3 class="ps-my-page__heading">Кратко о себе</h3>
                <!-- ввод текста о себе -->
                   <div class="ps-my-page__textarea-wrap">
-                     <textarea class="ps-my-page__textarea-text" name="text" value=""  cols="300" rows="4" maxlength="400"></textarea>
+                     <textarea class="ps-my-page__textarea-text" name="text" value=""  cols="300" rows="5" maxlength="400"></textarea>
                      <button class="ps-my-page__textarea-button" type="submit"><img class="ps-my-page__component"
                            src="{% static 'images/img/component 31.svg' %}" alt="component">
                      </button>
@@ -186,7 +186,7 @@
                      <!-- 4 фото -->
                      <!-- заглушка фото и форма загрузки фото -->
                      <div class="ps-my-page-photos-stub__img">
-                        <img src="{% static 'images/img/plug.png' %}" alt="foto">
+                        <img src="{% static 'images/img/plug.png' %}"  onError="this.src={% static 'images/img/plug' %}" alt="foto">
                         <div class="ps-my-page-photos-stub__btn">
                            <button class="ps-my-page-photos-stub__file" type="submit">
                               <img src="{% static 'images/img/cross.png' %}"alt="">
@@ -195,7 +195,7 @@
                      </div>
                      <!-- заглушка  фото -->
                      <div class="ps-my-page-photos-stub__img">
-                        <img src="{% static 'images/img/plug.png' %}" alt="foto">
+                        <img src="{% static 'images/img/plug.png' %}"  onError="this.src={% static 'images/img/plug' %}" alt="foto">
                         <div class="ps-my-page-photos-stub__btn">
                            <button class="ps-my-page-photos-stub__file" type="submit">
                               <img src="{% static 'images/img/cross.png' %}" alt="">
@@ -204,7 +204,7 @@
                      </div>
                      <!-- заглушка фото и форма загрузки фото -->
                      <div class="ps-my-page-photos-stub__img">
-                        <img src="{% static 'images/img/plug.png' %}" alt="foto">
+                        <img src="{% static 'images/img/plug.png' %}"  onError="this.src={% static 'images/img/plug' %}" alt="foto">
                         <div class="ps-my-page-photos-stub__btn">
                            <button class="ps-my-page-photos-stub__file" type="submit">
                               <img src="{% static 'images/img/cross.png' %}" alt="">
@@ -213,7 +213,7 @@
                      </div>
                      <!-- заглушка фото и форма загрузки фото -->
                      <div class="ps-my-page-photos-stub__img">
-                        <img src="{% static 'images/img/plug.png' %}"
+                        <img src="{% static 'images/img/plug.png' %}" onError="this.src={% static 'images/img/plug' %}"
                            alt="foto">
                         <div class="ps-my-page-photos-stub__btn">
                            <button class="ps-my-page-photos-stub__file" type="submit">
