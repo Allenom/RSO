@@ -13,7 +13,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic import CreateView, UpdateView, FormView, TemplateView
 
 from system.forms import CreateUserForm, ProfilePrivacyEditForm, UserPasswordEditForm, UserPersonalEditForm, \
-    ProfilePersonalEditForm
+    ProfilePersonalEditForm, ProfilePageEditForm
 from system.models import Profile
 
 
@@ -107,6 +107,16 @@ class ProfilePersonalEditView(LoginRequiredMixin, UpdateView):
         return super(ProfilePersonalEditView, self).form_valid(form)
 
 
+class ProfilePageEditView(LoginRequiredMixin, UpdateView):
+    login_url = "/login/"
+
+    template_name = 'profile/profile_settings/my_page.html'
+    form_class = ProfilePageEditForm
+    success_url = reverse_lazy('profile_settings_my_page')
+    model = Profile
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile
 
 
 # class UserSystemEditView(TemplateView):
