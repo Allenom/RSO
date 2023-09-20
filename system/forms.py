@@ -75,8 +75,12 @@ class ProfilePersonalEditForm(forms.ModelForm):
     # откуда узнали про рсо
     class Meta:
         model = Profile
-        fields = ('patronymic', 'last_name_lat', 'first_name_lat', 'patronymic_lat', 'date_of_birth', 'gender')
-        widgets = {'date_of_birth': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'), }
+        fields = ('patronymic', 'last_name_lat', 'first_name_lat', 'patronymic_lat', 'date_of_birth', 'gender',
+                  'telephone')
+        widgets = {
+            'date_of_birth': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
+            # 'telephone': forms.TextInput(attrs={'data-mask': "000-000-0000"}),
+        }
 
 
 class UserPersonalEditForm(forms.ModelForm):
