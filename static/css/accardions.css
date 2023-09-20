@@ -328,26 +328,6 @@ input[type="radio"] {
   margin-top: 16px;
 }
 
-.form-field svg {
-  position: absolute;
-  right: 2rem;
-  top: 2.4rem;
-  cursor: pointer;
-}
-
-.small-svg svg {
-  position: absolute;
-  right: 17.7rem;
-  top: 2.4rem;
-  cursor: pointer;
-}
-
-.full-svg svg {
-  position: absolute;
-  right: 2rem;
-  top: 2.4rem;
-  cursor: pointer;
-}
 
 .file-error {
   font-size: 12px;
