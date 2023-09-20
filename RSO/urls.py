@@ -13,11 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
-from django.urls import path
+from django.urls import path, reverse_lazy
 
-from system.views import SignUp, lk_page, ProfilePrivacyEditView, page
+from RSO import settings
+from system.views import SignUp, lk_page, ProfilePrivacyEditView, page, ProfilePersonalEditView, ProfilePageEditView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,11 +35,11 @@ urlpatterns = [
     path("profile/my_page/", lk_page, name='profile'),
 
     # Настройки профиля
-    path("profile/profile_settings/my_page/", page, {'template': 'profile/profile_settings/my_page.html'},
-         name='profile_settings_my_page'),
-    path("profile/profile_settings/personal/", page, {'template': 'profile/profile_settings/personal.html'},
-         name='profile_settings_personal'),
-    path("profile/profile_settings/system", PasswordChangeView.as_view(template_name='profile/profile_settings/test.html'),
+    path("profile/profile_settings/my_page/", ProfilePageEditView.as_view(), name='profile_settings_my_page'),
+    path("profile/profile_settings/personal/", ProfilePersonalEditView.as_view(), name='profile_settings_personal'),
+    path("profile/profile_settings/system/",
+         PasswordChangeView.as_view(template_name='profile/profile_settings/system.html',
+                                    success_url=reverse_lazy("profile")),
          name='profile_settings_system'),
     path("profile/profile_settings/privacy/", ProfilePrivacyEditView.as_view(), name='profile_settings_privacy'),
 
@@ -46,4 +48,4 @@ urlpatterns = [
     path("privacy_policy/", page, {'template': 'privacy_policy.html'}, name='privacy_policy'),
     path("terms_of_use/", page, {'template': 'terms_of_use.html'}, name='terms_of_use'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

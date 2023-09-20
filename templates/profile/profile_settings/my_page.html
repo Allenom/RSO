@@ -7,9 +7,16 @@
 <link rel="stylesheet" href="{% static 'css/user-page.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <link rel="stylesheet" href="{% static 'css/forms.css' %}" />
+<link rel="stylesheet" href="{% static 'css/my-page-baner.css' %}">
 {% endblock %}
 
 {% block content %}
+<form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
+{% include "layout/profile_cap.html" %}
     <!-- Настройки профиля -->
     <!-- <section class="profile-settings-top">
       <div class="container">
@@ -164,7 +171,7 @@
                <h3 class="ps-my-page__heading">Кратко о себе</h3>
                <!-- ввод текста о себе -->
                   <div class="ps-my-page__textarea-wrap">
-                     <textarea class="ps-my-page__textarea-text" name="text" value=""  cols="300" rows="4" maxlength="400"></textarea>
+                     <textarea class="ps-my-page__textarea-text" name="about" cols="300" rows="5" maxlength="400">{{user.profile.about}}</textarea>
                      <button class="ps-my-page__textarea-button" type="submit"><img class="ps-my-page__component"
                            src="{% static 'images/img/component 31.svg' %}" alt="component">
                      </button>
@@ -186,7 +193,11 @@
                      <!-- 4 фото -->
                      <!-- заглушка фото и форма загрузки фото -->
                      <div class="ps-my-page-photos-stub__img">
-                        <img src="{% static 'images/img/plug.png' %}" alt="foto">
+                        {% if user.profile.photo1 %}
+                        <img src="{{user.profile.photo1.url}}" onError="this.src={% static 'images/img/plug.png' %}" alt="Пользовательское фото 1">
+                        {% else %}
+                        <img src="{% static 'images/img/plug.png' %}" alt="Пользовательское фото 1 (пустое)">
+                        {% endif %}
                         <div class="ps-my-page-photos-stub__btn">
                            <button class="ps-my-page-photos-stub__file" type="submit">
                               <img src="{% static 'images/img/cross.png' %}"alt="">
@@ -195,7 +206,11 @@
                      </div>
                      <!-- заглушка  фото -->
                      <div class="ps-my-page-photos-stub__img">
-                        <img src="{% static 'images/img/plug.png' %}" alt="foto">
+                        {% if user.profile.photo2 %}
+                        <img src="{{user.profile.photo2.url}}" onError="this.src={% static 'images/img/plug.png' %}" alt="Пользовательское фото 2">
+                        {% else %}
+                        <img src="{% static 'images/img/plug.png' %}" alt="Пользовательское фото 2 (пустое)">
+                        {% endif %}
                         <div class="ps-my-page-photos-stub__btn">
                            <button class="ps-my-page-photos-stub__file" type="submit">
                               <img src="{% static 'images/img/cross.png' %}" alt="">
@@ -204,7 +219,11 @@
                      </div>
                      <!-- заглушка фото и форма загрузки фото -->
                      <div class="ps-my-page-photos-stub__img">
-                        <img src="{% static 'images/img/plug.png' %}" alt="foto">
+                        {% if user.profile.photo3 %}
+                        <img src="{{user.profile.photo3.url}}" onError="this.src={% static 'images/img/plug.png' %}" alt="Пользовательское фото 3">
+                        {% else %}
+                        <img src="{% static 'images/img/plug.png' %}" alt="Пользовательское фото 3 (пустое)">
+                        {% endif %}
                         <div class="ps-my-page-photos-stub__btn">
                            <button class="ps-my-page-photos-stub__file" type="submit">
                               <img src="{% static 'images/img/cross.png' %}" alt="">
@@ -213,8 +232,11 @@
                      </div>
                      <!-- заглушка фото и форма загрузки фото -->
                      <div class="ps-my-page-photos-stub__img">
-                        <img src="{% static 'images/img/plug.png' %}"
-                           alt="foto">
+                        {% if user.profile.photo4 %}
+                        <img src="{{user.profile.photo4.url}}" onError="this.src={% static 'images/img/plug.png' %}" alt="Пользовательское фото 4">
+                        {% else %}
+                        <img src="{% static 'images/img/plug.png' %}" alt="Пользовательское фото 4 (пустое)">
+                        {% endif %}
                         <div class="ps-my-page-photos-stub__btn">
                            <button class="ps-my-page-photos-stub__file" type="submit">
                              <img src="{% static 'images/img/cross.png' %}" alt="">

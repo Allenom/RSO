@@ -9,6 +9,11 @@
 {% endblock %}
 {% block content %}
 
+<form enctype="multipart/form-data" method="post">
+	{% csrf_token %}
+    {{ form.as_p }}
+	<button type="submit" style="padding: 10px">Зарегаться</button>
+</form>
 <!--        <div class="form_wrapper">
             <h1 class="page_title">Регистрация</h1>
 

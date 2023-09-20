@@ -6,6 +6,37 @@
 <!--Стили добавить если нужно-->
 {% endblock %}
 {% block content %}
+<!--    <form style="margin-bottom: 30px" method="post" enctype="multipart/form-data">-->
+<!--      {% csrf_token %}-->
+<!--      {{ form.non_field_errors }}-->
+<!--        <div style="color:red;">{{ form.old_password.errors }}</div>-->
+<!--        <label class="" for="id_old_password">Старый пароль</label>-->
+<!--        <input class="" type="password" name="old_password" id="id_old_password" autocomplete="current-password" required>-->
+
+<!--        <div style="color:red;">{{ form.new_password1.errors }}</div>-->
+<!--        <label class="" for="id_new_password1">Новый пароль</label>-->
+<!--        <input class="" type="password" name="new_password1" id="id_new_password1" autocomplete="new-password" required>-->
+<!--        <p class="">-->
+<!--            Пароль не должен быть слишком похож на другую вашу личную информацию, содержать минимум 8 символов.-->
+<!--           <span>-->
+<!--            Пароль не должен быть слишком простым и распространенным.-->
+<!--            </span>-->
+<!--            <span>-->
+<!--            Пароль не может состоять только из цифр.-->
+<!--            </span>-->
+<!--        </p>-->
+<!--        <div style="color:red;">{{ form.new_password2.errors }}</div>-->
+
+<!--        <label class="" for="id_new_password2">Повтор пароля</label>-->
+<!--        <input class="" type="password" name="new_password2" id="id_new_password2" autocomplete="new-password" required>-->
+<!--        <p class="">-->
+<!--            Для подтверждения нового пароля введите его ещё раз.-->
+<!--        </p>-->
+
+<!--      <button type="submit">Сохранить</button>-->
+<!--   </form>-->
+
+
 <main class="login-password-my-page">
       <section class="login-password-my-page__login-top">
          <div class="container">
@@ -14,26 +45,33 @@
                <div class="login-password-my-page__login-top-wrap">
                   <div class="login-password-my-page__login-top-heading">
                      <h2>Ваш логин: </h2>
-                     <p>login</p>
+                     <p>{{request.user.username}}</p>
                   </div>
-                  <!-- карандаш, изменить -->
-                  <div class="login-password-my-page__login-to-change">
-                     <img src="{% static 'images/icons/edit_duotone_line.svg' %}" alt="logo">
-                     <p><a href="#">Изменить</a></p>
-                  </div>
+                  <!-- карандаш, изменить, пока спрятал -->
+<!--                  <div class="login-password-my-page__login-to-change">-->
+<!--                     <img src="{% static 'images/icons/edit_duotone_line.svg' %}" alt="logo">-->
+<!--                     <p><a href="#">Изменить</a></p>-->
+<!--                  </div>-->
                </div>
 
                <div class="login-password-my-page__login-button">
                   <div class="login-password-my-page__login-wrap-button">
                      <h3>Изменить пароль</h3>
+
+
                      <!-- Форма входа -->
                      <form class="login-password-my-page__form-password" id="password-chanch" method="post"
                         enctype="multipart/form-data">
+                         {% csrf_token %}
+                         {{ form.non_field_errors }}
+                         {{ form.old_password.errors }}
+                         {{ form.new_password1.errors }}
+                         {{ form.new_password2.errors }}
                         <!-- Поле Пароль  -->
                         <fieldset form="password-chanch">
                            <div class="login-password-my-page__input-box">
                               <!-- Введите старый пароль -->
-                              <input type="password" name="password" id="oul"
+                              <input type="password" name="old_password" id="oul"
                                  placeholder="Введите старый пароль">
                                  <svg width="24" height="25" viewBox="0 0 20 20" fill="none" onclick="oulPass()" id="oulshow"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +111,7 @@
                            </div>
                            <!-- Придумайте новый пароль -->
                            <div class="login-password-my-page__input-box">
-                              <input type="password" name="password" id="password"
+                              <input type="password" name="new_password1" id="password"
                                  placeholder="Придумайте новый пароль">
                                  <svg width="24" height="25" viewBox="0 0 20 20" fill="none" onclick="togglePass()" id="show"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +150,7 @@
                            </div>
                            <!-- Повторите пароль -->
                            <div class="login-password-my-page__input-box">
-                              <input type="password" name="password" id="repeat_password"
+                              <input type="password" name="new_password2" id="repeat_password"
                                  placeholder="Повторите пароль">
                                  <svg width="24" height="25" viewBox="0 0 20 20" fill="none" onclick="repeaPass()" id="repshow"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -150,20 +188,20 @@
                               </svg>
                            </div>
                         </fieldset>
-                     </form>
-
-                     <!-- кнопка отправки формы -->
-                     <div class="login-password-my-page__button">
-                        <button class="login-password-my-page__button-submit" disabled="disabled"
-                          type="submit" formtarget=" _self">
+                         <div class="login-password-my-page__button">
+                        <button class="login-password-my-page__button-submit" type="submit">
                            <p>Сохранить</p>
                         </button>
                      </div>
+                     </form>
+
+                     <!-- кнопка отправки формы -->
+
                   </div>
                </div>
             </div>
          </div>
       </section>
-  </main>
+
   <script src="/static/js/login_pass.js"></script>
 {% endblock %}

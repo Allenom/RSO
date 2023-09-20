@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}Настройка приватности профиля{% endblock %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/privacy settings.css' %}">
+<link rel="stylesheet" href="{% static 'css/privacy-settings.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <link rel="stylesheet" href="{% static 'css/forms.css' %}" />
 {% endblock %}
@@ -87,11 +87,13 @@
                       <h4 class="profile-settings__title">Кто видит мои фотографии</h4>
                       {{form.privacy_photo}}
                    </div>
+
+                    <div class="profile-settings__button">
+                   <button class="profile-settings__btn btn__save profile-settings__link" type="submit">Сохранить</button>
+                    </div>
                  </form>
                 <!-- кнопка отправка формы -->
-                <div class="profile-settings__button">
-                   <button class="profile-settings__btn btn__save profile-settings__link" type="submit">Сохранить</button>
-                </div>
+
 
              </div>
           </div>

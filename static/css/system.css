@@ -38,7 +38,10 @@ p {
    max-width: 1180px;
    margin: 0 auto;
 }
-
+.login-password-my-page__login-top{
+margin-bottom:80px;
+border: 2px solid red;
+}
 /* Форма входа */
 .login-password-my-page__wrapper {
    max-width: 480px;
