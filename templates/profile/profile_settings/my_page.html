@@ -13,11 +13,6 @@
 {% endblock %}
 
 {% block content %}
-<form method="post" enctype="multipart/form-data" >
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Сохранить изменения</button>
-</form>
    <!-- Настройки профиля Хлебные крошки-->
    <section class="ps-nav">
       <div class="container">
@@ -57,7 +52,7 @@
             <nav class="ps__navigation">
                 <ul class="ps__navigation-links-list tab-header">
                     <li data-tab-ps__navigation="1" class="ps__my-page tab-title-navigation active">
-                        <a href="/templates/ps-my-page.html">Моя страница</a>
+                        <a style="background: #1C5C94;color: #ffffff;" href="/templates/ps-my-page.html">Моя страница</a>
                     </li>
                     <li data-tab-ps__navigation="2"class="ps__personal-data tab-title-navigation">
                         <a href="/templates/ps-personal-data.html">Персональные данные</a>
@@ -74,30 +69,31 @@
         </section>
      <!-- Настрой профиля: Моя страница -->
    <!-- Настрой профиля: Моя страница: Кратко о себе -->
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
    <section class="about-me">
       <div class="container">
          <div class="wrapper">
             <!-- Форма Кратко о себе  -->
-            <form id="about" action="textarea.php" enctype="multipart/form-data" method="post">
+            <div id="about">
                <fieldset form="about">
                  <legend>Кратко о себе</legend>
                   <div class="textarea-wrapper">
                      <label for="about-me">Кратко о себе</label>
-                     <textarea form="about" id="about-me" type="text" maxlength="400" name="about-me" rows="5" cols="33" spellcheck="true" wrap="hard">
-                     </textarea>
+                     <textarea id="about-me" type="text" maxlength="400" name="about" rows="5" cols="33" spellcheck="true">{{user.profile.about | default:''}}</textarea>
                   </div>
                   <div class="counter">
                      <output form="about" for="about-me" id="about" name="counter"></output>
                      <p class="total">/400</p>
                   </div>
                   <!-- Очистить Сохранить -->
-                  <div class="btn__save-reset">
-                     <button form="about" type="reset">Очистить</button>
-                     <label for="about-me_save">Кратко о себе</label>
-                     <input class="btn__save" form="about" id="about-me_save" type="submit" name="about-me_save" formtarget="#" value="Сохранить">
-                  </div>
+<!--                  <div class="btn__save-reset">-->
+<!--                     <button form="about" type="reset">Очистить</button>-->
+<!--                     <label for="about-me_save">Кратко о себе</label>-->
+<!--                     <input class="btn__save" form="about" id="about-me_save" type="submit" name="about-me_save" formtarget="#" value="Сохранить">-->
+<!--                  </div>-->
                </fieldset>
-             </form>
+             </div>
          </div>
       </div>
    </section>
@@ -107,7 +103,7 @@
       <div class="container">
          <div class="my-photo-wrapper">
             <!-- Форма Мои фото  -->
-            <form id="my_photo" action="my_photo.php" enctype="multipart/form-data" method="post">
+            <div id="my_photo">
                <fieldset form="my_photo">
                   <legend>Мои фото</legend>
 
@@ -115,12 +111,18 @@
                   <div class="avatar-upload my_photo__edit">
                      <!-- Заглушка по умолчанию  -->
                      <div class="avatar-preview my_photo__plug" id="imagePreview">
-                        <img src="/static/images/profile-settings/my-photo-plug.png" alt="">
+                         {% if user.profile.photo1 %}
+                         <img src="{{user.profile.photo1.url}}" alt="">
+                         {% else %}
+                         <img src="/static/images/profile-settings/my-photo-plug.png" alt="">
+                         {% endif %}
                      </div>
                      <!-- Добавить фото -->
                      <div class="avatar-edit my_photo__add">
-                        <label for="my_photo_add"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
-                        <input form="my_photo" type="file" id="imageUpload" name="my_photo_add" accept=".png, .jpg, .jpeg" />
+                        <label for="imageUpload">
+                            <img style="cursor:pointer;" src="/static/images/icons/pen-circle.svg" alt="">
+                            <input type="file" id="imageUpload" name="photo1" accept="image/*" />
+                        </label>
                      </div>
                   </div>
 
@@ -128,12 +130,18 @@
                   <div class="avatar-upload my_photo__edit">
                      <!-- Заглушка по умолчанию  -->
                      <div class="avatar-preview my_photo__plug" id="imagePreview">
-                        <img src="/static/images/profile-settings/album1-14.jpg" alt="">
+                         {% if user.profile.photo2 %}
+                         <img src="{{user.profile.photo2.url}}" alt="">
+                         {% else %}
+                         <img src="/static/images/profile-settings/my-photo-plug.png" alt="">
+                         {% endif %}
                      </div>
                      <!-- Добавить фото -->
                      <div class="avatar-edit my_photo__add">
-                        <label for="my_photo_add"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
-                        <input form="my_photo" type="file" id="imageUpload" name="my_photo_add" accept=".png, .jpg, .jpeg" />
+                        <label for="imageUpload">
+                            <img style="cursor:pointer;" src="/static/images/icons/pen-circle.svg" alt="">
+                            <input type="file" id="imageUpload" name="photo2" accept="image/*" />
+                        </label>
                      </div>
                   </div>
 
@@ -141,12 +149,18 @@
                   <div class="avatar-upload my_photo__edit">
                      <!-- Заглушка по умолчанию  -->
                      <div class="avatar-preview my_photo__plug" id="imagePreview">
-                        <img src="/static/images/profile-settings/album1-15.jpg" alt="">
+                         {% if user.profile.photo3 %}
+                         <img src="{{user.profile.photo3.url}}" alt="">
+                         {% else %}
+                         <img src="/static/images/profile-settings/my-photo-plug.png" alt="">
+                         {% endif %}
                      </div>
                      <!-- Добавить фото -->
                      <div class="avatar-edit my_photo__add">
-                        <label for="my_photo_add"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
-                        <input form="my_photo" type="file" id="imageUpload" name="my_photo_add" accept=".png, .jpg, .jpeg" />
+                        <label for="imageUpload">
+                            <img style="cursor:pointer;" src="/static/images/icons/pen-circle.svg" alt="">
+                            <input type="file" id="imageUpload" name="photo3" accept="image/*" />
+                        </label>
                      </div>
                   </div>
 
@@ -154,25 +168,32 @@
                   <div class="avatar-upload my_photo__edit">
                      <!-- Заглушка по умолчанию  -->
                      <div class="avatar-preview my_photo__plug" id="imagePreview">
-                        <img src="/static/images/profile-settings/my-photo-plug.png" alt="">
+                         {% if user.profile.photo4 %}
+                         <img src="{{user.profile.photo4.url}}" alt="">
+                         {% else %}
+                         <img src="/static/images/profile-settings/my-photo-plug.png" alt="">
+                         {% endif %}
                      </div>
                      <!-- Добавить фото -->
                      <div class="avatar-edit my_photo__add">
-                        <label for="my_photo_add"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
-                        <input form="my_photo" type="file" id="imageUpload" name="my_photo_add" accept=".png, .jpg, .jpeg" />
+                        <label for="imageUpload">
+                            <img style="cursor:pointer;" src="/static/images/icons/pen-circle.svg" alt="">
+                            <input type="file" id="imageUpload" name="photo4" accept="image/*" />
+                        </label>
                      </div>
                   </div>
                </fieldset>
                   <!-- Очистить Сохранить -->
                   <div class="btn__save-reset">
-                  <button form="my_photo" type="reset">Очистить</button>
+<!--                  <button form="my_photo" type="reset">Очистить</button>-->
                   <label for="my_photo_save">Сохранить</label>
-                  <input class="btn__save" form="my_photo" id="my_photo_save" type="submit" name="my_photo_save" formtarget="#" value="Сохранить">
+                  <input class="btn__save" id="my_photo_save" type="submit" name="my_photo_save" value="Сохранить">
                </div>
-               </form>
+               </div>
          </div>
       </div>
    </section>
+    </form>
    <script src="/static/js/profile/profile_settings/textarea-counter.js"></script>
    <!-- <script src="/static/js/profile/profile_settings/my-photo-upload.js"></script> -->
    <!-- <script src="/static/js/profile/profile_settings/file-upload.js"></script> -->
