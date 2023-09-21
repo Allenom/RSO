@@ -280,7 +280,8 @@ input[type="radio"] {
   margin-bottom: 80px;
 }
 
-#know {
+.know {
+  width: 100%;
   border: 1px solid #a3a3a3;
   margin-top: 8px;
       outline: none;

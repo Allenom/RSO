@@ -38,10 +38,6 @@
         width: 386px;
     }
 
-    .input-full {
-        width: 100%;
-    }
-
     .select-big {
         width: 386px;
     }
@@ -108,7 +104,6 @@
     }
 
     .data-form {
-        grid-template-columns: 1fr 1fr;
         grid-column-gap: 30px;
     }
 
@@ -117,7 +112,6 @@
     }
 
     .izm {
-        grid-template-columns: 1fr 1fr;
         grid-column-gap: 30px;
     }
 
@@ -145,6 +139,9 @@
     .input-big {
         width: 100%;
     }
+    .accordion-button {
+        font-size: 20px;
+    }
 
     .form-field label {
         font-size: 12px;
@@ -165,12 +162,9 @@
         width: 100%;
     }
 
-    .data-form {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .parents-about {
-        grid-template-columns: 1fr 1fr ;
+    .parents-wrapper__title {
+        text-align: center;
+        font-size: 18px;
     }
 
     .izm {
@@ -192,7 +186,7 @@
     }
 
     .RSO-title {
-        font-size: 15px;
+        font-size: 17px;
         width: 100%;
     }
 
@@ -222,22 +216,51 @@
         font-size: 14px;
     }
 
+
+
+    .checkbox-title {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
     .right-check {
         margin-left: 8px;
     }
 
     input[type="radio"] {
         width: 15px;
+        height: 12px;
     }
 
+    .nav-prev, .nav-next {
+        padding: 12px 25px 12px 25px;
+    }
 
+    .add-education {
+        font-size: 14px;
+        margin: 10px auto;
+    }
 
+    .statement-item p, .statement-item a {
+        font-size: 12px;
+    }
+
+    .download-blanks .file-choose {
+        font-size: 14px;
+    }
+
+    .education-wrapper {
+        column-gap: 15px;
+    }
 }
 
 @media (max-width: 575px) {
-
+.accordion-title {
+    text-align: center;
+}
     .data-form {
         display: block;
+        padding: 25px;
     }
 
     .form-field label {
@@ -258,7 +281,7 @@
         column-gap: 20px;
     }
     .add-education {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .small {
@@ -274,5 +297,27 @@
     }
     .statement-wrapper {
         flex-wrap: wrap;
+    }
+
+    .rso-question {
+        margin: 30px auto;
+        width: 100%;
+    }
+
+      .rso-question__title {
+        text-align: center;
+    }
+
+    #check-RSO {
+      text-align: center;
+    }
+
+    .addres {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .RSO-title {
+        margin-bottom: 28px;
     }
 }
