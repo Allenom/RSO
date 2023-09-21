@@ -16,7 +16,6 @@ img {
    display: block;
    max-width: 100%;
 }
-
 body {
    margin: 0;
    font-family: 'BertSans', sans-serif;
@@ -40,14 +39,10 @@ p {
 }
 .login-password-my-page__login-top{
 margin-bottom:80px;
-border: 2px solid red;
 }
 /* Форма входа */
 .login-password-my-page__wrapper {
    max-width: 480px;
-   margin-top:40px;
-   margin-bottom:60px;
-
 }
 
 .login-password-my-page__login-top-wrap {
@@ -66,8 +61,7 @@ border: 2px solid red;
    display: flex;
 }
 
-.login-password-my-page__login-top-heading h2,
-p {
+.login-password-my-page__login-top-heading h2 {
    color: #35383F;
    font-family: 'Akrobat', sans-serif;
    font-size: 24px;
@@ -77,6 +71,7 @@ p {
    display: inline;
    margin-right: 4px;
 }
+
 
 /* картинка и текст изменить */
 .login-password-my-page__login-to-change img {
@@ -256,13 +251,6 @@ p {
 } 
 
 /* ************************    Адаптив        ****************************** */
-@media screen and (max-width:1300px) {
-   .login-password-my-page__wrapper {
-      margin-left: 8%;
-      margin-right: 8%;
-   }
-}
-
 @media screen and (max-width:1030px) {
    .login-password-my-page__wrapper {
         margin-left: 66px;
@@ -272,7 +260,7 @@ p {
 
 @media screen and (max-width:587px) {
    .login-password-my-page__wrapper {
-      margin: 40px 16px 80px 16px;
+      margin: 0 16px;
    }
  
     .login-password-my-page__login-button {
