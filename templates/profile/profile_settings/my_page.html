@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{% static 'css/user-page.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <link rel="stylesheet" href="{% static 'css/forms.css' %}" />
+<link rel="stylesheet" href="{% static 'css/my-page-baner.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -15,6 +16,7 @@
     {{ form.as_p }}
     <button type="submit">Сохранить изменения</button>
 </form>
+{% include "layout/profile_cap.html" %}
     <!-- Настройки профиля -->
     <!-- <section class="profile-settings-top">
       <div class="container">

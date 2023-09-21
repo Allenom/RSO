@@ -1,0 +1,278 @@
+@media (max-width: 1439px) {
+    .input-big {
+        width: 100%;
+    }
+
+    .input-full {
+        width: 100%;
+    }
+
+    .data-form {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 80px;
+    }
+
+    .parents-about {
+         grid-column-gap: 80px;
+    }
+
+    .izm {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 80px;
+    }
+
+    #no-passport-parent {
+        column-gap: 80px;
+    }
+    #no-passport {
+        column-gap: 80px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .input-big {
+        width: 386px;
+    }
+
+    .input-small {
+        width: 386px;
+    }
+
+    .input-full {
+        width: 100%;
+    }
+
+    .select-big {
+        width: 386px;
+    }
+
+    .select-small {
+        width: 386px;
+    }
+
+    .data-form {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 40px;
+    }
+
+    .parents-about {
+         grid-column-gap: 40px;
+    }
+
+    .izm {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 40px;
+    }
+
+    #no-passport-parent {
+        column-gap: 40px;
+    }
+    #no-passport {
+        column-gap: 40px;
+    }
+    .pass-details__wrapper {
+        flex-direction: column;
+    }
+
+    .other-docs__wrapper {
+        grid-template-columns: none;
+    }
+
+    .small-svg svg {
+      position: absolute;
+    right: 2rem;
+    top: 2.4rem;
+    cursor: pointer;
+    }
+}
+
+@media (max-width: 991px) {
+    .input-big {
+        width: 290px;
+    }
+
+    .input-small {
+        width: 290px;
+    }
+
+    .input-full {
+        width: 100%;
+    }
+
+    .select-big {
+        width: 290px;
+    }
+
+    .select-small {
+        width: 290px;
+    }
+
+    .data-form {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+    }
+
+    .parents-about {
+         grid-column-gap: 30px;
+    }
+
+    .izm {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+    }
+
+    #no-passport-parent {
+        column-gap: 30px;
+    }
+    #no-passport {
+        column-gap: 30px;
+    }
+    .pass-details__wrapper {
+        flex-direction: column;
+    }
+
+      .RSO-title {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .other-docs__wrapper {
+        grid-template-columns: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .input-big {
+        width: 100%;
+    }
+
+    .form-field label {
+        font-size: 12px;
+    }
+    .input-small {
+        width: 100%;
+    }
+
+    .input-full {
+        width: 100%;
+    }
+
+    .select-big {
+        width: 100%;
+    }
+
+    .select-small {
+        width: 100%;
+    }
+
+    .data-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .parents-about {
+        grid-template-columns: 1fr 1fr ;
+    }
+
+    .izm {
+        grid-template-columns: none;
+    }
+
+    #no-passport-parent {
+        column-gap: 40px;
+    }
+    #no-passport {
+        column-gap: 40px;
+    }
+    .pass-details__wrapper {
+        flex-direction: column;
+    }
+
+    .other-docs__wrapper {
+        grid-template-columns: none;
+    }
+
+    .RSO-title {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .dowmload-all {
+        display: none;
+    }
+
+    .blanks-wrapper {
+        grid-template-columns: none;
+    }
+
+    .statement-title {
+        font-size: 14px;
+        width: 100%;
+    }
+
+
+    .accordion-block-title {
+        font-size: 18px;
+    }
+
+    .docs {
+        grid-template-columns: 1fr;
+    }
+
+    .checkbox {
+        font-size: 14px;
+    }
+
+    .right-check {
+        margin-left: 8px;
+    }
+
+    input[type="radio"] {
+        width: 15px;
+    }
+
+
+
+}
+
+@media (max-width: 575px) {
+
+    .data-form {
+        display: block;
+    }
+
+    .form-field label {
+        font-size: 10px;
+    }
+    .parents-about {
+        grid-template-columns: none;
+         grid-column-gap: 20px;
+    }
+    .izm {
+        grid-template-columns: none;
+        grid-column-gap: 20px;
+    }
+    #no-passport-parent {
+        column-gap: 20px;
+    }
+    #no-passport {
+        column-gap: 20px;
+    }
+    .add-education {
+        font-size: 14px;
+    }
+
+    .small {
+        margin-top: 20px;
+    }
+
+    .checkbox {
+        margin-bottom: 10px;
+    }
+
+    .checkbox-title {
+        font-size: 14px;
+    }
+    .statement-wrapper {
+        flex-wrap: wrap;
+    }
+}
