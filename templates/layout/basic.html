@@ -20,128 +20,158 @@
     <link rel="stylesheet" href="{% static 'fontawesome/fontawesome-free-6.4.2-web/css/all.css' %}">
     <!-- Подключаем стили -->
     <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/base.css">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 
     {% block head %}{% endblock %}
 </head>
 <body>
-<!-- Header user login -->
-    <header class="header">
-        <div class="container">
-            <div class="header__body-wrapper">
-                <div class="header__body">
-                    <!-- Логотипы -->
-                    <div class="header__logo">
-                        <!-- Логотип РСО -->
-                        <div class="header__logo-rco">
-                            <a href="#">
-                                <img src="/static/images/logo/rco-blue.svg" alt="">
-                            </a>
-                        </div>
-                        <!-- Логотип Труд Крут -->
-                        <div class="header__logo-labor-cool">
-                            <a href="#">
-                                <img src="/static/images/logo/labor-cool-dark.svg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Десктоп меню + 1024px-->
-                    <nav class="header__menu-top">
-                        <ul class="header__menu-top menu">
-                            <li class="item has-submenu">
-                                <a tabindex="0">Структура</a>
-                                <ul class="submenu">
-                                    <li class="subitem"><a href="#">ЛСО</a></li>
-                                    <li class="subitem"><a href="#">Штабы СО ОО</a></li>
-                                    <li class="subitem"><a href="#">Местные штабы</a></li>
-                                    <li class="subitem"><a href="#">Региональные штабы</a></li>
-                                    <li class="subitem"><a href="#">Окружные штабы</a></li>
-                                    <li class="subitem"><a href="#">Центральный штаб</a></li>
-                                </ul>
-                            </li>
-                                <li class="item"><a href="#">Мероприятия</a></li>
-                                <li class="item"><a href="#">Полезная информация</a>
-                            </li>
-                        </ul>
-                        <!-- Меню Бургер  -->
-                    <div class="toggle burger-menu">
-                        <!-- <img class="menuIcon" src="/static/images/icons/burger.svg" alt="">
-                        <img class="closeIcon mobile__menu-top-icon-closed" src="/static/images/icons/burger-closed.svg" alt=""> -->
-                        <!-- <div><img class="closeIcon mobile__menu-top-icon-closed" src="/static/images/icons/burger-closed.svg" alt=""></div> -->
-                            <!-- <div><img class="menuIcon" src="/static/images/icons/burger.svg" alt=""></div> -->
-                    </div>
-                    </nav>
+     <header class="header">
+         <div class="container">
+				<div class="header__body-wrapper">
+					<!-- Логотипы -->
+					<div class="header__logo">
+						<!-- Логотип РСО -->
+						<div class="header__logo-rco">
+							<a href="#">
+								<img src="/static/images/logo/rco-blue.svg" alt="">
+							</a>
+						</div>
+						<!-- Логотип Труд Крут -->
+						<div class="header__logo-labor-cool">
+							<a href="#">
+								<img src="/static/images/logo/labor-cool-dark.svg" alt="">
+							</a>
+						</div>
+					</div>
+					<!-- Десктоп меню -->
+					<nav class="navigation-desktop">
+						<ul class="nav-desktop">
+							<li class="nav-item"><a href="#">Структура</a></li>
+							<li class="nav-item"><a href="#">Мероприятия</a></li>
+							<li class="nav-item"><a href="#">Полезная информация</a></li>
+						</ul>
+					</nav>
 
-                    <!-- Правый блок меню -->
-                    <div class="header__block-user-info">
-                        <div class="header__revers">
-                            <!-- Счётчик заявок Контейнер -->
-                            <div class="header__application-count-container">
-                                <!-- Иконка колокольчик -->
-                                <img src="/static/images/icons/bell-light.svg" alt="">
-                                <!-- Счётчик заявок -->
-                                <div class="header__application-count">
-                                    <p class="text-p">99+</p>
-                                </div>
-                            </div>
-                            <!-- Региональное отделение пользователя -->
-                            <div class="header__regional-office-container">
-                                <!-- Иконка местоположения -->
-                                <div class="header__regional-dot">
-                                    <img src="/static/images/profile-settings/user-avatar.jpg" alt="">
-                                </div>
-                                <!-- Вывод названия регионального отделения -->
-                                <div class="header__regional-office">
-                                    <p class="text-p">
-                                        Карачаево-Черкесское региональное отделение
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Иконка или автар пользователя -->
-                        <div class="header__user-avatar-container">
-                            <!-- Автар пользователя -->
-                            <div class="header__user-avatar">
-                                <img src="/static/images/profile-settings/user-avatar.jpg" alt="">
-                            </div>
-                            <!-- Иконка, когда нет фото Пользователя -->
-                            <div class="header__user-icon">
-                                <img src="/static/images/icons/user-circle.svg" alt="">
-                            </div>
-                        </div>
-                        <!-- Мобильное меню Пользователя max-width:1024px-->
-                        <div class="header-mobile__menu-top-container">
-                            <nav class="header-mobile__menu-top">
-                                <ul class="header-mobile__menu-top">
-                                    <li><a href="#">Моя страница</a></li>
-                                    <li><a href="#">Мой отряд</a></li>
-                                    <li><a href="#">Штаб СО ОО</a></li>
-                                    <li><a href="#">Местный штаб</a></li>
-                                    <li><a href="#">Региональный штаб</a></li>
-                                    <li><a href="#">Окружной штаб</a></li>
-                                    <li><a href="#">Активные заявки</a></li>
-                                    <li><a href="#">Поиск участников</a></li>
-                                    <li><a href="#">Членский взнос</a></li>
-                                    <li><a href="#">Оформление справок</a></li>
-                                    <li><a href="#">Настройки профиля</a></li>
-                                    <li><a href="#">Выйти из ЛК</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- Иконка выпадающего меню  -->
-                        <div class="header__drop-down-click">
-                            <img src="/static/images/icons/angel-down.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <script src="/static/js/burger-menu.js"></script>
+					<!-- Юзер меню  -->
+					<nav class="navigation-user">
+						<ul class="nav-user">
+							<!-- Иконка местоположения на мобильном меню 360px-->
+							<li class="regional-dot">
+								<img src="/static/images/icons/dot-region.svg" alt="">
+							</li>
+							<!-- Счётчик заявок -->
+							<li class="application-count">
+								<a href="#">
+									<img src="/static/images/icons/bell-light.svg" alt="">
+								</a>
+								<div class="quantity">
+									<p>99+</p>
+								</div>
+							</li>
+							<!-- Региональное отделение -->
+							<li class="regional-office">
+								<p>
+									<a href="#">
+										Карачаево-Черкесское региональное отделение
+									</a>
+								</p>
+							</li>
+							<!-- Выпадающее Меню пользователя -->
+							<li class="dropdown">
+								<!-- <div class="dropdown-toggle"> -->
+									<!-- Иконка Пользователя -->
+									<div class="dropdown-toggle">
+										<p class="user-icon">
+											<a href="#">
+												<img src="/static/images/icons/user-circle.svg" alt="">
+											</a>
+										</p>
+
+										<!-- Иконка Раскрыть меню -->
+										<p class="drop-down-icon">
+											<a href="#">
+												<img src="/static/images/icons/angel-down.svg" alt="">
+											</a>
+										</p>
+									</div>
+								<!-- </div> -->
+								<ul class="dropdown-items">
+									<li class="menuItem"><a href="#">Моя страница</a></li>
+									<li class="menuItem"><a href="#">Мой отряд</a></li>
+									<li class="menuItem"><a href="#">Штаб СО ОО</a></li>
+									<li class="menuItem"><a href="#">Местный штаб</a></li>
+									<li class="menuItem"><a href="#">Региональный штаб</a></li>
+									<li class="menuItem"><a href="#">Окружной штаб</a></li>
+									<li class="menuItem"><a href="#">Активные заявки</a></li>
+									<li class="menuItem"><a href="#">Поиск участников</a></li>
+									<li class="menuItem"><a href="#">Членский взнос</a></li>
+									<li class="menuItem"><a href="#">Оформление справок</a></li>
+									<li class="menuItem"><a href="#">Настройки профиля</a></li>
+									<li class="menuItem"><a href="#">Выйти из ЛК</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div id="burger-menu">
+							<span></span>
+						</div>
+					</nav>
+					<!-- Мобильное меню  -->
+					<nav id="menu" class="navigation-mobile">
+						<ul class="sidenav menu-mobile">
+							<li class="mb-item">
+								<div class="dropdown-btn">
+									<a tabindex="0">Структура</a>
+									<button>
+										<img src="/static/images/icons/drop-down-sub-menu-white.svg" alt="">
+									</button>
+								</div>
+								<ul class="dropdown-container">
+									<li class="mb-item"><a href="#">ЛСО</a></li>
+									<li class="mb-item"><a href="#">Штабы СО ОО</a></li>
+									<li class="mb-item"><a href="#">Местные штабы</a></li>
+									<li class="mb-item"><a href="#">Региональные штабы</a></li>
+									<li class="mb-item"><a href="#">Окружные штабы</a></li>
+									<li class="mb-item"><a href="#">Центральный штаб</a></li>
+								</ul>
+							</li>
+							<li class="item"><a href="#">Мероприятия</a></li>
+							<li class="item"><a href="#">Полезная информация</a></li>
+
+						</ul>
+
+					</nav>
+				</div>
+			</div>
+      </header>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+      </script>
+      <script>
+         $(function() {
+            // Dropdown toggle
+            $(".dropdown-toggle").click(function() {
+               $(this).next(".dropdown-items").slideToggle();
+			   $(this).toggleClass("active");
+            });
+
+
+            $(document).click(function(e) {
+               var target = e.target;
+               if (!$(target).is(".dropdown-toggle") &&
+                  !$(target).parents().is(".dropdown-toggle")
+               ) {
+                  //{ $('.dropdown').hide(); }
+                  $(".dropdown-items").slideUp();
+               }
+            });
+         });
+      </script>
+    <script src="/static/js/burger.js"></script>
 
 {% block content %}{% endblock %}
 
    <!-- Футер -->
+  <!-- Футер -->
    <footer class="footer">
     <div class="container">
         <div class="footer__wrapper">
@@ -220,22 +250,22 @@
             </div>
         </div>
          <!-- Предупреждение cookie  -->
-<!--         <div class="cookie">-->
-<!--                <img src="/static/images/icons/closed-btn.svg" alt="">-->
-<!--          <div class="cookie_notification">-->
-<!--             <h4>Уведомление о Cookie</h4>-->
-<!--                <p>Этот сайт использует Cookie для хранения данных. Продолжая использовать сайт или нажимая «Принять», вы даете согласие на работу с этими файлами.-->
-<!--                <a href="#politika">Подробнее</a></p>-->
-<!--             &lt;!&ndash; Кнопка Принять Cookie &ndash;&gt;-->
-<!--             <button class="btn__accept" id="cookie_close">-->
-<!--                Принять-->
-<!--             </button>-->
-<!--          </div>-->
-<!--        </div>-->
+         <div class="cookie">
+                <img src="/static/images/icons/closed-btn.svg" alt="">
+          <div class="cookie_notification">
+             <h4>Уведомление о Cookie</h4>
+                <p>Этот сайт использует Cookie для хранения данных. Продолжая использовать сайт или нажимая «Принять», вы даете согласие на работу с этими файлами.
+                <a href="#politika">Подробнее</a></p>
+             <!-- Кнопка Принять Cookie -->
+             <button class="btn__accept" id="cookie_close">
+                Принять
+             </button>
+          </div>
+        </div>
     </div>
 </footer>
  <script src="/static/js/script-tabs.js"></script>
- <script src="/static//js//accardions.js"></script>
+ <script src="/static/js/accardions.js"></script>
  <script src="/static/js/script.js"></script>
  <script src="/static/js/cookie.js"></script>
 </body>

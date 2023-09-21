@@ -1,4 +1,4 @@
-/* Border */
+/* Basic styling */
 * {
   margin: 0;
   padding: 0;
@@ -35,71 +35,16 @@ li {
   margin: 0;
 }
 
-h2 {
-  /* Desktop/H-2 */
-  font-family: 'Akrobat';
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  color: #35383F;
-}
-
-p {
-  /* text */
-  font-family: 'BertSans';
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: #35383F;
-}
-
-a {
-  /* link */
-  font-family: 'BertSans';
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  /* text-decoration-line: underline; */
-}
-
+button,
 input {
-  outline: none;
-}
-
-::placeholder {
-  color: #898989;
-  font-family: 'BertSans';
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-button {
   border: none;
-}
-
-button a {
-  color: #ffffff;
-  /* button_text */
-  font-family: 'BertSans';
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 20px;
-  text-decoration: none;
+  outline: none;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
 .container {
-  margin: 0 auto;
   max-width: 1180px;
-}
-
-.form-field .error {
-  color: red;
-  font-size: 11px;
-  height: 16px;
+  margin: 0 auto;
 }

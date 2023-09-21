@@ -1,0 +1,32 @@
+/* Настройки профиля H2*/
+section.ps-title {
+    margin-bottom: 40px;
+ }
+ 
+ section.ps-title h2 {
+    /* Desktop/H-1 */
+    font-family: 'Akrobat';
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #35383F;
+    
+ }
+
+ /* Проверка адаптивности потом переписать */
+@media(max-width:1290px) {
+    section.ps-title {
+       margin: 0 20px 40px;
+    }
+    section.ps-title h2 {
+       font-size: 40px;
+       font-weight: 600;
+    }
+ }
+
+ @media(max-width: 360px) {
+    section.ps-title  {
+      display: none;
+    }
+}

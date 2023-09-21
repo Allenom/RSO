@@ -3,9 +3,11 @@
 {% block title %}Востановление пароля{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/system.css' %}">
+<link rel="stylesheet" href="{% static 'css/my-page-baner.css' %}">
 <!--Стили добавить если нужно-->
 {% endblock %}
 {% block content %}
+{% include "layout/profile_cap.html" %}
 <!--    <form style="margin-bottom: 30px" method="post" enctype="multipart/form-data">-->
 <!--      {% csrf_token %}-->
 <!--      {{ form.non_field_errors }}-->

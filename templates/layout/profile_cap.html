@@ -1,87 +1,89 @@
-<!-- Баннер с данными пользователя -->
- <div class="user-metric">
-    <div class="user-metric__top">
-       <div class="user-metric__top-img-wrapper">
-          <img src="/static/images/profile-settings/album1-15.jpg" alt="">
-          <!-- Заглушка -->
-          <!-- <img src="/static/images/plug-bg.png" alt=""> -->
-       </div>
-    </div>
-    <!-- Иконки редактирования банер -->
-    <div class="user-metric__baner-add">
-       <!--Иконка Добавить аватар -->
-       <!-- <img src="/static/images/icons/plus.svg" alt=""> -->
-       <!-- Иконка Изменить аватар  -->
-       <img src="/static/images/icons/pen-circle.svg" alt="">
-    </div>
-    <div class="user-metric__avatar-wrapper">
-       <div class="user-metric__avatar">
-          <!-- Аватар пользователя  -->
-          <img src="/static/images/profile-settings/album1-4.jpg" alt="">
-          <!-- Иконка по умолчанию -->
-          <!-- <img src="/static/static/images/icons/user-circle.svg" alt=""> -->
-       </div>
-        <!-- Иконки редактирования аватар -->
-        <div class="user-metric__avatar-add">
-          <!--Иконка Добавить аватар -->
-          <!-- <img src="/static/images/icons/plus.svg" alt=""> -->
-          <!-- Иконка Изменить аватар  -->
-          <img src="/static/images/icons/pen-circle.svg" alt="">
-       </div>
-    </div>
-    <div class="user-metric__bottom">
-       <!-- Данные пользователя  -->
-       <div class="user-data__wrapper">
-          <div class="user-data__name">
-             <h4>{{ user.last_name|default:'' }} {{ user.first_name|default:'' }} {{ user.profile.patronymic|default:'' }}</h4>
-          </div>
-          <div class="user-data__list-wrapper">
-             <ul class="user-data__list">
-                <li class="user-data__title"><p>Кандидат</p></li>
-                <li class="user-data__regional-office"><p>Карачаево-Черкесское региональное отделение</p></li>
-                <li class="user-data__faculty"><p>Филологический</p></li>
-                <li class="user-data__profession"><p>Учитель русского языка и литературы</p></li>
-                <li class="user-data__course"><p>Курс 2</p></li>
-                <li class="user-data__introductions">
-                   <p>Дата вступления в РСО</p>
-                   <img src="/static/images/icons/calendar.svg" alt="">
-                   <time datetime="2022-09-10">10.09.2022</time>
-<!--                   {{user.profile.date_of_birth|date:"d.m.Y"}}-->
-                </li>
-             </ul>
-          </div>
-          <!-- Контакты пользователя  -->
-          <div class="user-data__contacts-wrapper">
-             <!-- ссылки на соцсети -->
-             <div class="user-data__social-network">
-                <div class="user-data__link-vk">
-                   <a href="https://vk.com" target="_blank">
-                      <img src="/static/images/icons/vk-blue.svg">
-                   </a>
-                </div>
-                <div class="user-data__link-telegram">
-                   <a href="https://t.me" target="_blank">
-                      <img src="/static/images/icons/telegram-blue.svg" alt="">
-                   </a>
-                </div>
-                <div class="user-data__link-share-link">
-                   <a href="#" target="_blank">
-                      <img src="/static/images/icons/to-share-link.svg" alt="">
-                   </a>
-                </div>
-             </div>
-             <!-- Телефон, почта пользователя -->
-             <div class="user-data__personal-contacts">
-                <div class="user-data__phone">
-                   <img src="/static/images/icons/phone.svg" alt="">
-                   <a href="tel:+79999999999">{{user.profile.telephone}}</a>
-                </div>
-                <div class="user-data__mail">
-                   <img src="/static/images/icons/envelope.svg" alt="">
-                   <a href="mailto:lichnaua.pochta@mail.ru">{{user.email}}</a>
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
- </div>
+ <!-- Настройки профиля Банер -->
+   <section class="ps-baner">
+      <div class="container">
+        <!-- Баннер Страница Настроки профиля-->
+         <div class="user-metric">
+            <div class="user-metric__top">
+               <div class="user-metric__top-img-wrapper">
+                  <!-- Заглушка Банер -->
+                  <img src="/static/images/profile-settings/banner-stub.png" alt="" id="banner-pic">
+               </div>
+            </div>
+            <!-- Иконки редактирования банер -->
+            <div class="user-metric__baner-add">
+               <!--Иконка Добавить аватар -->
+               <!-- Иконка Изменить аватар  -->
+               <label for="upload-banner"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
+               <input type="file" id="upload-banner" accept="image/jpeg, image/png, image/jpg" hidden>
+            </div>
+            <div class="user-metric__avatar-wrapper">
+               <div class="user-metric__avatar">
+                  <!-- Аватар пользователя  -->
+                  <img id="profile-pic" src="/static/images/profile-settings/user-avatar-stub.png" alt="">
+               </div>
+                <!-- Иконки редактирования аватар -->
+                <div class="user-metric__avatar-add">
+                  <!--Иконка Добавить аватар -->
+                  <!-- <img src="/static/images/icons/plus.svg" alt=""> -->
+                  <!-- Иконка Изменить аватар  -->
+                  <label for="upload-avatar"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
+                  <input type="file" id="upload-avatar" accept="image/jpeg, image/png, image/jpg" hidden>
+               </div>
+            </div>
+            <div class="user-metric__bottom">
+               <!-- Данные пользователя  -->
+               <div class="user-data__wrapper">
+                  <div class="user-data__name">
+                     <h4>Иванова Светлана Ивановна</h4>
+                  </div>
+                  <div class="user-data__list-wrapper">
+                     <ul class="user-data__list">
+                        <li class="user-data__title"><p>Кандидат</p></li>
+                        <li class="user-data__regional-office"><p>Карачаево-Черкесское региональное отделение</p></li>
+                        <li class="user-data__faculty"><p>Филологический</p></li>
+                        <li class="user-data__profession"><p>Учитель русского языка и литературы</p></li>
+                        <li class="user-data__course"><p>Курс 2</p></li>
+                        <li class="user-data__introductions">
+                           <p>Дата вступления в РСО</p>
+                           <img src="/static/images/icons/calendar.svg" alt="">
+                           <time datetime="2022-09-10">10.09.2022</time>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- Контакты пользователя  -->
+                  <div class="user-data__contacts-wrapper">
+                     <!-- ссылки на соцсети -->
+                     <div class="user-data__social-network">
+                        <div class="user-data__link-vk">
+                           <a href="https://vk.com" target="_blank">
+                              <img src="/static/images/icons/vk-blue.svg">
+                           </a>
+                        </div>
+                        <div class="user-data__link-telegram">
+                           <a href="https://t.me" target="_blank">
+                              <img src="/static/images/icons/telegram-blue.svg" alt="">
+                           </a>
+                        </div>
+                        <div class="user-data__link-share-link">
+                           <a href="#" target="_blank">
+                              <img src="/static/images/icons/to-share-link.svg" alt="">
+                           </a>
+                        </div>
+                     </div>
+                     <!-- Телефон, почта пользователя -->
+                     <div class="user-data__personal-contacts">
+                        <div class="user-data__phone">
+                           <img src="/static/images/icons/phone.svg" alt="">
+                           <a href="tel:+79999999999">+ 7 (999) 999 99 99</a>
+                        </div>
+                        <div class="user-data__mail">
+                           <img src="/static/images/icons/envelope.svg" alt="">
+                           <a href="mailto:lichnaua.pochta@mail.ru">lichnaua.pochta@mail.ru</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>

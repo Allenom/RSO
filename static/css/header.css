@@ -1,595 +1,583 @@
-/* Border */
-* {
-    margin: 0;
-    padding: 0;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: 'BertSans', sans-serif;
-    font-family: 'Akrobat', sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-li {
-    padding: 0;
-    margin: 0;
-}
-
-/* Цвета проекта */
-:root {
-    /* Основные цвета */
-    --dark_blue-color: #1c5c94;
-    --mostly-desaturated-dark-green-color: #608553;
-    --very-soft-yellow-color: #dbce9f;
-    --light_green-color: #5ca386;
-    --soft-yellow-color: #fbd350;
-    --soft-red-color: #eb574b;
-    /* Дополнительные цвета */
-    --dark_cyan-color: #29997E;
-    --very-soft-blue-c-color: #91C9F7;
-    --very-soft-blue-a-color: #ace1f8;
-    --bright-orange-color: #fc9c38;
-    --moderate-cyan-color: #33bdbd;
-    --pale-magenta-color: #ff9aee;
-    --light-grayish-red-color: #fed1d5;
-    /* Бэкграунд цвета для секций*/
-    --white-bg-color: #ffffff;
-    --gray-bg-color: #D1D5D8;
-    /* Бэкграунд цвета для кнопок */
-    --button-submit-color: #39BFBF;
-    /* Цвета компонентов форм */
-    --input-border-color: #a3a3a3;
-    --placeholder-color: #898989;
-    /* Цвета иконок в инпутах */
-    --icon-input-color: #898989;
-    /* Цвета текста */
-    --white-text-color: #ffffff;
-    /* Цвета ссылок по дефолту Селектор ссылки по тэгу a */
-    --link-top-menu-color: #35383F; /* Верхнее меню ссылки */
-    /* Цвета ссылок при наведении Псевдокласс :hover */
-    /* Цвета ссылок посещённых Псевдокласс :visited*/
-}
-
-/* Заголовки  */
-h1 {}
-
-h2 {
-    /* Desktop/H-2 */
-    font-family: 'Akrobat';
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    color: #35383F;
-}
-
-h3 {}
-
-h4 {}
-
-h5 {}
-
-h6 {}
-
-/* Текст */
-p {
-    /* text */
-    font-family: 'BertSans';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #35383F;
-}
-
-/* Ссылки */
-a {
-    /* link */
-    font-family: 'BertSans';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-decoration-line: underline;
-}
-
-a:visited { /* Цвет посещённой ссылки */}
-
-a:hover {/* Цвет ссылки при наведении на нее курсора мыши */}
-
-/* ******************** */
-
-/* Автор тэг  */
-address {}
-
-
-/* Компоненты форм  */
-
-input {
-    /* text-indent: 13px; */
-}
-::placeholder {
-    color: var(--placeholder-color);
-    font-family: 'BertSans';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-/* Кнопки  */
-button {}
-
-button a {
-    color: var(--white-text-color);
-    /* button_text */
-    font-family: 'BertSans';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 20px;
-    text-decoration: none;
-}
-
-button:hover {}
-
-button:active {}
-
-
-/* Основной контейнер */
-.container {
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
 /* header */
-
 .header {
-	background-color: #fff;
-	/* position: fixed; */
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 50;
+  background-color: #fff;
+  border-bottom: 1px solid  #D9D9D9;
 }
 
 .header__body-wrapper {
-    display: flex;
-    flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.header__body {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-    width: 100%;
-    max-height: 88px;
-	padding: 15px 0;
-	/* position: relative;
-	z-index: 2; */
-    border-bottom: 1px solid  #D9D9D9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-height: 58px;
+  padding: 15px 0;
 }
 
 /* Логотипы */
 .header__logo {
+  display: flex;
+  justify-content: space-between;
+  width: 146px;
+}
+
+
+.header__logo-rco {
     display: flex;
-    justify-content: space-between;
-    width: 146px;
-}
-
-.header__logo-rco {
-    /* margin-right: 30px; */
-}
-
-.header__logo-rco {
+    align-items: center;
     width: 60px;
     height: 56px;
 }
 
 .header__logo-rco img {
-    max-width: 100%;
-	max-height: 100%;
-	object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .header__logo-labor-cool {
+    display: flex;
+    align-items: center;
     width: 56px;
     height: 56px;
     border-radius: 50%;
-	/* flex: 0 0 60px; */
-	/* overflow: hidden; */
-	/* position: relative; */
-	/* z-index: 3; */
 }
 
 .header__logo-labor-cool img {
-	max-width: 100%;
-	max-height: 100%;
-	object-fit: cover;
-    border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-/* Десктоп меню 1980 - 1024px */
-
-.header__menu-top {
-	display: flex;
-	justify-content: space-between;
+nav.navigation-desktop,
+nav.navigation-user,
+ul.nav-desktop,
+ul.nav-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
 }
 
-.header__menu-top ul {
-	width: 100%;
-	list-style: none;
-	display: flex;
+ul.nav-desktop li {
+  padding: 0 16px;
 }
 
-.header__menu-top li {
-    padding-right: 16px;
+ul.nav-desktop li a {
+  display: block;
+  text-decoration: none;
+  color: #35383F;
+  /* Footer */
+  font-family: 'BertSans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.header__menu-top a {
-	display: block;
+ul.nav-desktop li a:hover {
+  color: #46EBEB;
+}
+
+
+/* Юзер меню */
+ul.nav-user {
+  display: flex;
+  max-width: 383px;
+}
+
+/* Иконка местоположение 360px*/
+li.regional-dot {
+  display: none;
+}
+
+/* Счётчик заявок */
+li.application-count {
+  display: flex;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+li.application-count a {
+  display: block;
+}
+
+li.application-count {
+  width: 36px;
+  height: 36px;
+  color: #35383F;
+}
+
+li.application-count img {
+  width: 100%;
+  height: 100%;
+  color: #35383F;
+}
+
+.quantity {
+  position: absolute;
+  margin: 0 0 23px 17px;
+}
+
+.quantity p {
+  position: relative;
+  padding: 1px 2px;
+  background-color: #ffffff;
+  text-align: center;
+  font-family: 'Akrobat';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #DB0000;
+}
+
+/* Региональное отделение */
+.nav-user li.regional-office {
+  max-width: 230px;
+}
+
+.nav-user li.regional-office p a {
+  display: block;
+  text-decoration: none;
+  /*  */
+  color: #35383F;
+  text-align: center;
+  font-family: 'BertSans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Выпадающее Меню пользователя */
+li.dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+/* Иконка Пользователя */
+li.dropdown .user-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: #35383F;
+  margin-right: 12px;
+  margin-left: 10px;
+}
+
+li.dropdown .user-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Иконка Раскрыть меню */
+button.drop-down-icon {
+  width: 14px;
+  height: 14px;
+  color: #35383F;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+button.drop-down-icon img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s linear;
+}
+
+.drop-down-icon.active .drop-down-icon {
+  transform: rotate(-180deg);
+  transition: transform 0.3s linear;
+}
+
+
+ul.dropdown-items {
+  min-width: 328px;
+  border-radius: 10px;
+  background: #1F7CC0;
+  /*  */
+  display: none;
+  position: absolute;
+  top: 131%;
+  right: 0%;
+  padding: 28px 28px;
+  z-index: 999;
+}
+
+ul.dropdown-items li {
+  list-style-type: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+  margin-bottom: 8px;
+}
+
+ul.dropdown-container li.mb-item:last-child {
+  border-bottom: none;
+}
+
+ul.dropdown-items li a {
+  display: block;
+  text-decoration: none;
+  /*  */
+  color: #ffffff;
+  font-family: 'Akrobat';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 16px auto;
+}
+
+#menu,
+nav.navigation-mobile {
+  visibility: hidden;
+  display: none;
+}
+
+@media(max-width:1290px) {
+  header.header {
+    margin: 0 20px;
+  }
+}
+
+@media(max-width:1024px) {
+  /* Десктоп меню */
+  nav.navigation-desktop,
+  ul.nav-desktop {
+    display: none;
+  }
+  /* Иконка Раскрыть меню */
+  li.dropdown .drop-down-icon {
+    display: none;
+  }
+
+  #burger-menu {
+    cursor: pointer;
+    width: 24px;
+    height: 27px;
+    margin: 15px;
+    overflow: visible;
+    position: relative;
+    z-index:200;
+  }
+  #burger-menu span,
+  #burger-menu span:before,
+  #burger-menu span:after {
+    background: #35383F;
+    display: block;
+    height: 1px;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+  }
+  #burger-menu span:before,
+  #burger-menu span:after {
+    content: "";
+  }
+  #burger-menu span {
+    right: 0px;
+    top: 13px;
+    width: 20px;
+  }
+  #burger-menu span:before {
+    left: 0px;
+    top: -10px;
+    width: 20px;
+  }
+  #burger-menu span:after {
+    left: 0px;
+    top: 10px;
+    width: 20px;
+  }
+  
+  #burger-menu.close span {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 20px;
+  }
+  #burger-menu.close span:before {
+    top: 0px;
+    transform: rotate(90deg);
+    width: 20px;
+  }
+  #burger-menu.close span:after {
+    top: 0px;
+    left: 0;
+    transform: rotate(90deg);
+    opacity: 0;
+    width: 0;
+  }
+  
+  #menu,
+  nav.navigation-mobile  {
+    visibility: visible;
+    display: block;
+    max-width: 328px;
+    z-index:100;
+    position: fixed;
+    top: 88px;
+    right: 22%;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+  }
+  
+  #menu.overlay {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 100px;
+  }
+  
+  ul.menu-mobile {
+    width: 328px;
+    position: fixed;
+    z-index: 100;
+    top: 89px;
+    right: 3%;
+    overflow-x: hidden;
+    border-radius: 10px;
+    background: #1F7CC0;
+    padding: 28px 28px;
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .dropdown-btn {
+    display: flex;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .dropdown-btn a {
+    display: block;
+    text-align: left;
     text-decoration: none;
+  }
+  
+  .dropdown-btn button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    max-width: 24px;
+    min-height: 24px;
+    color: #ffffff;
+  }
+  
+  .dropdown-btn button img {
+    display: inline-block;
+    max-width: 100%;
+    min-height: 100%;
+    transition: transform 0.3s linear;
+  }
+
+  .dropdown-btn.active button img {
+    transform: rotate(-180deg);
+  }
+
+  nav.navigation-mobile ul li {
+    /* width: 100%; */
+    list-style-type: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+    margin-bottom: 8px;
+  }
+  
+  nav.navigation-mobile ul li a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    margin: 16px auto;
     /*  */
-	color: #35383F;
-    font-family: 'BertSans';
-    font-size: 16px;
+    color: #ffffff;
+    font-family: 'Akrobat';
+    font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
-}
-
-.header__menu-top li a:hover {
-    color: #46EBEB;
-}
-
-ul.submenu {
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  nav.navigation-mobile ul.dropdown-container {
     display: none;
+    background: #1F7CC0;
+    padding-left: 20px;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+  }
+  
+  .active {
+    color: white;
+  }
+  
+  ul.dropdown-container {
+  
+  }
 }
-
-
-/* Мобильное меню Пользователя 1024px */
-.header-mobile__menu-top-container {
-    display: none;
-}
-
-/* Мобильное меню 1024px */
-.mobile__menu-top-wrapper {
-    display: none;
-}
-
-/* Конка Бургер */
-.burger-menu {
-    display: none;
-}
-
-@media screen and (max-width: 1440px) {
-    .header__block-user-info {
-        min-width: 400px;
-    }
-    /* Вывод названия регионального отделения */
-    .header__regional-office {
-        min-width: 200px;
-    }
-    .header__regional-office p {
-        padding: 0;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .header__body-wrapper {
-        margin: 0 66px;
-    }
-    /* Десктоп меню */
-    .header__menu-top {
-        /* display: none; */
-    }
-    /* Правый блок меню */
-    .header__block-user-info {
-        max-width: 480px;
-        /* margin-right: 60px; */
-    }
-    /* Вывод названия регионального отделения */
-    .header__regional-office {
-
-    }
-    /* Иконка или фото пользователя */
-    .header__user-avatar,
-    .header__user-icon {
-        margin-right: 0;
-    }
-    /* Иконка выпадающего меню */
-    .header__drop-down-click {
-        display: none;
-    }
-    /* конка Бургер */
-    .burger-menu {
-        display: block;
-    }
-    /* Мобильное меню Пользователя 1024px */
-    .item,
-    .header__menu-top {
-        /* order: 3; */
-        width: 100%;
-        text-align: center;
-        display: none;
-        /* display: block; */
-      }
-    
-      .active .item {
-        display: block;
-      }
-    
-      /* Отображение подменю на экранах мобильных устройств */
-      .submenu {
-        display: none;
-      }
-    
-      .submenu-active .submenu {
-        display: block;
-      }
-    
-      /* Галочкка показать субменю */
-      .has-submenu > a::after {
-        font-family: "Font Awesome 5 Free";
-        font-size: 12px;
-        line-height: 16px;
-        font-weight: 900;
-        content: "\f078";
-        color: white;
-        padding-left: 5px;
-      }
-    
-      /* //////////////////////////////////////////////// */
-    /* Конка Бургер */
-    .hamburger,
-    .burger-menu {
-        width: 36px;
-        height: 36px;
-        /*  */
-        display: block;
-        position: fixed;
-        z-index: 100;
-        top: 1.5625rem;
-        right: 66px;
-        border: none;
-        background: none;
-        cursor: pointer;
-    }
-    .burger-menu img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .header__body-wrapper {
-        margin: 0 34px;
-    }
-}
-
-@media screen and (max-width: 370px) {
-    .header__body-wrapper {
-        margin: 0 16px;
-    }
-    /* Логотипы */
-    .header__logo {
-        width: 88px;
-    }
-    .header__logo-rco {
-        width: 40px;
-        height: 35px;
-    }
-    
-    .header__logo-rco img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: cover;
-    }
-    
-    .header__logo-labor-cool {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-    }
-    
-    .header__logo-labor-cool img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-    /* Правый блок меню */
-    .header__block-user-info {
-        max-width: 204px;
-    }
-    /* Вывод названия регионального отделения*/
-    .header__regional-office-container {
-        width: 30px;
-        height: 30px;
-        border: 1px solod red;
-    }
-    /* Меняем местами иконки */
-    .header__revers {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-    .header__regional-office {
-        display: none;
-    }
-   /* Иконка местоположение */
-    .header__regional-dot {
-        display: block;
-        width: 18px;
-        height: 22px;
-        color: #35383F;
-    }
-    .header__regional-dot img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    /* Автар пользователя */
-    .header__user-avatar-container {
-        margin-right: 20px;
-    }
-    .header__user-avatar {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-    }
-    /* Иконка, когда нет фото Пользователя*/
-    .header__user-icon {
-        display: none;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        color: #35383F;
-    }
-
-    .header__user-avatar img,
-    .header__user-icon img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-
-}
-
-    /* *** */
-.header__block-user-info {
+@media(max-width:670px) {
+  .header__body-wrapper {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    width: 385px;
-}
-
-/* Счётчик заявок Контейнер */
-.header__application-count-container {
+    align-items: center;
+    width: 100%;
+    height: 37px;
+    padding: 11.5px 0;
+  }
+    /* Логотипы */
+  .header__logo {
     display: flex;
-    margin-right: 10px;
-}
+    justify-content: space-between;
+    width: 90px;
+  }
 
-/* Иконка колокольчик */
-.header__application-count-container img {
+  .header__logo-rco {
+      max-width: 40px;
+      min-height: 35px;
+  }
+
+  .header__logo-rco img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  .header__logo-labor-cool {
+      max-width: 36px;
+      min-height: 36px;
+      border-radius: 50%;
+  }
+
+  .header__logo-labor-cool img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .nav-user li.regional-office {
+    max-width: 170px;
+  }
+  .nav-user li.regional-office p a {
+    font-size: 12px;;
+  }
+
+  ul.dropdown-items {
+    min-width: fit-content;
+    border-radius: 10px;
+    background: #1F7CC0;
+    display: none;
+    position: absolute;
+    top: 139%;
+    right: 10px;
+    padding: 12px 28px;
+    left: -187px;
+  }
+      /* Иконка Пользователя */
+  li.dropdown .user-icon {
     width: 36px;
     height: 36px;
+    border-radius: 50%;
     color: #35383F;
+    margin-right: 12px;
+    margin-left: 10px;
+  }
+
+  li.dropdown .user-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  ul.menu-mobile {
+    max-width: fit-content;
+    position: fixed;
+    z-index: 100;
+    top: 62px;
+    right: 3%;
+    overflow-x: hidden;
+    border-radius: 10px;
+    background: #1F7CC0;
+    padding: 28px 28px;
+  }
 }
 
-.header__icon-bell,
-.header__user-avatar-container {
+@media(max-width:570px) {
+
+  ul.menu-mobile {
+    min-width: fit-content;
+    padding: 10px 20px;
+  }
+
+  nav.navigation-mobile ul li a,
+  ul.dropdown-items li a {
+    font-size: 18px;
+
+  }
+}
+
+@media(max-width:470px) {
+  /* Иконка местоположение 360px*/
+  li.regional-dot {
     display: flex;
     align-items: center;
-}
+    max-width: 36px;
+    min-height: 36px;
+    margin-right: 5px;
+  }
 
-/* Счётчик заявок*/
-.header__application-count {
+  li.regional-dot img {
+  /* display: block; */
+    width: 100%;
+    height: 100%;
+  }
+
+    /* Региональное отделение */
+  .nav-user li.regional-office {
+    display: none;
+  }
+
+  ul.menu-mobile {
+    min-width: fit-content;
+    padding: 10px 20px;
+    right: 4%;
+  }
+
+  ul.dropdown-items {
+    min-width: fit-content;
+    border-radius: 10px;
+    background: #1F7CC0;
+    display: none;
     position: absolute;
-    margin: 0 0 23px 17px;
+    top: 139%;
+    right: -40px;
+    padding: 10px 20px;
+    left: -93px;
+  }
+  nav.navigation-mobile ul li a,
+  ul.dropdown-items li a {
+    font-size: 16px;
+  }
 }
 
-.header__application-count p {
-    position: relative;
-    padding: 1px 2px;
-    background-color: #ffffff;
-    text-align: center;
-    font-family: 'Akrobat';
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #DB0000;
-}
-
-/* Региональное отделение пользователя */
-.header__regional-office-container {
-    display: flex;
-    max-width: 170px;
-}
-
-.header__revers {
-    display: flex;
-}
-
-/* Иконка местоположение */
-.header__regional-dot {
+@media(max-width:340px) {
+  /* Иконка местоположение 360px*/
+    /* Региональное отделение */
+  .nav-user li.regional-dot,
+  .nav-user li.application-count {
     display: none;
-}
+  }
 
-/* Вывод названия регионального отделения */
-.header__regional-office p {
-    color: #35383F;
-    text-align: center;
-    font-family: 'BertSans';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    /* padding: 0 10px; */
-}
-
-/*** Иконка или автар пользователя ***/
-/* Автар пользователя */
-.header__user-avatar-container {
-    margin-right: 24px;
-}
-.header__user-avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-}
-
-/* Иконка, когда нет фото Пользователя*/
-.header__user-icon {
-    display: none;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    color: #35383F;
-}
-
-.header__user-avatar img,
-.header__user-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-/* Иконка выпадающего меню */
-
-/* Иконка раскрыть */
-.header__drop-down-click {
-    width: 14px;
-    height: 14px;
-    color: #35383F;
-}
-
-.header__drop-down-click img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }

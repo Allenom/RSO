@@ -1,4 +1,7 @@
 /* Buttons Styles */
+section.button__layouts {
+    margin: 0 auto 80px;
+  }
 
 button {
     border: none;
@@ -385,6 +388,225 @@ button {
     background-color: #129393;
 }
 
+ /* Настрой профиля: Моя страница: Кратко о себе about-me.css */
+ /*  Сохранить 151*52 В сотоянии Disabled Пока не заполнены поля */
+ #about label[for="about-me_save"] {
+    display: none;
+ }
+ 
+ #about input[id="about-me_save"] {
+    width: 151px;
+    min-height: 52px;
+    background: #39BFBF;
+    /*  */
+    color: #ffffff;
+    padding: 16px 32px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+    /*  */
+    cursor: pointer;
+ }
+ 
+ #about input[id="about-me_save"]:disabled {
+    cursor: default;
+    background: #898989;
+ }
+ 
+#about input[id="about-me_save"]:hover,
+#about input[id="about-me_save"]:active {
+    cursor: pointer;
+    background-color: #129393;
+ }
+ 
+ /* Очистить */
+#about button[type="reset"]  {
+    width: 152px;
+    min-height: 52px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 16px 22px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+#about button[type="reset"]:hover,
+#about button[type="reset"]:active {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+ @media(max-width: 500px) {
+     /*  Сохранить 151*52 В сотоянии Disabled Пока не заполнены поля */
+     #about input[id="about-me_save"] {
+        width: 114px;
+        min-height: 40px;
+        background: #39BFBF;
+        /*  */
+        color: #ffffff;
+        padding: 10px 24px;/*padding change*/
+        /* button_text */
+        font-family: 'BertSans';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 166.667% */
+    }
+    
+    #about input[id="about-me_save"]:disabled {
+        cursor: default;
+        background: #898989;
+    }
+    
+    #about input[id="about-me_save"]:hover,
+    #about input[id="about-me_save"]:active {
+        cursor: pointer;
+        background-color: #129393;
+    }
+    
+    /*  Очистить 152*52 Нет состояния Disabled */
+    #about button[type="reset"] {
+        width: 114px;
+        min-height: 40px;
+        background: #ffffff;
+        /*  */
+        border: 2px solid #35383F;
+        color:  #35383F;
+        padding: 10px 22px; /*change padding*/
+        /* button_text */
+        font-family: 'BertSans';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 166.667% */
+    }
+
+    #about button[type="reset"]:hover,
+    #about button[type="reset"]:active {
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #35383F;
+    }
+ }
+
+/* Настрой профиля: Моя страница: Мои фото my-photo.css */
+  /*  Сохранить 151*52 В сотоянии Disabled Пока не заполнены поля */
+
+#my_photo label[for="my_photo_save"] {
+    display: none;
+}
+
+#my_photo input[name="my_photo_save"] {
+    width: 151px;
+    min-height: 52px;
+    background: #39BFBF;
+    color: #ffffff;
+    padding: 16px 32px;
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    cursor: pointer;
+}
+ 
+ #my_photo input[name="my_photo_save"]:disabled {
+    cursor: default;
+    background: #898989;
+ }
+ 
+ #my_photo input[name="my_photo_save"]:hover,
+ #my_photo input[name="my_photo_save"]:active {
+    cursor: pointer;
+    background-color: #129393;
+ }
+ 
+ /* Очистить */
+#my_photo button[type="reset"]  {
+    width: 152px;
+    min-height: 52px;
+    background: #ffffff;
+    /*  */
+    border: 2px solid #35383F;
+    color:  #35383F;
+    padding: 16px 22px;
+    /* button_text */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+#my_photo button[type="reset"]:hover,
+#my_photo button[type="reset"]:active  {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #35383F;
+}
+
+ @media(max-width: 500px) {
+    /*  Сохранить 151*52 В сотоянии Disabled Пока не заполнены поля */
+     #my_photo input[name="my_photo_save"] {
+       width: 114px;
+       min-height: 40px;
+       background: #39BFBF;
+       /*  */
+       color: #ffffff;
+       padding: 10px 24px;/*padding change*/
+       /* button_text */
+       font-family: 'BertSans';
+       font-size: 12px;
+       font-style: normal;
+       font-weight: 600;
+       line-height: 20px; /* 166.667% */
+   }
+   
+    #my_photo input[name="my_photo_save"]:disabled {
+       cursor: default;
+       background: #898989;
+   }
+   
+    #my_photo input[name="my_photo_save"]:hover,
+    #my_photo input[name="my_photo_save"]:active {
+       cursor: pointer;
+       background-color: #129393;
+   }
+   
+   /* Очистить 152*52 Нет состояния Disabled  */
+        #my_photo button[type="reset"] {
+        width: 114px;
+        min-height: 40px;
+        background: #ffffff;
+        /*  */
+        border: 2px solid #35383F;
+        color:  #35383F;
+        padding: 10px 22px; /*change padding*/
+        /* button_text */
+        font-family: 'BertSans';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 166.667% */
+    }
+
+    #my_photo button[type="reset"]:hover,
+    #my_photo button[type="reset"]:active {
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #35383F;
+    }
+}
 
 /*  Сохранить изменения 244*52 В сотоянии Disabled Пока не заполнены поля */
 .btn__save-ch {
@@ -922,28 +1144,80 @@ button {
     background-color: #35383F;
 }
 
-/*  Отклонить 114*40 Нет состояния Disabled */
-.btn__reject-s {
-    width: 114px;
-    min-height: 40px;
+    /*  Отклонить 152*52 Нет состояния Disabled */
+@media(max-width: 500px) {
+    .btn__reject {
+        width: 114px;
+        min-height: 40px;
+        background: #ffffff;
+        /*  */
+        border: 2px solid #35383F;
+        color:  #35383F;
+        padding: 10px 22px; /*change padding*/
+        /* button_text */
+        font-family: 'BertSans';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 166.667% */
+    }
+
+    .btn__reject:hover,
+    .btn__reject:active {
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #35383F;
+    }
+}
+
+/*  Очистить 152*52 Нет состояния Disabled */
+.btn__clear {
+    width: 152px;
+    min-height: 52px;
     background: #ffffff;
     /*  */
     border: 2px solid #35383F;
     color:  #35383F;
-    padding: 10px 22px; /*change padding*/
+    padding: 16px 22px;
     /* button_text */
     font-family: 'BertSans';
-    font-size: 12px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 20px; /* 166.667% */
+    line-height: 20px; /* 125% */
 }
 
-.btn__reject-s:hover,
-.btn__reject-s:active {
+.btn__clear:hover,
+.btn__clear:active {
     cursor: pointer;
     color: #ffffff;
     background-color: #35383F;
+}
+
+    /*  Очистить 152*52 Нет состояния Disabled */
+@media(max-width: 500px) {
+    .btn__clear {
+        width: 114px;
+        min-height: 40px;
+        background: #ffffff;
+        /*  */
+        border: 2px solid #35383F;
+        color:  #35383F;
+        padding: 10px 22px; /*change padding*/
+        /* button_text */
+        font-family: 'BertSans';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 166.667% */
+    }
+
+    .btn__clear:hover,
+    .btn__clear:active {
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #35383F;
+    }
 }
 
 /*  Предпросмотр 168*48 Нет состояния Disabled */
@@ -1090,3 +1364,10 @@ button {
     color: #ffffff;
     background-color: #35383F;
 }
+
+/* Проверка адаптивности потом переписать */
+@media(max-width:1290px) {
+    section.button__layouts {
+      margin: 0 20px 80px;
+    }
+  }

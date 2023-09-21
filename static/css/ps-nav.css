@@ -1,0 +1,44 @@
+/* Настройки профиля Хлебные крошки */
+section.ps-nav {
+    padding-top: 40px;
+    margin-bottom: 40px;
+ }
+ 
+ .breadcrumbs-container ul {
+    display: flex;
+    list-style: none;
+ }
+ 
+ .breadcrumbs-slesh {
+    margin: 0 4px;
+ }
+ 
+ .breadcrumbs-container a {
+    display: block;
+    text-decoration: none;
+    /* хлебные_крошки */
+    font-family: 'Akrobat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #35383F;
+ }
+ 
+ .breadcrumbs-container a.active {
+    display: block;
+    text-decoration: none;
+   /* хлебные_крошки */
+    font-family: 'Akrobat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #1F7CC0;
+ }
+
+ @media(max-width: 1290px) {
+   section.ps-nav {
+        margin: 0 20px 40px;
+    }
+}

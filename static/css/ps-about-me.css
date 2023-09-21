@@ -1,0 +1,114 @@
+/* Настрой профиля: Моя страница: Кратко о себе */
+.about-me .wrapper {
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+  border-right: 1px solid rgba(0, 0, 0, 0.10);
+  border-left: 1px solid rgba(0, 0, 0, 0.10);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+/* Форма Кратко о себе */
+form#about {
+
+   /* border: 1px solid rgb(0, 255, 55); */
+   display: flex;
+   flex-direction: column;
+   width: initial;
+   margin: 40px 40px 0;
+ }
+ 
+ #about fieldset {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   border: none;
+ }
+
+#about legend {
+   color: #35383F;
+   /* Названия блоков в инпутах */
+   font-family: 'Akrobat';
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 28px; /* 116.667% */
+   /*  */
+   margin-bottom: 20px;
+}
+
+.textarea-wrapper {
+  max-height: fit-content;
+}
+
+#about label[for="about-me"] {
+   display: none;
+ }
+
+ #about textarea#about-me  {
+   box-sizing: border-box;
+   resize: none;
+   width: 100%;
+   /* height: fit-content; */
+   padding: 16px 16px;
+   /*  */
+   overflow: hidden;
+   /* text-indent: 16px; */
+   /*  */
+   color: #5E5C5C;
+   /* Подсказки в инпутах */
+   font-family: 'BertSans';
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   /*  */
+   border-radius: 10px;
+   border: 1px solid rgba(0, 0, 0, 0.10);
+   background: #ffffff;
+   /*  */
+   margin-bottom: 16px;
+ }
+
+ #about textarea#about-me:focus {
+   outline: none;
+   border-radius: 10px;
+   border: 1px solid rgba(0, 0, 0, 0.10);
+   background: #ffffff;
+ }
+
+ #about .counter {
+   display: flex;
+   width: 60px;
+   /*  */
+   color: #898989;
+   font-family: 'Verdana';
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   /*  */
+   margin-bottom: 20px;
+ }
+
+ #about output[name="counter"] {
+   width: 30px;
+ }
+
+ /* Сохранить Очистить */
+ .btn__save-reset {
+   display: flex;
+   justify-content: space-evenly;
+ }
+
+ /* Проверка адаптивности потом переписать */
+ @media(max-width: 1290px) {
+   section.about-me {
+        margin: 0 20px;
+    }
+ }
+
+ @media(max-width: 768px) {
+  section.about-me {
+       margin: 0 20px;
+   }
+}

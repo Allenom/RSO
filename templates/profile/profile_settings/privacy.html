@@ -2,60 +2,71 @@
 {% load static %}
 {% block title %}Настройка приватности профиля{% endblock %}
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-baner.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-tabs.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-nav.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-title.css' %}">
 <link rel="stylesheet" href="{% static 'css/privacy-settings.css' %}">
-<link rel="stylesheet" href="{% static 'css/style.css' %}" />
-<link rel="stylesheet" href="{% static 'css/forms.css' %}" />
+<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+
 {% endblock %}
 
 {% block content %}
-   <!-- <section class="profile-settings">
+  <!-- Настройки профиля Хлебные крошки-->
+   <section class="ps-nav">
       <div class="container">
-        &lt;!&ndash;  Контейнер c вкладками   &ndash;&gt;
-        <nav class="ps__navigation">
-          <ul class="ps__navigation-links-list tab-header">
-            <li
-              data-tab="my-page"
-              class="ps__my-page tab-title-navigation active"
-            >
-              Моя страница
-            </li>
-            <li
-              data-tab="personal-data"
-              class="ps__personal-data tab-title-navigation"
-            >
-              Персональные данные
-            </li>
-            <li
-              data-tab="login-password"
-              class="ps__login-password tab-title-navigation"
-            >
-              Логин и пароль
-            </li>
-            <li
-              data-tab="private-settings"
-              class="ps__privacy-settings tab-title-navigation"
-            >
-              Настройки приватности
-            </li>
-          </ul>
-        </nav>
+         <!-- Хлебные крошки -->
+         <nav class="breadcrumbs-container">
+            <ul itemscope itemtype="#">
+               <li itemprop="itemListElement" itemscope itemtype="#">
+                   <a href="/" title="Личный кабинет" itemprop="item">
+                       <span itemprop="name">Личный кабинет</span>
+                       <meta itemprop="position" content="0">
+                   </a>
+               </li>
+               <div class="breadcrumbs-slesh">/</div>
+               <li itemprop="itemListElement" itemscope itemtype="profile-settings-my-page.html">
+                   <a class="active" href="/templates/profile-settings-my-page.html" title="Настройки профиля" itemprop="item">
+                       <span itemprop="name">Настройки профиля</span>
+                       <meta itemprop="position" content="1">
+                   </a>
+               </li>
+           </ul>
+         </nav>
       </div>
-    </section>-->
+   </section>
 
-<!--  <form method="post" enctype="multipart/form-data">-->
-<!--    {% csrf_token %}-->
-<!--    <h4>Кто видит мой номер телефона</h4>-->
-<!--    {{form.privacy_telephone}}-->
-<!--    <h4>Кто видит мою электронную почту</h4>-->
-<!--    {{form.privacy_email}}-->
-<!--    <h4>Кто видит мои ссылки на соцсети</h4>-->
-<!--    {{form.privacy_social}}-->
-<!--    <h4>Кто видит информацию обо мне</h4>-->
-<!--    {{form.privacy_about}}-->
-<!--    <h4>Кто видит мои фотографии</h4>-->
-<!--    {{form.privacy_photo}}-->
-<!--    <button type="submit">Сохранить</button>-->
-<!--  </form>-->
+   <!-- Настройки профиля H2 -->
+   <section class="ps-title">
+      <div class="container">
+         <h2>Настройки профиля</h2>
+      </div>
+   </section>
+{% include "layout/profile_cap.html" %}
+
+<!-- Табы  -->
+        <section class="ps-tabs">
+            <div class="container">
+            <!--  Контейнер c вкладками   -->
+            <nav class="ps__navigation">
+                <ul class="ps__navigation-links-list tab-header">
+                    <li data-tab-ps__navigation="1" class="ps__my-page tab-title-navigation active">
+                        <a href="/templates/ps-my-page.html">Моя страница</a>
+                    </li>
+                    <li data-tab-ps__navigation="2"class="ps__personal-data tab-title-navigation">
+                        <a href="/templates/ps-personal-data.html">Персональные данные</a>
+                    </li>
+                    <li data-tab-ps__navigation="3" class="ps__login-password tab-title-navigation">
+                        <a href="/templates/ps-p-change.html">Логин и пароль</a>
+                    </li>
+                    <li data-tab-ps__navigation="4" class="ps__privacy-settings tab-title-navigation">
+                        <a href="/templates/ps-settings.html">Настройки приватности</a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+        </section>
     <section class="profile-settings-privacy">
           <div class="container">
              <div class="profile-settings__drop-down-list">
