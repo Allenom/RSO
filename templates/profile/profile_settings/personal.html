@@ -26,12 +26,12 @@
 <!--Стили добавить если нужно-->
 {% endblock %}
 {% block content %}
-{#<form method="post" enctype="multipart/form-data" >#}
-{#    {% csrf_token %}#}
-{#    {{ user_form.as_p }}#}
-{#    {{ form.as_p }}#}
-{#    <button type="submit">Сохранить изменения</button>#}
-{#</form>#}
+<form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
      <!-- Настройки профиля -->
    <!-- Настройки профиля Хлебные крошки-->
    <section class="ps-nav">
@@ -1916,7 +1916,7 @@
                 <p class="know-RSO-title">Откуда вы узнали про РСО</p>
                 <textarea
                   name="know"
-                  id="know"
+                  class="know"
                   cols="1"
                   rows="1"
                   class="input-full area"
@@ -1952,7 +1952,7 @@
             data-parent="#insurance-steps"
           >
             <div class="card-body" >
-              <div class="RSO-blanks RSO" id="Blanks">
+              <div class="RSO-blanks RSO" id="Blanks-yes-RSO">
                 <p class="RSO-blanks__title RSO-title">
                   Загрузите копию паспорта
                 </p>
@@ -2465,7 +2465,7 @@
             data-parent="#insurance-steps"
           >
             <div class="card-body" >
-              <div class="RSO-blanks RSO" id="Blanks">
+              <div class="RSO-blanks RSO" id="Blanks-foreign">
                 <p class="RSO-blanks__title RSO-title">
                   Скачайте бланки, распечатайте. Отсканируйте и прикрепите
                   заполненные заявления (оригиналы отнесите в Региональное
@@ -2526,7 +2526,7 @@
                             stroke="#1F7CC0"
                           />
                         </svg>
-                        <button id="statement" class="download-blanks">
+                        <button id="statement-foreign" class="download-blanks">
                           Скачать бланк
                         </button>
                       </div>
@@ -2548,17 +2548,17 @@
                         <input
                           type="file"
                           name="file"
-                          id="RSO-statement"
+                          id="RSO-statement-no-RSO-foreign"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
 
-                        <label for="RSO-statement" class="file-choose"
+                        <label for="RSO-statement-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-statement">Файл не выбран</span>
+                        <span class="file-chosen" id="file-chosen-statement-foreign">Файл не выбран</span>
                         <span class="file-error"></span>
                       </div>
                     </div>
@@ -2616,7 +2616,7 @@
                           />
                         </svg>
                         <button
-                          id="consent-personal"
+                          id="consent-personal-foreign"
                           class="download-blanks"
                         >
                           Скачать бланк
@@ -2640,17 +2640,17 @@
                         <input
                           type="file"
                           name="file"
-                          id="personal-data"
+                          id="personal-data-no-RSO-foreign"
                           class="file-upload"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="personal-data" class="file-choose"
+                        <label for="personal-data-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" class="file-chosen-personal">Файл не выбран</span>
+                        <span class="file-chosen" class="file-chosen-personal-foreign">Файл не выбран</span>
                         <span class="file-error"></span>
                       </div>
                     </div>
@@ -2674,7 +2674,7 @@
                     </svg>
                     <button
                       class="download-blanks"
-                      onclick="downloadAll()"
+                      onclick="downloadAllForeign()"
                     >
                       Скачать все бланки
                     </button>
@@ -2739,16 +2739,16 @@
                         <input
                           type="file"
                           name="file"
-                          id="pass-upload"
+                          id="pass-upload-no-RSO-foreign"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
                         />
-                        <label for="pass-upload" class="file-choose"
+                        <label for="pass-upload-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
                         <span class="file-error"></span>
-                        <span class="file-chosen" id="file-chosen-pass">Файл не выбран</span>
+                        <span class="file-chosen" id="file-chosen-pass-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2812,15 +2812,15 @@
                         <input
                           type="file"
                           name="file"
-                          id="SNILS-upload"
+                          id="SNILS-upload-no-RSO-foreign"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
                         />
-                        <label for="SNILS-upload" class="file-choose"
+                        <label for="SNILS-upload-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-snils">Файл не выбран</span>
+                        <span class="file-chosen" id="file-chosen-snils-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2877,16 +2877,16 @@
                         <input
                           type="file"
                           name="file"
-                          id="INN-upload"
+                          id="INN-upload-no-RSO-foreign"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="INN-upload" class="file-choose"
+                        <label for="INN-upload-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-INN">Файл не выбран</span>
+                        <span class="file-chosen" id="file-chosen-INN-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2943,13 +2943,13 @@
                         <input
                           type="file"
                           name="file"
-                          id="workbook"
+                          id="workbook-no-RSO-foreign"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="workbook" class="file-choose"
+                        <label for="workbook-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
                         <span class="file-chosen" id="file-chosen-workbook">Файл не выбран</span>
@@ -2971,13 +2971,13 @@
                 <p class="know-RSO-title">Откуда вы узнали про РСО</p>
                 <textarea
                   name="know"
-                  id="know-foreign"
+                  class="know foreign-know"
                   cols="1"
                   rows="1"
                   class="input-full area"
                 ></textarea>
                 <div class="counter">
-                  <span class="current">0</span>&nbsp;/
+                  <span class="current current-foreign">0</span>&nbsp;/
                   <span class="total">200</span>
                 </div>
               </div>
@@ -3020,6 +3020,7 @@
 
     </script>
      <script src="/static/js/accardions.js"></script>
+     <script src="/static/js/download-files.js"></script>
     <script src="/static/js/date-valid.js"></script>
 
 {% endblock %}
