@@ -106,6 +106,7 @@ class Profile(models.Model):
 
 class Region(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name='Название')
+    branch = models.CharField(max_length=100, db_index=True, default='региональное отделение', verbose_name='Региональное отделение')
 
     def __str__(self):
         return self.name

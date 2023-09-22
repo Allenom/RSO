@@ -73,7 +73,11 @@
 							<li class="regional-office">
 								<p>
 									<a href="#">
-										Карачаево-Черкесское региональное отделение
+                                        {% if user %}
+										{{user.profile.region.branch}}
+                                        {% else %}
+                                        Московское региональное отделение
+                                        {% endif %}
 									</a>
 								</p>
 							</li>

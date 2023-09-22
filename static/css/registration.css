@@ -81,7 +81,8 @@ section.user-registration-form .wrapper-form {
 #registration input[type="text"],
 #registration input[type="number"],
 #registration input[type="password"],
-#registration input[type="repeat-password"] {
+#registration input[type="repeat-password"],
+ #registration input[type="date"] {
   border: 1px solid #A3A3A3;
   border-radius: 10px;
   width: 100%;

@@ -9,11 +9,11 @@
 {% endblock %}
 {% block content %}
 
-<form enctype="multipart/form-data" method="post">
-	{% csrf_token %}
-    {{ form.as_p }}
-	<button type="submit" style="padding: 10px">Зарегаться</button>
-</form>
+<!--<form enctype="multipart/form-data" method="post">-->
+<!--	{% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--	<button type="submit" style="padding: 10px">Зарегаться</button>-->
+<!--</form>-->
 <!--        <div class="form_wrapper">
             <h1 class="page_title">Регистрация</h1>
 
@@ -27,11 +27,14 @@
 		<section class="user-registration-form">
 			<div class="wrapper-form">
 				<!-- Форма регистрации  -->
-				<form class="form user-registration" id="registration" method="post" action="#"
+				<form class="form user-registration" id="registration" method="post"
 					enctype="multipart/form-data" spellcheck="true">
+					{% csrf_token %}
 					<fieldset form="registration">
 						<legend>Регистрация</legend>
+						{{ form.non_field.errors }}
 						<!-- Поле поиска региона -->
+						{{form.region}}
 						<div class="wrapper">
 							<div class="select-btn">
 								<span>
@@ -54,60 +57,77 @@
 							</div>
 						</div>
 
+						{{ form.last_name.errors }}
 						<!-- Фамилия -->
 						<div class="form-field">
 							<label for="surname">Фамилия</label>
-							<input form="registration" type="text" name="surname" id="surname"
-								autocomplete="family-name" placeholder="Фамилия" />
+							<input form="registration" type="text" name="last_name" id="surname"
+								autocomplete="family-name" placeholder="Фамилия" value="{{ form.last_name.value }}" />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
 
+						{{ form.first_name.errors }}
 						<!-- Имя -->
 						<div class="form-field">
 							<label for="name">Имя</label>
-							<input form="registration" type="text" name="name" id="name" autocomplete="name"
-								placeholder="Имя" />
+							<input form="registration" type="text" name="first_name" id="name" autocomplete="name"
+								placeholder="Имя" value="{{ form.first_name.value }}" />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
 
+						{{ form.patronymic.errors }}
 						<!-- Отчество -->
 						<div class="form-field">
 							<label for="patronymic">Отчество</label>
 							<input form="registration" type="text" name="patronymic" id="patronymic"
-								autocomplete="patronymic" placeholder="Отчество (при наличии)" />
+								autocomplete="patronymic" placeholder="Отчество (при наличии)" value="{{ form.patronymic.value }}" />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
 
+						{{ form.date_of_birth.errors }}
+						<!-- Дата рождения -->
+						<div class="form-field">
+							<label for="patronymic">Дата рождения</label>
+							<input form="registration" type="date" name="date_of_birth" id="id_date_of_birth"
+								autocomplete="date_of_birth" placeholder="Дата рождения" value="{{ form.date_of_birth.value }}" />
+							<!-- JS Текст об ошибке неверно введённого зачения -->
+							<!--<div class="error"></div>-->
+						</div>
+
+						{{ form.telephone.errors }}
 						<!-- Номер телефона -->
 						<div class="form-field">
 							<label for="phone">Введите номер телефона</label>
-							<input form="registration" type="number" name="phone" id="phone" autocomplete="tel"
-								placeholder="+7 (999) 999-99-99" />
+							<input form="registration" type="number" name="telephone" id="phone" autocomplete="tel"
+								placeholder="+7 (999) 999-99-99" value="{{ form.telephone.value }}" />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
 
+						{{ form.email.errors }}
 						<!--Почта-->
 						<div class="form-field">
 							<label for="email">Укажите электронную почту</label>
 							<input form="registration" type="text" name="email" id="email" autocomplete="email"
-								placeholder="Электронная почта" />
+								placeholder="Электронная почта" value="{{ form.email.value }}" />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
 
+						{{ form.username.errors }}
 						<!-- Придумайте логин -->
 						<div class="form-field">
 							<label for="username">Придумайте логин</label>
 							<input form="registration" type="text" name="username" id="username" autocomplete="username"
-								placeholder="Придумайте логин" />
+								placeholder="Придумайте логин" value="{{ form.username.value }}" />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
 
+						{{ form.password.errors }}
 						<!-- Придумайте пароль -->
 						<div class="input-box">
 							<label for="password">Придумайте пароль</label>
@@ -123,6 +143,8 @@
 							<!--<div class="error"></div>-->
 						</div>
 
+
+						{{ form.repeat_password.errors }}
 						<!-- Повторите пароль -->
 						<div class="input-box">
 							<div class="repeat-password">
@@ -146,7 +168,7 @@
 						<div class="form-field-checkbox">
 							<label for="checkbox">
 								<input form="registration" class="checkbox" type="checkbox" id="checkbox"
-									value="checkbox" />
+									value="checkbox" onclick="checkBox()" />
 								<p>Даю согласие на обработку моих персональных данных в соответствии с законом от
 									27.07.2006 года № 152-ФЗ «О персональных данных», на условиях и для целей,
 									определенных в Согласии на обработку персональных данных*.</p>
@@ -157,18 +179,29 @@
 
 						<!-- Кнопка Зарегистрироваться -->
 						<!-- Зарегистрироваться 232*52 В сотоянии Disabled Пока не заполнены поля -->
-						<button class="btn__register" id="registration" type="submit" formtarget="#">
+						<button class="btn__register" id="registration_btn" type="submit" disabled>
 							Зарегистрироваться
 						</button>
 						<!-- У меня уже есть аккаунт  -->
 						<div class="link-login GoLogin_wrapper GoLogin">
-							<a href="/templates/user-login.html">У меня уже есть аккаунт</a>
+							<a href="/login/">У меня уже есть аккаунт</a>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 		</section>
 	</article>
+<script>
+    function checkBox(){
+        let button = document.getElementById("registration_btn");
+        if(button.disabled) {
+        button.disabled = false;
+        } else {
+        button.disabled = true;
+        }
+
+    }
+</script>
  <script src="/static/js/script_registration.js"></script>
 <script src="/static/js/form-user-registration.js"></script>
     <!--<form class="main__form" method="post">
