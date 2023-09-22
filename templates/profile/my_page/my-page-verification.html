@@ -1,27 +1,51 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% extends 'layout/basic.html' %}
+{% load static %}
+{% block title %}Профиль{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/ps-baner.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-about-me.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-my-photo.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-tabs.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-nav.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-title.css' %}">
+{% endblock %}
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Подключаем шрифты Akrobat -->
-   <link rel="stylesheet" href="/static/fonts/akrobat/otf/stylesheet.css">
-   <link rel="stylesheet" href="/static/fonts/akrobat/ttf/stylesheet.css">
-   <link rel="stylesheet" href="/static/fonts/akrobat/web/stylesheet.css">
-   <!-- Подключаем шрифты BertSans -->
-   <link rel="stylesheet" href="/static/fonts/bertsans/stylesheet.css">
-   <!-- Подключаем шрифты Verdana -->
-   <link rel="stylesheet" href="/static/fonts/verdana/ttf/stylesheet.css">
-   <!-- Подключаем шрифты Inter -->
-   <link rel="stylesheet" href="/static/fonts/inter/ttf/stylesheet.css">
-   <!-- Подключаем стили -->
-   <link rel="stylesheet" href="/static/css/my-page-verification.css">
-   <!-- Подключаем библиотеки -->
-   <title>Верификация данных</title>
-</head>
+{% block content %}
 
-<body>
+   <!-- Настройки профиля Хлебные крошки-->
+   <section class="ps-nav">
+      <div class="container">
+         <!-- Хлебные крошки -->
+         <nav class="breadcrumbs-container">
+            <ul itemscope itemtype="#">
+               <li itemprop="itemListElement" itemscope itemtype="#">
+                   <a href="/" title="Личный кабинет" itemprop="item">
+                       <span itemprop="name">Личный кабинет</span>
+                       <meta itemprop="position" content="0">
+                   </a>
+               </li>
+               <div class="breadcrumbs-slesh">/</div>
+               <li itemprop="itemListElement" itemscope itemtype="profile-settings-my-page.html">
+                   <a class="active" href="/templates/profile-settings-my-page.html" title="Настройки профиля" itemprop="item">
+                       <span itemprop="name">Настройки профиля</span>
+                       <meta itemprop="position" content="1">
+                   </a>
+               </li>
+           </ul>
+         </nav>
+      </div>
+   </section>
+
+   <!-- Настройки профиля H2 -->
+   <section class="ps-title">
+      <div class="container">
+         <h2>Настройки профиля</h2>
+      </div>
+   </section>
+{% include "layout/profile_cap.html" %}
+
    <!-- верификация данных -->
    <article class="my-page-verification">
       <section class="my-page-verification__wrapper">
@@ -58,6 +82,4 @@
          </div>
       </section>
    </article>
-</body>
-
-</html>
+{% endblock %}
