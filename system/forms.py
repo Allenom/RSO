@@ -58,7 +58,7 @@ class ProfilePageEditForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ('about', 'photo1', 'photo2', 'photo3', 'photo4')
+        fields = ('about', 'banner', 'photo', 'photo1', 'photo2', 'photo3', 'photo4')
         widgets = {'about': forms.Textarea(attrs={'rows': 3}), }
 
 

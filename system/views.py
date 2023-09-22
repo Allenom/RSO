@@ -21,6 +21,10 @@ def page(request, template):
     return render(request, template)
 
 
+def redirect_to_lk_page(request):
+    return redirect('/profile/my_page/')
+
+
 def lk_page(request):
     if not request.user.is_authenticated:
         return redirect('/login/?next=/profile/')

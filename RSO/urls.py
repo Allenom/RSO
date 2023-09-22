@@ -19,7 +19,7 @@ from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.urls import path, reverse_lazy
 
 from RSO import settings
-from system.views import SignUp, lk_page, ProfilePrivacyEditView, page, ProfilePersonalEditView, ProfilePageEditView
+from system.views import SignUp, lk_page, ProfilePrivacyEditView, page, ProfilePersonalEditView, ProfilePageEditView, redirect_to_lk_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +32,7 @@ urlpatterns = [
     path("change_password/", page, {'template': 'change_password.html'}, name='change_password'),
 
     # Профиль
+    path('', redirect_to_lk_page),
     path("profile/my_page/", lk_page, name='profile'),
     path("profile/my_page/verification", page, {'template': 'profile/my_page/verification.html'}, name='profile_verification'),
     path("profile/my_page/data_verification", page, {'template': 'profile/my_page/data_verification.html'}, name='profile_data_verification'),

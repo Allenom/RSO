@@ -46,11 +46,13 @@ class Profile(models.Model):
     social_vk = models.CharField(max_length=50, blank=True, default='https://vk.com/', verbose_name='Ссылка на ВК')
     social_tg = models.CharField(max_length=50, blank=True, default='', verbose_name='Ссылка на Телеграм')
 
+    banner = models.ImageField(upload_to='users/banner/%Y/%m/%d', blank=True, verbose_name='Баннер личной страницы')
     photo = models.ImageField(upload_to='users/avatar/%Y/%m/%d', blank=True, verbose_name='Аватарка')
     photo1 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 1')
     photo2 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 2')
     photo3 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 3')
     photo4 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 4')
+
 
     # document1_title
     # document1
