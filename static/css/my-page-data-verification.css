@@ -44,14 +44,9 @@ p {
    margin: 0 auto;
    align-items: start;
 }
-
-.my-page-data-verification__wrapper {
-   margin-top: 60px;
-   margin-bottom: 80px;
-
+.my-page-verification{
+  margin-bottom: 80px;
 }
-
-
 .my-page-data-verification__heading {
    color: #35383F;
    font-family: 'Akrobat', sans-serif;
@@ -99,34 +94,29 @@ p {
 
 
 /********************* адаптив ***********************************/
-@media screen and (max-width:1300px) {
+@media screen and (max-width:1290px) {
    .my-page-data-verification__wrapper {
-      margin-right: 7%;
-      margin-left: 7%;
+      margin:0 130px;
    }
 
 }
 
 @media screen and (max-width:1030px) {
    .ma-page-data-verification__wrapper {
-      margin-right: 66px;
-      margin-left: 66px;
+      margin:0 66px;
    }
 }
-
 
 @media screen and (max-width:768px) {
 
    .my-page-data-verification__wrapper {
-      margin-left: 34px;
-      margin-right: 34px;
+      margin:0 34px;
    }
 }
 
 @media screen and (max-width:657px) {
    .my-page-data-verification__wrapper {
-      margin-right: 16px;
-      margin-left: 16px;
+      margin:0 16px;
    }
 }
 
