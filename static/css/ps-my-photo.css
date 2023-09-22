@@ -9,11 +9,11 @@ section.my_photo {
     border-left: 1px solid rgba(0, 0, 0, 0.10);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    padding-top: 40px;
+    padding-top: 20px;
   }
 
   /* Форма Мои фото */
- form#my_photo {
+ #my_photo {
     display: grid;
     margin: 40px 40px 0;
   }
@@ -90,7 +90,7 @@ section.my_photo {
    cursor: pointer;
  }
 
- #my_photo input[name="my_photo_add"] {
+ #my_photo input[name="photo1"],input[name="photo2"],input[name="photo3"],input[name="photo4"] {
    display: none;
 }
 
