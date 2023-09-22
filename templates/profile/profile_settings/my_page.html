@@ -114,52 +114,52 @@
                   <!-- Контейнер для фото  -->
                   <div class="avatar-upload my_photo__edit">
                      <!-- Заглушка по умолчанию  -->
-                     <div class="avatar-preview my_photo__plug" id="imagePreview">
-                        <img src="/static/images/profile-settings/my-photo-plug.png" alt="">
+                     <div class="avatar-preview my_photo__plug">
+                        <img src="/static/images/profile-settings/my-photo-plug.png" alt="" id="banner-one">
                      </div>
                      <!-- Добавить фото -->
                      <div class="avatar-edit my_photo__add">
-                        <label for="my_photo_add"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
-                        <input form="my_photo" type="file" id="imageUpload" name="my_photo_add" accept=".png, .jpg, .jpeg" />
+                        <label for="upload-banner-one"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
+                        <input form="my_photo" type="file" id="upload-banner-one" name="my_photo_add" accept=".png, .jpg, .jpeg" />
                      </div>
                   </div>
 
                   <!-- Контейнер для фото  -->
                   <div class="avatar-upload my_photo__edit">
                      <!-- Заглушка по умолчанию  -->
-                     <div class="avatar-preview my_photo__plug" id="imagePreview">
-                        <img src="/static/images/profile-settings/album1-14.jpg" alt="">
+                     <div class="avatar-preview my_photo__plug" >
+                        <img src="/static/images/profile-settings/album1-14.jpg" alt="" id="banner-two">
                      </div>
                      <!-- Добавить фото -->
                      <div class="avatar-edit my_photo__add">
-                        <label for="my_photo_add"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
-                        <input form="my_photo" type="file" id="imageUpload" name="my_photo_add" accept=".png, .jpg, .jpeg" />
+                        <label for="upload-banner-two"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
+                        <input form="my_photo" type="file" id="upload-banner-two" name="my_photo_add" accept=".png, .jpg, .jpeg" />
                      </div>
                   </div>
 
                   <!-- Контейнер для фото  -->
                   <div class="avatar-upload my_photo__edit">
                      <!-- Заглушка по умолчанию  -->
-                     <div class="avatar-preview my_photo__plug" id="imagePreview">
-                        <img src="/static/images/profile-settings/album1-15.jpg" alt="">
+                     <div class="avatar-preview my_photo__plug" >
+                        <img src="/static/images/profile-settings/album1-15.jpg" alt="" id="banner-hree">
                      </div>
                      <!-- Добавить фото -->
                      <div class="avatar-edit my_photo__add">
-                        <label for="my_photo_add"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
-                        <input form="my_photo" type="file" id="imageUpload" name="my_photo_add" accept=".png, .jpg, .jpeg" />
+                        <label for="upload-banner-hree"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
+                        <input form="my_photo" type="file" id="upload-banner-hree" name="my_photo_add" accept=".png, .jpg, .jpeg" />
                      </div>
                   </div>
 
                   <!-- Контейнер для фото  -->
                   <div class="avatar-upload my_photo__edit">
                      <!-- Заглушка по умолчанию  -->
-                     <div class="avatar-preview my_photo__plug" id="imagePreview">
-                        <img src="/static/images/profile-settings/my-photo-plug.png" alt="">
+                     <div class="avatar-preview my_photo__plug" >
+                        <img src="/static/images/profile-settings/my-photo-plug.png" alt="" id="banner-four">
                      </div>
                      <!-- Добавить фото -->
                      <div class="avatar-edit my_photo__add">
-                        <label for="my_photo_add"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
-                        <input form="my_photo" type="file" id="imageUpload" name="my_photo_add" accept=".png, .jpg, .jpeg" />
+                        <label for="upload-banner-four"><img src="/static/images/icons/pen-circle.svg" alt=""></label>
+                        <input form="my_photo" type="file" id="upload-banner-four" name="my_photo_add" accept=".png, .jpg, .jpeg" />
                      </div>
                   </div>
                </fieldset>
@@ -173,7 +173,89 @@
          </div>
       </div>
    </section>
-   <script src="/static/js/profile/profile_settings/textarea-counter.js"></script>
+
+   <!--&lt;!&ndash; Настрой профиля: Моя страница: Мои фото &ndash;&gt;
+   <section class="my_photo">
+      <div class="container">
+         <div class="my-photo-wrapper">
+            &lt;!&ndash; Форма Мои фото  &ndash;&gt;
+            <form id="my_photo" action="my_photo.php" enctype="multipart/form-data" method="post">
+               <fieldset form="my_photo">
+                  <legend>Мои фото</legend>
+                  &lt;!&ndash; фото 1 &ndash;&gt;
+                  &lt;!&ndash; Контейнер для фото  &ndash;&gt;
+                  <div class="avatar-upload my_photo__edit">
+                     &lt;!&ndash; Заглушка по умолчанию  &ndash;&gt;
+                     <div class="avatar-preview my_photo__plug">
+                        <img src="/static/images/img/plug.png" alt="" id="banner-one">
+                     </div>
+                     &lt;!&ndash; Добавить фото &ndash;&gt;
+                     <div class="avatar-edit my_photo__add">
+                        <label for="upload-banner-one"><img src="/static/images/img/cross.png" alt=""></label>
+                        <input form="my_photo" type="file" id="upload-banner-one" name="my_photo_add"
+                           accept=".png, .jpg, .jpeg" />
+                     </div>
+                  </div>
+                  &lt;!&ndash; фото 2 &ndash;&gt;
+                  &lt;!&ndash; Контейнер для фото  &ndash;&gt;
+                  <div class="avatar-upload my_photo__edit">
+                     &lt;!&ndash; Заглушка по умолчанию  &ndash;&gt;
+                     <div class="avatar-preview my_photo__plug" >
+                        <img src="/static/images/img/plug.png" alt="" id="banner-two">
+                     </div>
+                     &lt;!&ndash; Добавить фото &ndash;&gt;
+                     <div class="avatar-edit my_photo__add">
+                        <label for="upload-banner-two"><img src="/static/images/img/cross.png" alt=""></label>
+                        <input form="my_photo" type="file" id="upload-banner-two" name="my_photo_add"
+                           accept=".png, .jpg, .jpeg" />
+                     </div>
+                  </div>
+                  &lt;!&ndash; фото 3 &ndash;&gt;
+                  &lt;!&ndash; Контейнер для фото  &ndash;&gt;
+                  <div class="avatar-upload my_photo__edit">
+                     &lt;!&ndash; Заглушка по умолчанию  &ndash;&gt;
+                     <div class="avatar-preview my_photo__plug" >
+                        <img src="/static/images/img/plug.png" alt="" id="banner-hree">
+                     </div>
+                     &lt;!&ndash; Добавить фото &ndash;&gt;
+                     <div class="avatar-edit my_photo__add">
+                        <label for="upload-banner-hree"><img src="/static/images/img/cross.png" alt=""></label>
+                        <input form="my_photo" type="file" id="upload-banner-hree" name="my_photo_add"
+                           accept=".png, .jpg, .jpeg" />
+                     </div>
+                  </div>
+                  &lt;!&ndash; фото 4 &ndash;&gt;
+                     &lt;!&ndash; Контейнер для фото  &ndash;&gt;
+                     <div class="avatar-upload my_photo__edit">
+                        &lt;!&ndash; Заглушка по умолчанию  &ndash;&gt;
+                        <div class="avatar-preview my_photo__plug" >
+                           <img src="/static/images/img/plug.png" alt="" id="banner-four">
+                        </div>
+                        &lt;!&ndash; Добавить фото &ndash;&gt;
+                        <div class="avatar-edit my_photo__add">
+                           <label for="upload-banner-four"><img src="/static/images/img/cross.png" alt=""></label>
+                           <input form="my_photo" type="file" id="upload-banner-four" name="my_photo_add"
+                              accept=".png, .jpg, .jpeg" />
+                        </div>
+                     </div>
+
+               </fieldset>
+               &lt;!&ndash; Очистить Сохранить &ndash;&gt;
+               <div class="btn__save-reset">
+                  <button form="my_photo" type="reset">Очистить</button>
+                  <label for="my_photo_save">Сохранить</label>
+                  <input class="btn__save" form="my_photo" id="my_photo_save" type="submit" name="my_photo_save"
+                     formtarget="#" value="Сохранить">
+               </div>
+            </form>
+         </div>
+      </div>
+   </section>-->
+
+
+
+    <script src="/static/js/textarea-counter.js"></script>
+    <script src="/static/js/file-upload.js"></script>
    <!-- <script src="/static/js/profile/profile_settings/my-photo-upload.js"></script> -->
    <!-- <script src="/static/js/profile/profile_settings/file-upload.js"></script> -->
 {% endblock %}
