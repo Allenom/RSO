@@ -142,7 +142,7 @@
             <div class="card-body">
               <div class="data-form">
                 <div class="form-field">
-                  <label for="surname">Фамилия</label>
+                  <label for="surname">Фамилия <span class="valid-red">*</span></label>
                   <input
                     type="text"
                     name="last_name"
@@ -165,7 +165,7 @@
                   <div class="error"></div>
                 </div>
                 <div class="form-field">
-                  <label for="name">Имя</label>
+                  <label for="name">Имя<span class="valid-red">*</span></label>
                   <input
                     type="text"
                     id="name"
@@ -212,7 +212,7 @@
                   <div class="error"></div>
                 </div>
                 <div class="checkbox">
-                  <p class="checkbox-title">Пол</p>
+                  <p class="checkbox-title">Пол<span class="valid-red">*</span></p>
                   <input
                     type="radio"
                     id="male"
@@ -231,7 +231,7 @@
                   <label for="female">Женский</label>
                 </div>
                 <div class="form-field">
-                  <label for="birthdate">Дата рождения</label>
+                  <label for="birthdate">Дата рождения<span class="valid-red">*</span></label>
                   <input
                     type="date"
                     name="date"
@@ -249,7 +249,7 @@
                 <div class="parents">
                     <div class="parents-about">
                               <div class="form-field">
-                    <label for="surname-parent">Фамилия</label>
+                    <label for="surname-parent">Фамилия<span class="valid-red">*</span></label>
                     <input
                       type="text"
                       id="surname-parent"
@@ -261,7 +261,7 @@
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
-                    <label for="">Кем является</label>
+                    <label for="">Кем является<span class="valid-red">*</span></label>
                     <select class="select-small" name="select" >
                       <option
                         value="0"
@@ -285,7 +285,7 @@
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
-                    <label for="date-parent">Дата рождения</label>
+                    <label for="date-parent">Дата рождения<span class="valid-red">*</span></label>
                     <input
                       type="date"
                       name="date-parent"
@@ -294,7 +294,7 @@
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
-                    <label for="name-parent">Имя</label>
+                    <label for="name-parent">Имя<span class="valid-red">*</span></label>
                     <input
                       type="text"
                       name="name"
@@ -307,7 +307,7 @@
                   </div>
 
                   <div class="form-field">
-                    <label for="phone-parent">Телефон</label>
+                    <label for="phone-parent">Телефон<span class="valid-red">*</span></label>
                     <input
                       type="tel"
                       id="phone-parent"
@@ -322,7 +322,7 @@
 
                     <div class="izm" id="passport-parent-yes">
                            <div class="checkbox passport" id="checkbox-parent-pass">
-                    <p class="checkbox-title">Паспорт гражданина РФ</p>
+                    <p class="checkbox-title">Паспорт гражданина РФ<span class="valid-red">*</span></p>
                     <div class="checkbox"></div>
                     <input
                       type="radio"
@@ -348,7 +348,7 @@
                   <div class="addres" id="pass-no-addr">Адрес постоянной регистрации</div>
 
                     <div class="form-field" id="pass-no-pass-id">
-                      <label for="pass-num-parent">Номер и серия</label>
+                      <label for="pass-num-parent">Номер и серия<span class="valid-red">*</span></label>
                       <input
                         type="text"
                         id="pass-num-parent"
@@ -361,7 +361,7 @@
                     </div>
 
                     <div class="form-field" id="pass-no-reg">
-                      <label for="">Регион</label>
+                      <label for="">Регион<span class="valid-red">*</span></label>
                       <select
                         class="select-big"
                         name="select"
@@ -379,7 +379,7 @@
                     </div>
 
                     <div class="form-field" id="pass-no-date">
-                      <label for="pass-date-parent">Дата выдачи</label>
+                      <label for="pass-date-parent">Дата выдачи<span class="valid-red">*</span></label>
                       <input
                         type="date"
                         id="pass-date-parent"
@@ -390,7 +390,7 @@
                     </div>
 
                     <div class="form-field" id="pass-no-locality">
-                      <label for="locality-parent">Населенный пункт</label>
+                      <label for="locality-parent">Населенный пункт<span class="valid-red">*</span></label>
                       <input
                         type="text"
                         name="addres"
@@ -403,7 +403,7 @@
                     </div>
 
                     <div class="form-field" id="pass-no-pass">
-                      <label for="pass-id-parent">Кем выдан</label>
+                      <label for="pass-id-parent">Кем выдан<span class="valid-red">*</span></label>
                       <input
                         type="text"
                         id="pass-id-parent"
@@ -415,7 +415,7 @@
                     </div>
 
                     <div class="form-field" id="pass-no-street">
-                      <label for="addres-parent">Улица, Дом, Квартира</label>
+                      <label for="addres-parent">Улица, дом, квартира<span class="valid-red">*</span></label>
                       <input
                         type="text"
                         name="addres"
@@ -430,7 +430,7 @@
                   <div id="no-passport-parent" class="form-data">
                     <div class="form-field one">
                       <label for="pass-num-parent"
-                        >Документ удостоверяющий личность</label
+                        >Документ удостоверяющий личность<span class="valid-red">*</span></label
                       >
                       <input
                         type="text"
@@ -444,7 +444,7 @@
 
                     <div class="form-field">
                       <label for="pass-date-parent-foreign"
-                        >Дата выдачи</label
+                        >Дата выдачи<span class="valid-red">*</span></label
                       >
                       <input
                         type="date"
@@ -468,7 +468,7 @@
                       <div class="error"></div>
                     </div>
                     <div class="form-field one">
-                      <label for="org-id-parent-foreign">Кем выдан</label>
+                      <label for="org-id-parent-foreign">Кем выдан<span class="valid-red">*</span></label>
                       <input
                         type="text"
                         id="org-id-parent-foreign"
@@ -559,7 +559,7 @@
                     Адрес постоянной регистрации
                   </p>
                   <div class="form-field">
-                    <label for="phone-contact">Телефон</label>
+                    <label for="phone-contact">Телефон<span class="valid-red">*</span></label>
                     <input
                       type="tel"
                       id="phone-contact"
@@ -570,7 +570,7 @@
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
-                    <label for="">Регион</label>
+                    <label for="">Регион<span class="valid-red">*</span></label>
                     <select class="select-big" name="select">
                       <option
                         value="0"
@@ -583,7 +583,7 @@
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
-                    <label for="email-contact">Электронная почта</label>
+                    <label for="email-contact">Электронная почта<span class="valid-red">*</span></label>
                     <input
                       type="email"
                       name="email"
@@ -594,7 +594,7 @@
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
-                    <label for="locality-contact">Населенный пункт</label>
+                    <label for="locality-contact">Населенный пункт<span class="valid-red">*</span></label>
                     <input
                       type="text"
                       class="input-big"
@@ -625,7 +625,7 @@
                   </div>
                   <div class="form-field">
                     <label for="addres-contact"
-                      >Улица, Дом, Квартира</label
+                      >Улица, дом, квартира</label
                     >
                     <input
                       type="text"
@@ -639,7 +639,7 @@
                   <div class="checkbox" id="checkbox">
                     <p class="checkbox-title">
                       Адрес фактического проживания совпадает с адресом
-                      постоянной регистрации
+                      постоянной регистрации<span class="valid-red">*</span>
                     </p>
                     <input
                       type="radio"
@@ -647,6 +647,7 @@
                       name="fact-addr"
                       value="yes"
                       onclick="addrFact(1)"
+                      checked
                     />
                     <label for="yes">Да</label>
 
@@ -657,7 +658,7 @@
                       name="fact-addr"
                       value="no"
                       onclick="addrFact(2)"
-                      checked
+
                     />
                     <label for="no">Нет</label>
                   </div>
@@ -692,7 +693,7 @@
                     </div>
                     <div class="form-field">
                       <label for="addres-fact"
-                        >Улица, Дом, Квартира</label
+                        >Улица, дом, квартира</label
                       >
                       <input
                         type="text"
@@ -740,7 +741,7 @@
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
-               Документы
+               Документы (паспорт, СНИЛС, ИНН, сведения о трудовой деятельности, документ воинского учета)
               </button>
             </h5>
           </div>
@@ -754,7 +755,7 @@
             <div class="card-body">
               <div class="data-form docs">
                 <div class="checkbox one">
-                  <p class="checkbox-title">Паспорт гражданина РФ</p>
+                  <p class="checkbox-title">Паспорт гражданина РФ<span class="valid-red">*</span></p>
                   <input
                     type="radio"
                     id="yes-pass"
@@ -776,7 +777,7 @@
                 </div>
                 <div id="yes-passport" class="form-data izm">
                   <div class="form-field">
-                    <label for="pass-num">Номер и серия</label>
+                    <label for="pass-num">Номер и серия<span class="valid-red">*</span></label>
                     <input
                       type="text"
                       id="pass-num"
@@ -788,7 +789,7 @@
                   </div>
 
                   <div class="form-field">
-                    <label for="pass-date">Дата выдачи</label>
+                    <label for="pass-date">Дата выдачи<span class="valid-red">*</span></label>
                     <input
                       type="date"
                       name="date"
@@ -809,7 +810,7 @@
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
-                    <label for="SNILS-id">Номер СНИЛС</label>
+                    <label for="SNILS-id">Номер СНИЛС<span class="valid-red">*</span></label>
                     <input
                       type="text"
                       id="SNILS-id"
@@ -819,7 +820,7 @@
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
-                    <label for="INN-id">ИНН</label>
+                    <label for="INN-id">ИНН<span class="valid-red">*</span></label>
                     <input
                       type="text"
                       id="INN-id"
@@ -884,7 +885,7 @@
                 <div id="no-passport" class="form-data izm">
                   <div class="form-field one">
                     <label for="pass-num"
-                      >Документ удостоверяющий личность</label
+                      >Документ удостоверяющий <span class="valid-red">*</span></label
                     >
                     <input
                       type="text"
@@ -896,7 +897,7 @@
                   </div>
 
                   <div class="form-field">
-                    <label for="pass-date">Дата выдачи</label>
+                    <label for="pass-date">Дата выдачи<span class="valid-red">*</span></label>
                     <input
                       type="date"
                       name="pass-date"
@@ -917,7 +918,7 @@
                     <div class="error"></div>
                   </div>
                   <div class="form-field one">
-                    <label for="org-id">Кем выдан</label>
+                    <label for="org-id">Кем выдан<span class="valid-red">*</span></label>
                     <input
                       type="text"
                       id="org-id"
@@ -1019,7 +1020,7 @@
               <div class="data-form simple" id="simplee">
                 <div class="form-field">
                   <label for="education-org"
-                    >Образовательная организация</label
+                    >Образовательная организация<span class="valid-red">*</span></label
                   >
                   <input
                     type="text"
@@ -1041,7 +1042,7 @@
                   <div class="error"></div>
                 </div>
                 <div class="form-field">
-                  <label for="course">Курс (класс)</label>
+                  <label for="course">Курс (класс)<span class="valid-red">*</span></label>
                   <input
                     type="text"
                     id="course"
@@ -1102,7 +1103,7 @@
                 aria-expanded="false"
                 aria-controls="collapseFive"
               >
-               Заявление об вступлении в РСО
+               Заявление о вступлении в РСО и скан-копии документов
               </button>
             </h5>
           </div>
@@ -1123,7 +1124,7 @@
                 <div class="blanks-wrapper">
                   <div class="RSO-statement">
                     <p class="statement-title">
-                      Заявление на вступление в РСО
+                      Заявление на вступление в РСО<span class="valid-red">*</span>
                     </p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
@@ -1212,7 +1213,7 @@
                       </div>
                     </div>
                     <p class="statement-title">
-                      Согласие на обработку персональных данных
+                      Согласие на обработку персональных данных<span class="valid-red">*</span>
                     </p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
@@ -1305,7 +1306,7 @@
                     </div>
                     <p class="statement-title">
                       Согласие законного представителя на обработку
-                      персональных данных несовершенолетнего
+                      персональных данных несовершенолетнего<span class="valid-red">*</span>
                     </p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
@@ -1430,7 +1431,7 @@
                 </p>
                 <div class="pass-details__wrapper">
                   <div class="pass-details__item">
-                    <p class="statement-title">Паспорт гражданина РФ</p>
+                    <p class="statement-title">Паспорт гражданина РФ<span class="valid-red">*</span></p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
                         <svg
@@ -1497,7 +1498,7 @@
                   </div>
                   <div class="pass-details__item">
                     <p class="statement-title">
-                      Паспорт законного представителя
+                      Паспорт законного представителя<span class="valid-red">*</span>
                     </p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
@@ -1926,6 +1927,15 @@
                   <span class="total">200</span>
                 </div>
               </div>
+                  <button
+                class="nav-prev"
+                data-toggle="collapse"
+                data-target="#collapseFour"
+                aria-expanded="true"
+                aria-controls="collapseFour"
+              >
+               Назад
+              </button>
             </div>
           </div>
         </div>
@@ -1940,7 +1950,7 @@
                 aria-expanded="false"
                 aria-controls="collapseFive"
               >
-               Скан копии документов
+               Скан-копии документов
               </button>
             </h5>
           </div>
@@ -1958,7 +1968,7 @@
                 </p>
                 <div class="pass-wrapper">
                   <div class="RSO-statement">
-                    <p class="statement-title">Паспорт гражданина РФ</p>
+                    <p class="statement-title">Паспорт гражданина РФ<span class="valid-red">*</span></p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
                         <svg
@@ -2024,7 +2034,7 @@
                       </div>
                     </div>
                     <p class="statement-title">
-                      Паспорт законного представителя
+                      Паспорт законного представителя<span class="valid-red">*</span>
                     </p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
