@@ -67,7 +67,7 @@ background-image: url(/static/images/user-login-bg.jpg);
 }
 
 #user_login legend {
-  text-align: left;
+  text-align: center;
   color: #35383F;
     /* Desktop/H-2 */
   font-family: 'Akrobat';
