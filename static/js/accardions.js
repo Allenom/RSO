@@ -1,12 +1,23 @@
+function changeRSOpeople(val) {
+  if (val == 1) {
+    document.getElementById("yes-RSO").style.display = "block";
+    document.getElementById("no-RSO").style.display = "none";
+    document.get;
+  } else if (val == 2) {
+    document.getElementById("yes-RSO").style.display = "none";
+    document.getElementById("no-RSO").style.display = "block";
+  }
+}
 
 const noRSOforeign = document.getElementById('no-RSO-foreign');
 const noRSO = document.getElementById('no-RSO');
 function handleRadioClick() {
   if (document.getElementById('no-rso-people').checked && document.getElementById('no-pass').checked) {
     noRSOforeign.style.display = 'block';
-  noRSO.style.display = 'none';
-  } else {
-    noRSOforeign.style.display = 'none';
+       noRSO.style.display = 'none'
+  } else if(document.getElementById('no-rso-people').checked && document.getElementById('yes-pass').checked) {
+    noRSOforeign.style.display = 'none'
+    noRSO.style.display = 'block'
   }
 }
 
@@ -304,16 +315,7 @@ function changeBlockPassport(val) {
 }
 
 
-function changeRSOpeople(val) {
-  if (val == 1) {
-    document.getElementById("yes-RSO").style.display = "block";
-    document.getElementById("no-RSO").style.display = "none";
-    document.get;
-  } else if (val == 2) {
-    document.getElementById("yes-RSO").style.display = "none";
-    document.getElementById("no-RSO").style.display = "block";
-  }
-}
+
 
 function addrFact(val) {
   if (val == 1) {

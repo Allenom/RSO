@@ -1400,7 +1400,12 @@
                     </div>
                   </div>
                   <div class="dowmload-all">
-                    <svg
+
+                    <button
+                      class="download-blanks"
+                      onclick="downloadAll()"
+                    >
+                               <svg
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -1416,10 +1421,6 @@
                         stroke="#1F7CC0"
                       />
                     </svg>
-                    <button
-                      class="download-blanks"
-                      onclick="downloadAll()"
-                    >
                       Скачать все бланки
                     </button>
                   </div>
@@ -1927,7 +1928,8 @@
                   <span class="total">200</span>
                 </div>
               </div>
-                  <button
+               <div class="center">
+                     <button
                 class="nav-prev"
                 data-toggle="collapse"
                 data-target="#collapseFour"
@@ -1936,6 +1938,7 @@
               >
                Назад
               </button>
+                </div>
             </div>
           </div>
         </div>
@@ -2449,6 +2452,18 @@
                   </div>
                 </div>
               </div>
+                <div class="center">
+                     <button
+                class="nav-prev"
+                data-toggle="collapse"
+                data-target="#collapseFour"
+                aria-expanded="true"
+                aria-controls="collapseFour"
+              >
+               Назад
+              </button>
+                </div>
+
             </div>
           </div>
         </div>
@@ -2463,7 +2478,7 @@
                 aria-expanded="fasle"
                 aria-controls="collapseFive"
               >
-               Заявление об вступлении в РСО
+               Заявление о вступлении в РСО и скан-копии документов
               </button>
             </h5>
           </div>
@@ -2484,7 +2499,7 @@
                 <div class="blanks-wrapper">
                   <div class="RSO-statement">
                     <p class="statement-title">
-                      Заявление на вступление в РСО
+                      Заявление на вступление в РСО<span class="valid-red">*</span>
                     </p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
@@ -2573,7 +2588,7 @@
                       </div>
                     </div>
                     <p class="statement-title">
-                      Согласие на обработку персональных данных
+                      Согласие на обработку персональных данных<span class="valid-red">*</span>
                     </p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
@@ -2666,7 +2681,12 @@
                     </div>
                   </div>
                   <div class="dowmload-all">
-                    <svg
+
+                    <button
+                      class="download-blanks"
+                      onclick="downloadAllForeign()"
+                    >
+                               <svg
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -2682,10 +2702,6 @@
                         stroke="#1F7CC0"
                       />
                     </svg>
-                    <button
-                      class="download-blanks"
-                      onclick="downloadAllForeign()"
-                    >
                       Скачать все бланки
                     </button>
                   </div>
@@ -2697,7 +2713,7 @@
                 </p>
                 <div class="pass-details__wrapper">
                   <div class="pass-details__item">
-                    <p class="statement-title">Паспорт иностранного гражданина</p>
+                    <p class="statement-title">Паспорт иностранного гражданина<span class="valid-red">*</span></p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
                         <svg
@@ -2991,6 +3007,17 @@
                   <span class="total">200</span>
                 </div>
               </div>
+                        <div class="center">
+                     <button
+                class="nav-prev"
+                data-toggle="collapse"
+                data-target="#collapseFour"
+                aria-expanded="true"
+                aria-controls="collapseFour"
+              >
+               Назад
+              </button>
+                </div>
             </div>
           </div>
         </div>

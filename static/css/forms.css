@@ -175,4 +175,5 @@ li.selected {
   display: block;
   font-size: 12px;
   padding: 10px 0px 10px 16px;
+  margin-bottom: 20px;
 }
