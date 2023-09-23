@@ -1,38 +1,29 @@
-ul {
+* {
    margin: 0;
    padding: 0;
 }
 
-html {
-   box-sizing: border-box;
-}
-
 *,
-* ::before,
+*::before,
 *::after {
    box-sizing: inherit;
 }
 
-/* говорим тегу img будешь блочным тегом.
-Указываем максимальную ширину    max-width: 100%; - если экран будет меньше самой картинки то картинка будет сжиматься. */
 img {
    display: block;
    max-width: 100%;
 }
 
-a {
+body {
    margin: 0;
-   padding: 0;
+   font-family: 'BertSans', sans-serif;
+   font-family: 'Akrobat', sans-serif;
+}
+
+a {
    text-decoration: none;
-   color: var(--unnamed);
-   display: block;
 }
 
-button {
-   border: none;
-}
-
-/* убираем все падинги и марджины которые установлены по умолчанию */
 h1,
 h2,
 h3,
@@ -44,197 +35,85 @@ p {
    margin: 0;
 }
 
-/* Sans-serif делает шрифт без засечек, указываем по умолчанию настройки: обнуление отступов, шрифт и его начертание */
-body {
-   margin: 0;
+.my-page-verification__title h3 {
+   color: #35383F;
    font-family: 'Akrobat', sans-serif;
-   font-family: 'BertSans', sans-serif;
+   font-size: 32px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   margin-bottom: 40px;
 }
 
-/********** uder-page ***********/
+.my-page-verification__text p {
+   color: #35383F;
+   font-family: 'BertSans', sans-serif;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   max-width: 835px;
+   min-height: 72px;
+   margin-bottom: 40px;
+}
+
+.my-page-verification__info-text p {
+   color: #35383F;
+   font-family: 'BertSans', sans-serif;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   max-width: 835px;
+   min-height: 72px;
+}
+
+a {
+   color: #FFF;
+   font-family: 'BertSans', sans-serif;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+}
+
+/* верификация данных */
 .container {
    max-width: 1180px;
    margin: 0 auto;
-
+   align-items: start;
 }
 
-/* ****************Блок about*************** */
-
-.user-page__title {
-   margin: 0;
-   padding: 40px 40px 20px 40px;
+/* отступы */
+.my-page-verification__info,
+.my-page-verification__wrapper {
+   margin-top: 60px;
 }
 
-
-.user-page__heading {
-   color: #35383F;
-   font-family: 'Akrobat', sans-serif;
-   font-style: normal;
-   color: #35383F;
-   font-size: 24px;
-   font-weight: 600;
-   line-height: 28px;
-   margin-bottom: 20px;
-}
-
-.user-page__wraper {
-   border-radius: 10px;
-   margin-bottom: 80px;
-   border: 1px solid rgba(0, 0, 0, 0.10);
-}
-
-.user-page__counter {
-   color: #898989;
-   font-family: 'Verdana', sans-serif;
-   font-size: 14px;
-   font-weight: 400;
-}
-
-.user-page__btn {
-   display: flex;
+/* стилизация кнопки */
+.my-page-verification__button {
+   max-width: 345px;
+   max-height: 48px;
+   padding: 10.5px 62px;
    justify-content: center;
-}
-
-.user-page__btn a {
-   color: #FFF;
-}
-
-.user-page__save {
-   padding: 16px 32px;
    align-items: center;
    border-radius: 10px;
    background: #39BFBF;
-   font-family: 'BertSans', sans-serif;
-   font-size: 16px;
-   font-weight: 600;
-   cursor: pointer;
-
-}
-
-/* раздел поля ввода текста */
-
-.user-page__textarea {
-   max-width: 822px;
-   min-height: 116px;
-   color: #5E5C5C;
-   font-size: 16px;
-   font-weight: 400;
-   overflow: hidden;
-   margin-bottom: 20px;
-}
-
-.user-page__textarea-wrap {
-   max-width: 788px;
-   min-height: 84px;
-   border-radius: 10px;
-   border: 1px solid rgba(0, 0, 0, 0.10);
-   background: #FFF;
-   display: flex;
-   padding: 16px;
-
-}
-
-/* удаляет полосу прокрутки и обводку    resize: none; не дает двигаться*/
-textarea {
-   max-width: 744px;
-   min-height: 84px;
    border: none;
-   outline: none;
-   text-align: left;
-   resize: none;
-   margin-right: 20px;
-   font-size: 16px;
-   font-weight: 400;
-   color: #5E5C5C;
 }
 
-::value {
-   font-family: 'BertSans', sans-serif;
-   color: #5E5C5C;
-   font-size: 16px;
-   font-weight: 400;
-   line-height: normal;
-   text-align: left;
-   max-width: 744px;
-   min-height: 84px;
-
+.my-page-verification__info {
+   margin-bottom: 80px;
 }
 
-/*  иконка component*/
-.user-page__textarea-button {
-   background: none;
-}
-
-.user-page__textarea-button img {
-   width: 24px;
-   height: 24px;
-   cursor: pointer;
-}
-
-.user-page__component {
-   position: absolute;
-   right: 16px;
-   top: 26px;
-   transform: translateY(-50%);
-
-}
-
-.user-page__textarea-wrap {
-   position: relative;
-   width: 100%;
-   align-items: center;
-}
-
-.user-page__textarea-button {
-   background: none;
-}
-
-.user-page__textarea-button img {
-   width: 24px;
-   height: 24px;
-   cursor: pointer;
-}
-
-.user-page__component {
-   position: absolute;
-   right: 16px;
-   top: 26px;
-   transform: translateY(-50%);
-
-}
-
-.ps-my-page__textarea-wrap {
-   position: relative;
-   width: 100%;
-   align-items: center;
-}
-
-
-/************************     конец раздела user-page    ***********************/
-
-/************************     раздел  user-page-photos    *********************************************** */
-
-.user-page-photos__heading {
-   margin-bottom: 40px;
-   color: #35383F;
-   font-family: 'Akrobat', sans-serif;
-   font-size: 24px;
-   font-weight: 600;
-   line-height: 28px;
-}
-
-.user-page-photos__title {
-   margin: 40px;
-}
-
-.user-page-photos__wrap {
+.my-page-verification__foto {
+   margin-top: 40px;
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    gap: 20px;
 }
 
-/* этот код помещает широкую картинку в блок */
-.user-page-photos__img img {
+.my-page-verification__foto img {
    width: 100%;
    height: 100%;
    display: block;
@@ -242,144 +121,88 @@ textarea {
    border-radius: 10px;
 }
 
-/* позиционирование кнопки + */
-.user-page-photos__img {
-   position: relative;
-}
-
-.user-page-photos__btn {
-   background: none;
-   position: absolute;
-   align-items: end;
-   margin-top: -57px;
-   right: 0px;
-
-}
-
-/* -*************************    конец раздела мое фото        ********************** */
+/* ********************  адаптив   ************************ */
 @media screen and (max-width:1300px) {
-   .user-page__wraper {
-      margin: 0 7%;
-   }
-}
 
-@media screen and (max-width:1030px) {
-   .user-page__wraper {
-      margin: 0 66px;
-   }
-
-   textarea {
-      min-height: 125px;
-   }
-
-   .user-page-photos__heading {
-      margin-bottom: 20px;
-   }
-}
-
-@media screen and (max-width:900px) {
-   .user-page__title {
-      max-width: 820px;
-   }
-
-   textarea {
-      width: 620px;
-      min-height: 140px;
-      height: 100%;
-   }
-}
-
-@media screen and (max-width:815px) {
-   textarea {
-      min-height: 165px;
+   .my-page-verification__wrapper,
+   .my-page-verification__info {
+      margin-right: 7%;
+      margin-left: 7%;
    }
 }
 
 @media screen and (max-width:768px) {
-   .user-page__title {
-      max-width: 820px;
-   }
 
-   .user-page__wraper {
-      margin: 0 34px 80px;
-   }
-
-   textarea {
-      min-height: 165px;
-      margin-right: 0;
+   .my-page-verification__wrapper,
+   .my-page-verification__info {
+      margin-right: 66px;
+      margin-left: 66px;
    }
 }
 
-@media screen and (max-width:657px) {
-
-   .user-page__title {
-      padding: 0 0 20px 0;
-      margin-top: 20px;
-   }
-
-   .user-page__wraper {
-      border: none;
-   }
-
-   .user-page-photos-stub__title {
-      margin: 0;
-   }
-}
-
-@media screen and (max-width:587px) {
-   textarea {
-      min-height: 180px;
-   }
-
-   .user-page-photos__wrap {
-      display: grid;
+@media screen and (max-width:650px) {
+   .my-page-verification__foto {
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
    }
 
-   .user-page__wraper {
-      border: none;
-      margin: 20px 16px 20px 16px;
-   }
-
-   .user-page-photos__title {
-      margin: 20px 0 80px 0;
-   }
-
-   .user-page-photos__btn img {
-      width: 36px;
-      height: 36px;
-   }
-
-   .user-page-photos__btn {
-      right: 0px;
-      bottom: 8px;
+   .my-page-verification__wrapper,
+   .my-page-verification__info {
+      margin-right: 32px;
+      margin-left: 32px;
    }
 }
 
-@media screen and (max-width:500px) {
-   textarea {
-      min-height: 205px;
+@media screen and (max-width:412px) {
+   .my-page-verification__button {
+     max-width: 328px;
+      max-height: 48px;
+      padding-left: 53.5px;
+      padding-right: 53.5px;
    }
-}
-
-@media screen and (max-width:470px) {
-   textarea {
-      min-height: 232px;
-   }
-}
-
-@media screen and (max-width:400px) {
-   textarea {
-      min-height: 252px;
+   .my-page-verification__wrapper,
+   .my-page-verification__info {
+      margin-right: 16px;
+      margin-left: 16px;
    }
 }
 
 @media screen and (max-width:360px) {
-   textarea {
-      min-height: 272px;
+   .my-page-verification__button {
+      max-width: 328px;
+      max-height: 48px;
+      padding-left: 50px;
+      padding-right: 50px;
+      justify-content: center;
    }
-   .user-page-photos__wrap {
+   .my-page-verification__button a {
+      font-size: 20px;
+   }
+   .my-page-verification__foto {
       grid-template-columns: repeat(1, 1fr);
    }
+}
+
+@media screen and (max-width:355px) {
+   .my-page-verification__button a {
+      font-size: 18px;
+   }
+}
+@media screen and (max-width:340px) {
+   .my-page-verification__title h3 {
+      font-size: 28px;
+   }
+   .my-page-verification__button {
+      padding: 12px 40px;
+   }
+}
+@media screen and (max-width:320px) {
+   .my-page-verification__button {
+      padding: 12px 32px;
+   }
+}
+@media screen and (max-width:298px) {
+   .my-page-verification__button {
+      padding: 12px 24px;
+   }
+
 }
