@@ -94,7 +94,7 @@ class UserPersonalEditForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('last_name', 'first_name')
+        fields = ('last_name', 'first_name', 'email')
 
 
 class UserPasswordEditForm(PasswordChangeForm):
