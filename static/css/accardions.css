@@ -217,6 +217,9 @@ input[type="radio"] {
   font-size: 16px;
   color: #898989;
   margin-bottom: 20px;
+      background: url(../images/icons/angel-down.svg) no-repeat right;
+    appearance: none;
+    background-position-x: calc(100% - 16px);
 }
 
 .select-big {
@@ -231,6 +234,9 @@ input[type="radio"] {
   font-size: 16px;
   color: #898989;
   margin-bottom: 20px;
+        background: url(../images/icons/angel-down.svg) no-repeat right;
+    appearance: none;
+    background-position-x: calc(100% - 16px);
 }
 
 .passport {
@@ -464,4 +470,8 @@ input[type="radio"] {
 .accordion-button:not(.collapsed) {
   background-color: white;
     color: #35383F;
+}
+
+#select-military {
+  padding-right: 40px;
 }
