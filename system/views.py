@@ -27,7 +27,7 @@ def redirect_to_lk_page(request):
 
 def lk_page(request):
     if not request.user.is_authenticated:
-        return redirect('/login/?next=/profile/')
+        return redirect('/login/?next=/profile/my_page/')
     context = {}
 
     return render(request, 'profile/my_page.html', context)

@@ -6,6 +6,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
+from RSO import settings
 from .models import Profile, Region
 
 
@@ -27,14 +28,19 @@ class CreateUserForm(forms.ModelForm):
     region = forms.ModelChoiceField(required=False, queryset=Region.objects)
 
     password = forms.CharField(widget=forms.PasswordInput, label='Пароль',
-                               help_text='Минимум 8 символов, не простой '                                                                             'и не распространенный')
+                               help_text='Минимум 8 символов, не простой ''и не распространенный')
     repeat_password = forms.CharField(widget=forms.PasswordInput, label='Повтор пароля')
     username = forms.CharField(label='Логин', help_text='Только буквы, цифры и символы @/./+/-/_.')
 
+    first_name = forms.CharField(label='Имя')
+    last_name = forms.CharField(label='Фамилия')
+
     telephone = forms.CharField(label='Телефон')
-    patronymic = forms.CharField(label='Отчество')
+    patronymic = forms.CharField(label='Отчество', required=False)
     date_of_birth = forms.DateField(label='Дата рождения',
                                     widget=forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'))
+
+
 
     # institution = forms.ModelChoiceField(required=False, queryset=Institution.objects)
 
