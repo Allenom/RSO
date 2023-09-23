@@ -13,10 +13,10 @@
 {% endblock %}
 
 {% block content %}
-<div>{{ user.last_name|default:'' }} {{ user.first_name|default:'' }} {{ user.profile.patronymic|default:'' }}</div>
-<div>{{ user.profile.telephone|default:'' }}</div>
-<div>{{ user.profile.telephone|default:'' }}</div>
-<div>{{ user.profile.telephone|default:'' }}</div>
+<!--<div>{{ user.last_name|default:'' }} {{ user.first_name|default:'' }} {{ user.profile.patronymic|default:'' }}</div>-->
+<!--<div>{{ user.profile.telephone|default:'' }}</div>-->
+<!--<div>{{ user.profile.telephone|default:'' }}</div>-->
+<!--<div>{{ user.profile.telephone|default:'' }}</div>-->
    <!-- Настройки профиля Хлебные крошки-->
    <section class="ps-nav">
       <div class="container">
@@ -62,7 +62,7 @@
                   ваших
                   личных данных. Она займет всего несколько минут.</p>
             </div>
-            <a class="my-page-verification__button" href="#">Пройти верификацию</a>
+            <a class="my-page-verification__button" href="/profile/profile_settings/personal/">Пройти верификацию</a>
          </div>
       </section>
       <section class="my-page-verification__info">
