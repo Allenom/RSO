@@ -1,6 +1,15 @@
 p {
   margin: 0px;
 }
+
+.accordion-button::after {
+background-image: url("../images/icons/Component 33.svg");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("../images/icons/Component 33-up.svg");
+   transform: rotate(-180deg);
+}
 .parents-wrapper {
   margin-top: 40px;
   border: 1px solid #1c5c94;
