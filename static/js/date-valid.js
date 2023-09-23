@@ -1,4 +1,4 @@
-$('#birthdatee').bind('blur', function(){
+$('#birthdatee').ready(function(){
   var d = new Date();
   var InputVal = $(this).val().split('-')[0];
   var ThisYear = d.getFullYear();
