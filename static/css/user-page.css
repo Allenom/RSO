@@ -65,7 +65,6 @@ p {
    font-weight: 400;
    line-height: normal;
    max-width: 835px;
-   min-height: 72px;
 }
 
 a {
@@ -176,9 +175,6 @@ a {
    }
    .my-page-verification__button a {
       font-size: 20px;
-   }
-   .my-page-verification__foto {
-      grid-template-columns: repeat(1, 1fr);
    }
 }
 

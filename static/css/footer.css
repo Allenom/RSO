@@ -115,10 +115,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* max-width: 396px; */
     min-height: 72px;
 }
 
 /* Левая часть футера */
+.footer__all-rights-reserved {
+    max-width: 396px;
+}
 
 .footer__all-rights-reserved p {
     color: #ffffff;
@@ -314,6 +318,9 @@
         height: 100%;
         object-fit: cover;
     }
+    .footer__logo-teamcode a {
+        font-size: 11px;
+    }
     .cookie p,
     .cookie a {
         font-size: 14px;
@@ -347,7 +354,18 @@
         justify-content: center;
         padding-top: 48px;
         margin-bottom: 40px;
+        /* justify-items: center; */
     }
+
+    .footer__logo-wrapper {
+        margin: 0 auto 32px;
+    }
+        /* Иконки соцсетей */
+    .footer__social-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
 }
 
 @media(max-width: 380px) {
@@ -399,6 +417,25 @@
     .cookie p,
     .cookie a {
         font-size: 10px;
+    }
+    .footer__top-container {
+        margin-bottom: 20px;
+    }
+    .footer__developed {
+        margin-bottom: 20px;
+    }
+    /* Логотип 1Т */
+    .footer__logo-1t-img {
+        width: 44px;
+        height: 13px;
+        margin: 0 6px 0 10px;
+    }
+    .footer__logo-teamcode a {
+        font-size: 9px;
+        margin-left: 6px;
+    }
+    .footer__bottom-container {
+        padding-bottom: 30px;
     }
 }
 

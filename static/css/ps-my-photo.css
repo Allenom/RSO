@@ -113,7 +113,7 @@ section.my_photo {
   @media(max-width: 1024px) {
     #my_photo fieldset {
         display: grid;
-        grid-template-columns: repeat(2, 260px);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         justify-content: center;
         column-gap: 20px;
@@ -146,6 +146,6 @@ section.my_photo {
   @media(max-width: 500px) {
     .btn__save-reset {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
   }
