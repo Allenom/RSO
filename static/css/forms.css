@@ -1,3 +1,5 @@
+
+
 .registration {
   min-height: 100vh;
   background-image: url("../images/user-login-bg.jpg");
@@ -177,3 +179,23 @@ li.selected {
   padding: 10px 16px 10px 16px;
   margin-bottom: 20px;
 }
+
+.select-reg {
+    border: 2px solid #a3a3a3;
+  border-radius: 10px;
+  width: 513px;
+  min-height: 40px;
+  text-indent: 16px;
+  outline: none;
+  font-family: "BertSans";
+  font-weight: 500;
+  font-size: 16px;
+  color: #898989;
+  margin-bottom: 20px;
+        background: url(../images/icons/angel-down.svg) no-repeat right;
+    appearance: none;
+    background-position-x: calc(100% - 16px);
+}
+
+
+

@@ -3,9 +3,18 @@
 {% block head %}
     {% load static %}
    <!-- <link rel="stylesheet" href="{% static 'css/signup.css' %}">-->
+       <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.default.min.css"
+  integrity="sha512-pTaEn+6gF1IeWv3W1+7X7eM60TFu/agjgoHmYhAfLEU8Phuf6JKiiE8YmsNC0aCgQv4192s4Vai8YZ6VNM6vyQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 	<link rel="stylesheet" href="{% static 'css/registration.css' %}">
 	<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
 	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
 {% endblock %}
 {% block content %}
 
@@ -34,28 +43,29 @@
 						<legend>Регистрация</legend>
 						{{ form.non_field.errors }}
 						<!-- Поле поиска региона -->
-						{{form.region}}
-						<div class="wrapper">
-							<div class="select-btn">
-								<span>
-									<p>Выберите регион обучения</p>
-								</span>
-								<img src="/static/images/icons/angel-down-form.svg" alt="">
-							</div>
-							<div class="content">
-								<div class="search">
-									<label for="region-search">Найти регион</label>
-									<input form="registration" spellcheck="false" list="region" type="search"
-										id="region-search" name="q" autocomplete="address-level1"
-										placeholder="Начинай набирать.." />
-								</div>
-								<!-- <div class="region-list"> -->
-								<ul id="region" class="options">
-									<p></p>
-								</ul>
-								<!-- </div> -->
-							</div>
-						</div>
+                    <div class="select-reg">{{form.region}}</div>
+
+{#						<div class="wrapper">#}
+{#							<div class="select-btn">#}
+{#								<span>#}
+{#									<p>Выберите регион обучения</p>#}
+{#								</span>#}
+{#								<img src="/static/images/icons/angel-down-form.svg" alt="">#}
+{#							</div>#}
+{#							<div class="content">#}
+{#								<div class="search">#}
+{#									<label for="region-search">Найти регион</label>#}
+{#									<input form="registration" spellcheck="false" list="region" type="search"#}
+{#										id="region-search" name="q" autocomplete="address-level1"#}
+{#										placeholder="Начинай набирать.." />#}
+{#								</div>#}
+{#								<!-- <div class="region-list"> -->#}
+{#								<ul id="region" class="options">#}
+{#									<p></p>#}
+{#								</ul>#}
+{#								<!-- </div> -->#}
+{#							</div>#}
+{#						</div>#}
 
 						{{ form.last_name.errors }}
 						<!-- Фамилия -->
@@ -192,6 +202,15 @@
 			</div>
 		</section>
 	</article>
+    <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"
+  integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+    <script>
+    $('#id_region').selectize({ normalize: true });
+    </script>
 <script>
     function checkBox(){
         let button = document.getElementById("registration_btn");

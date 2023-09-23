@@ -1,3 +1,19 @@
+* {  box-sizing:inherit;
+  margin: 0;  padding: 0;
+}
+dl, ol, ul {
+    margin-bottom: 0;}
+ol, ul {
+   padding-left: 0;}
+
+nav.navigation-mobile ul li a {
+    color: #ffffff;
+}
+
+accordion-cont {
+  box-sizing: border-box;
+}
+
 p {
   margin: 0px;
 }
@@ -225,7 +241,7 @@ input[type="radio"] {
 .select-big {
   border: 2px solid #a3a3a3;
   border-radius: 10px;
-  width: 513px;
+  width: 465px;
   min-height: 40px;
   text-indent: 16px;
   outline: none;
@@ -365,7 +381,7 @@ input[type="radio"] {
 }
 
 .input-big {
-  width: 510px;
+  width: 465px;
 }
 
 .input-small {
