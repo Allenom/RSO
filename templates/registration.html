@@ -90,10 +90,9 @@
 						{{ form.date_of_birth.errors }}
 						<!-- Дата рождения -->
 						<div class="form-field">
-							<label for="id_date_of_birth">Дата рождения</label>
 							<input form="registration" type="text" name="date_of_birth" id="id_date_of_birth"
 								autocomplete="date_of_birth" placeholder="Дата рождения" value="{% if form.date_of_birth.value %}{{ form.date_of_birth.value }}{% endif %}"
-								onfocus="(this.type='date')"
+								onfocus="this.type='date';this.style='text-indent: 8px'"
 							/>
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
