@@ -82,7 +82,7 @@
 						<div class="form-field">
 							<label for="patronymic">Отчество</label>
 							<input form="registration" type="text" name="patronymic" id="patronymic"
-								autocomplete="patronymic" placeholder="Отчество (при наличии)" value="{% if form.patronymic.value %}{{ form.patronymic.value }} {% endif %}" />
+								autocomplete="patronymic" placeholder="Отчество (при наличии)" value="{% if form.patronymic.value %}{{ form.patronymic.value }}{% endif %}" />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
@@ -90,9 +90,10 @@
 						{{ form.date_of_birth.errors }}
 						<!-- Дата рождения -->
 						<div class="form-field">
-							<label for="patronymic">Дата рождения</label>
-							<input form="registration" type="date" name="date_of_birth" id="id_date_of_birth"
-								autocomplete="date_of_birth" placeholder="Дата рождения" value="{{ form.date_of_birth.value }}" />
+							<input form="registration" type="text" name="date_of_birth" id="id_date_of_birth"
+								autocomplete="date_of_birth" placeholder="Дата рождения" value="{% if form.date_of_birth.value %}{{ form.date_of_birth.value }}{% endif %}"
+								onfocus="this.type='date';this.style='text-indent: 8px'"
+							/>
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
