@@ -79,11 +79,12 @@ ul.nav-desktop li a:hover {
   color: #46EBEB;
 }
 
-
 /* Юзер меню */
-ul.nav-user {
+/* ul.nav-user, */
+nav.navigation-user {
   display: flex;
-  max-width: 383px;
+  /* max-width: 383px; */
+  width: 383px;
 }
 
 /* Иконка местоположение 360px*/
@@ -96,6 +97,7 @@ li.application-count {
   display: flex;
   margin-right: 5px;
   cursor: pointer;
+  margin-right: 47px;
 }
 
 li.application-count a {
@@ -134,7 +136,8 @@ li.application-count img {
 
 /* Региональное отделение */
 .nav-user li.regional-office {
-  max-width: 230px;
+  max-width: 170px;
+  margin-right: 47px;
 }
 
 .nav-user li.regional-office p a {
@@ -148,6 +151,10 @@ li.application-count img {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.nav-user li.regional-office p a:hover {
+  color: #46EBEB;
 }
 
 /* Выпадающее Меню пользователя */
@@ -170,7 +177,6 @@ li.dropdown .user-icon {
   border-radius: 50%;
   color: #35383F;
   margin-right: 12px;
-  margin-left: 10px;
 }
 
 li.dropdown .user-icon img {
@@ -257,6 +263,33 @@ nav.navigation-mobile {
   ul.nav-desktop {
     display: none;
   }
+
+    /* Счётчик заявок */
+  li.application-count {
+    display: flex;
+    cursor: pointer;
+    margin-right: 60px;
+  }
+
+  .nav-user li.regional-office {
+    max-width: 170px;
+    margin-right: 60px;
+}
+
+  /* Юзер меню */
+  /* ul.nav-user, */
+  nav.navigation-user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 477px;
+  }
+
+  /* Иконка Пользователя */
+  li.dropdown .user-icon {
+    margin: 0;
+  }
+
   /* Иконка Раскрыть меню */
   li.dropdown .drop-down-icon {
     display: none;
@@ -264,9 +297,10 @@ nav.navigation-mobile {
 
   #burger-menu {
     cursor: pointer;
-    width: 24px;
-    height: 27px;
-    margin: 15px;
+    width: 28px;
+    height: 24px;
+    margin-left: 60px;
+    /* margin: 15px; */
     overflow: visible;
     position: relative;
     z-index:200;
@@ -427,7 +461,44 @@ nav.navigation-mobile {
   
   }
 }
-@media(max-width:670px) {
+
+@media(max-width:768px) {
+  /* Счётчик заявок */
+  li.application-count {
+    display: flex;
+    /* margin-right: 5px; */
+    cursor: pointer;
+    margin-right: 48px;
+  }
+
+  .nav-user li.regional-office {
+    /* max-width: 230px; */
+    max-width: 170px;
+    margin-right: 48px;
+  }
+  
+  /* Юзер меню */
+  /* ul.nav-user, */
+  nav.navigation-user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 441px;
+  }
+
+  #burger-menu {
+    cursor: pointer;
+    width: 28px;
+    height: 24px;
+    margin-left: 48px;
+    /* margin: 15px; */
+    overflow: visible;
+    position: relative;
+    z-index:200;
+  }
+}
+
+@media(max-width:680px) {
   .header__body-wrapper {
     display: flex;
     justify-content: space-between;
@@ -466,10 +537,7 @@ nav.navigation-mobile {
     object-fit: cover;
     border-radius: 50%;
   }
-
-  .nav-user li.regional-office {
-    max-width: 170px;
-  }
+  
   .nav-user li.regional-office p a {
     font-size: 12px;;
   }
@@ -491,8 +559,8 @@ nav.navigation-mobile {
     height: 36px;
     border-radius: 50%;
     color: #35383F;
-    margin-right: 12px;
-    margin-left: 10px;
+    /* margin-right: 12px;
+    margin-left: 10px; */
   }
 
   li.dropdown .user-icon img {
@@ -501,6 +569,7 @@ nav.navigation-mobile {
     object-fit: cover;
     border-radius: 50%;
   }
+
   ul.menu-mobile {
     max-width: fit-content;
     position: fixed;
@@ -514,7 +583,46 @@ nav.navigation-mobile {
   }
 }
 
-@media(max-width:570px) {
+@media(max-width:620px) {
+  /* Счётчик заявок */
+  li.application-count {
+    display: flex;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    color: #35383F;
+    margin-right: 20px;
+  }
+  
+  li.application-count img {
+    width: 100%;
+    height: 100%;
+    color: #35383F;
+  }
+
+  .nav-user li.regional-office {
+    max-width: 170px;
+    margin-right: 20px;
+  }
+  
+  /* Юзер меню */
+  nav.navigation-user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 204px;
+  }
+
+  #burger-menu {
+    cursor: pointer;
+    width: 28px;
+    height: 24px;
+    margin-left: 20px;
+    /* margin: 15px; */
+    overflow: visible;
+    position: relative;
+    z-index:200;
+  }
 
   ul.menu-mobile {
     min-width: fit-content;
@@ -526,22 +634,20 @@ nav.navigation-mobile {
     font-size: 18px;
 
   }
-}
 
-@media(max-width:470px) {
   /* Иконка местоположение 360px*/
   li.regional-dot {
     display: flex;
     align-items: center;
     max-width: 36px;
     min-height: 36px;
-    margin-right: 5px;
+    margin-right: 20px;
   }
 
   li.regional-dot img {
   /* display: block; */
-    width: 100%;
-    height: 100%;
+    width: 24px;
+    height: 26px;
   }
 
     /* Региональное отделение */
@@ -570,14 +676,4 @@ nav.navigation-mobile {
   ul.dropdown-items li a {
     font-size: 16px;
   }
-}
-
-@media(max-width:340px) {
-  /* Иконка местоположение 360px*/
-    /* Региональное отделение */
-  .nav-user li.regional-dot,
-  .nav-user li.application-count {
-    display: none;
-  }
-
 }

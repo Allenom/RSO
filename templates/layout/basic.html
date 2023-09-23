@@ -58,7 +58,9 @@
 						<ul class="nav-user">
 							<!-- Иконка местоположения на мобильном меню 360px-->
 							<li class="regional-dot">
-								<img src="/static/images/icons/dot-region.svg" alt="">
+                                <a href="">
+                                    <img src="/static/images/icons/dot-region.svg" alt="">
+                                </a>
 							</li>
 							<!-- Счётчик заявок -->
 							<li class="application-count">
@@ -73,11 +75,12 @@
 							<li class="regional-office">
 								<p>
 									<a href="#">
-                                        {% if user %}
+                                        Карачаево-Черкесское региональное отделение
+                                        <!-- {% if user %}
 										{{user.profile.region.branch}}
                                         {% else %}
                                         Московское региональное отделение
-                                        {% endif %}
+                                        {% endif %} -->
 									</a>
 								</p>
 							</li>
@@ -120,6 +123,7 @@
 							<span></span>
 						</div>
 					</nav>
+                    
 					<!-- Мобильное меню  -->
 					<nav id="menu" class="navigation-mobile">
 						<ul class="sidenav menu-mobile">
