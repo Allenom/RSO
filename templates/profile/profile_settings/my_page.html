@@ -95,15 +95,17 @@
                   <div class="user-data__list-wrapper">
                      <ul class="user-data__list">
                         <li class="user-data__title"><p>Кандидат</p></li>
-                        <li class="user-data__regional-office"><p>Карачаево-Черкесское региональное отделение</p></li>
-                        <li class="user-data__faculty"><p>Филологический</p></li>
-                        <li class="user-data__profession"><p>Учитель русского языка и литературы</p></li>
-                        <li class="user-data__course"><p>Курс 2</p></li>
-                        <li class="user-data__introductions">
-                           <p>Дата вступления в РСО</p>
-                           <img src="/static/images/icons/calendar.svg" alt="">
-                           <time datetime="2022-09-10">10.09.2022</time>
-                        </li>
+                         {% if user.profile.region.branch != '' %}
+                        <li class="user-data__regional-office"><p>{{user.profile.region.branch}}</p></li>
+                         {% endif %}
+<!--                        <li class="user-data__faculty"><p>Филологический</p></li>-->
+<!--                        <li class="user-data__profession"><p>Учитель русского языка и литературы</p></li>-->
+<!--                        <li class="user-data__course"><p>Курс 2</p></li>-->
+<!--                        <li class="user-data__introductions">-->
+<!--                           <p>Дата вступления в РСО</p>-->
+<!--                           <img src="/static/images/icons/calendar.svg" alt="">-->
+<!--                           <time datetime="2022-09-10">10.09.2022</time>-->
+<!--                        </li>-->
                      </ul>
                   </div>
                   <!-- Контакты пользователя  -->
