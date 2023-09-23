@@ -26,12 +26,12 @@
 <!--Стили добавить если нужно-->
 {% endblock %}
 {% block content %}
-<form method="post" enctype="multipart/form-data" >
-    {% csrf_token %}
-    {{ user_form.as_p }}
-    {{ form.as_p }}
-    <button type="submit">Сохранить изменения</button>
-</form>
+<!--<form method="post" enctype="multipart/form-data" >-->
+<!--    {% csrf_token %}-->
+<!--    {{ user_form.as_p }}-->
+<!--    {{ form.as_p }}-->
+<!--    <button type="submit">Сохранить изменения</button>-->
+<!--</form>-->
      <!-- Настройки профиля -->
    <!-- Настройки профиля Хлебные крошки-->
    <section class="ps-nav">
@@ -114,7 +114,7 @@
           <p class="accordion-title">
             Для вступления в РСО внесите ниже персональные данные
           </p>
-          <form action="#" method="post"  id="accordion-form" enctype="multipart/form-data">
+          <form method="post"  id="accordion-form" enctype="multipart/form-data">
               {% csrf_token %}
        <div class="accordion" id="insurance-steps">
         <div class="card">
@@ -146,7 +146,7 @@
                   <input
                     type="text"
                     name="last_name"
-                    value={{request.user.last_name}}
+                    value="{{user.last_name}}"
                     id="surname"
                     class="input-big"
                     pattern="[А-Яа-яЁё]{3,}"
@@ -157,6 +157,8 @@
                 <div class="form-field">
                   <label for="surname-lat">Фамилия (латиницей)</label>
                   <input
+                    name="last_name_lat"
+                    value="{{user.profile.last_name_lat}}"
                     type="text"
                     id="surname-lat"
                     class="input-big"
@@ -169,8 +171,8 @@
                   <input
                     type="text"
                     id="name"
-                    name="name"
-
+                    name="first_name"
+                    value="{{user.first_name}}"
                     pattern="[А-Яа-яЁё]{2,}"
                     class="input-big"
                     placeholder="Ввведите имя"
@@ -181,6 +183,8 @@
                 <div class="form-field">
                   <label for="name-lat">Имя (латиницей)</label>
                   <input
+                    name="first_name_lat"
+                    value="{{user.profile.first_name_lat}}"
                     type="text"
                     id="name-lat"
                     class="input-big"
@@ -193,8 +197,9 @@
                   <label for="patronymic">Отчество</label>
                   <input
                     name = "patronymic"
+                    value="{{user.profile.patronymic}}"
                     type="text"
-                    id="patronomyc"
+                    id="patronymyc"
                     class="input-big"
                     placeholder="Введите Отчество"
                   />
@@ -204,6 +209,8 @@
                 <div class="form-field">
                   <label for="patronomyc-lat">Отчество (латиницей)</label>
                   <input
+                    name="patronymic_lat"
+                    value="{{user.profile.patronymic_lat}}"
                     type="text"
                     id="patronomyc-lat"
                     class="input-big"
@@ -234,7 +241,8 @@
                   <label for="birthdate">Дата рождения<span class="valid-red">*</span></label>
                   <input
                     type="date"
-                    name="date"
+                    name="date_of_birth"
+                    value="{{user.profile.date_of_birth | date:'Y-m-d'}}"
                     class="input-small date"
                     id="birthdatee"
                   />

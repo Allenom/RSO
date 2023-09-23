@@ -30,10 +30,10 @@ const form = document.getElementById("accordion-form");
 const submitButton = document.querySelector(".user-data__btn");
 const fileError = document.querySelector(".file-error");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  uploadFiles();
-});
+//form.addEventListener("submit", (e) => {
+//  e.preventDefault();
+//  uploadFiles();
+//});
 
 function add_social_field() {
   let html = `

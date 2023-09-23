@@ -40,8 +40,6 @@ class CreateUserForm(forms.ModelForm):
     date_of_birth = forms.DateField(label='Дата рождения',
                                     widget=forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'))
 
-
-
     # institution = forms.ModelChoiceField(required=False, queryset=Institution.objects)
 
     class Meta:
@@ -65,7 +63,9 @@ class ProfilePageEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('about', 'banner', 'photo', 'photo1', 'photo2', 'photo3', 'photo4')
-        widgets = {'about': forms.Textarea(attrs={'rows': 3}), }
+        widgets = {
+            'about': forms.Textarea(attrs={'rows': 3}),
+        }
 
 
 class ProfilePersonalEditForm(forms.ModelForm):
