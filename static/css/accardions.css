@@ -49,6 +49,11 @@ p {
   padding-bottom: 40px;
 }
 
+.center {
+ display: flex;
+  justify-content: center;
+}
+
 .nav-prev, .nav-next {
   background-color: white;
   font-size: 16px;
@@ -59,6 +64,8 @@ p {
  margin-right: 20px;
  cursor: pointer;
 }
+
+
 
 .addr-fact__wrapper {
   grid-column-start: 2;
@@ -192,27 +199,29 @@ input[type="radio"] {
 .select-small {
   border: 2px solid #a3a3a3;
   border-radius: 10px;
-  width: 268px;
-  min-height: 35px;
+  width: 248px;
+  min-height: 40px;
   text-indent: 16px;
   outline: none;
   font-family: "BertSans";
   font-weight: 500;
   font-size: 16px;
   color: #898989;
+  margin-bottom: 20px;
 }
 
 .select-big {
   border: 2px solid #a3a3a3;
   border-radius: 10px;
   width: 513px;
-  min-height: 35px;
+  min-height: 40px;
   text-indent: 16px;
   outline: none;
   font-family: "BertSans";
   font-weight: 500;
   font-size: 16px;
   color: #898989;
+  margin-bottom: 20px;
 }
 
 .passport {
@@ -378,31 +387,6 @@ input[type="radio"] {
   display: block;
 }
 
-.select-small {
-  border: 2px solid #a3a3a3;
-  border-radius: 10px;
-  width: 268px;
-  min-height: 35px;
-  text-indent: 16px;
-  outline: none;
-  font-family: "BertSans";
-  font-weight: 500;
-  font-size: 16px;
-  color: #898989;
-}
-
-.select-big {
-  border: 2px solid #a3a3a3;
-  border-radius: 10px;
-  width: 510px;
-  min-height: 35px;
-  text-indent: 16px;
-  outline: none;
-  font-family: "BertSans";
-  font-weight: 500;
-  font-size: 16px;
-  color: #898989;
-}
 
   .izm {
     display: grid;
