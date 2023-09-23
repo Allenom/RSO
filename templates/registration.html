@@ -72,7 +72,7 @@
 						<div class="form-field">
 							<label for="surname">Фамилия</label>
 							<input form="registration" type="text" name="last_name" id="surname"
-								autocomplete="family-name" placeholder="Фамилия" value="{% if form.last_name.value %}{{ form.last_name.value }} {% endif %}" />
+								autocomplete="family-name" placeholder="Фамилия" value="{% if form.last_name.value %}{{ form.last_name.value }} {% endif %}" required/>
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
@@ -82,7 +82,7 @@
 						<div class="form-field">
 							<label for="name">Имя</label>
 							<input form="registration" type="text" name="first_name" id="name" autocomplete="name"
-								placeholder="Имя" value="{% if form.first_name.value %}{{ form.first_name.value }} {% endif %}" />
+								placeholder="Имя" value="{% if form.first_name.value %}{{ form.first_name.value }} {% endif %}"  required/>
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
@@ -102,7 +102,7 @@
 						<div class="form-field">
 							<input form="registration" type="text" name="date_of_birth" id="id_date_of_birth"
 								autocomplete="date_of_birth" placeholder="Дата рождения" value="{% if form.date_of_birth.value %}{{ form.date_of_birth.value }}{% endif %}"
-								onfocus="this.type='date';this.style='text-indent: 8px'"
+								onfocus="this.type='date';this.style='text-indent: 8px'" required
 							/>
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
@@ -113,7 +113,7 @@
 						<div class="form-field">
 							<label for="phone">Введите номер телефона</label>
 							<input form="registration" type="number" name="telephone" id="phone" autocomplete="tel"
-								placeholder="+7 (999) 999-99-99" value="{{ form.telephone.value }}" />
+								placeholder="+7 (999) 999-99-99" value="{{ form.telephone.value }}" required />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
@@ -123,7 +123,7 @@
 						<div class="form-field">
 							<label for="email">Укажите электронную почту</label>
 							<input form="registration" type="text" name="email" id="email" autocomplete="email"
-								placeholder="Электронная почта" value="{% if form.email.value %}{{ form.email.value }} {% endif %}" />
+								placeholder="Электронная почта" value="{% if form.email.value %}{{ form.email.value }} {% endif %}" required />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
@@ -133,7 +133,7 @@
 						<div class="form-field">
 							<label for="username">Придумайте логин</label>
 							<input form="registration" type="text" name="username" id="username" autocomplete="username"
-								placeholder="Придумайте логин" value="{% if form.username.value %}{{ form.username.value }} {% endif %}" />
+								placeholder="Придумайте логин" value="{% if form.username.value %}{{ form.username.value }} {% endif %}" required />
 							<!-- JS Текст об ошибке неверно введённого зачения -->
 							<!--<div class="error"></div>-->
 						</div>
@@ -143,7 +143,7 @@
 						<div class="input-box">
 							<label for="password">Придумайте пароль</label>
 							<input form="registration" type="password" name="password" id="password"
-								autocomplete="password" placeholder="Придумайте пароль" />
+								autocomplete="password" placeholder="Придумайте пароль" required />
 							<div class="icon-show">
 								<!-- <img id="togglePassword" src="/static/images/icons/eye-slash.svg" alt=""
 									onclick="togglePass()" id="show"> -->
@@ -161,7 +161,7 @@
 							<div class="repeat-password">
 								<label for="repeat-password">Повторите пароль</label>
 								<input form="registration" type="password" name="repeat_password" id="repeat-password"
-									autocomplete="password" placeholder="Повторите пароль" />
+									autocomplete="password" placeholder="Повторите пароль" required />
 								<div class="icon-show">
 									<!-- <img id="togglePasswordConfirm" src="/static/images/icons/eye-slash.svg" alt=""
 										onclick="togglePassConfirm()" id="show_repeat"> -->
