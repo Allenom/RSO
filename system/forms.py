@@ -25,7 +25,7 @@ from .models import Profile, Region
 
 class CreateUserForm(forms.ModelForm):
     """Регистрация"""
-    region = forms.ModelChoiceField(required=False, queryset=Region.objects)
+    region = forms.ModelChoiceField(required=True, queryset=Region.objects)
 
     password = forms.CharField(widget=forms.PasswordInput, label='Пароль',
                                help_text='Минимум 8 символов, не простой ''и не распространенный')
