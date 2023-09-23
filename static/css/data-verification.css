@@ -94,26 +94,12 @@ p {
 
 
 /********************* адаптив ***********************************/
+
 @media screen and (max-width:1290px) {
    .my-page-data-verification__info {
-      margin:0 130px;
-   }
-
-}
-
-@media screen and (max-width:1030px) {
-   .my-page-data-verification__info {
-      margin:0 66px;
+      margin:0 25px;
    }
 }
-
-@media screen and (max-width:768px) {
-
-   .my-page-data-verification__info {
-      margin:0 34px;
-   }
-}
-
 @media screen and (max-width:657px) {
    .my-page-data-verification__info {
       margin:0 16px;
