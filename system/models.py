@@ -12,7 +12,7 @@ class Profile(models.Model):
     patronymic_lat = models.CharField(max_length=40, blank=True, default='', verbose_name='Отчество (латиница)')
 
     # regional_office
-    region = models.ForeignKey('Region', null=True, on_delete=models.PROTECT, verbose_name='Регион')
+    region = models.ForeignKey('Region', null=True, on_delete=models.PROTECT, verbose_name='Регион ОО')
     GENDERS = [('', '-'), ('Мужской', 'Мужской'), ('Женский', 'Женский')]
     gender = models.CharField(max_length=10, blank=True, choices=GENDERS, default='', verbose_name='Пол')
     date_of_birth = models.DateField(verbose_name='Дата рождения')
@@ -38,8 +38,17 @@ class Profile(models.Model):
     pass_date = models.DateField(blank=True, null=True, verbose_name='Дата выдачи паспорта')
     pass_kod = models.CharField(max_length=15, blank=True, default='', verbose_name='Код подразделения, выдавшего '
                                                                                     'паспорт')
-    pass_address = models.CharField(max_length=15, blank=True, default='', verbose_name='Место регистрации по паспорту')
-    address = models.CharField(max_length=15, blank=True, default='', verbose_name='Фактическое место проживания')
+    # pass_address = models.CharField(max_length=15, blank=True, default='', verbose_name='Место регистрации по паспорту')
+    # address = models.CharField(max_length=15, blank=True, default='', verbose_name='Фактическое место проживания')
+
+    reg_region = models.ForeignKey('Region', null=True, on_delete=models.PROTECT, related_name='reg', verbose_name='Регион прописки')
+    reg_town = models.CharField(max_length=40, blank=True, default='', verbose_name='Населенный пункт прописки')
+    reg_house = models.CharField(max_length=40, blank=True, default='', verbose_name='Улица,дом,кв прописки')
+    reg_fac_same_address = models.BooleanField(default=False, verbose_name='Адреса регистрации и фактический совпадают')
+    fact_region = models.ForeignKey('Region', null=True, on_delete=models.PROTECT, related_name='fact', verbose_name='Регион проживания')
+    fact_town = models.CharField(max_length=40, blank=True, default='', verbose_name='Населенный пункт проживания')
+    fact_house = models.CharField(max_length=40, blank=True, default='', verbose_name='Улица,дом,кв проживания')
+
     # pass_sub Документ при отсутствии паспорта
     # ---Дополнительные данные---
     about = models.CharField(max_length=400, blank=True, default='', verbose_name='О себе')

@@ -72,9 +72,9 @@ class ProfilePersonalEditForm(forms.ModelForm):
     """Настройки личных данных профиля"""
 
     # член рсо (по его мнению)
-    # Фамилия, имя, отчество, пол, фамилия(лат), имя(лат), отчество (лат), дата рождения
-    # *Законный представитель несовершеннолетнего*
-    # телефон, почта, *соцсети, адрес совпадает, *адрес регистрации, *адрес проживания
+    # (ГОТОВО) Фамилия, имя, отчество, пол, фамилия(лат), имя(лат), отчество (лат), дата рождения, пол
+    # (НЕ НУЖНО)*Законный представитель несовершеннолетнего*
+    # телефон, почта, вк, телеграм, адрес совпадает, *адрес регистрации, *адрес проживания
     # гражданство РФ, номер и серия, дата выдачи, выдан, снилс, инн, трудовая, загран, воинский, серия номер воинского
     # оо, факультет, курс, специальность
     # *файлы*
@@ -82,10 +82,14 @@ class ProfilePersonalEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('patronymic', 'last_name_lat', 'first_name_lat', 'patronymic_lat', 'date_of_birth', 'gender',
-                  'telephone')
+                  'telephone', 'reg_region', 'reg_town', 'reg_house', 'reg_fac_same_address', 'fact_region',
+                  'fact_town', 'fact_house')
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
             # 'telephone': forms.TextInput(attrs={'data-mask': "000-000-0000"}),
+            'gender': forms.RadioSelect,
+            'reg_region': forms.Select(attrs={'class': 'select-big'}),
+            'fact_region': forms.Select(attrs={'class': 'select-big'}),
         }
 
 

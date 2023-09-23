@@ -26,12 +26,12 @@
 <!--Стили добавить если нужно-->
 {% endblock %}
 {% block content %}
-<!--<form method="post" enctype="multipart/form-data" >-->
-<!--    {% csrf_token %}-->
-<!--    {{ user_form.as_p }}-->
-<!--    {{ form.as_p }}-->
-<!--    <button type="submit">Сохранить изменения</button>-->
-<!--</form>-->
+<form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
      <!-- Настройки профиля -->
    <!-- Настройки профиля Хлебные крошки-->
    <section class="ps-nav">
@@ -223,8 +223,10 @@
                   <input
                     type="radio"
                     id="male"
-                    name="sex"
-                    value="male"
+                    name="gender"
+                    value="Мужской"
+                    {% if user.profile.gender == 'Мужской' %} checked {% endif %}
+
                   />
                   <label for="male">Мужской</label>
 
@@ -232,8 +234,10 @@
                     class="right-check"
                     type="radio"
                     id="female"
-                    name="sex"
-                    value="female"
+                    name="gender"
+                    value="Женский"
+                    {% if user.profile.gender == 'Женский' %} checked {% endif %}
+
                   />
                   <label for="female">Женский</label>
                 </div>
@@ -580,15 +584,16 @@
                   </div>
                   <div class="form-field">
                     <label for="">Регион<span class="valid-red">*</span></label>
-                    <select class="select-big" name="select">
-                      <option
-                        value="0"
-                        class="user-registration__select-text"
-                      >
-                        Выберете регион
-                      </option>
-                      <option value="1">Москва</option>
-                    </select>
+<!--                    <select class="select-big" name="select">-->
+<!--                      <option-->
+<!--                        value="0"-->
+<!--                        class="user-registration__select-text"-->
+<!--                      >-->
+<!--                        Выберете регион-->
+<!--                      </option>-->
+<!--                      <option value="1">Москва</option>-->
+<!--                    </select>-->
+                      {{form.reg_region}}
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
@@ -654,10 +659,10 @@
                     <input
                       type="radio"
                       id="yes"
-                      name="fact-addr"
-                      value="yes"
+                      name="reg_fac_same_address"
+                      value="True"
                       onclick="addrFact(1)"
-                      checked
+                      {% if user.profile.reg_fac_same_address %} checked {% endif %}
                     />
                     <label for="yes">Да</label>
 
@@ -665,10 +670,10 @@
                       class="right-check"
                       type="radio"
                       id="no"
-                      name="fact-addr"
-                      value="no"
+                      name="reg_fac_same_address"
+                      value="False"
                       onclick="addrFact(2)"
-
+                      {% if not user.profile.reg_fac_same_address %} checked {% endif %}
                     />
                     <label for="no">Нет</label>
                   </div>
@@ -679,15 +684,16 @@
                     </p>
                     <div class="form-field">
                       <label for="">Регион</label>
-                      <select class="select-big" name="select">
-                        <option
-                          value="0"
-                          class="user-registration__select-text"
-                        >
-                          Выберете регион
-                        </option>
-                        <option value="1">Москва</option>
-                      </select>
+<!--                      <select class="select-big" name="select">-->
+<!--                        <option-->
+<!--                          value="0"-->
+<!--                          class="user-registration__select-text"-->
+<!--                        >-->
+<!--                          Выберете регион-->
+<!--                        </option>-->
+<!--                        <option value="1">Москва</option>-->
+<!--                      </select>-->
+                        {{form.fact_region}}
                       <div class="error"></div>
                     </div>
                     <div class="form-field">
