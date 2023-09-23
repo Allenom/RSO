@@ -82,7 +82,7 @@ section.user-registration-form .wrapper-form {
 #registration input[type="number"],
 #registration input[type="password"],
 #registration input[type="repeat-password"],
- #registration input[type="date"] {
+#registration input[type="date"] {
   border: 1px solid #A3A3A3;
   border-radius: 10px;
   width: 100%;
@@ -99,6 +99,12 @@ section.user-registration-form .wrapper-form {
 
 #registration input:focus {
   outline: none;
+}
+
+/* Стилизация datepicker  */
+#registration input[type="date"]::-webkit-calendar-picker-indicator {
+  font-size: 26px;
+  filter: opacity(50%);
 }
 
 /* Стилизация placeholder  */
