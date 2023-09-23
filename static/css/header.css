@@ -322,17 +322,17 @@ nav.navigation-mobile {
   #burger-menu span {
     right: 0px;
     top: 13px;
-    width: 20px;
+    width: 28px;
   }
   #burger-menu span:before {
     left: 0px;
     top: -10px;
-    width: 20px;
+    width: 28px;
   }
   #burger-menu span:after {
     left: 0px;
     top: 10px;
-    width: 20px;
+    width: 28px;
   }
   
   #burger-menu.close span {
@@ -537,7 +537,7 @@ nav.navigation-mobile {
     object-fit: cover;
     border-radius: 50%;
   }
-  
+
   .nav-user li.regional-office p a {
     font-size: 12px;;
   }
