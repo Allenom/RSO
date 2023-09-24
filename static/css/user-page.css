@@ -183,12 +183,13 @@ a {
       font-size: 18px;
    }
 }
-@media screen and (max-width:340px) {
+@media screen and (max-width:348px) {
    .my-page-verification__title h3 {
       font-size: 28px;
    }
    .my-page-verification__button {
       padding: 12px 40px;
+      font-size: 16px;
    }
 }
 @media screen and (max-width:320px) {
