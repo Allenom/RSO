@@ -317,7 +317,7 @@ function changeBlockPassport(val) {
 
 
 
-function addrFact(val) {
+window.onload =  function addrFact(val) {
   if (val == 1) {
     document.getElementById("addr-fact").style.display = "none";
   } else if (val == 2) {
