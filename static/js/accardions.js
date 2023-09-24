@@ -316,14 +316,17 @@ function changeBlockPassport(val) {
 
 
 
-
-window.onload =  function addrFact(val) {
+  function addrFact(val) {
   if (val == 1) {
     document.getElementById("addr-fact").style.display = "none";
   } else if (val == 2) {
     document.getElementById("addr-fact").style.display = "block";
   }
 }
+window.onload =  function(){
+addrFact(val);
+}
+
 
 function checkBox(){
   let button = document.getElementById("submit-btn");
