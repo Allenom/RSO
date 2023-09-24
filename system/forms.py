@@ -83,7 +83,7 @@ class ProfilePersonalEditForm(forms.ModelForm):
         model = Profile
         fields = ('patronymic', 'last_name_lat', 'first_name_lat', 'patronymic_lat', 'date_of_birth', 'gender',
                   'telephone', 'reg_region', 'reg_town', 'reg_house', 'reg_fac_same_address', 'fact_region',
-                  'fact_town', 'fact_house')
+                  'fact_town', 'fact_house', 'social_vk', 'social_tg')
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
             # 'telephone': forms.TextInput(attrs={'data-mask': "000-000-0000"}),

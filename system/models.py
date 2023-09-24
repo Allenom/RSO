@@ -53,7 +53,7 @@ class Profile(models.Model):
     # ---Дополнительные данные---
     about = models.CharField(max_length=400, blank=True, default='', verbose_name='О себе')
     social_vk = models.CharField(max_length=50, blank=True, default='https://vk.com/', verbose_name='Ссылка на ВК')
-    social_tg = models.CharField(max_length=50, blank=True, default='', verbose_name='Ссылка на Телеграм')
+    social_tg = models.CharField(max_length=50, blank=True, default='https://t.me/', verbose_name='Ссылка на Телеграм')
 
     banner = models.ImageField(upload_to='users/banner/%Y/%m/%d', blank=True, verbose_name='Баннер личной страницы')
     photo = models.ImageField(upload_to='users/avatar/%Y/%m/%d', blank=True, verbose_name='Аватарка')

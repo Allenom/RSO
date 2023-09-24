@@ -26,12 +26,12 @@
 <!--Стили добавить если нужно-->
 {% endblock %}
 {% block content %}
-<form method="post" enctype="multipart/form-data" >
-    {% csrf_token %}
-    {{ user_form.as_p }}
-    {{ form.as_p }}
-    <button type="submit">Сохранить изменения</button>
-</form>
+<!--<form method="post" enctype="multipart/form-data" >-->
+<!--    {% csrf_token %}-->
+<!--    {{ user_form.as_p }}-->
+<!--    {{ form.as_p }}-->
+<!--    <button type="submit">Сохранить изменения</button>-->
+<!--</form>-->
      <!-- Настройки профиля -->
    <!-- Настройки профиля Хлебные крошки-->
    <section class="ps-nav">
@@ -624,21 +624,34 @@
                   <div class="scoial-networks">
                     <div class="add">
                       <div class="form-field">
-                        <label for="socials">Ссылки на соц сети</label>
+                        <label for="socials">Ссылка на ВК</label>
                         <input
+                          name="social_vk"
+                          value="{{user.profile.social_vk}}"
                           type="text"
                           id="socials"
                           class="input-big"
-                          placeholder="@telegram"
+                          placeholder="https://vk.com/danya_porg"
+                        />
+                      </div>
+                        <div class="form-field">
+                        <label for="socials">Ссылка на Телеграм</label>
+                        <input
+                          name="social_tg"
+                          value="{{user.profile.social_tg}}"
+                          type="text"
+                          id="socials"
+                          class="input-big"
+                          placeholder="https://t.me/allenom"
                         />
                       </div>
                     </div>
-                    <button
-                      class="add-social"
-                      onclick="add_social_field()"
-                    >
-                      + Добавить
-                    </button>
+<!--                    <button-->
+<!--                      class="add-social"-->
+<!--                      onclick="add_social_field()"-->
+<!--                    >-->
+<!--                      + Добавить-->
+<!--                    </button>-->
                   </div>
                   <div class="form-field">
                     <label for="addres-contact"
