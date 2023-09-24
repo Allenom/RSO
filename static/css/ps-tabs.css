@@ -51,12 +51,12 @@ section.ps-tabs {
     border-radius: 30px;
     background: transparent #1C5C94;
 }
-.ps__navigation a:active {
+/*.ps__navigation a:active {
     border-radius: 30px;
     background: #1C5C94;
     padding: 10px 24px;
     color: #ffffff;
-} 
+} */
 
 @media(max-width: 1290px) {
     section.ps-tabs {
