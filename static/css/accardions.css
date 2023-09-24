@@ -1,18 +1,16 @@
-* {  box-sizing:inherit;
+ *{  box-sizing:inherit;
   margin: 0;  padding: 0;
 }
 dl, ol, ul {
-    margin-bottom: 0;}
+   margin-bottom: 0;}
 ol, ul {
    padding-left: 0;}
 
-nav.navigation-mobile ul li a {
-    color: #ffffff;
-}
 
-accordion-cont {
-  box-sizing: border-box;
-}
+
+/*.container {*/
+/*  box-sizing: border-box;*/
+/*}*/
 
 p {
   margin: 0px;
@@ -488,9 +486,6 @@ input[type="radio"] {
     color: #35383F;
 }
 
-#select-military {
-  padding-right: 40px;
-}
 
 .check-label {
   display: flex;

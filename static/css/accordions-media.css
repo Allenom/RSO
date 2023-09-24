@@ -1,4 +1,7 @@
 @media (max-width: 1439px) {
+     a:not([href]):not([class]), a:not([href]):not([class]):hover {
+        color: #ffffff;
+    }
     .input-big {
         width: 100%;
     }
@@ -30,6 +33,7 @@
 }
 
 @media (max-width: 1023px) {
+
     .input-big {
         width: 386px;
     }
@@ -169,6 +173,7 @@
 
     .izm {
         grid-template-columns: none;
+        align-items: end;
     }
 
     #no-passport-parent {
@@ -255,8 +260,17 @@
 }
 
 @media (max-width: 575px) {
+    .container {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
 .accordion-title {
     text-align: center;
+    font-size: 18px;
+}
+.accordion-button {
+    font-size: 16px;
 }
     .data-form {
         display: block;
@@ -264,7 +278,7 @@
     }
 
     .form-field label {
-        font-size: 10px;
+        font-size: 12px;
     }
     .parents-about {
         grid-template-columns: none;
@@ -289,7 +303,7 @@
     }
 
     .checkbox {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .checkbox-title {
@@ -301,7 +315,8 @@
 
     .rso-question {
         margin: 30px auto;
-        width: 100%;
+        /*width: 100%;*/
+        padding: 0px;
     }
 
       .rso-question__title {
@@ -319,5 +334,9 @@
 
     .RSO-title {
         margin-bottom: 28px;
+    }
+    .agree-check p {
+        margin-left: 10px;
+        font-size: 12px;
     }
 }
