@@ -74,22 +74,27 @@ class ProfilePersonalEditForm(forms.ModelForm):
     # член рсо (по его мнению)
     # (ГОТОВО) Фамилия, имя, отчество, пол, фамилия(лат), имя(лат), отчество (лат), дата рождения, пол
     # (НЕ НУЖНО)*Законный представитель несовершеннолетнего*
-    # телефон, почта, вк, телеграм, адрес совпадает, *адрес регистрации, *адрес проживания
-    # гражданство РФ, номер и серия, дата выдачи, выдан, снилс, инн, трудовая, загран, воинский, серия номер воинского
-    # оо, факультет, курс, специальность
+    # (ГОТОВО) телефон, почта, вк, телеграм, адрес совпадает, *адрес регистрации, *адрес проживания
+    # (ГОТОВО) гражданство РФ, номер и серия, дата выдачи, выдан, снилс, инн, трудовая, загран, воинский, серия номер воинского
+    # (НЕ НУЖНО)*Для иностранцев*
+    # (ГОТОВО) оо, факультет, курс, специальность
     # *файлы*
     # откуда узнали про рсо
     class Meta:
         model = Profile
         fields = ('patronymic', 'last_name_lat', 'first_name_lat', 'patronymic_lat', 'date_of_birth', 'gender',
                   'telephone', 'reg_region', 'reg_town', 'reg_house', 'reg_fac_same_address', 'fact_region',
-                  'fact_town', 'fact_house', 'social_vk', 'social_tg')
+                  'fact_town', 'fact_house', 'social_vk', 'social_tg', 'pass_ser_num', 'pass_date', 'pass_whom',
+                  'SNILS', 'INN', 'work_book_num', 'inter_pass', 'mil_reg_doc_type', 'mil_reg_doc_ser_num',
+                  'study_institution', 'study_faculty', 'study_year', 'study_spec',
+                  )
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
             # 'telephone': forms.TextInput(attrs={'data-mask': "000-000-0000"}),
             'gender': forms.RadioSelect,
             'reg_region': forms.Select(attrs={'class': 'select-big'}),
             'fact_region': forms.Select(attrs={'class': 'select-big'}),
+            'pass_whom': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
         }
 
 

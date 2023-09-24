@@ -813,12 +813,14 @@
                   <div class="form-field">
                     <label for="pass-num">Номер и серия<span class="valid-red">*</span></label>
                     <input
+                      name = "pass_ser_num"
+                      value="{{user.profile.pass_ser_num}}"
                       type="text"
                       id="pass-num"
-                      pattern="[0-9]{11,11}"
                       class="input-big"
                       placeholder="__ __ ____"
                     />
+<!--                      pattern="[0-9]{11,11}"-->
                     <div class="error"></div>
                   </div>
 
@@ -826,7 +828,8 @@
                     <label for="pass-date">Дата выдачи<span class="valid-red">*</span></label>
                     <input
                       type="date"
-                      name="date"
+                      name="pass_date"
+                      value="{{user.profile.pass_date | date:'Y-m-d'}}"
                       class="input-small"
                     />
                     <div class="error"></div>
@@ -835,17 +838,21 @@
                   <div class="form-field one">
                     <label for="pass-id">Кем выдан</label>
                     <input
+                      name="pass_whom"
+                      value="{{user.profile.pass_whom}}"
                       type="text"
                       id="pass-id"
                       class="input-full"
-                      pattern="[А-Яа-яЁё]{6,}"
                       placeholder="Название организации"
                     />
+<!--                      pattern="[А-Яа-яЁё]{6,}"-->
                     <div class="error"></div>
                   </div>
                   <div class="form-field">
                     <label for="SNILS-id">Номер СНИЛС<span class="valid-red">*</span></label>
                     <input
+                      name="SNILS"
+                      value="{{user.profile.SNILS}}"
                       type="text"
                       id="SNILS-id"
                       class="input-big"
@@ -856,6 +863,8 @@
                   <div class="form-field">
                     <label for="INN-id">ИНН<span class="valid-red">*</span></label>
                     <input
+                      name="INN"
+                      value="{{user.profile.INN}}"
                       type="text"
                       id="INN-id"
                       class="input-big"
@@ -868,6 +877,8 @@
                       >Трудовая книжка
                     </label>
                     <input
+                      name="work_book_num"
+                      value="{{user.profile.work_book_num}}"
                       type="text"
                       id="work-book"
                       class="input-big"
@@ -878,6 +889,8 @@
                   <div class="form-field">
                     <label for="foreign-pass">Загранпаспорт</label>
                     <input
+                      name="inter_pass"
+                      value="{{user.profile.inter_pass}}"
                       type="text"
                       id="foreign-pass"
                       class="input-big"
@@ -888,17 +901,15 @@
                   <div class="form-field">
                     <label for="">Документ воинского учета</label>
                     <select
+                      name="mil_reg_doc_type"
                       class="select-big"
                       id="select-military"
-                      name="select"
                     >
-                      <option
-                        value="0"
-                        class="military__select-text"
-                      >
+                      <option value="" {% if user.profile.mil_reg_doc_type == '' %} selected {% endif %}>-</option>
+                      <option value="Приписной" class="military__select-text" {% if user.profile.mil_reg_doc_type == 'Приписной' %} selected {% endif %}>
                         Удостоверение гражданина пожлежащего вызову на срочную военную службу
                       </option>
-                      <option value="1">Военный билет</option>
+                      <option value="Военник" {% if user.profile.mil_reg_doc_type == 'Военник' %} selected {% endif %}>Военный билет</option>
                     </select>
                     <div class="error"></div>
                   </div>
@@ -907,6 +918,8 @@
                       >Серия и номер документов воинского учета</label
                     >
                     <input
+                      name="mil_reg_doc_ser_num"
+                      value="{{user.profile.mil_reg_doc_ser_num}}"
                       type="text"
                       id="military-id"
                       class="input-big"
@@ -1056,6 +1069,8 @@
                     >Образовательная организация<span class="valid-red">*</span></label
                   >
                   <input
+                    name="study_institution"
+                    value="{{user.profile.study_institution}}"
                     type="text"
                     id="education-org"
                     pattern="[А-Яа-яЁё]{6,}"
@@ -1067,6 +1082,8 @@
                 <div class="form-field">
                   <label for="facultet">Факультет</label>
                   <input
+                    name="study_faculty"
+                    value="{{user.profile.study_faculty}}"
                     type="text"
                     id="facultet"
                     class="input-full"
@@ -1077,6 +1094,8 @@
                 <div class="form-field">
                   <label for="course">Курс (класс)<span class="valid-red">*</span></label>
                   <input
+                    name="study_year"
+                    value="{{user.profile.study_year}}"
                     type="text"
                     id="course"
                     class="input-full"
@@ -1087,6 +1106,8 @@
                 <div class="form-field">
                   <label for="speciality">Специальность</label>
                   <input
+                    name="study_spec"
+                    value="{{user.profile.study_spec}}"
                     type="text"
                     id="speciality"
                     class="input-full"
@@ -1094,14 +1115,14 @@
                   />
                   <div class="error"></div>
                 </div>
-                <div class="addEd"></div>
-                <button
-                  class="add-education"
-                  onclick="add_education_field()"
-                >
-                  + Добавить дополнителное образование
-                </button>
-              </div>
+<!--                <div class="addEd"></div>-->
+<!--                <button-->
+<!--                  class="add-education"-->
+<!--                  onclick="add_education_field()"-->
+<!--                >-->
+<!--                  + Добавить дополнителное образование-->
+<!--                </button>-->
+<!--              </div>-->
               <div class="nav-btn__wrapper">
                 <button
                 class="nav-prev"
