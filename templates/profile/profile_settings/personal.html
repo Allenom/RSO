@@ -612,6 +612,8 @@
                     <label for="locality-contact">Населенный пункт<span class="valid-red">*</span></label>
                     <input
                       type="text"
+                      name="reg_town"
+                      value="{{user.profile.reg_town}}"
                       class="input-big"
                       id="locality-contact"
                       pattern="[А-Яа-яЁё]{6,}"
@@ -644,10 +646,11 @@
                     >
                     <input
                       type="text"
-                      name="addres"
+                      name="reg_house"
+                      value="{{user.profile.reg_house}}"
                       id="addres-contact"
                       class="input-big"
-                      placeholder="Москва"
+                      placeholder="ул. Комсомольская, д. 42, кв. 56"
                     />
                     <div class="error"></div>
                   </div>
@@ -700,7 +703,8 @@
                       <label for="locality-fact">Населенный пункт</label>
                       <input
                         type="text"
-                        name="addres"
+                        name="fact_town"
+                        value="{{user.profile.fact_town}}"
                         id="locality-fact"
                         class="input-big"
                         placeholder="Москва"
@@ -713,10 +717,11 @@
                       >
                       <input
                         type="text"
-                        name="addres"
+                        name="fact_house"
+                        value="{{user.profile.fact_house}}"
                         id="addres-fact"
                         class="input-big"
-                        placeholder="Москва"
+                        placeholder="ул. Комсомольская, д. 42, кв. 56"
                       />
                       <div class="error"></div>
                     </div>
