@@ -55,12 +55,12 @@ class Profile(models.Model):
     # verbose_name='Место регистрации по паспорту')
     # address = models.CharField(max_length=15, blank=True, default='', verbose_name='Фактическое место проживания')
 
-    reg_region = models.ForeignKey('Region', null=True, on_delete=models.PROTECT, related_name='reg',
+    reg_region = models.ForeignKey('Region', null=True, blank=True, on_delete=models.PROTECT, related_name='reg',
                                    verbose_name='Регион прописки')
     reg_town = models.CharField(max_length=40, blank=True, default='', verbose_name='Населенный пункт прописки')
     reg_house = models.CharField(max_length=40, blank=True, default='', verbose_name='Улица,дом,кв прописки')
     reg_fac_same_address = models.BooleanField(default=False, verbose_name='Адреса регистрации и фактический совпадают')
-    fact_region = models.ForeignKey('Region', null=True, on_delete=models.PROTECT, related_name='fact',
+    fact_region = models.ForeignKey('Region', null=True, blank=True, on_delete=models.PROTECT, related_name='fact',
                                     verbose_name='Регион проживания')
     fact_town = models.CharField(max_length=40, blank=True, default='', verbose_name='Населенный пункт проживания')
     fact_house = models.CharField(max_length=40, blank=True, default='', verbose_name='Улица,дом,кв проживания')
