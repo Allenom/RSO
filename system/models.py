@@ -19,33 +19,49 @@ class Profile(models.Model):
     telephone = models.CharField(max_length=30, blank=True, default='+7', verbose_name='Телефон')
     # detachment
     # Направление ЛСО
-    # study_institution
+    study_institution = models.CharField(max_length=40, blank=True, default='', verbose_name='Образовательная организация')
     study_faculty = models.CharField(max_length=40, blank=True, default='', verbose_name='Факультет')
-    study_group = models.CharField(max_length=20, blank=True, default='', verbose_name='Факультет')
+    study_group = models.CharField(max_length=20, blank=True, default='', verbose_name='Курс')
     STUDY_FORMS = [('', '-'), ('очная', 'очная'), ('очно-заочная', 'очно-заочная'), ('вечерняя', 'вечерняя'),
                    ('заочная', 'заочная'), ('дистанционная', 'дистанционная')]
     study_form = models.CharField(max_length=15, blank=True, choices=STUDY_FORMS, default='', verbose_name='Форма '
                                                                                                            'обучения')
+    study_year = models.CharField(max_length=10, blank=True, default='', verbose_name='Курс')
+    study_spec = models.CharField(max_length=40, blank=True, default='', verbose_name='Специальность')
+
     # ---ДОКУМЕНТЫ---
     SNILS = models.CharField(max_length=15, blank=True, default='', verbose_name='СНИЛС')
     INN = models.CharField(max_length=15, blank=True, default='', verbose_name='ИНН')
     # INN_file
     # pass_file
-    pass_ser = models.CharField(max_length=15, blank=True, default='', verbose_name='Серия паспорта')
-    pass_nom = models.CharField(max_length=15, blank=True, default='', verbose_name='Номер паспорта')
-    pass_town = models.CharField(max_length=15, blank=True, default='', verbose_name='Город рождения')
+    pass_ser_num = models.CharField(max_length=15, blank=True, default='', verbose_name='Номер и серия паспорта')
+    # pass_nom = models.CharField(max_length=15, blank=True, default='', verbose_name='Номер паспорта')
+    # pass_town = models.CharField(max_length=15, blank=True, default='', verbose_name='Город рождения')
     pass_whom = models.CharField(max_length=15, blank=True, default='', verbose_name='Кем выдан паспорт')
     pass_date = models.DateField(blank=True, null=True, verbose_name='Дата выдачи паспорта')
-    pass_kod = models.CharField(max_length=15, blank=True, default='', verbose_name='Код подразделения, выдавшего '
-                                                                                    'паспорт')
-    # pass_address = models.CharField(max_length=15, blank=True, default='', verbose_name='Место регистрации по паспорту')
+    # pass_kod = models.CharField(max_length=15, blank=True, default='', verbose_name='Код подразделения, выдавшего '
+    #                                                                                 'паспорт')
+
+    work_book_num = models.CharField(max_length=15, blank=True, default='', verbose_name='Трудовая книжка номер')
+    inter_pass = models.CharField(max_length=15, blank=True, default='', verbose_name='Загранпаспорт номер')
+    MILITARY_DOCUMENT_TYPES = [('', '-'), ('Приписной', 'Удостоверение гражданина пожлежащего вызову на срочную '
+                                                        'военную службу'), ('Военник', 'Военный билет')]
+    mil_reg_doc_type = models.CharField(max_length=10, blank=True, choices=MILITARY_DOCUMENT_TYPES, default='',
+                                        verbose_name='Тип документа воинского учета')
+    mil_reg_doc_ser_num = models.CharField(max_length=15, blank=True, default='',
+                                           verbose_name='Номер и серия документа воинского учета')
+
+    # pass_address = models.CharField(max_length=15, blank=True, default='',
+    # verbose_name='Место регистрации по паспорту')
     # address = models.CharField(max_length=15, blank=True, default='', verbose_name='Фактическое место проживания')
 
-    reg_region = models.ForeignKey('Region', null=True, on_delete=models.PROTECT, related_name='reg', verbose_name='Регион прописки')
+    reg_region = models.ForeignKey('Region', null=True, blank=True, on_delete=models.PROTECT, related_name='reg',
+                                   verbose_name='Регион прописки')
     reg_town = models.CharField(max_length=40, blank=True, default='', verbose_name='Населенный пункт прописки')
     reg_house = models.CharField(max_length=40, blank=True, default='', verbose_name='Улица,дом,кв прописки')
     reg_fac_same_address = models.BooleanField(default=False, verbose_name='Адреса регистрации и фактический совпадают')
-    fact_region = models.ForeignKey('Region', null=True, on_delete=models.PROTECT, related_name='fact', verbose_name='Регион проживания')
+    fact_region = models.ForeignKey('Region', null=True, blank=True, on_delete=models.PROTECT, related_name='fact',
+                                    verbose_name='Регион проживания')
     fact_town = models.CharField(max_length=40, blank=True, default='', verbose_name='Населенный пункт проживания')
     fact_house = models.CharField(max_length=40, blank=True, default='', verbose_name='Улица,дом,кв проживания')
 
@@ -53,7 +69,7 @@ class Profile(models.Model):
     # ---Дополнительные данные---
     about = models.CharField(max_length=400, blank=True, default='', verbose_name='О себе')
     social_vk = models.CharField(max_length=50, blank=True, default='https://vk.com/', verbose_name='Ссылка на ВК')
-    social_tg = models.CharField(max_length=50, blank=True, default='', verbose_name='Ссылка на Телеграм')
+    social_tg = models.CharField(max_length=50, blank=True, default='https://t.me/', verbose_name='Ссылка на Телеграм')
 
     banner = models.ImageField(upload_to='users/banner/%Y/%m/%d', blank=True, verbose_name='Баннер личной страницы')
     photo = models.ImageField(upload_to='users/avatar/%Y/%m/%d', blank=True, verbose_name='Аватарка')
@@ -61,7 +77,6 @@ class Profile(models.Model):
     photo2 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 2')
     photo3 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 3')
     photo4 = models.ImageField(upload_to='users/photo/%Y/%m/%d', blank=True, verbose_name='Фото 4')
-
 
     # document1_title
     # document1
@@ -77,11 +92,17 @@ class Profile(models.Model):
     # document6
     # ---Конфенденциальность (настройки приватности)---
     PRIVACIES = [('1', 'Все'), ('2', 'Члены отряда'), ('3', 'Руководство')]
-    privacy_telephone = models.CharField(max_length=15, choices=PRIVACIES, default='1', verbose_name='Кто видит номер телефона')
-    privacy_email = models.CharField(max_length=15, choices=PRIVACIES, default='1', verbose_name='Кто видит электронную почту')
-    privacy_social = models.CharField(max_length=15, choices=PRIVACIES, default='1', verbose_name='Кто видит мои ссылки на соц сети')
-    privacy_about = models.CharField(max_length=15, choices=PRIVACIES, default='1', verbose_name='Кто видит информацию обо мне')
-    privacy_photo = models.CharField(max_length=15, choices=PRIVACIES, default='1', verbose_name='Кто видит мои фотографии')
+    privacy_telephone = models.CharField(max_length=15, choices=PRIVACIES, default='1',
+                                         verbose_name='Кто видит номер телефона')
+    privacy_email = models.CharField(max_length=15, choices=PRIVACIES, default='1',
+                                     verbose_name='Кто видит электронную почту')
+    privacy_social = models.CharField(max_length=15, choices=PRIVACIES, default='1',
+                                      verbose_name='Кто видит мои ссылки на соц сети')
+    privacy_about = models.CharField(max_length=15, choices=PRIVACIES, default='1',
+                                     verbose_name='Кто видит информацию обо мне')
+    privacy_photo = models.CharField(max_length=15, choices=PRIVACIES, default='1',
+                                     verbose_name='Кто видит мои фотографии')
+
     # ---Для несовершеннолетних---
     # ---На будущее---
     # membership_fee = models.BooleanField(default=False, verbose_name='Членский взнос оплачен')
@@ -115,7 +136,8 @@ class Profile(models.Model):
 
 class Region(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name='Название')
-    branch = models.CharField(max_length=100, db_index=True, default='региональное отделение', verbose_name='Региональное отделение')
+    branch = models.CharField(max_length=100, db_index=True, default='региональное отделение',
+                              verbose_name='Региональное отделение')
 
     def __str__(self):
         return self.name
@@ -137,6 +159,7 @@ class Unit(models.Model):
     banner = models.ImageField(upload_to='emblems/%Y/%m/%d', blank=True, verbose_name='Баннер')
     slogan = models.CharField(max_length=100, blank=True, default='', verbose_name='Девиз')
     founding_date = models.DateField(blank=True, null=True, verbose_name='Дата основания')
+
     # Уровень Линейный отряд, Штаб учебного заведения, Региональное отделение, (Направление)
     # area = models.ForeignKey('Area', null=True, blank=True, on_delete=models.PROTECT, verbose_name='Направление')
     #
@@ -152,6 +175,7 @@ class Unit(models.Model):
 
 class Detachment(Unit):
     area = models.CharField(max_length=50, blank=True, default='', verbose_name='Направление')
+
     # регион
     # institution = models.ForeignKey('Institution', null=True, blank=True, on_delete=models.PROTECT,
     #                                verbose_name='Учебное заведение')
@@ -164,7 +188,6 @@ class Detachment(Unit):
     class Meta:
         verbose_name_plural = 'отряды'
         verbose_name = 'Отряд'
-
 
 # Штаб Образовательной Организации
 # Регион

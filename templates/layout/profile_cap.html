@@ -50,6 +50,18 @@
                      {% if user.profile.region.branch != '' %}
                      <li class="user-data__regional-office"><p>{{user.profile.region.branch}}</p></li>
                       {% endif %}
+                     {% if user.profile.study_institution != '' %}
+                     <li class="user-data__regional-office"><p>{{user.profile.study_institution}}</p></li>
+                      {% endif %}
+                     {% if user.profile.study_faculty != '' %}
+                     <li class="user-data__regional-office"><p>{{user.profile.study_faculty}}</p></li>
+                      {% endif %}
+                     {% if user.profile.study_year != '' %}
+                     <li class="user-data__regional-office"><p>Курс {{user.profile.study_year}}</p></li>
+                      {% endif %}
+                     {% if user.profile.study_spec != '' %}
+                     <li class="user-data__regional-office"><p>{{user.profile.study_spec}}</p></li>
+                      {% endif %}
 <!--                     <li class="user-data__faculty"><p>Филологический</p></li>-->
 <!--                     <li class="user-data__profession"><p>Учитель русского языка и литературы</p></li>-->
 <!--                     <li class="user-data__course"><p>Курс 2</p></li>-->

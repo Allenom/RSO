@@ -10,15 +10,29 @@ function changeRSOpeople(val) {
 }
 
 const noRSOforeign = document.getElementById('no-RSO-foreign');
+const yesRSOforeign = document.getElementById('yes-RSO-foreign');
 const noRSO = document.getElementById('no-RSO');
+const yesRSO = document.getElementById('yes-RSO');
+
 function handleRadioClick() {
   if (document.getElementById('no-rso-people').checked && document.getElementById('no-pass').checked) {
     noRSOforeign.style.display = 'block';
        noRSO.style.display = 'none'
+      yesRSOforeign.style.display = 'none'
   } else if(document.getElementById('no-rso-people').checked && document.getElementById('yes-pass').checked) {
     noRSOforeign.style.display = 'none'
     noRSO.style.display = 'block'
   }
+   else if(document.getElementById('yes-rso-people').checked && document.getElementById('no-pass').checked) {
+    yesRSOforeign.style.display = 'block'
+    noRSOforeign.style.display = 'none'
+    yesRSO.style.display = 'none'
+  }
+   else if(document.getElementById('yes-rso-people').checked && document.getElementById('yes-pass').checked) {
+    yesRSOforeign.style.display = 'none'
+    yesRSO.style.display = 'block'
+  }
+
 }
 
 const radioButtons = document.querySelectorAll('input[name="changeRSOforeign"]');
@@ -316,14 +330,17 @@ function changeBlockPassport(val) {
 
 
 
-
-function addrFact(val) {
+  function addrFact(val) {
   if (val == 1) {
     document.getElementById("addr-fact").style.display = "none";
   } else if (val == 2) {
     document.getElementById("addr-fact").style.display = "block";
   }
 }
+window.onload =  function(){
+addrFact(val);
+}
+
 
 function checkBox(){
   let button = document.getElementById("submit-btn");
