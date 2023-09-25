@@ -35,7 +35,7 @@
      <!-- Настройки профиля -->
    <!-- Настройки профиля Хлебные крошки-->
    <section class="ps-nav">
-      <div class="container">
+      <div class="container box">
          <!-- Хлебные крошки -->
          <nav class="breadcrumbs-container">
             <ul itemscope itemtype="#">
@@ -59,14 +59,14 @@
 
    <!-- Настройки профиля H2 -->
    <section class="ps-title">
-      <div class="container">
+      <div class="container box">
          <h2>Настройки профиля</h2>
       </div>
    </section>
 {% include "layout/profile_cap.html" %}
 <!-- Табы  -->
      <section class="ps-tabs">
-            <div class="container">
+            <div class="container box">
             <!--  Контейнер c вкладками   -->
             <nav class="ps__navigation">
                 <ul class="ps__navigation-links-list tab-header">
@@ -87,11 +87,8 @@
             </div>
         </section>
   <section>
-    <div class="container accordion-cont">
-
-          <form method="post"  id="accordion-form" enctype="multipart/form-data">
-              {% csrf_token %}
-           <div class="rso-question">
+    <div class="container box">
+   <div class="rso-question">
             <div class="rso-question__title">Являетесь членом РСО?</div>
             <div class="checkbox" id="check-RSO">
               <input
@@ -114,6 +111,9 @@
               <label for="no-rso-people">Нет</label>
             </div>
           </div>
+          <form method="post"  id="accordion-form" enctype="multipart/form-data">
+              {% csrf_token %}
+
           <p class="accordion-title">
             Для вступления в РСО внесите ниже персональные данные
           </p>
@@ -2025,8 +2025,9 @@
                 <p class="RSO-blanks__title RSO-title">
                   Загрузите копию паспорта
                 </p>
-                <div class="pass-wrapper">
-                  <div class="RSO-statement">
+                  <div class="pass-details">
+                <div class="pass-details__wrapper">
+                  <div class="pass-details__item">
                     <p class="statement-title">Паспорт гражданина РФ<span class="valid-red">*</span></p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
@@ -2079,19 +2080,20 @@
                         <input
                           type="file"
                           name="file"
-                          id="pass-yesRSO"
+                          id="pass-upload-yes"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
                         />
-
-                        <label for="pass-yesRSO" class="file-choose"
+                        <label for="pass-upload-yes" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-pass-yesRSO">Файл не выбран</span>
                         <span class="file-error"></span>
+                        <span class="file-chosen" id="file-chosen-pass-yes">Файл не выбран</span>
                       </div>
                     </div>
+                  </div>
+                  <div class="pass-details__item">
                     <p class="statement-title">
                       Паспорт законного представителя<span class="valid-red">*</span>
                     </p>
@@ -2146,21 +2148,23 @@
                         <input
                           type="file"
                           name="file"
-                          id="statement-yesRSO"
+                          id="parent-pass-upload-yes"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="statement-yesRSO" class="file-choose"
+
+                        <label for="parent-pass-upload-yes" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span   class="file-chosen" id="file-chosen-statement-yesRSO">Файл не выбран</span>
                         <span class="file-error"></span>
+                        <span class="file-chosen" id="file-chosen-parent-pass-yes">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
               <div class="others-docs RSO">
                 <p class="other-docs__title RSO-title">

@@ -1,4 +1,5 @@
- *{  box-sizing:inherit;
+
+*{  box-sizing:inherit;
   margin: 0;  padding: 0;
 }
 dl, ol, ul {
@@ -6,11 +7,19 @@ dl, ol, ul {
 ol, ul {
    padding-left: 0;}
 
+.container {
+  max-width: 1180px;
+  margin: 0px auto;
+  padding: 0;
+}
 
+.box {
+  box-sizing: border-box;
+}
 
-/*.container {*/
-/*  box-sizing: border-box;*/
-/*}*/
+.dropdown-toggle::after {
+  display: none;
+}
 
 p {
   margin: 0px;

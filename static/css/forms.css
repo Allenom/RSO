@@ -20,12 +20,12 @@
 .wrapper {
   width: 100%;
 }
-.select-btn,
-li {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
+/*.select-btn,*/
+/*li {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  cursor: pointer;*/
+/*}*/
 .select-btn {
   background: #fff;
   border-radius: 10px;

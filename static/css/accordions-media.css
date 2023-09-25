@@ -260,11 +260,6 @@
 }
 
 @media (max-width: 575px) {
-    .container {
-        width: 100%;
-        padding: 8px;
-        box-sizing: border-box;
-    }
 .accordion-title {
     text-align: center;
     font-size: 18px;
@@ -316,7 +311,7 @@
     .rso-question {
         margin: 30px auto;
         /*width: 100%;*/
-        padding: 0px;
+        padding: 20px;
     }
 
       .rso-question__title {

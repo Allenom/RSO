@@ -150,6 +150,28 @@ section.user-registration-form .wrapper-form {
 #registration input#region-search:focus {
   padding-left: 16px;
 } */
+.selectize-control.single .selectize-input, .selectize-dropdown.single {
+    border: 1px solid #A3A3A3;
+}
+#id_region-selectized {
+  font-size: 16px;
+  font-family: 'BertSans';
+}
+
+
+.selectize-dropdown .selected {
+  background: white;
+    color: #35383F;
+}
+
+.selectize-dropdown .active {
+  background: white;
+  color: #35383F;
+}
+
+.selectize-control.single .selectize-input {
+    background-image: linear-gradient(to bottom,#fefefe, #ffffff);
+}
 
 
 #registration :focus::placeholder {
@@ -522,7 +544,7 @@ section.user-registration-form .wrapper {
     border-radius: 10px;
     width: 100%;
     min-height: 40px;
-    text-indent: 16px;
+    text-indent: 6px;
     font-family: 'BertSans';
     font-size: 16px;
     font-style: normal;
