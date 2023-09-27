@@ -345,8 +345,9 @@ section.user-registration-form .wrapper {
   line-height: normal;
 }
 
-/* Текст и background input-а об ошибке неверно введённого зачения */
-#registration .error {
+/* Текст об ошибке неверно введённого зачения */
+#registration .errorlist {
+    list-style: none;
   color: #DB0000;
   /* хлебные_крошки */
   font-family: 'Akrobat';
