@@ -264,6 +264,9 @@
     text-align: center;
     font-size: 18px;
 }
+    .box{
+        padding: 12px;
+    }
 .accordion-button {
     font-size: 16px;
 }
@@ -321,6 +324,12 @@
     #check-RSO {
       text-align: center;
     }
+    input[type="checkbox"] {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
 
     .addres {
         margin-top: 20px;
@@ -331,7 +340,7 @@
         margin-bottom: 28px;
     }
     .agree-check p {
-        margin-left: 10px;
-        font-size: 12px;
+        margin-left: 8px;
+        font-size: 11px;
     }
 }
