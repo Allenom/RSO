@@ -53,11 +53,11 @@
          <div class="user-metric">
             <div class="user-metric__top">
                <div class="user-metric__top-img-wrapper">
-                  <!-- Заглушка Банер -->
-                   {% if user.profile.banner %}
-                  <img src="{{user.profile.banner.url}}" alt="Баннер личной страницы" id="banner-pic" />
-                  {% else %}
-                  <img src="/static/images/profile-settings/banner-stub.png" alt="Баннер личной страницы(пусто)" id="banner-pic" />
+                  <!-- Вывод баннера, если он есть в профиле, если нет то заглушка -->
+                   {% if user.profile.banner %} <!-- есть ли баннер у профиля пользователя -->
+                  <img src="{{user.profile.banner.url}}" alt="Баннер личной страницы" id="banner-pic" /> <!-- Вывод баннера по url (из media) -->
+                  {% else %}<!-- Если нет загруженного баннера у профиля пользователя -->
+                  <img src="/static/images/profile-settings/banner-stub.png" alt="Баннер личной страницы(пусто)" id="banner-pic" /> <!-- Вывод заглушки из static -->
                   {% endif %}
                </div>
             </div>
