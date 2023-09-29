@@ -51,7 +51,7 @@
    /* height: fit-content; */
    padding: 16px 16px;
    /*  */
-   overflow: hidden;
+ overflow: hidden;
    /* text-indent: 16px; */
    /*  */
    color: #5E5C5C;
@@ -112,3 +112,4 @@
        margin: 0 20px;
    }
 }
+

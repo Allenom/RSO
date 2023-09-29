@@ -4,7 +4,9 @@
 {% block title %}Моя страница{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/ps-baner.css' %}">
-<link rel="stylesheet" href="{% static 'css/user-page.css' %}">
+<link rel="stylesheet" href="{% static 'css/my-page-verification/user-page.css' %}">
+<link rel="stylesheet" href="{% static 'css/my-page-verification/my-page-list-events.css' %}">
+<link rel="stylesheet" href="{% static 'css/my-page-verification/my-page-checkbox.css' %}">
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
 <link rel="stylesheet" href="{% static 'css/ps-tabs.css' %}">
@@ -87,5 +89,143 @@
             </div>
          </div>
       </section>
+         <section class="my-page-events">
+            <div class="container">
+               <form class="my-page-events__form" method="post" action="">
+                  <fieldset>
+                     <h3>Мои мероприятия</h3>
+                     <div class="my-page-events__checkbox">
+                        <div class="my-page-events__wrapp">
+                           <div class="my-page-events__text">
+                              <p>Статус <br> мероприятия</p>
+                           </div>
+                           <div class="my-page-events__checkbox-input">
+                              <div class="my-page-events__checkbox-input-span">
+                              <label><input type="checkbox" name="" id="myCheckOpen"
+                                    onclick="myFunctionOpen()"><span>Активные</span>
+                              </label>
+                                 </div>
+                              <div class="my-page-events__checkbox-input-span">
+                              <label><input type="checkbox" name="" id="myCheck"
+                                    onclick="myFunction()"><span>Завершённые</span>
+                              </label>
+                           </div>
+                           </div>
+                        </div>
+                        <!-- <div class="my-page-event__answer" id="textOpen" style="display:none"> -->
+                        <div class="my-page-event__answer" style="display:none">
+                           <p>У вас пока нет активных мероприятий</p>
+                        </div>
+                        <div class="my-page-event__answer" id="text" style="display:none">
+                           <p>У вас пока нет завершённых мероприятий</p>
+                        </div>
+
+                        <!-- блок мероприятий -->
+                        <!-- раздел мои мероприятия -->
+                        <div class="my-page-list-events" id="textOpen">
+                           <div class="container">
+                              <div class="my-page-list-events__wrapper-block">
+                                 <div class="my-page-list-events__wrapper">
+                                    <div class="my-page-list-events__block">
+                                       <div class="my-page-list-events__block-img">
+                                          <img src="/static/images/img/list-events-foto1.png" alt="">
+                                          <button class="my-page-list-events__block-img-tame" type="btn"><img
+                                                src="/static/images/img/Message-about-the-end-of-registration.svg"
+                                                alt=""></button>
+                                       </div>
+                                       <div class="my-page-list-events__block-heading">
+                                          <h4>Название мероприятия очень длинное название, которое кому-то посвящено </h4>
+                                       </div>
+                                    </div>
+                                    <div class="my-page-list-events__block-info">
+                                       <div class="my-page-list-events__block-info-p">
+                                          <p>6 июля 2023</p>
+                                       </div>
+
+                                       <div class="my-page-list-events__block-info-p-img">
+                                          <p>100 </p>
+                                          <img src="/static/images/img/group_light.svg" alt="">
+                                       </div>
+
+                                    </div>
+                                    <div class="my-page-list-events__block-btn">
+                                       <p >Всероссийское</p>
+                                       <p >Образовательное</p>
+                                    </div>
+                                 </div>
+
+
+                                 <div class="my-page-list-events__wrapper">
+                                    <div class="my-page-list-events__block">
+                                       <div class="my-page-list-events__block-img">
+                                          <img src="/static/images/img/list-events-foto2.png" alt="">
+                                          <button class="my-page-list-events__block-img-tame" type="btn"><img
+                                                src="/static/images/img/Message-about-the-end-of-registration.svg"
+                                                alt=""></button>
+                                       </div>
+                                       <div class="my-page-list-events__block-heading">
+                                          <h4>Название мероприятия очень длинное название, которое кому-то посвящено </h4>
+                                       </div>
+                                    </div>
+                                    <div class="my-page-list-events__block-info">
+                                       <div class="my-page-list-events__block-info-p">
+                                          <p>6 июля 2023</p>
+                                       </div>
+
+                                       <div class="my-page-list-events__block-info-p-img">
+                                          <p>100 </p>
+                                          <img src="/static/images/img/group_light.svg" alt="">
+                                       </div>
+
+                                    </div>
+                                    <div class="my-page-list-events__block-btn">
+                                       <p >Всероссийское</p>
+                                       <p >Образовательное</p>
+                                    </div>
+                                 </div>
+
+
+                                 <div class="my-page-list-events__wrapper">
+                                    <div class="my-page-list-events__block">
+                                       <div class="my-page-list-events__block-img">
+                                          <img src="/static/images/img/list-events-foto3.png" alt="">
+                                          <button class="my-page-list-events__block-img-tame" type="btn"><img
+                                                src="/static/images/img/Message-about-the-end-of-registration.svg"
+                                                alt=""></button>
+                                       </div>
+                                       <div class="my-page-list-events__block-heading">
+                                          <h4>Название мероприятия очень длинное название, которое кому-то посвящено </h4>
+                                       </div>
+                                    </div>
+                                    <div class="my-page-list-events__block-info">
+                                       <div class="my-page-list-events__block-info-p">
+                                          <p>6 июля 2023</p>
+                                       </div>
+
+                                       <div class="my-page-list-events__block-info-p-img">
+                                          <p>100 </p>
+                                          <img src="/static/images/img/group_light.svg" alt="">
+                                       </div>
+
+                                    </div>
+                                    <div class="my-page-list-events__block-btn">
+                                       <p>Всероссийское</p>
+                                       <p>Образовательное</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="my-page-list-events__block-open">
+                                 <a href="#">Смотреть все мероприятия</a>
+                              </div>
+
+                           </div>
+                        </div>
+                     </div>
+                  </fieldset>
+               </form>
+            </div>
+      </section>
+
    </article>
+ <script src="/static/js/checkbox.js"></script>
 {% endblock %}

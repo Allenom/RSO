@@ -1,0 +1,149 @@
+/* мои мероприятия */
+
+
+.my-page-events {
+   padding-top: 60px;
+}
+
+
+fieldset h3 {
+   font-family: 'Akrobat', sans-serif;
+   font-size: 32px;
+   font-weight: 600;
+   line-height: 40px;
+   letter-spacing: 0em;
+   text-align: left;
+   margin-bottom: 40px;
+}
+
+.my-page-events__form fieldset {
+   border: none;
+}
+
+.my-page-events__checkbox {
+   display: flex;
+   justify-content: space-between;
+}
+
+.my-page-events__text {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 24px;
+}
+
+.my-page-events__text p {
+   font-family: 'BertSans', sans-serif;
+   font-size: 20px;
+   font-weight: 600;
+   line-height: 26px;
+   letter-spacing: 0em;
+   text-align: left;
+
+}
+
+
+/* расположение checkbox  */
+.my-page-events__checkbox-input,
+.my-page-events__wrapp {
+   display: flex;
+   flex-direction: column;
+
+}
+.my-page-events__checkbox-input{
+   width: 166px;
+}
+.my-page-events__checkbox-input-span input {
+   display: inline-block;
+}
+
+/* стилизация размера окна с галочкой */
+.my-page-events__checkbox-input input {
+   width: 24px;
+   height: 24px;
+   margin-bottom: 16px;
+
+
+}
+
+.my-page-events__text p,
+.my-page-events__checkbox-input input:last-child {
+   margin-bottom: 0;
+}
+
+.my-page-events__checkbox-input-span label {
+   justify-content: space-between;
+}
+
+/* текст у checkbox */
+.my-page-events__checkbox-input span {
+   padding-left: 14px;
+
+}
+
+.my-page-events__checkbox-input-span span {
+   color: #35383F;
+   font-family: 'BertSans', sans-serif;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+}
+
+.my-page-event__answer {
+   width: 835px;
+   height: 28px;
+   margin-right: 47px;
+}
+
+.my-page-event__answer p {
+   width: 600px;
+   font-family: 'Akrobat', sans-serif;
+   font-size: 24px;
+   font-weight: 600;
+   line-height: 28px;
+   letter-spacing: 0em;
+   padding: 0 5em;
+   justify-content: center;
+   text-align: center;
+}
+
+/* адаптив */
+@media (max-width:1224px) {
+   .my-page-events__checkbox {
+   flex-direction: column;
+   }
+   
+}
+
+
+@media (max-width:950px) {
+   .my-page-event__answer p {
+      padding: 0 2em;
+   }
+
+   .my-page-event__answer {
+      margin-right: 27px;
+   }
+}
+
+@media (max-width:756px) {
+   .my-page-event__answer p {
+      padding: 0;
+   }
+
+   .my-page-event__answer {
+      margin-right: 10px;
+   }
+}
+
+@media (max-width:693px) {
+   .my-page-event__answer {
+      margin-right: 0;
+   }
+}
+
+@media (max-width:600px) {
+   .my-page-events__checkbox {
+      flex-direction: column;
+   }
+}

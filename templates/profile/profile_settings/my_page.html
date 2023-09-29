@@ -192,8 +192,8 @@
                  <legend>Кратко о себе</legend>
                   <div class="textarea-wrapper">
                      <label for="about-me">Кратко о себе</label>
-                     <textarea id="about-me" type="text" maxlength="400" name="about" rows="5" cols="33" spellcheck="true">{{user.profile.about | default:''}}</textarea>
-                  </div>
+                     <p class="textarea-p"><textarea id="about-me" type="text" maxlength="400" name="about" rows="5" cols="300" spellcheck="true">{{user.profile.about | default:''}}</textarea></p>
+                      </div>
                   <div style="width:130px;"  class="counter">
 <!--                     <output form="about" for="about-me" id="about" name="counter"></output>-->
                      <p class="total">до 400 символов</p>
@@ -306,7 +306,10 @@
       </div>
    </section>
     </form>
-   <script src="/static/js/profile/profile_settings/textarea-counter.js"></script>
+
+    
+
+   <!--<script src="/static/js/textarea-counter.js"></script>-->
    <!-- <script src="/static/js/profile/profile_settings/my-photo-upload.js"></script> -->
    <!-- <script src="/static/js/profile/profile_settings/file-upload.js"></script> -->
 {% endblock %}
