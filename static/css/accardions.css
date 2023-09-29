@@ -412,7 +412,7 @@ input[type="radio"] {
 .data-form {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  column-gap: 160px;
+  column-gap: 140px;
   padding: 40px;
   border: 1px solid #a3a3a3;
   border-radius: 10px;
@@ -429,7 +429,7 @@ input[type="radio"] {
   .izm {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    column-gap: 182px;
+    column-gap: 140px;
   }
   #no-passport {
     display: none;
@@ -468,11 +468,11 @@ input[type="radio"] {
 
 #no-passport-parent {
   margin-top: 18px;
-  column-gap: 182px;
+  column-gap: 140px;
 }
 
 #no-passport {
-  grid-column-gap: 157px;
+  grid-column-gap: 140px;
 }
 
 .card {

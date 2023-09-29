@@ -366,7 +366,7 @@
                         type="text"
                         id="pass-num-parent"
                         name="passInput"
-                        class="input-small"
+                        class="input-small pass-masked"
                         pattern="[0-9]{11,11}"
                         placeholder="__ __ ____"
                       />
@@ -474,7 +474,7 @@
                       <input
                         type="text"
                         id="pass-id-parent-foreign"
-                        class="input-small"
+                        class="input-small pass-masked"
                         pattern="[0-9]{11,11}"
                         placeholder="__ ___ ____"
                       />
@@ -498,7 +498,7 @@
                       <input
                         type="text"
                         id="work-book-parent-foreign"
-                        class="input-big"
+                        class="input-big mask-workbook"
                         placeholder="AA 999999999"
                       />
                       <div class="error"></div>
@@ -508,7 +508,7 @@
                       <input
                         type="text"
                         id="INN-id-parent-foreign"
-                        class="input-big"
+                        class="input-big mask-inn"
                         placeholder="AA 999999999"
                       />
                       <div class="error"></div>
@@ -520,7 +520,7 @@
                       <input
                         type="text"
                         id="snils-id-parent-foreign"
-                        class="input-big"
+                        class="input-big mask-snils"
                         placeholder="AA 999999999"
                       />
                       <div class="error"></div>
@@ -578,7 +578,7 @@
                       id="phone-contact"
                       name="telephone"
                       value="{{user.profile.telephone}}"
-                      class="input-small"
+                      class="input-small phone"
                       placeholder="+7(__) __ __ _"
                     />
                     <div class="error"></div>
@@ -603,7 +603,7 @@
                       type="email"
                       name="email"
                       value="{{user.email}}"
-                      id="email-contact"
+                      id="email-contact mask-email"
                       class="input-big"
                       placeholder="mail@mail.com"
                     />
@@ -631,7 +631,7 @@
                           value="{{user.profile.social_vk}}"
                           type="text"
                           id="socials"
-                          class="input-big"
+                          class="input-big mask-vk"
                           placeholder="https://vk.com/danya_porg"
                         />
                       </div>
@@ -642,7 +642,7 @@
                           value="{{user.profile.social_tg}}"
                           type="text"
                           id="socials"
-                          class="input-big"
+                          class="input-big mask-tg"
                           placeholder="https://t.me/allenom"
                         />
                       </div>
@@ -817,7 +817,7 @@
                       name = "pass_ser_num"
                       value="{{user.profile.pass_ser_num}}"
                       type="text"
-                      id="pass-num"
+                      id="pass-num pass-masked"
                       class="input-big"
                       placeholder="__ __ ____"
                     />
@@ -856,7 +856,7 @@
                       value="{{user.profile.SNILS}}"
                       type="text"
                       id="SNILS-id"
-                      class="input-big"
+                      class="input-big mask-snils"
                       placeholder="AA 999999999"
                     />
                     <div class="error"></div>
@@ -868,7 +868,7 @@
                       value="{{user.profile.INN}}"
                       type="text"
                       id="INN-id"
-                      class="input-big"
+                      class="input-big mask-inn"
                       placeholder="AA 999999999"
                     />
                     <div class="error"></div>
@@ -881,8 +881,8 @@
                       name="work_book_num"
                       value="{{user.profile.work_book_num}}"
                       type="text"
-                      id="work-book"
-                      class="input-big"
+                      id="work-book "
+                      class="input-big mask-workbook"
                       placeholder="AA 999999999"
                     />
                     <div class="error"></div>
@@ -894,7 +894,7 @@
                       value="{{user.profile.inter_pass}}"
                       type="text"
                       id="foreign-pass"
-                      class="input-big"
+                      class="input-big mask-foreign-pass"
                       placeholder="AA 999999999"
                     />
                     <div class="error"></div>
@@ -908,7 +908,7 @@
                     >
                       <option value="" {% if user.profile.mil_reg_doc_type == '' %} selected {% endif %}>-</option>
                       <option value="Приписной" class="military__select-text" {% if user.profile.mil_reg_doc_type == 'Приписной' %} selected {% endif %}>
-                        Удостоверение гражданина пожлежащего вызову на срочную военную службу
+                        Удостоверение гражданина подлежащего вызову на срочную военную службу
                       </option>
                       <option value="Военник" {% if user.profile.mil_reg_doc_type == 'Военник' %} selected {% endif %}>Военный билет</option>
                     </select>
@@ -923,7 +923,7 @@
                       value="{{user.profile.mil_reg_doc_ser_num}}"
                       type="text"
                       id="military-id"
-                      class="input-big"
+                      class="input-big mask-military"
                       placeholder="AA 999999999"
                     />
                     <div class="error"></div>
@@ -958,7 +958,7 @@
                     <input
                       type="text"
                       id="pass-id"
-                      class="input-small"
+                      class="input-small pass-masked"
                       pattern="[0-9]{11,11}"
                       placeholder="__ ___ ____"
                     />
@@ -991,7 +991,7 @@
                     <input
                       type="text"
                       id="work-book-foreign"
-                      class="input-big"
+                      class="input-big mask-workbook"
                       placeholder="AA 999999999"
                     />
                     <div class="error"></div>
@@ -1001,7 +1001,7 @@
                     <input
                       type="text"
                       id="INN-id-foreign"
-                      class="input-big"
+                      class="input-big mask-inn"
                       placeholder="AA 999999999"
                     />
                     <div class="error"></div>
@@ -1011,7 +1011,7 @@
                     <input
                       type="text"
                       id="snils-id-foreign"
-                      class="input-big"
+                      class="input-big mask-snils"
                       placeholder="AA 999999999"
                     />
                     <div class="error"></div>
@@ -1210,7 +1210,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-statement">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1262,9 +1262,7 @@
                         />
 
                         <label for="RSO-statement" class="file-choose"
-                          >Выбрать файл</label
-                        >
-                        <span class="file-chosen" id="file-chosen-statement">Файл не выбран</span>
+                          >Выбрать файл</label>
                         <span class="file-error"></span>
                       </div>
                     </div>
@@ -1299,7 +1297,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-personal">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1356,7 +1354,6 @@
                         <label for="personal-data" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" class="file-chosen-personal">Файл не выбран</span>
                         <span class="file-error"></span>
                       </div>
                     </div>
@@ -1392,7 +1389,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-children">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1450,7 +1447,6 @@
                           >Выбрать файл</label
                         >
 
-                        <span class="file-chosen" id="file-chosen-children">Файл не выбран</span>
                         <span class="file-error"></span>
                       </div>
                     </div>
@@ -1517,7 +1513,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-pass">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1549,7 +1545,6 @@
                           >Выбрать файл</label
                         >
                         <span class="file-error"></span>
-                        <span class="file-chosen" id="file-chosen-pass">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -1585,7 +1580,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-parent-pass">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1619,7 +1614,6 @@
                           >Выбрать файл</label
                         >
                         <span class="file-error"></span>
-                        <span class="file-chosen" id="file-chosen-parent-pass">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -1660,7 +1654,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-snils">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1691,7 +1685,7 @@
                         <label for="SNILS-upload" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-snils">Файл не выбран</span>
+
                       </div>
                     </div>
                   </div>
@@ -1725,7 +1719,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-military">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1748,16 +1742,15 @@
                         <input
                           type="file"
                           name="file"
-                          id="militaryTicket"
+                          id="militaryTicket-upload"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="militaryTicket" class="file-choose"
+                        <label for="militaryTicket-upload" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-military">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -1791,7 +1784,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-INN">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1823,7 +1816,6 @@
                         <label for="INN-upload" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-INN">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -1857,7 +1849,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-foreign-pass">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1889,7 +1881,6 @@
                         <label for="foreign-pass-upload" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-foreign-pass">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -1923,7 +1914,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-workbook">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -1946,16 +1937,15 @@
                         <input
                           type="file"
                           name="file"
-                          id="workbook"
+                          id="workbook-upload"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="workbook" class="file-choose"
+                        <label for="workbook-upload" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-workbook">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2057,7 +2047,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-pass-yes">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2089,7 +2079,6 @@
                           >Выбрать файл</label
                         >
                         <span class="file-error"></span>
-                        <span class="file-chosen" id="file-chosen-pass-yes">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2125,7 +2114,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-parent-pass-yes">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2159,7 +2148,6 @@
                           >Выбрать файл</label
                         >
                         <span class="file-error"></span>
-                        <span class="file-chosen" id="file-chosen-parent-pass-yes">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2201,7 +2189,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-SNILS-yesRSO">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2233,7 +2221,6 @@
                         <label for="SNILS-yesRSO" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span  class="file-chosen" id="file-chosen-SNILS-yesRSO">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2267,7 +2254,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-military-yesRSO">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2290,16 +2277,15 @@
                         <input
                           type="file"
                           name="file"
-                          id="militaryTicket-yesRSO"
+                          id="militaryTicket-upload-yesRSO"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="militaryTicket-yesRSO" class="file-choose"
+                        <label for="militaryTicket-upload-yesRSO" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-yesRSO">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2333,7 +2319,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-INN-yesRSO">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2356,16 +2342,15 @@
                         <input
                           type="file"
                           name="file"
-                          id="INN-yesRSO"
+                          id="INN-upload-yesRSO"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="INN-yesRSO" class="file-choose"
+                        <label for="INN-upload-yesRSO" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-INN-yesRSO">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2399,7 +2384,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-foreignPass-yesRSO">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2422,16 +2407,15 @@
                         <input
                           type="file"
                           name="file"
-                          id="foreignPass-yesRSO"
+                          id="foreignPass-upload-yesRSO"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="foreignPass-yesRSO" class="file-choose"
+                        <label for="foreignPass-upload-yesRSO" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-foreignPass-yesRSO">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2465,7 +2449,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-workbook-yesRSO">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2488,16 +2472,15 @@
                         <input
                           type="file"
                           name="file"
-                          id="workbook-yesRSO"
+                          id="workbook-upload-yesRSO"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
 
                         />
-                        <label for="workbook-yesRSO" class="file-choose"
+                        <label for="workbook-upload-yesRSO" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-workbook-yesRSO">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2589,7 +2572,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-statement-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2643,7 +2626,6 @@
                         <label for="RSO-statement-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-statement-foreign">Файл не выбран</span>
                         <span class="file-error"></span>
                       </div>
                     </div>
@@ -2678,7 +2660,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-personal-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2735,7 +2717,6 @@
                         <label for="personal-data-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" class="file-chosen-personal-foreign">Файл не выбран</span>
                         <span class="file-error"></span>
                       </div>
                     </div>
@@ -2802,7 +2783,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-pass-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2834,7 +2815,6 @@
                           >Выбрать файл</label
                         >
                         <span class="file-error"></span>
-                        <span class="file-chosen" id="file-chosen-pass-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2875,7 +2855,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-snils-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2906,7 +2886,6 @@
                         <label for="SNILS-upload-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-snils-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -2940,7 +2919,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-INN-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -2972,7 +2951,6 @@
                         <label for="INN-upload-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-INN-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -3006,7 +2984,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-workbook-noRSO-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -3038,7 +3016,6 @@
                         <label for="workbook-no-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-workbook">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -3139,7 +3116,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-pass-foreign-yesRSO">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -3162,21 +3139,20 @@
                         <input
                           type="file"
                           name="file"
-                          id="pass-upload-no-RSO-foreign"
+                          id="pass-upload-yes-RSO-foreign"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
                         />
-                        <label for="pass-upload-no-RSO-foreign" class="file-choose"
+                        <label for="pass-upload-yes-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
                         <span class="file-error"></span>
-                        <span class="file-chosen" id="file-chosen-pass-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
                     <div class="pass-details__item">
-                    <p class="statement-title">Паспорт законного представтеля<span class="valid-red">*</span></p>
+                    <p class="statement-title">Паспорт законного представителя<span class="valid-red">*</span></p>
                     <div class="statement-wrapper">
                       <div class="statement-item">
                         <svg
@@ -3205,7 +3181,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-pass-parent-foreign-yesRSO">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -3228,16 +3204,15 @@
                         <input
                           type="file"
                           name="file"
-                          id="pass-upload-no-RSO-foreign"
+                          id="pass-parent-upload-yes-RSO-foreign"
                           hidden
                           multiple
                           accept=".pdf, .jpeg, .png"
                         />
-                        <label for="pass-upload-no-RSO-foreign" class="file-choose"
+                        <label for="pass-parent-upload-yes-RSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
                         <span class="file-error"></span>
-                        <span class="file-chosen" id="file-chosen-pass-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -3278,7 +3253,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-home-yesRSO-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -3310,7 +3285,6 @@
                         <label for="home-yesRSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span  class="file-chosen" id="file-chosen-Shome-yesRSO-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -3344,7 +3318,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-SNILS-yesRSO-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -3376,7 +3350,6 @@
                         <label for="SNILS-yesRSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span  class="file-chosen" id="file-chosen-SNILS-yesRSO-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -3410,7 +3383,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-INN-yesRSO-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -3442,7 +3415,6 @@
                         <label for="INN-yesRSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-INN-yesRSO-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
@@ -3476,7 +3448,7 @@
                             stroke="#35383F"
                           />
                         </svg>
-                        <p>
+                        <p id="file-chosen-workbook-yesRSO-foreign">
                           Файл в формате pdf, png, jpeg размером не более
                           7 мб
                         </p>
@@ -3508,12 +3480,11 @@
                         <label for="workbook-yesRSO-foreign" class="file-choose"
                           >Выбрать файл</label
                         >
-                        <span class="file-chosen" id="file-chosen-workbook-yesRSO-foreign">Файл не выбран</span>
                       </div>
                     </div>
                   </div>
                   <div class="other-docs__item">
-                    <div class="addDoc yessRsoForeign"></div>
+                    <div class="addDoc yesRsoForeign"></div>
                     <button
                       class="add-doc"
                       onclick="add_document_field_yesRsoForeign()"
@@ -3559,6 +3530,8 @@
         </div>
       </section>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" integrity="sha512-d4KkQohk+HswGs6A1d6Gak6Bb9rMWtxjOa0IiY49Q3TeFd5xAzjWXDCBW9RS7m86FQ4RzM2BdHmdJnnKRYknxw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/static/js/masked.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
      $(document).ready(function () {
@@ -3576,6 +3549,7 @@
 
     </script>
      <script src="/static/js/accardions.js"></script>
+    <script src="/static/js/file-upload-rso.js"></script>
      <script src="/static/js/download-files.js"></script>
     <script src="/static/js/date-valid.js"></script>
 

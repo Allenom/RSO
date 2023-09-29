@@ -53,11 +53,11 @@
          <div class="user-metric">
             <div class="user-metric__top">
                <div class="user-metric__top-img-wrapper">
-                  <!-- Заглушка Банер -->
-                   {% if user.profile.banner %}
-                  <img src="{{user.profile.banner.url}}" alt="Баннер личной страницы" id="banner-pic" />
-                  {% else %}
-                  <img src="/static/images/profile-settings/banner-stub.png" alt="Баннер личной страницы(пусто)" id="banner-pic" />
+                  <!-- Вывод баннера, если он есть в профиле, если нет то заглушка -->
+                   {% if user.profile.banner %} <!-- есть ли баннер у профиля пользователя -->
+                  <img src="{{user.profile.banner.url}}" alt="Баннер личной страницы" id="banner-pic" /> <!-- Вывод баннера по url (из media) -->
+                  {% else %}<!-- Если нет загруженного баннера у профиля пользователя -->
+                  <img src="/static/images/profile-settings/banner-stub.png" alt="Баннер личной страницы(пусто)" id="banner-pic" /> <!-- Вывод заглушки из static -->
                   {% endif %}
                </div>
             </div>
@@ -125,20 +125,20 @@
                      <!-- ссылки на соцсети -->
                      <div class="user-data__social-network">
                         <div class="user-data__link-vk">
-                           <a href="https://vk.com" target="_blank">
+                           <a href="{{user.profile.social_vk}}" target="_blank">
                               <img src="/static/images/icons/vk-blue.svg">
                            </a>
                         </div>
                         <div class="user-data__link-telegram">
-                           <a href="https://t.me" target="_blank">
+                           <a href="{{user.profile.social_tg}}" target="_blank">
                               <img src="/static/images/icons/telegram-blue.svg" alt="">
                            </a>
                         </div>
-                        <div class="user-data__link-share-link">
-                           <a href="#" target="_blank">
-                              <img src="/static/images/icons/to-share-link.svg" alt="">
-                           </a>
-                        </div>
+<!--                        <div class="user-data__link-share-link">-->
+<!--                           <a href="#" target="_blank">-->
+<!--                              <img src="/static/images/icons/to-share-link.svg" alt="">-->
+<!--                           </a>-->
+<!--                        </div>-->
                      </div>
                      <!-- Телефон, почта пользователя -->
                      <div class="user-data__personal-contacts">

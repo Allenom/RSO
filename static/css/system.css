@@ -248,7 +248,21 @@ margin-bottom:80px;
 .login-password-my-page__input-password:focus::placeholder {
    opacity: 0;
    transition: opacity 0.3s ease;
-} 
+}
+
+.errorlist {
+    list-style: none;
+  color: #DB0000;
+  /* хлебные_крошки */
+  font-family: 'Akrobat';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  /*  */
+  /* min-height: 10px; */
+  width: 100%;
+}
 
 /* ************************    Адаптив        ****************************** */
 @media screen and (max-width:1030px) {
