@@ -51,9 +51,9 @@ urlpatterns = [
     path("privacy_policy/", page, {'template': 'privacy_policy.html'}, name='privacy_policy'),
     path("terms_of_use/", page, {'template': 'terms_of_use.html'}, name='terms_of_use'),
 
-    #Отряды
+    # Отряды
 
-    path("squads/squads/", page,{'template': 'squads.html'}, name='squads'),
+    path("squads/squads/", page, {'template': 'squads/squads.html'}, name='squads'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
