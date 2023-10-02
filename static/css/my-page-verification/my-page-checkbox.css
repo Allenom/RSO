@@ -8,7 +8,7 @@ input{
 }
 
 
-fieldset h3 {
+.my-page-events__form h3 {
    font-family: 'Akrobat', sans-serif;
    font-size: 32px;
    font-weight: 600;
@@ -18,12 +18,12 @@ fieldset h3 {
    margin-bottom: 40px;
 }
 
-.my-page-events__form fieldset {
-   border: none;
-}
+
 
 .my-page-events__checkbox {
-display: grid;
+  /* display: flex;
+   justify-content: space-between;*/
+   display: grid;
 grid-template-columns:repeat(2, auto);
 }
 
@@ -52,7 +52,7 @@ grid-template-columns:repeat(2, auto);
 
 }
 .my-page-events__checkbox-input{
-   width: 166px;
+   width: 259px;
 }
 .my-page-events__checkbox-input-span input {
    display: inline-block;
@@ -114,6 +114,7 @@ grid-template-columns:repeat(2, auto);
 /* адаптив */
 @media (max-width:1224px) {
    .my-page-events__checkbox {
+   display:flex;
    flex-direction: column;
    }
    .my-page-event__answer {
