@@ -1,29 +1,11 @@
-
-function myFunctionOpen() {
-   let checkBox = document.getElementById("myCheckOpen");
-   let text = document.getElementById("textOpen");
-
-   if (checkBox.checked == true) {
-      text.style.display = "block";
-   }
-   else {
-      text.style.display = "none";
-   }
-}
-
 // при нажатии на checkbox завершенные выводится текст нет завершнных
-function myFunction() {
-   let checkBox = document.getElementById("myCheck");
-   let text = document.getElementById("text");
+function myFinish(val) {
+if (val == 1 ) {
+    document.getElementById("textOpen").style.display = "block";
+    document.getElementById("text").style.display = "none";
 
-   if (checkBox.checked == true) {
-      text.style.display = "block";
-   }
-   else {
-      text.style.display = "none";
-   }
+  } else if (val == 2) {
+      document.getElementById("textOpen").style.display = "none";
+        document.getElementById("text").style.display = "block";
+  }
 }
-
-
-// ++++++++++++++++++++++++++++++++++++ слайдер 
-

@@ -89,6 +89,7 @@
             </div>
          </div>
       </section>
+<!--      мои мероприятия-->
          <section class="my-page-events">
             <div class="container">
                <form class="my-page-events__form" method="post" action="">
@@ -101,13 +102,13 @@
                            </div>
                            <div class="my-page-events__checkbox-input">
                               <div class="my-page-events__checkbox-input-span">
-                              <label><input type="checkbox" name="" id="myCheckOpen"
-                                    onclick="myFunctionOpen()"><span>Активные</span>
+                              <label><input class="label-input" type="radio"  id="myCheckOpen" name="events" value="activ"
+                                    onclick="myFinish(1)" hidden><span>Активные</span>
                               </label>
                                  </div>
                               <div class="my-page-events__checkbox-input-span">
-                              <label><input type="checkbox" name="" id="myCheck"
-                                    onclick="myFunction()"><span>Завершённые</span>
+                              <label><input type="radio" id="myCheck" name="events" value="finish"
+                                    onclick="myFinish(2)" hidden><span>Завершённые</span>
                               </label>
                            </div>
                            </div>
@@ -128,13 +129,13 @@
                                  <div class="my-page-list-events__wrapper">
                                     <div class="my-page-list-events__block">
                                        <div class="my-page-list-events__block-img">
-                                          <img src="/static/images/img/list-events-foto1.png" alt="">
+                                          <img class="my-page-list-events__block-foto" src="/static/images/img/list-events-foto1.png" alt="">
                                           <button class="my-page-list-events__block-img-tame" type="btn"><img
                                                 src="/static/images/img/Message-about-the-end-of-registration.svg"
                                                 alt=""></button>
                                        </div>
                                        <div class="my-page-list-events__block-heading">
-                                          <h4>Название мероприятия очень длинное название, которое кому-то посвящено </h4>
+                                          <a><h4>Название мероприятия очень длинное название, которое кому-то посвящено </h4></a>
                                        </div>
                                     </div>
                                     <div class="my-page-list-events__block-info">
@@ -158,13 +159,13 @@
                                  <div class="my-page-list-events__wrapper">
                                     <div class="my-page-list-events__block">
                                        <div class="my-page-list-events__block-img">
-                                          <img src="/static/images/img/list-events-foto2.png" alt="">
+                                          <img class="my-page-list-events__block-foto"  src="/static/images/img/list-events-foto2.png" alt="">
                                           <button class="my-page-list-events__block-img-tame" type="btn"><img
                                                 src="/static/images/img/Message-about-the-end-of-registration.svg"
                                                 alt=""></button>
                                        </div>
                                        <div class="my-page-list-events__block-heading">
-                                          <h4>Название мероприятия очень длинное название, которое кому-то посвящено </h4>
+                                          <a><h4>Название мероприятия очень длинное название, которое кому-то посвящено </h4></a>
                                        </div>
                                     </div>
                                     <div class="my-page-list-events__block-info">
@@ -188,13 +189,13 @@
                                  <div class="my-page-list-events__wrapper">
                                     <div class="my-page-list-events__block">
                                        <div class="my-page-list-events__block-img">
-                                          <img src="/static/images/img/list-events-foto3.png" alt="">
+                                          <img class="my-page-list-events__block-foto"  src="/static/images/img/list-events-foto3.png" alt="">
                                           <button class="my-page-list-events__block-img-tame" type="btn"><img
                                                 src="/static/images/img/Message-about-the-end-of-registration.svg"
                                                 alt=""></button>
                                        </div>
                                        <div class="my-page-list-events__block-heading">
-                                          <h4>Название мероприятия очень длинное название, которое кому-то посвящено </h4>
+                                          <a><h4>Название мероприятия очень длинное название, которое кому-то посвящено </h4></a>
                                        </div>
                                     </div>
                                     <div class="my-page-list-events__block-info">
