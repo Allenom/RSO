@@ -23,8 +23,8 @@ fieldset h3 {
 }
 
 .my-page-events__checkbox {
-   display: flex;
-   justify-content: space-between;
+display: grid;
+grid-template-columns:repeat(2, auto);
 }
 
 .my-page-events__text {
