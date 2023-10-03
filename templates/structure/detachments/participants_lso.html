@@ -1,14 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="{% static/css/participants-lso.css %}" >
+{% extends 'layout/basic.html' %}
+{% load static %}
+{% block title %}Профиль{% endblock %}
+{% block head %}
+   <link rel="stylesheet" href="{% static 'css/ico-participants/participants-lso.css' %}" >
    <title>Участини ЛСО</title>
-</head>
+{% endblock %}
 
-<body>
+{% block content %}
+<!-- Настройки профиля Хлебные крошки-->
+   <section class="ps-nav">
+      <div class="container">
+         <!-- Хлебные крошки -->
+         <nav class="breadcrumbs-container">
+            <ul itemscope itemtype="#">
+               <li itemprop="itemListElement" itemscope itemtype="#">
+                   <a href="/" title="Личный кабинет" itemprop="item">
+                       <span itemprop="name">Личный кабинет</span>
+                       <meta itemprop="position" content="0">
+                   </a>
+               </li>
+               <div class="breadcrumbs-slesh">/</div>
+               <li itemprop="itemListElement" itemscope itemtype="profile-settings-my-page.html">
+                   <a class="active" href="/profile/profile_settings/my_page/" title="Настройки профиля" itemprop="item">
+                       <span itemprop="name">Настройки профиля</span>
+                       <meta itemprop="position" content="1">
+                   </a>
+               </li>
+           </ul>
+         </nav>
+      </div>
+   </section>
    <article class="participants-lso">
       <div class="container">
          <h2>Участники ЛСО</h2>
@@ -23,8 +44,8 @@
          <form class="participants-lso__form" action="">
             <fieldset>
                <div class="participants-lso__form-loop">
-                  <button><img src="./static/images/img/Icon_loop.svg"></button>
-                  <label for=""><input type="text" placeholder="Например, Иванов Иван"></label>
+                  <button><img src="/static/images/img/participants_lso_img/Icon_loop.svg"></button>
+                  <label for="#"><input type="text" placeholder="Например, Иванов Иван"></label>
                </div>
             </fieldset>
          </form>
@@ -32,8 +53,8 @@
          <!-- кнопки переключение с блоков в строку  -->
          <div class="participants-lso__buttum">
             <div class="participants-lso__buttum-click">
-             <a href="#"><img src="./static/images/img/darhboard.svg" alt=""></a>
-             <a href="#"><img src="./static/images/img/menu.svg" alt=""></a>
+             <a href="#"><img src="/static/images/img/participants_lso_img/darhboard.svg" alt=""></a>
+             <a href="#"><img src="/static/images/img/participants_lso_img/menu.svg" alt=""></a>
             </div>
             <!-- выподающий список -->
             <div class="articipants-lso__buttum-list-open">
@@ -43,7 +64,7 @@
                   <option value="">Дате создания отряда</option>
                   <option value="">Количеству участников</option>
                </select>
-               <button><img src="./static/images/img/arrow-list.svg" alt=""></button>
+               <button><img src="/static/images/img/participants_lso_img/arrow-list.svg" alt=""></button>
             </div>
          </div>
          <div class="participants-lso__avatar-user">
@@ -51,168 +72,168 @@
                <ul>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-1.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-1.png" alt="">
                         <p>Андрей</p>
                         <p>Командир</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-2.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-2.png" alt="">
                         <p>Мария</p>
                         <p>Комиссар</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-3.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-3.png" alt="">
                         <p>Екатерина</p>
                         <p>Мастер</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-4.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-4.png" alt="">
                         <p>Иван</p>
                         <p>Медик</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-5.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-5.png" alt="">
                         <p>Елена</p>
                         <p>Флагоносец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-6.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-6.png" alt="">
                         <p>Егор</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-7.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-7.png" alt="">
                         <p>Алексей</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-8.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-8.png" alt="">
                         <p>Максим</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-9.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-9.png" alt="">
                         <p>Евгения</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-10.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-10.png" alt="">
                         <p>Елена</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-11.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-11.png" alt="">
                         <p>Роланда</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-12.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-12.png" alt="">
                         <p>Вероника</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-13.png" alt="">
+                        <img src"{/tatic/images/img/fparticipants_lso_img/oto-user-13.png  alt="">
                         <p>Александра</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-14.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-14.png" alt="">
                         <p>Нина</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-15.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-15.png" alt="">
                         <p>Ярослава</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-16.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-16.png" alt="">
                         <p>Анна</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-17.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-17.png" alt="">
                         <p>Василиса</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-18.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-18.png" alt="">
                         <p>Анна</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-19.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-19.png" alt="">
                         <p>Анна</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-20.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-20.png" alt="">
                         <p>Анна</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-21.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-21.png" alt="">
                         <p>Анна</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-22.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-22.png" alt="">
                         <p>Павел</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-23.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-23.png" alt="">
                         <p>Денис</p>
                         <p>Боец</p>
                      </div>
                   </li>
                   <li>
                      <div>
-                        <img src="./static/images/img/foto-user-24.png" alt="">
+                        <img src="/static/images/img/participants_lso_img/foto-user-24.png" alt="">
                         <p>Дмитрий</p>
                         <p>Боец</p>
                      </div>
@@ -229,6 +250,4 @@
       </div>
    </article>
 
-</body>
-
-</html>
+{% endblock %}
