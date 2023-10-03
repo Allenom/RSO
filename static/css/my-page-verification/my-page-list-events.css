@@ -213,22 +213,22 @@ padding-top: 40px;
 
 @media (max-width:860px) {
    .my-page-list-events__wrapper {
-      width: 230px;
+      width: 216px;
    }
 
    .my-page-list-events__block-foto {
-      width: 230px;
+      width: 216px;
    }
 
 }
 
 @media (max-width:788px) {
    .my-page-list-events__wrapper {
-      width: 210px;
+      width: 198px;
    }
 
    .my-page-list-events__block-foto {
-      width: 210px;
+      width: 198px;
    }
 
    .my-page-list-events__block-btn p {
