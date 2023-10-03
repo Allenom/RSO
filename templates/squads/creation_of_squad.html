@@ -1,0 +1,402 @@
+{% extends 'layout/basic.html' %}
+{% load static %}
+
+{% block title %}Создание ЛСО{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
+
+<!--Стили добавить если нужно-->
+{% endblock %}
+
+{% block content %}
+
+   <section class="">
+
+      <h1>Создание ЛСО</h1>
+
+      <form class="" method="post" id="accordion-form" enctype="multipart/form-data">
+
+        <div class="card">
+          <div class="accordion-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Основная информация</button>
+            </h5>
+          </div>
+
+          <!-- <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#insurance-steps"> -->
+            <div class="card-body">
+              <div class="data-form">
+                <div class="form-field">
+                  <label class="control-label" for="squad">Название отряда<span class="valid-red">*</span></label>
+                  <input class="control-input" type="text" name="squad" id="squad" placeholder="Например, Монолит" required>
+                  <!-- <div class="error"></div> -->
+                </div>
+                <div class="form-field">
+                  <label class="control-label" for="direction">Выберите направление<span class="valid-red">*</span></label>
+                  <select name="direction" size="6" required></select>
+                  <!-- <div class="error"></div> -->
+                </div>
+                <div class="form-field">
+                  <label for="create-date">Дата основания<span class="valid-red">*</span></label>
+                  <input type="date" name="create-date" value="" class="input-small" required>
+                  <!-- <div class="error"></div> -->
+                </div>
+                <div class="form-field">
+                  <label for="">Выберите регион<span class="valid-red">*</span></label>
+      <!--                    <select class="select-big" name="select">-->
+      <!--                      <option-->
+      <!--                        value="0"-->
+      <!--                        class="user-registration__select-text"-->
+      <!--                      >-->
+      <!--                        Выберете регион-->
+      <!--                      </option>-->
+      <!--                      <option value="1">Москва</option>-->
+      <!--                    </select>-->
+                  <select name="create-region" class="select-big" id="id_create_region" size="6" required>
+                    <!-- <option value="" selected="">---------</option> -->
+
+                    <!-- <option value="1">москва</option> -->
+                  </select>
+                  <!-- <div class="error"></div> -->
+                </div>
+                <div class="form-field">
+                  <label class="control-label" for="city">Город</label>
+                  <input class="control-input" type="text" name="city" id="city" placeholder="Например, Барнаул">
+                </div>
+                <div class="form-field">
+                  <label for="">Выберите учебное заведение<span class="valid-red">*</span></label>
+                  <select name="create-institution" class="select-big" id="id_create_institution" size="6" required>
+                    <!--  -->
+                  </select>
+                  <!-- <div class="error"></div> -->
+                </div>
+                <div class="form-field">
+                  <label for="">Командир отряда:<span class="valid-red">*</span></label>
+                  <input type="text" name="search" class="" placeholder="Поиск по ФИО" required>
+                  <input type="submit" name="submit" class="submit" value="Search">
+                  <!-- <div class="error"></div> -->
+                </div>
+              </div>
+
+              <div class="nav-btn__wrapper">
+                <button class="nav-next" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                  Далее
+                </button>
+              </div>
+            </div>
+          <!-- </div> -->
+        </div>
+
+        <div class="card">
+          <div class="accordion-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Контакты</button>
+            </h5>
+          </div>
+
+          <!-- <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#insurance-steps"> -->
+            <div class="card-body">
+              <div class="data-form">
+                <div class="form-field">
+                  <label class="" for="social-media">Группа отряда ВКонтакте<span class="valid-red">*</span></label>
+                  <input class="" type="text" name="social-media" id="social-media" placeholder="Например, https://vk.com/cco_monolit" required>
+                  <!-- <div class="error"></div> -->
+                  <button class="add-social" onclick="add_social_field()">+ Добавить соцсеть</button>
+                </div>
+                <div class="form-field">
+                  <label for="">Участники отряда<span class="valid-red">*</span></label>
+                  <input type="text" name="search" class="" placeholder="Поиск по ФИО" required>
+                  <input type="submit" name="submit" class="submit" value="Search">
+                </div>
+              </div>
+              <div class="nav-btn__wrapper">
+                <button class="nav-prev" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Назад</button>
+                <button class="nav-next" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Далее</button>
+              </div>
+            </div>
+          <!-- </div> -->
+        </div>
+
+
+
+
+
+        <div class="">
+          <button class="button button-apply" type="submit">Создать</button>
+        </div>
+
+      </form>
+    </section>
+
+<!--   <section class="squads">-->
+<!--      <div class="container-squats">-->
+<!--        <div class="squads-route">Структура /<span>Отряды</span></div>-->
+<!--        <div class="squads-banner">-->
+<!--          <div class="squads-banner__text">-->
+<!--            Студенческие отряды — это больше, чем работа. Километры впечатлений, тысячи друзей и лето с пользой!-->
+<!--          </div>-->
+<!--          <button class="squads-banner__btn">Создать отряд</button>-->
+<!--        </div>-->
+<!--        <h2 class="squads-title">Студенческие отряды</h2>-->
+
+<!--        <div class="squads-tabs">-->
+<!--          <button class="squad-tabs__item " onclick="filterProduct('all')">Все</button>-->
+<!--          <button class="squad-tabs__item " onclick="filterProduct('Conductors')">-->
+<!--           Проводников-->
+<!--          </button>-->
+<!--          <button class="squad-tabs__item " onclick="filterProduct('Buildings')">-->
+<!--           Строительные-->
+<!--          </button>-->
+<!--          <button class="squad-tabs__item" onclick="filterProduct('Teachers')">-->
+<!--           Педагогические-->
+<!--          </button>-->
+<!--          <button class="squad-tabs__item " onclick="filterProduct('Medicine')">-->
+<!--            Медицинские-->
+<!--          </button>-->
+<!--          <button class="squad-tabs__item " onclick="filterProduct('Agricultural')">-->
+<!--           Сельскохозяйственные-->
+<!--          </button>-->
+<!--          <button class="squad-tabs__item " onclick="filterProduct('Service')">-->
+<!--           Сервисные-->
+<!--          </button>-->
+<!--          <button class="squad-tabs__item " onclick="filterProduct('Putinns')">-->
+<!--            Путинные-->
+<!--          </button>-->
+<!--        </div>-->
+<!--        <div class="squads-search">-->
+<!--          <input-->
+<!--            type="text"-->
+<!--            id="search"-->
+<!--            class="squads-search__input"-->
+<!--            placeholder="Поищем отряд?"-->
+<!--          />-->
+<!--          <svg-->
+<!--            width="28"-->
+<!--            height="28"-->
+<!--            viewBox="0 0 28 28"-->
+<!--            fill="none"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--          >-->
+<!--            <path-->
+<!--              d="M18.511 19.0914L24 24.8M21 12.84C21 14.5884 20.5015 16.2975 19.5675 17.7512C18.6335 19.205 17.306 20.338 15.7528 21.0071C14.1997 21.6762 12.4906 21.8512 10.8417 21.5101C9.1929 21.169 7.67835 20.3271 6.4896 19.0908C5.30085 17.8545 4.4913 16.2794 4.16333 14.5646C3.83535 12.8498 4.00368 11.0724 4.64703 9.45708C5.29037 7.84178 6.37984 6.46116 7.77766 5.48981C9.17548 4.51846 10.8189 4 12.5 4C14.7544 4 16.9164 4.93135 18.5104 6.58918C20.1045 8.247 21 10.4955 21 12.84Z"-->
+<!--              stroke="#898989"-->
+<!--              stroke-width="2"-->
+<!--              stroke-linecap="round"-->
+<!--              stroke-linejoin="round"-->
+<!--            />-->
+<!--          </svg>-->
+
+<!--          <div id="error">-->
+<!--            Отряд не найден :(-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="squads-sort">-->
+<!--          <div class="sort-layout">-->
+<!--            <button class="dashboard-btn" onclick="changeLayout(1)">-->
+<!--              <svg-->
+<!--                width="32"-->
+<!--                height="32"-->
+<!--                viewBox="0 0 32 32"-->
+<!--                fill="none"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <rect width="32" height="32" rx="5" fill="#35383F" />-->
+<!--                <rect-->
+<!--                  x="5.33594"-->
+<!--                  y="5.33301"-->
+<!--                  width="8"-->
+<!--                  height="8"-->
+<!--                  rx="1"-->
+<!--                  stroke="white"-->
+<!--                  stroke-linejoin="round"-->
+<!--                />-->
+<!--                <rect-->
+<!--                  x="5.33594"-->
+<!--                  y="18.667"-->
+<!--                  width="8"-->
+<!--                  height="8"-->
+<!--                  rx="1"-->
+<!--                  stroke="white"-->
+<!--                  stroke-linejoin="round"-->
+<!--                />-->
+<!--                <rect-->
+<!--                  x="18.6641"-->
+<!--                  y="18.667"-->
+<!--                  width="8"-->
+<!--                  height="8"-->
+<!--                  rx="1"-->
+<!--                  stroke="white"-->
+<!--                  stroke-linejoin="round"-->
+<!--                />-->
+<!--                <rect-->
+<!--                  x="18.6641"-->
+<!--                  y="5.33301"-->
+<!--                  width="8"-->
+<!--                  height="8"-->
+<!--                  rx="1"-->
+<!--                  stroke="white"-->
+<!--                  stroke-linejoin="round"-->
+<!--                />-->
+<!--              </svg>-->
+<!--            </button>-->
+<!--            <button class="menu-btn" onclick="changeLayout(2)">-->
+<!--              <svg-->
+<!--                width="32"-->
+<!--                height="32"-->
+<!--                viewBox="0 0 32 32"-->
+<!--                fill="none"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <rect-->
+<!--                  x="0.5"-->
+<!--                  y="0.5"-->
+<!--                  width="31"-->
+<!--                  height="31"-->
+<!--                  rx="4.5"-->
+<!--                  fill="white"-->
+<!--                />-->
+<!--                <rect-->
+<!--                  x="5.33594"-->
+<!--                  y="6.66699"-->
+<!--                  width="21.3333"-->
+<!--                  height="6.66667"-->
+<!--                  rx="1"-->
+<!--                  stroke="#35383F"-->
+<!--                  stroke-linejoin="round"-->
+<!--                />-->
+<!--                <rect-->
+<!--                  x="5.33594"-->
+<!--                  y="18.667"-->
+<!--                  width="21.3333"-->
+<!--                  height="6.66667"-->
+<!--                  rx="1"-->
+<!--                  stroke="#35383F"-->
+<!--                  stroke-linejoin="round"-->
+<!--                />-->
+<!--                <rect-->
+<!--                  x="0.5"-->
+<!--                  y="0.5"-->
+<!--                  width="31"-->
+<!--                  height="31"-->
+<!--                  rx="4.5"-->
+<!--                  stroke="#35383F"-->
+<!--                />-->
+<!--              </svg>-->
+<!--            </button>-->
+<!--          </div>-->
+
+<!--          <div class="sort-filters">-->
+<!--            <div class="sort-select">-->
+<!--              <select class="sort-select__input education-check" name="select">-->
+<!--                <option value="0" class="squad-sort__selected">-->
+<!--                 Образовательная организация-->
+<!--                </option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            <div class="sort-select">-->
+<!--              <select class="sort-select__input sort-alph" name="select">-->
+<!--                <option value="0" class="squad-sort__selected">-->
+<!--                  По алфавиту: А-Я-->
+<!--                </option>-->
+<!--                <option value="1">По алфавиту: Я-А</option>-->
+<!--              </select>-->
+<!--            </div>-->
+
+<!--            <button class="change-btn">-->
+<!--              <svg-->
+<!--                width="32"-->
+<!--                height="32"-->
+<!--                viewBox="0 0 32 32"-->
+<!--                fill="none"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--                xmlns:xlink="http://www.w3.org/1999/xlink"-->
+<!--              >-->
+<!--                <mask-->
+<!--                  id="mask0_2410_408345"-->
+<!--                  style="mask-type: alpha"-->
+<!--                  maskUnits="userSpaceOnUse"-->
+<!--                  x="8"-->
+<!--                  y="8"-->
+<!--                  width="15"-->
+<!--                  height="15"-->
+<!--                >-->
+<!--                  <rect-->
+<!--                    x="8"-->
+<!--                    y="8"-->
+<!--                    width="15"-->
+<!--                    height="15"-->
+<!--                    fill="url(#pattern0)"-->
+<!--                  />-->
+<!--                </mask>-->
+<!--                <g mask="url(#mask0_2410_408345)">-->
+<!--                  <rect x="8" y="8" width="15" height="15" fill="#35383F" />-->
+<!--                </g>-->
+<!--                <rect-->
+<!--                  x="0.5"-->
+<!--                  y="0.5"-->
+<!--                  width="31"-->
+<!--                  height="31"-->
+<!--                  rx="9.5"-->
+<!--                  stroke="#35383F"-->
+<!--                />-->
+<!--                <defs>-->
+<!--                  <pattern-->
+<!--                    id="pattern0"-->
+<!--                    patternContentUnits="objectBoundingBox"-->
+<!--                    width="1"-->
+<!--                    height="1"-->
+<!--                  >-->
+<!--                    <use-->
+<!--                      xlink:href="#image0_2410_408345"-->
+<!--                      transform="scale(0.00195312)"-->
+<!--                    />-->
+<!--                  </pattern>-->
+<!--                  <image-->
+<!--                    id="image0_2410_408345"-->
+<!--                    width="512"-->
+<!--                    height="512"-->
+<!--                    xlink:href="data:image/png;base64,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nGN/gEngBKCCzBNPjHjf+2rPMXOO/QEmhQAYscz58yMuvLD2HDPn2B9gkgiAkTv11Ihf/uXaU8yM5Q8waXwPwMh98IO1J5gZz/wBJpETgBHKPPTQbn3Xv2f+AJNKAIxSHnVU7RGmz7E/wCTzCGCUymtfW3uE6XHsDzDpnACMUr7iFbVH2DnH/gAtEAAjtddetSfYMcf+AK3wCGCUyqZNtUfYPsf+AC1xAjBSjz9ee4Jtc+wP0BoBMEr5wx/WHuHFHPsDtMgjgFEq3/xm7RGez7E/QKucAIzU178e8eyztaeY4tgfoGUCYIRKefLJiOuuqz2HY38ABMCo5Sc/WXeAxYstfwAEwIiV3h13RFxzTZ1Xd+wPwBQBUEN++MMRa9eO9kUd+wOwlQCooPQeeSTij/4oInM0r2j5A/B8AqCSUr72tcizzhr+K3nmD8CL+T0AFZXexRdnzpkTsXRpRG/AMZYZcd55pVxwQe3rBGD8OAGorJRPfzryd34ncs2awf2pq1dHLFpk+QOwPQJgDJTesmURhx0W+bnPRWzePPs/afPmyEsvjTzssFL+9V9rXxcA40sAjInSW7my9E47LeJVr4r427+NeOyx6f/bjz4aeeGFEQcfXHqnn156q1bVvh4AxpvvARgzpTz4YMTZZ2d+5CORRxwR5Td+I+KQQyJ+5Vci9tln6p9aty7ikUci7rsv4rbbIu6+u/T6/dqzA9AdAmBMldLvR3z721P/AYDB8ggAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQQIAABokAACgQXNrDwDA+Mt8/esjjj024k1vijz44CgvfWnEvvtGbNgQsXZtxMMPR95zT8Stt0a5/vpSHn+89szsmAAAYJsy99gj4g//MOLMMyMOPvjn/0V57j81b17ES14S8ZKXRHnDGyI+8IGIjRszr78+cunS0rv11trXwbZ5BADAi2S+5z0RP/hBxEUXPW/5T8tuu0WccEKUW27JvO66zIMOqn09vJgAAODnMvfYI/OKKyKuuCLi5S/f9T9x0aKIu+/OfPe7a18bzycAAIiIiOzvv3/E178e8Z73DPZP3nvviCuvzDzn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"-->
+<!--                  />-->
+<!--                </defs>-->
+<!--              </svg>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div id="squads-wrapper">-->
+<!--        </div>-->
+
+<!--      <button class="show-squads">Показать еще</button>-->
+<!--    </section>-->
+
+<!--    <script-->
+<!--      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"-->
+<!--      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="-->
+<!--      crossorigin="anonymous"-->
+<!--      referrerpolicy="no-referrer"-->
+<!--    ></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+
+<!--    <script>-->
+
+<!--  $(window).on('load resize', function() {-->
+<!--  if ($(window).width() < 769) {-->
+<!--    $('.squads-tabs:not(.slick-initialized)').slick({-->
+<!--      dots: false,-->
+<!--      infinite: true,-->
+<!--      arrows: false,-->
+<!--      speed: 100,-->
+<!--      slidesToShow: 2,-->
+<!--        slidesToScroll: 1-->
+<!--    });-->
+<!--  } else {-->
+<!--    $(".squads-tabs.slick-initialized").slick("unslick");-->
+<!--  }-->
+<!--});-->
+<!--    </script>-->
+<!--    <script src="../static/js/squads.js"></script>-->
+
+{% endblock %}
