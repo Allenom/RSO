@@ -1,57 +1,8 @@
-/* Border */
-* {
-   margin: 0;
-   padding: 0;
-}
-
-*,
-*::before,
-*::after {
-   box-sizing: inherit;
-}
-
-img {
-   display: block;
-   max-width: 100%;
-}
-
-body {
-   margin: 0;
-   font-family: 'BertSans', sans-serif;
-   font-family: 'Akrobat', sans-serif;
-}
-
-button {
-   background: none;
-   border: none;
-}
-
-ul,
-li {
-   list-style-type: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-   padding: 0;
-   margin: 0;
-}
-
-
-a {
-   text-decoration: none;
-}
 
 /* выравниваем по центру кондейнера */
 .container {
    max-width: 1180px;
    margin: 0 auto;
-   align-items: start;
 }
 
 /* главный родитель отступ с верху с низу */
@@ -79,9 +30,14 @@ a {
    justify-content: start;
 }
 
+ul,
+li {
+   list-style-type: none;
+}
+
 .participants-lso__nav-tab li {
-   color: #1C5C94;
-   background: #fff;
+   color: #fff;
+   background: #1C5C94;
    border-radius: 30px;
    border: 2px solid #1C5C94;
    text-align: center;
@@ -91,6 +47,12 @@ a {
    margin-right: 8px;
    padding: 6px 24px;
    cursor: pointer;
+}
+
+.participants-lso__nav-tab li:last-child {
+   border: 2px solid #1C5C94;
+   color: #1C5C94;
+   background: #fff;
 }
 
 /* форма инпута, поиска */
@@ -104,6 +66,12 @@ a {
 
 
 }
+
+button {
+   background: none;
+   border: none;
+}
+
 
 .participants-lso__form-loop img {
    width: 20px;
@@ -170,20 +138,46 @@ input {
    margin-right: 0;
 }
 
-/*выподающий список  */
-.articipants-lso__buttum-list-open select {
-   width: 212px;
+/*выподающий список  убираем галочку по умолчанию и добавляем свою.кнопка*/
+
+.participants-lso__buttum-list-open select {
+   max-width: 240px;
    height: 24px;
    border-radius: 10px;
    border: 1px solid#35383F;
    background: #FFF;
    padding: 4px 16px;
+   margin-right: 4px;
+   background: url('/static/images/img/arrow-down.svg')no-repeat right;
+   display: block;
+   appearance: none;
+   /* overflow: hidden; */
+   /* установила стрелку в том положении где нужно */
+   background-position: calc(100% - 10px) 0.15em;
+   /* 0.35em указывает высоту */
+
+   color: #35383F;
+   font-family: 'BertSans', sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+  
 }
 
-.participants-lso__buttum-click {}
 
-.articipants-lso__buttum-list-open {}
+.participants-lso__buttum-list-open {
+   display: flex;
 
-.participants-lso__avatar-user {}
+}
 
-.participants-lso__avatar-ul {}
+.participants-lso__buttum-list-open button {
+   cursor: pointer;
+}
+
+
+/* адаптив */
+@media screen and (max-width: 1100px) {
+   .participants-lso__wrapper-block{
+      margin: 0 66px;
+      
+      }
+}
