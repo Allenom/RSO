@@ -1,4 +1,4 @@
-.about-me h3 {
+.about-squad h3 {
     color: #35383F;
     font-family: "Akrobat";
     font-size: 32px;
@@ -7,7 +7,7 @@
     line-height: normal;
 }
 
-.about-me p {
+.about-squad p {
     /* отступы */
     margin-top: 40px;
     margin-bottom: 40px;
@@ -21,7 +21,7 @@
 }
 
 @media(max-width: 1290px) {
-    section.about-me {
+    section.about-squad {
         margin: 0 20px;
     }
 }
