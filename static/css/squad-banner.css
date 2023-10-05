@@ -1,0 +1,616 @@
+/* Настройки профиля Банер */
+section.ps-baner {
+    margin-bottom: 60px;
+}
+
+.squad-metric {
+    display: grid;
+    grid-template-columns: 30px 135px 135px 2fr 64px;
+    grid-template-rows: 100px 100px 112px auto;
+    margin-bottom: 40px;
+    /*  */
+    border-radius: 10px 10px;
+    border-right: 1px solid rgba(0, 0, 0, 0.10);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    border-left: 1px solid rgba(0, 0, 0, 0.10);
+    background: rgba(244, 244, 244, 0.00);
+}
+
+.squad-metric__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 100px;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.squad-metric__top-img-wrapper {
+    display: grid;
+    grid-template-columns: 3fr;
+    grid-template-rows: 200px;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.squad-metric__top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/* Иконки редактирования банер */
+.squad-metric__baner-add {
+    display: grid;
+    align-items: end;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 0 16px 16px 0;
+}
+
+.squad-metric__baner-add img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    clip-path: circle(50%);
+}
+
+.squad-metric__baner-add input {
+    display: none;
+}
+
+/* .squad-metric__baner-add input[type="file"] {
+    display: none;
+} */
+
+.squad-metric__bottom {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.squad-metric__avatar-wrapper {
+    display: grid;
+    grid-template-columns: 160px 90px;
+    grid-template-rows: 130px 80px;
+    align-content: center;
+    justify-content: center;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.squad-metric__avatar {
+    /*display: grid;*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 80%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.squad-metric__avatar img {
+    border: 10px solid #ffffff;
+    width: 90%;
+    height: 90%;
+    clip-path: circle(50%);
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Иконки редактирования аватар */
+/* Иконка Изменить аватар */
+.squad-metric__avatar-add {
+    display: grid;
+    grid-template-columns: 50px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.squad-metric__avatar-add img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    clip-path: circle(50%);
+}
+
+.squad-metric__avatar-add input {
+    display: none;
+}
+
+/* .squad-metric__avatar-add input[type="file"] {
+    display: none;
+} */
+
+/* Данные пользователя */
+.squad-data__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 32px 0 12px 300px;
+}
+
+.squad-data__name {
+    margin-bottom: 20px;
+}
+
+.squad-data__name h4 {
+    color: #35383F;
+    /* Desktop/H-3 */
+    font-family: 'Akrobat';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #35383F;
+}
+
+.squad-data__list-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: start;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+.squad-data__list-wrapper ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+.squad-data__list-wrapper li {
+    border-right: 1px solid #35383F;
+    /* height: 20px; */
+    margin: auto;
+}
+
+.squad-data__list p,
+.squad-data__list time,
+.squad-data__slogan,
+.squad-data__participant-counter {
+    color: #35383F;
+    /*  */
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 5px;
+}
+
+.squad-data__slogan {
+    margin-bottom: 8px;
+}
+
+.squad-data__introductions {
+    display: flex;
+    align-items: center;
+}
+
+.squad-data__introductions p,
+.squad-data__introductions img {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* Контакты пользователя */
+.squad-data__contacts-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.squad-data__contacts {
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ссылки на соцсети */
+.squad-data__social-network {
+    display: flex;
+    margin-right: 40px;
+    margin-top: 17px;
+}
+
+.squad-data__contacts-wrapper .btn__save {
+    width: auto;
+    margin-right: 16px;
+}
+
+.squad-data__contacts-wrapper .btn__save-reset {
+    margin-bottom: 0px;
+}
+
+.squad-data__link-vk,
+.squad-data__link-telegram,
+.squad-data__link-share-link {
+    width: 24px;
+    height: 24px;
+}
+
+.squad-data__link-telegram {
+    margin: 0 12px;
+}
+
+.squad-data__link-vk img,
+.squad-data__link-telegram img,
+.squad-data__link-share-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Телефон, почта пользователя */
+.squad-data__personal-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.squad-data__phone {
+    margin-right: 20px;
+}
+
+.squad-data__phone,
+.squad-data__mail {
+    display: flex;
+}
+
+.squad-data__phone img,
+.squad-data__mail img {
+    margin-right: 8px;
+}
+
+.squad-data__phone a,
+.squad-data__mail a {
+    display: block;
+    font-family: 'BertSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #35383F;
+    text-decoration: none;
+}
+
+@media(max-width: 1290px) {
+    section.ps-baner {
+        /* margin: 0 66px 40px; */
+        margin: 0 20px 40px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .squad-data__introductions p {
+        margin-left: 0px;
+    }
+
+    .squad-data__list-wrapper ul {
+        align-items: start;
+        justify-content: left;
+        list-style: none;
+        flex-direction: column;
+    }
+
+    .squad-data__list-wrapper li {
+        margin: 0px;
+    }
+
+    .squad-data__list-wrapper li {
+        border-right: none;
+    }
+}
+
+@media(max-width: 910px) {
+    .squad-data__contacts-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .squad-data__social-network {
+        margin-right: 0;
+
+    }
+}
+
+@media(max-width: 790px) {
+    .squad-data__contacts-wrapper {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .squad-data__social-network {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+@media(max-width: 705px) {
+    .squad-data__regional-office {
+        min-height: 53px;
+    }
+}
+
+
+
+@media(max-width: 634px) {
+    .squad-metric {
+        display: grid;
+        grid-template-columns: 60px 135px 135px 2fr 60px;
+        grid-template-rows: 120px 80px 70px auto;
+    }
+
+    .squad-metric__avatar-wrapper {
+        display: grid;
+        grid-template-columns: 100px 50px;
+        grid-template-rows: 80px 45px;
+        align-content: center;
+        justify-content: start;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    .squad-metric__avatar {
+        display: grid;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 80%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    .squad-metric__avatar img {
+        border: 10px solid #ffffff;
+        width: 90%;
+        height: 90%;
+        clip-path: circle(50%);
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    /* Иконки редактирования банер+аватар */
+    .squad-metric__baner-add {
+        display: grid;
+        align-items: start;
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin-top: 16px;
+    }
+
+    .squad-metric__baner-add img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        clip-path: circle(50%);
+    }
+
+    /* Иконка Изменить аватар */
+    .squad-metric__avatar-add {
+        display: grid;
+        grid-template-columns: 50px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
+
+    .squad-metric__baner-add img,
+    .squad-metric__avatar-add img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        clip-path: circle(50%);
+    }
+
+    .squad-metric__bottom {
+        /* display: grid; */
+        grid-column-start: 2;
+        grid-column-end: 7;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+
+
+    .squad-data__regional-office {
+        min-height: 0px;
+    }
+
+    .squad-data__wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 0 0 10px 0;
+    }
+
+    .participant-dlt {
+        display: none;
+    }
+
+}
+
+
+@media(max-width: 521px) {
+    .squad-data__regional-office {
+        margin-bottom: 20px;
+    }
+
+    .squad-data__phone {
+        margin: 0 0 10px 0;
+    }
+}
+
+@media(max-width: 520px) {
+    .squad-data__contacts {
+        height: 40%;
+    }
+
+    .squad-data__list-wrapper li {
+        height: auto;
+    }
+}
+
+@media(max-width: 460px) {
+    .squad-metric {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 120px 90px 90px auto;
+    }
+
+    .squad-metric__avatar-wrapper {
+        display: grid;
+        grid-template-columns: 165px 80px;
+        grid-template-rows: 120px 80px;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        margin-bottom: 10px;
+    }
+
+    .squad-metric__avatar {
+        /*display: grid;*/
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 80%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    .squad-metric__avatar-add {
+        display: grid;
+        grid-template-columns: 50px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        padding: 10px 0 0 15px;
+    }
+
+    .squad-metric__avatar img {
+        border: 10px solid #ffffff;
+        width: 90%;
+        height: 90%;
+        clip-path: circle(50%);
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .squad-metric__bottom {
+        display: grid;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .squad-data__wrapper {
+        margin: 0 10px 32px 10px;
+    }
+
+    .squad-data__name h4 {
+        text-align: center;
+    }
+
+    .squad-data__list-wrapper ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .squad-data__list-wrapper {
+        align-items: center;
+    }
+
+    .squad-data__list li {
+        text-align: center;
+    }
+
+    .squad-data__regional-office {
+        margin-bottom: 0;
+    }
+
+    .squad-data__personal-contacts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .squad-data__contacts-wrapper {
+        align-items: center;
+    }
+
+    .squad-data__social-network {
+        display: flex;
+        justify-content: center;
+    }
+
+    .squad-metric h4 {
+        font-size: 28px;
+    }
+
+}
+
+@media (max-width:426px) {
+
+    .squad-metric p,
+    .squad-metric li p {
+        text-align: center;
+    }
+}
+
+@media(max-width: 360px) {
+    .squad-metric h4 {
+        font-size: 24px;
+    }
+
+    .squad-metric p,
+    .squad-metric a,
+    .squad-metric li p,
+    .squad-data__list time,
+    .squad-data__participant-counter {
+        font-size: 12px
+    }
+}
+
+/* ********************** */
