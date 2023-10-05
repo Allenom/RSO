@@ -1,0 +1,27 @@
+.about-me h3 {
+    color: #35383F;
+    font-family: "Akrobat";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.about-me p {
+    /* отступы */
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /*  */
+    color: #1E1E1E;
+    font-family: "BertSans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media(max-width: 1290px) {
+    section.about-me {
+        margin: 0 20px;
+    }
+}

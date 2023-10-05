@@ -36,6 +36,10 @@ urlpatterns = [
     path("profile/my_page/", lk_page, name='profile'),
     path("profile/my_page/verification", page, {'template': 'profile/my_page/verification.html'}, name='profile_verification'),
     path("profile/my_page/data_verification", page, {'template': 'profile/my_page/data_verification.html'}, name='profile_data_verification'),
+   
+    # ЛСО
+    path("personal_page_squad/personal_page_squad/", page,  {'template': 'personal_page_squad/personal_page_squad.html'}, name='personal_page_squad'),
+    path("personal_page_squad/personal_page_squad-wait-approval/", page,  {'template': 'personal_page_squad/personal_page_squad-wait-approval.html'}, name='personal_page_squad-wait-approval'),
 
     # Настройки профиля
     path("profile/profile_settings/my_page/", ProfilePageEditView.as_view(), name='profile_settings_my_page'),

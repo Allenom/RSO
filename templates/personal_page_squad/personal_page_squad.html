@@ -1,0 +1,335 @@
+{% extends 'layout/basic.html' %}
+{% load static %}
+{% block title %}ЛСО{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/squad-banner.css' %}">
+<link rel="stylesheet" href="{% static 'css/about-squad.css' %}">
+<link rel="stylesheet" href="{% static 'css/squad-photo.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+<link rel="stylesheet" href="{% static 'css/squad-tabs.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-nav.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-title.css' %}">
+<link rel="stylesheet" href="{% static 'css/squad-participants.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Настройки профиля Хлебные крошки-->
+<section class="ps-nav">
+    <div class="container">
+        <!-- Хлебные крошки -->
+        <nav class="breadcrumbs-container">
+            <ul itemscope itemtype="#">
+                <li itemprop="itemListElement" itemscope itemtype="#">
+                    <a href="/" title="Личный кабинет" itemprop="item">
+                        <span itemprop="name">Личный кабинет</span>
+                        <meta itemprop="position" content="0">
+                    </a>
+                </li>
+                <div class="breadcrumbs-slesh">/</div>
+                <li itemprop="itemListElement" itemscope itemtype="personal_page_squad.html">
+                    <a class="active" href="/profile/personal_page_squad/" title="ЛСО" itemprop="item">
+                        <span itemprop="name">СCО «Инвар»</span>
+                        <meta itemprop="position" content="1">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<!-- Настройки профиля H2 -->
+<section class="ps-title">
+    <div class="container">
+        <h2>ЛСО</h2>
+    </div>
+</section>
+
+
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+
+    <!-- ЛСО Баннер -->
+    <section class="ps-baner">
+        <div class="container">
+            <!-- Баннер Страница ЛСО -->
+            <div class="squad-metric">
+                <div class="squad-metric__top">
+                    <div class="squad-metric__top-img-wrapper">
+                        <!-- Заглушка Баннер -->
+                        {% if user.profile.banner %}
+                        <img src="/static/images/personal-page-squad/banner-squad.png" alt="Баннер страницы отряда"
+                            id="banner-pic" />
+                        {% else %}
+                        <img src="/static/images/profile-settings/banner-stub.png" alt="Баннер страницы отряда(пусто)"
+                            id="banner-pic" />
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- Иконки редактирования баннер -->
+                <div class="squad-metric__baner-add">
+                    <!--Иконка Добавить аватар -->
+                    <!-- Иконка Изменить аватар  -->
+                    <label for="upload-banner"><img src="/static/images/icons/pen-circle.svg" alt="" /></label>
+                    <input type="#" id="upload-banner" name="banner" accept="image/*" hidden />
+                </div>
+                <div class="squad-metric__avatar-wrapper">
+                    <div class="squad-metric__avatar">
+                        <!-- Аватар пользователя  -->
+                        {% if user.profile.photo %}
+                        <img id="profile-pic" src="/static/images/personal-page-squad/logo-squad.png" alt="Аватарка">
+                        {% else %}
+                        <img id="profile-pic" src="/static/images/profile-settings/user-avatar-stub.png"
+                            alt="Аватарка(пусто)">
+                        {% endif %}
+                    </div>
+                    <!-- Иконки редактирования аватар -->
+                    <div class="squad-metric__avatar-add">
+                        <!--Иконка Добавить аватар -->
+                        <!-- <img src="/static/images/icons/plus.svg" alt=""> -->
+                        <!-- Иконка Изменить аватар  -->
+                        <label for="upload-avatar"><img src="/static/images/icons/pen-circle.svg" alt="" /></label>
+                        <input type="#" id="upload-avatar" name="photo" accept="image/*" hidden />
+                    </div>
+                </div>
+                <div class="squad-metric__bottom">
+                    <!-- Данные пользователя  -->
+                    <div class="squad-data__wrapper">
+                        <div class="squad-data__name">
+                            <h4>СCО «Инвар»</h4>
+                        </div>
+                        <div class="squad-data__list-wrapper">
+                            <div class="squad-data__slogan">
+                                <p>Через тернии к звездам!</p>
+                            </div>
+                            <ul class="squad-data__list">
+                                <li class="squad-data__university">
+                                    <p>Коми государственный педагогический институт</p>
+                                </li>
+                                <li class="squad-data__introductions">
+                                    <p>Дата создания штаба</p>
+                                    <img src="/static/images/icons/calendar.svg" alt="">
+                                    <time datetime="2022-09-10">10.09.2022</time>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <!-- Контакты пользователя  -->
+                        <div class="squad-data__contacts-wrapper">
+                            <!-- ссылки на соцсети -->
+                            <div class="squad-data__contacts">
+                                <div class="squad-data__participant-counter">
+                                    <span>356 участников</p></span>
+                                </div>
+                                <div class="squad-data__social-network">
+                                    <div class="squad-data__link-vk">
+                                        <a href="https://vk.com" target="_blank">
+                                            <img src="/static/images/icons/vk-blue.svg">
+                                        </a>
+                                    </div>
+                                    <div class="squad-data__link-telegram">
+                                        <a href="https://t.me" target="_blank">
+                                            <img src="/static/images/icons/telegram-blue.svg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="squad-data__link-share-link">
+                                        <a href="#" target="_blank">
+                                            <img src="/static/images/icons/to-share-link.svg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btn__save-reset">
+                                <label for="my_photo_save"></label>
+                                <input class="btn__save" id="my_photo_save" type="submit" name="my_photo_save"
+                                    value="Редактировать страницу">
+                            </div>
+                            <!-- <div class="btn__save-reset">
+                                <label for="my_photo_save"></label>
+                                <input class="btn__save" id="my_photo_save" type="submit" name="my_photo_save"
+                                    value="Подать заявку">
+                            </div> -->
+                            <!-- <div class="btn__save-reset">
+                                <label for="my_photo_save"></label>
+                                <input class="btn__save" id="my_photo_save" type="submit" name="my_photo_save"
+                                    value="Заявка на рассмотрении">
+                            </div> -->
+                            <!-- <div class="btn__save-reset">
+                                <label for="my_photo_save"></label>
+                                <input class="btn__save" id="my_photo_save" type="submit" name="my_photo_save"
+                                    value="Вы участник">
+                            </div> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-me">
+        <div class="container">
+            <h3>Об отряде</h3>
+            <p>Студенческий отряд "Инвар" был основан в 1995 году на базе одного из ведущих вузов нашего региона.
+                Идея создания отряда возникла благодаря нескольким амбициозным студентам, чья основная цель была
+                содействовать активной жизнедеятельности студенческого сообщества и общественной сферы.</p>
+
+        </div>
+        </div>
+    </section>
+
+    <section class="my_photo">
+        <div class="container">
+            <div class="my-photo-wrapper">
+                <!-- Форма Мои фото  -->
+                <div id="my_photo">
+                    <fieldset form="my_photo">
+                        <!-- <legend>Мои фото</legend> -->
+
+                        <!-- Контейнер для фото  -->
+                        <div class="avatar-upload my_photo__edit">
+                            <!-- Заглушка по умолчанию  -->
+                            <div class="avatar-preview my_photo__plug">
+                                <img src="/static/images/personal-page-squad/squad-photo.png" alt="">
+                            </div>
+                            <!-- Добавить фото -->
+                            <div class="avatar-edit my_photo__add">
+                                <label for="imageUpload1">
+                                    <img style="cursor:pointer;" src="/static/images/icons/pen-circle.svg" alt="">
+                                    <input type="file" id="imageUpload1" name="photo1" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Контейнер для фото  -->
+                        <div class="avatar-upload my_photo__edit">
+                            <!-- Заглушка по умолчанию  -->
+                            <div class="avatar-preview my_photo__plug">
+                                <img src="/static/images/personal-page-squad/squad-photo2.png" alt="">
+                            </div>
+                            <!-- Добавить фото -->
+                            <div class="avatar-edit my_photo__add">
+                                <label for="imageUpload2">
+                                    <img style="cursor:pointer;" src="/static/images/icons/pen-circle.svg" alt="">
+                                    <input type="file" id="imageUpload2" name="photo2" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Контейнер для фото  -->
+                        <div class="avatar-upload my_photo__edit">
+                            <!-- Заглушка по умолчанию  -->
+                            <div class="avatar-preview my_photo__plug">
+                                <img src="/static/images/personal-page-squad/squad-photo3.png" alt="">
+                            </div>
+                            <!-- Добавить фото -->
+                            <div class="avatar-edit my_photo__add">
+                                <label for="imageUpload3">
+                                    <img style="cursor:pointer;" src="/static/images/icons/pen-circle.svg" alt="">
+                                    <input type="file" id="imageUpload3" name="photo3" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Контейнер для фото  -->
+                        <div class="avatar-upload my_photo__edit">
+                            <!-- Заглушка по умолчанию  -->
+                            <div class="avatar-preview my_photo__plug">
+                                <img src="/static/images/personal-page-squad/squad-photo4.png" alt="">
+                            </div>
+                            <!-- Добавить фото -->
+                            <div class="avatar-edit my_photo__add">
+                                <label for="imageUpload4">
+                                    <img style="cursor:pointer;" src="/static/images/icons/pen-circle.svg" alt="">
+                                    <input type="file" id="imageUpload4" name="photo4" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="squad-participants">
+        <section class="squad-tabs">
+            <div class="container">
+                <!--  Контейнер c вкладками   -->
+                <h3 class="squad-participants__title">Участники</h3>
+                <nav class="squad__navigation">
+                    <ul class="squad__navigation-links-list tab-header">
+                        <li data-tab-ps__navigation="1" class="squad__my-page tab-title-navigation active">
+                            <a style="background: #1C5C94;color: #ffffff;"
+                                href="/personal_page_squad/personal_page_squad/">Уже в
+                                отряде</a>
+                        </li>
+                        <li data-tab-ps__navigation="2" class="squad__personal-data tab-title-navigation">
+                            <a href="/personal_page_squad/personal_page_squad-wait-approval/">Ожидают одобрения</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
+        </section>
+        <section class="squad-participants__list">
+            <div class="container">
+                <ul class="already_in_squad">
+                    <li class="squad-participant">
+                        <div class="squad-participant_box">
+                            <img src="/static/images/personal-page-squad/squad-participant.png" alt="">
+                            <h5 id="name_length">Андрей
+                            </h5>
+                            <p>Командир</p>
+                        </div>
+                    </li>
+                    <li class="squad-participant">
+                        <div class="squad-participant_box">
+                            <img src="/static/images/personal-page-squad/squad-participant2.png" alt="">
+                            <h5 id="name_length2">Мария
+                            </h5>
+                            <p>Комиссар</p>
+                        </div>
+                    </li>
+                    <li class="squad-participant">
+                        <div class="squad-participant_box">
+                            <img src="/static/images/personal-page-squad/squad-participant3.png" alt="">
+                            <h5 id="name_length3">Екатерина
+                            </h5>
+                            <p>Мастер</p>
+                        </div>
+                    </li>
+                    <li class="squad-participant participant-dlt">
+                        <div class="squad-participant_box">
+                            <img src="/static/images/personal-page-squad/squad-participant4.png" alt="">
+                            <h5 id="name_length4">Иван
+                            </h5>
+                            <p>Медик</p>
+                        </div>
+                    </li>
+                    <li class="squad-participant participant-del ">
+                        <div class="squad-participant_box">
+                            <img src="/static/images/personal-page-squad/squad-participant5.png" alt="">
+                            <h5 id="name_length5">Елена
+                            </h5>
+                            <p>Флагоносец</p>
+                        </div>
+                    </li>
+                    <li class="squad-participant participant-delete">
+                        <div class="squad-participant_box">
+                            <img src="/static/images/personal-page-squad/squad-participant6.png" alt="">
+                            <h5 id="name_length6">Анна
+                            </h5>
+                            <p>Боец</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="squad-participants__link">
+                    <a href="#">Показать всех</a>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="/static/js/personal_page_squad.js"></script>
+
+    {% endblock %}
