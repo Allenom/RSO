@@ -1,0 +1,140 @@
+/* фото userov   */
+.participants-lso__avatar-user,
+.participants-lso__list-avatar {
+   margin: 40px 0 60px;
+   border-radius: 10px;
+   background: #FFF;
+   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+   padding: 24px;
+
+}
+
+/* расположение рядов user */
+.participants-lso__avatar-ul ul,
+.articipants-lso__list-ul ul {
+   display: grid;
+   grid-template-columns: repeat(6, 1fr);
+
+}
+
+/* отступы для блока  img и параграф */
+.participants-lso__avatar-ul-li {
+   margin: 0 10px 40px 10px;
+   position: relative;
+   border: 3px solid red;
+   width: 176px;
+}
+
+.participants-lso__avatar-ul li:nth-child(6) {
+   padding-right: 0;
+}
+
+.participants-lso__avatar-ul li:nth-child(12) {
+   padding-right: 0;
+}
+
+.participants-lso__avatar-ul li:nth-child(18) {
+   padding-right: 0;
+}
+
+.participants-lso__avatar-ul li:nth-child(24) {
+   padding-right: 0;
+}
+
+.participants-lso__avatar-li {
+   position: relative;
+}
+
+a {
+   text-decoration: none;
+
+}
+
+.participants-lso__avatar-hover-a {
+   background-image: url('/static/images/img/participants_lso_img/go-to-profile.png');
+   background-repeat: no-repeat;
+
+   width: 197px;
+   height: 56px;
+
+   position: absolute;
+   top: -46px;
+   left: 0;
+
+
+   color: #FFF;
+   text-align: center;
+   font-family: 'BertSans', sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+   padding-top: 9.5px;
+   cursor: pointer;
+   display: none;
+}
+
+.participants-lso__avatar-li:hover .participants-lso__avatar-hover-a {
+   display: block;
+}
+
+
+.participants-lso__avatar-wrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 40px;
+
+
+}
+
+
+.participants-lso__avatar-ul img {
+   padding-top: 20px;
+}
+
+/* пораграф с именем  */
+.participants-lso__avatar-ul p {
+   color: #35383F;
+   text-align: center;
+   font-family: 'BertSans', sans-serif;
+   font-size: 28px;
+   font-weight: 400;
+
+   padding-top: 32px;
+}
+
+/* пораграф с должностью*/
+.participants-lso__avatar-ul p:last-child {
+   color: #676767;
+   font-family: 'BertSans', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   letter-spacing: -0.48px;
+
+   padding-top: 10px;
+}
+
+/* кнопка */
+
+.participants-lso__avatar-button {
+   display: flex;
+   justify-content: center;
+}
+
+.participants-lso__avatar-button button {
+   text-align: center;
+   gap: 10px;
+   border-radius: 10px;
+   background: #39BFBF;
+   padding: 16px 32px;
+   cursor: pointer;
+
+   color: #FFF;
+   font-family: 'BertSans', sans-serif;
+   font-size: 16px;
+   font-weight: 600;
+}
+
+/* при нажатии появляется список участников */
+
+
+/* адаптив */
