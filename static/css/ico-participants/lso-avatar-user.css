@@ -1,6 +1,6 @@
 /* фото userov   */
-.participants-lso__avatar-user,
-.participants-lso__list-avatar {
+.participants-lso__avatar-ul,
+.participants-lso__list-ul {
    margin: 40px 0 60px;
    border-radius: 10px;
    background: #FFF;
@@ -10,8 +10,7 @@
 }
 
 /* расположение рядов user */
-.participants-lso__avatar-ul ul,
-.articipants-lso__list-ul ul {
+.participants-lso__avatar-ul ul {
    display: grid;
    grid-template-columns: repeat(6, 1fr);
 

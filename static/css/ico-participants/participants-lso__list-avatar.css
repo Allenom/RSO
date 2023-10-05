@@ -1,0 +1,63 @@
+.participants-lso__list-avatar {}
+
+.participants-lso__list-ul {
+   padding:24px;
+}
+
+/* обводка блока */
+.participants-lso__list-ul-li {
+   height: 32px;
+   padding: 8px 20px;
+   margin-bottom: 12px;
+
+   border-radius: 10px;
+   border: 1px solid #B6B6B6;
+   background: #FFF;
+
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+/* стилизация картинок и позиционирование */
+.participants-lso__list-img-text {
+   display: flex;
+   position: relative;
+   align-items: center;
+}
+
+.participants-lso__list-img-status {
+   position: absolute;
+   width: 18px;
+   max-height: 18px;
+   bottom: 0px;
+   left: 25px;
+}
+
+.participants-lso__list-img {
+   margin-right: 13px;
+}
+
+/* заголовок */
+
+.participants-lso__list-img-text h3 {
+   color: #35383F;
+   font-family: 'BertSans', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+}
+
+/* дата */
+ .participants-lso__list-date p {
+   color: #1C5C94;
+   font-family: 'BertSans', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+}
+
+/*  */
+.participants-lso__list-date {
+   display: flex;
+   justify-content: space-between;
+}

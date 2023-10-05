@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 <link rel="stylesheet" href="{% static 'css/ico-participants/participants-lso.css' %}">
 <link rel="stylesheet" href="{% static 'css/ico-participants/lso-avatar-user.css' %}">
+<link rel="stylesheet" href="{% static 'css/ico-participants/participants-lso__list-avatar.css' %}">
 <title>Участини ЛСО</title>
 {% endblock %}
 
@@ -25,21 +26,21 @@
             </li>
 
             </li>
-               <div class="breadcrumbs-slesh">/</div>
-             <li itemprop="itemListElement" itemscope itemtype="#">
+            <div class="breadcrumbs-slesh">/</div>
+            <li itemprop="itemListElement" itemscope itemtype="#">
                <a href="#" title="Лсо" itemprop="item">
                   <span class="title-lso" itemprop="name">Лсо</span>
                   <meta itemprop="position" content="0">
                </a>
             </li>
-               <div class="breadcrumbs-slesh">/</div>
-             <li itemprop="itemListElement" itemscope itemtype="#">
+            <div class="breadcrumbs-slesh">/</div>
+            <li itemprop="itemListElement" itemscope itemtype="#">
                <a href="#" title="Ссо «Инвар»" itemprop="item">
                   <span itemprop="name"><span class="title-lso">Ссо</span> «Инвар»</span>
                   <meta itemprop="position" content="0">
                </a>
             </li>
-               <div class="breadcrumbs-slesh">/</div>
+            <div class="breadcrumbs-slesh">/</div>
             <li itemprop="itemListElement" itemscope itemtype="profile-settings-my-page.html">
                <a class="active" href="#" title=" Участники отряда" itemprop="item">
                   <span itemprop="name"> Участники отряда</span>
@@ -73,10 +74,10 @@
          <!-- кнопки переключение с блоков в строку  -->
          <div class="participants-lso__buttum">
             <div class="participants-lso__buttum-click">
-               <a class="participants-lso__buttum-click-block" href="#"><img
-                     src="/static/images/img/participants_lso_img/darhboard.svg" alt=""></a>
+               <a class="participants-lso__buttum-click-block" href="#" ><img
+                     src="/static/images/img/participants_lso_img/darhboard.svg" alt="" onclick="myFinish(1)"></a>
                <a class="participants-lso__buttum-click-list" href="#"><img
-                     src="/static/images/img/participants_lso_img/menu.svg" alt=""></a>
+                     src="/static/images/img/participants_lso_img/menu.svg" alt="" onclick="myFinish(2)"></a>
             </div>
             <!-- выподающий список -->
             <div class="participants-lso__buttum-list-open">
@@ -91,7 +92,7 @@
          </div>
       </section>
       <!-- фото userov  -->
-      <section class="participants-lso__avatar-user">
+      <section class="participants-lso__avatar-user" id="textOpen"  >
          <div class="participants-lso__avatar-ul">
 
             <ul>
@@ -259,6 +260,7 @@
                   </div>
                </li>
                <li class="participants-lso__avatar-li">
+                  <a class="participants-lso__avatar-hover-a" href="#">Перейти в профиль</a>
                   <div class="participants-lso__avatar-wrapper">
                      <img src="/static/images/img/participants_lso_img/foto-user-21.png" alt="">
                      <p>Анна</p>
@@ -300,26 +302,173 @@
       </section>
 
       <!-- при нажатии меняется на список -->
-      <section class="participants-lso__list-avatar">
+      <section class="participants-lso__list-avatar" id="text" style="display: none;">
          <div class="participants-lso__list-ul">
             <ul>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-            </ul>
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-1.svg" alt="">
+                     <img class="participants-lso__list-img-status"
+                        src="/static/images/img/participants_lso_img/commander.svg" alt="">
+                     <h3>Васильев Андрей Владимирович</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-2.svg" alt="">
+                     <img class="participants-lso__list-img-status"
+                        src="/static/images/img/participants_lso_img/commissioner.svg" alt="">
+                     <h3>Антонова Мария Владимировна</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
 
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-3.svg" alt="">
+                     <img class="participants-lso__list-img-status"
+                        src="/static/images/img/participants_lso_img/master.svg" alt="">
+                     <h3>Антонова Екатерина Владимировна</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-4.svg" alt="">
+                     <img class="participants-lso__list-img-status"
+                        src="/static/images/img/participants_lso_img/medic.svg" alt="">
+                     <h3>Гончаров Иван Олегович</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-5.svg" alt="">
+
+                     <h3>Федоров Алексей Викторович</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-6.svg" alt="">
+
+                     <h3>Ермолин Никита Андреевич</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-7.svg" alt="">
+
+                     <h3>Васильева Мария Ивановна</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>14.09.2003</p>
+                  </div>
+               </li>
+
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-8.svg" alt="">
+
+                     <h3>Иванова Алиса Сергеевна</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-9.svg" alt="">
+
+                     <h3>Шашков Андрей Андреевич</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-10.svg" alt="">
+
+                     <h3>Сидоров Иван Петрович</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-11.svg" alt="">
+
+                     <h3>Гончаров Иван Олегович</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-12.svg" alt="">
+
+                     <h3>Гончаров Иван Олегович</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+
+               <li class="participants-lso__list-ul-li">
+                  <div class="participants-lso__list-img-text">
+                     <img class="participants-lso__list-img"
+                        src="/static/images/img/participants_lso_img/list-lso-foto-13.svg" alt="">
+
+                     <h3>Гончаров Иван Олегович</h3>
+                  </div>
+                  <div class="participants-lso__list-date" style="border-left:2px solid #B6B6B6; padding-left:13px;">
+                     <p>13.07.2000</p>
+                  </div>
+               </li>
+         </div>
+         <!-- кнопка -->
+         <div class="participants-lso__avatar-button">
+            <button type="btn">Показать еще</button>
          </div>
       </section>
    </div>
 </article>
-
+  <script src="/static/js/participants_lso.js"></script>
 {% endblock %}
