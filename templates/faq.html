@@ -1,0 +1,1016 @@
+{% extends 'layout/basic.html' %}
+{% load static %}
+{% block title %}FAQ{% endblock %}
+{% block head %}
+
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+{% endblock %}
+{% block content %}
+
+ <section class="faq">
+      <div class="container-faq">
+        <h2 class="faq-title">Полезная информация</h2>
+        <div class="accordion accordion-flush" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Новичку о РСО
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="accordion" id="sub-accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingOne">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Что такое РСО?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseOne"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingOne"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Молодежная общероссийская общественная организация
+                        «Российские Студенческие Отряды» (МООО «РСО») –
+                        крупнейшая молодежная организация страны, которая
+                        обеспечивает временной трудовой занятостью более 200
+                        тысяч молодых людей из 81 региона нашей страны, в
+                        которых открыты и действуют ее региональные отделения, а
+                        также занимается гражданским и патриотическим
+                        воспитанием, развивает творческий и спортивный потенциал
+                        молодежи. Цель Российских Студенческих Отрядов —
+                        организация временной трудовой деятельности обучающихся.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingTwo">
+                      <button
+                        class="accordion-button small collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseTwo"
+                      >
+                        Где я могу узнать, действует ли движение РСО в моем
+                        регионе и какие существуют направления работы?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingTwo"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        На сайте
+                        <a href="https://xn--d1amqcgedd.xn--p1ai/"
+                          >трудкрут.рф</a
+                        >
+                        можно узнать о <a href="https://xn--d1amqcgedd.xn--p1ai/map">региональных отделениях </a>и о существующих
+                        <a href="https://xn--d1amqcgedd.xn--p1ai/napravleniya_raboty.html">направлениях работы</a>.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingThree">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseThree"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Могу ли я вступить в РСО, если мне нет 18 лет?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingThree"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Вступить в РСО можно с 14 лет, но необходимо согласие
+                        законного представителя.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingFour">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseFour"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseFour"
+                      >
+                        Хочу узнать подробнее о структуре организации, правах,
+                        обязанностях членов РСО
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingFour"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        С данной информацией можно ознакомиться в
+                        <a
+                          href="https://xn--d1amqcgedd.xn--p1ai/ustav_molodezhnoy_obshcherossiyskoy_obshchestvennoy_organizatsii_rossiyskie_studencheskie_otryady.html"
+                          >Уставе МООО «РСО»</a
+                        >.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingFive">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseFive"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Для чего нужен членский взнос?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseFive"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingFive"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Членский взнос уплачивается каждым членом организации,
+                        подтверждая свое членство.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingSix">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseSix"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseSix"
+                      >
+                        Как просмотреть информацию об оплате членского взноса?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseSix"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingSix"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Членский взнос».
+                        На этой странице указана актуальная информация об оплате
+                        членского взноса.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingSeven">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseSeven"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Что означают аббревиатуры ЛСО, Штаб СО ОО?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseSeven"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingSeven"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        ЛСО - линейный студенческий отряд, Штаб СО ОО - штаб
+                        студенческих отрядов образовательной организации.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingEight">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseEight"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseEight"
+                      >
+                        Что такое линейный студенческий отряд?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseEight"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingEight"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Линейный студенческий отряд (ЛСО) — форма организации
+                        студентов образовательных учреждений среднего и высшего
+                        профессионального образования различных форм обучения,
+                        изъявивших желание в свободное от учебы время трудиться
+                        в различных отраслях хозяйства, выполняющих общую
+                        производственную задачу и одновременно реализующих
+                        общественно полезную программу.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="true"
+                aria-controls="collapseTwo"
+              >
+                О работе с Личным кабинетом
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="accordion" id="sub-accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingOneTwo">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseOneTwo"
+                        aria-expanded="true"
+                        aria-controls="collapseTwo"
+                      >
+                        Как зарегистрироваться в РСО?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseOneTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingOneTwo"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        На странице регистрации выберите регион местонахождения
+                        вашей образовательной организации, далее укажите свои
+                        ФИО, телефон, электронную почту, придумайте пароль,
+                        нажмите кнопку «Зарегистрироваться».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingTwoTwo">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseTwoTwo"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseTwoTwo"
+                      >
+                        Как изменить пароль?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseTwoTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingTwoTwo"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Настройки
+                        профиля» - «Логин и пароль». В окне «Изменить пароль»
+                        введите старый пароль, также придумайте новый пароль,
+                        нажмите кнопку «Сохранить».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingThreeTwo">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseThreeTwo"
+                        aria-expanded="true"
+                        aria-controls="collapseTwo"
+                      >
+                        Как изменить логин?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseThreeTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingThreeTwo"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Настройки
+                        профиля» - «Логин и пароль». Нажмите на значок
+                        «Изменить» рядом с логином. Введите новый логин в
+                        открывшемся поле и нажмите кнопку «Сохранить».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingFourTwo">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseFourTwo"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseFourTwo"
+                      >
+                        Как восстановить пароль?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseFourTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingFourTwo"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        На странице авторизации нажмите на ссылку
+                        «Восстановить». Укажите электронную почту, которую
+                        использовали при регистрации. Перейдите по ссылке из
+                        письма в электронной почте, придумайте новый пароль,
+                        нажмите кнопку «Сохранить».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingFiveTwo">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseFiveTwo"
+                        aria-expanded="true"
+                        aria-controls="collapseTwo"
+                      >
+                        Как изменить персональные данные?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseFiveTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingFiveTwo"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Настройки
+                        профиля» - «Персональные данные». Выберите необходимое
+                        поле, укажите новые данные, нажмите кнопку «Сохранить
+                        изменения».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingSixTwo">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseSixTwo"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseSixTwo"
+                      >
+                        Как настроить приватность данных?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseSixTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingSixTwo"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Для определения приватности данных перейдите в раздел
+                        «Личный кабинет» - «Настройки профиля» - «Настройки
+                        приватности». Выберите желаемый уровень приватности,
+                        нажмите кнопку «Сохранить».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingSevenTwo">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseSevenTwo"
+                        aria-expanded="true"
+                        aria-controls="collapseTwo"
+                      >
+                        Для чего нужна верификация данных?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseSevenTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingSevenTwo"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Верификация данных необходима для вступления в члены
+                        Организации, также для получения полного доступа к
+                        информации о деятельности Организации, полного доступа к
+                        участию в деятельности Организации.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingEightTwo">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseEightTwo"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseEightTwo"
+                      >
+                        Как пройти верификацию данных?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseEightTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingEightTwo"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Настройки
+                        профиля» - «Персональные данные» либо нажмите на кнопку
+                        «Пройти верификацию» на Моей странице. Укажите ваши
+                        данные, нажмите кнопку «Отправить данные на
+                        верификацию». После проверки внесенных данных и
+                        подтверждения верификации уполномоченным сотрудником
+                        Организации вы получите полный доступ к информации о
+                        деятельности Организации, полный доступ к участию в ее
+                        деятельности.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="true"
+                aria-controls="collapseThree"
+              >
+                Об отрядах и штабах
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="accordion" id="sub-accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingOneThree">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseOneThree"
+                        aria-expanded="true"
+                        aria-controls="collapseThree"
+                      >
+                        Как создать отряд?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseOneThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingOneThree"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в  раздел  «ЛСО». Нажмите на кнопку «Создать
+                        отряд», расположенную на баннере вверху страницы.
+                        Заполните открывшуюся форму, нажмите на кнопку
+                        «Сохранить».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingTwoThree">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseTwoThree"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseTwoThree"
+                      >
+                        Как редактировать данные об отряде?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseTwoThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingTwoThree"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите на страницу ЛСО, данные о котором желаете
+                        редактировать. Нажмите на кнопку «Редактировать отряд»,
+                        внесите актуальную информацию, нажмите кнопку «Сохранить
+                        изменения».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingThreeThree">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseThreeThree"
+                        aria-expanded="true"
+                        aria-controls="collapseThree"
+                      >
+                        Как создать штаб?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseThreeThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingThreeThree"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        В разделе  «Структура» выберите необходимые вам штабы.
+                        Перейдите на страницу. Нажмите на кнопку «Создать штаб»,
+                        расположенную на баннере вверху страницы. Заполните
+                        открывшуюся форму, нажмите на кнопку «Сохранить».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingFourThree">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseFourThree"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseFourThree"
+                      >
+                        Как редактировать данные о штабе?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseFourThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingFourThree"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите на страницу штаба, данные о котором желаете
+                        редактировать. Нажмите на кнопку «Редактировать штаб»,
+                        внесите актуальную информацию, нажмите кнопку «Сохранить
+                        изменения».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingFiveThree">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseFiveThree"
+                        aria-expanded="true"
+                        aria-controls="collapseThree"
+                      >
+                        Как вступить в отряд?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseFiveThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingFiveThree"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите на страницу штаба, данные о котором желаете
+                        редактировать. Нажмите на кнопку «Редактировать штаб»,
+                        внесите актуальную информацию, нажмите кнопку «Сохранить
+                        изменения».
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="true"
+                aria-controls="collapseFour"
+              >
+                О мероприятиях
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="accordion" id="sub-accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingOneFour">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseOneFour"
+                        aria-expanded="true"
+                        aria-controls="collapseFour"
+                      >
+                        Как создать мероприятие?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseOneFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingOneFour"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в  раздел  «Мероприятия». Нажмите на кнопку
+                        «Создать мероприятие», расположенную на баннере вверху
+                        страницы. Заполните открывшуюся форму, нажмите на кнопку
+                        «Создать».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingTwoFour">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseTwoFour"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseTwoFour"
+                      >
+                        Как редактировать данные о мероприятии?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseTwoFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingTwoFour"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите на страницу мероприятия, данные о котором
+                        желаете редактировать. Нажмите на кнопку «Редактировать
+                        мероприятие», внесите актуальную информацию, нажмите
+                        кнопку «Сохранить изменения».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingThreeFour">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseThreeFour"
+                        aria-expanded="true"
+                        aria-controls="collapseFour"
+                      >
+                        Как зарегистрироваться на участие в мероприятии?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseThreeFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingThreeFour"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в  раздел  «Мероприятия». Выберите
+                        мероприятие, в котором желаете участвовать. Нажмите на
+                        кнопку «Участвовать». В случае, если для участия
+                        необходима дополнительная информация, после нажатия на
+                        кнопку «Участвовать» откроется форма. Заполните ее,
+                        далее нажмите кнопку «Подать заявку». После
+                        подтверждения вашего участия уполномоченным сотрудником
+                        Организации статус «Заявка на рассмотрении» изменится на
+                        статус «Вы участник».  В случае, если к участию в
+                        мероприятии принимается только групповая заявка, после
+                        нажатия на кнопку «Участвовать» также откроется
+                        специальная форма. Заполните ее, далее нажмите кнопку
+                        «Подать заявку». При изменении статуса «Заявка на
+                        рассмотрении» на «Сформировать списки» необходимо нажать
+                        на кнопку «Сформировать списки». Внесите данные, далее
+                        нажмите кнопку «Подать заявку». После подтверждения
+                        вашего участия уполномоченным сотрудником Организации
+                        статус «Заявка на рассмотрении» изменится на статус «Вы
+                        участник».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingFourFour">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseFourFour"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseFourFour"
+                      >
+                        Как отказаться от участия в мероприятии?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseFourFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingFourFour"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите на страницу мероприятия, от участия в котором
+                        вы желаете отказаться. Наведите курсор мыши на кнопку
+                        «Вы участник», в выпадающем меню нажмите на кнопку
+                        «Отказаться от участия».
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFive"
+                aria-expanded="true"
+                aria-controls="collapseFive"
+              >
+                Работа с заявками
+              </button>
+            </h2>
+            <div
+              id="collapseFive"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFive"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="accordion" id="sub-accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingOneFive">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseOneFive"
+                        aria-expanded="true"
+                        aria-controls="collapseFive"
+                      >
+                        Как одобрить/отклонить заявку на участие в мероприятии?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseOneFive"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingOneFive"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Активные заявки»
+                        - «Заявка на участие в мероприятии». Выберите заявку,
+                        проверьте данные, наведите курсор мыши на кнопку
+                        «Выберите действие», в выпадающем меню нажмите на кнопку
+                        «Одобрить» или кнопку «Отклонить».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingTwoFive">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseTwoFive"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseTwoFive"
+                      >
+                        Как одобрить/отклонить заявку на вступление в отряд?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseTwoFive"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingTwoFive"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Активные заявки»
+                        - «Заявка на вступление в отряд». Выберите заявку,
+                        проверьте данные, наведите курсор мыши на кнопку
+                        «Выберите действие», в выпадающем меню нажмите на кнопку
+                        «Одобрить» или кнопку «Отклонить».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingThreeFive">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseThreeFive"
+                        aria-expanded="true"
+                        aria-controls="collapseFive"
+                      >
+                        Как одобрить/отклонить заявку на верификацию аккаунта?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseThreeFive"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingThreeFive"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Активные заявки»
+                        - «Верификация аккаунтов». Выберите аккаунт, который
+                        желаете верифицировать, проверьте данные пользователя,
+                        наведите курсор мыши на кнопку «Выберите действие», в
+                        выпадающем меню нажмите на кнопку «Одобрить» или кнопку
+                        «Отклонить».
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseSix"
+                aria-expanded="true"
+                aria-controls="collapseSix"
+              >
+                Работа с реестром участников, выдача справок
+              </button>
+            </h2>
+            <div
+              id="collapseSix"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingSix"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="accordion" id="sub-accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingOneSix">
+                      <button
+                        class="accordion-button small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseOneSix"
+                        aria-expanded="true"
+                        aria-controls="collapseSix"
+                      >
+                        Как пользоваться реестром участников?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseOneSix"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingOneSix"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Реестр
+                        участников». Для просмотра информации о каком-либо
+                        объекте отметьте необходимые пункты в фильтрах. Также вы
+                        можете просматривать статистику любых объектов, для
+                        этого нажмите кнопку «Показать статистику».
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="sub-headingTwoSix">
+                      <button
+                        class="accordion-button collapsed small"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sub-collapseTwoSix"
+                        aria-expanded="false"
+                        aria-controls="sub-collapseTwoSix"
+                      >
+                        Как сформировать справку о членстве в РСО?
+                      </button>
+                    </h2>
+                    <div
+                      id="sub-collapseTwoSix"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="sub-headingTwoSix"
+                      data-bs-parent="#sub-accordionExample"
+                    >
+                      <div class="accordion-body content">
+                        Перейдите в раздел «Личный кабинет» - «Оформление
+                        справок». Выберите справку, которую желаете оформить.
+                        Заполните открывшуюся форму, нажмите кнопку «Получить
+                        справки».
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+{% endblock %}
