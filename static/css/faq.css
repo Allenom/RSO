@@ -1,0 +1,119 @@
+*{  box-sizing:inherit;
+  margin: 0;  padding: 0;
+}
+dl, ol, ul {
+   margin-bottom: 0;}
+ol, ul {
+   padding-left: 0;}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0px auto;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0px;
+}
+.faq {
+  padding: 60px 0px 200px 0px;
+}
+
+.container-faq {
+  max-width: 1180px;
+  margin: 0px auto;
+  box-sizing: border-box;
+}
+
+.faq-title {
+  padding-left: 1rem;
+  margin-bottom: 60px;
+  font-size: 52px;
+  font-weight: 700;
+  font-family: AKROBAT;
+}
+
+.accordion-button {
+  font-size: 32px;
+  font-weight: 600;
+  color: #35383F;
+  font-family: AKROBAT;
+}
+
+.accordion-body a {
+  color: #222222;
+  font-weight: 500;
+  font-family: Bert-Sans;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: white;
+  color: #35383F;
+}
+
+
+.accordion-button:focus {
+  border-color: white;
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  background-image: url("../images/icons/Component 33.svg");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("../images/icons/Component 33.svg");
+}
+
+.small {
+  font-size: 24px;
+  border: none;
+  color: #35383F;
+}
+.content {
+  color: #222222;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 40px 40px;
+  font-size: 18px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-weight: 500;
+  font-family: Bert-Sans;
+}
+
+@media (max-width: 575px) {
+  .container-faq {
+  padding: 0 16px;
+}
+  .faq-title {
+  font-size: 40px;
+}
+.small {
+  font-size: 20px;
+    padding: 1rem 0.5rem;
+}
+.content {
+  padding: 40px 16px;
+}
+}
+
+@media (max-width: 360px) {
+  .accordion-button {
+  font-size: 24px;
+}
+  .faq-title {
+  font-size: 34px;
+}
+.small {
+  font-size: 18px;
+}
+.content {
+  padding: 40px 16px;
+}
+}

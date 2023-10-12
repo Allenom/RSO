@@ -54,6 +54,7 @@ urlpatterns = [
     path("404/", page, {'template': '404.html'}, name='page_not_found'),
     path("privacy_policy/", page, {'template': 'privacy_policy.html'}, name='privacy_policy'),
     path("terms_of_use/", page, {'template': 'terms_of_use.html'}, name='terms_of_use'),
+    path("faq/", page, {'template': 'faq.html'}, name='FAQ'),
 
     # Отряды
 
