@@ -1,8 +1,8 @@
-.participants-lso__list-avatar {}
+/* .participants-lso__list-avatar {}
 
 .participants-lso__list-ul {
    padding:24px;
-}
+} */
 
 /* обводка блока */
 .participants-lso__list-ul-li {
@@ -20,7 +20,7 @@
    align-items: center;
 }
 
-/* стилизация картинок и позиционирование */
+
 .participants-lso__list-img-text {
    display: flex;
    position: relative;
@@ -39,7 +39,7 @@
    margin-right: 13px;
 }
 
-/* заголовок */
+
 
 .participants-lso__list-img-text h3 {
    color: #35383F;
@@ -48,7 +48,7 @@
    font-weight: 400;
 }
 
-/* дата */
+
  .participants-lso__list-date p {
    color: #1C5C94;
    font-family: 'BertSans', sans-serif;
@@ -56,8 +56,215 @@
    font-weight: 400;
 }
 
-/*  */
+
 .participants-lso__list-date {
    display: flex;
    justify-content: space-between;
+} 
+
+/* адаптив */
+@media (max-width:1290px) {
+   #squadslso-wrapper {
+      grid-template-columns: repeat(5, 1fr);
+   }
+
 }
+
+@media (max-width:1024px) {
+   #squadslso-wrapper {
+      grid-column-gap: 0px;
+   }
+}
+
+@media (max-width:1010px) {
+   #squadslso-wrapper {
+      grid-template-columns: repeat(4, 1fr);
+   }
+}
+
+@media (max-width:770px) {
+   #squadslso-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+   }
+}
+
+@media (max-width:682px) {
+   .squadslso__avatar-hover-a {
+      /* background-image: url('/static/images/img/participants_lso_img/go-to-profile-121.png');
+      background-repeat: no-repeat; */
+      background: none;
+      font-size: 12px;
+      /* width: 121px;
+      height: 52px; */
+      padding-top: 0px;
+      top: -14px;
+      left: -10px;
+      padding-top: 4px;
+      padding-left: 0;
+
+   }
+}
+
+@media (max-width:606px) {
+   .squadslso__avatar-ul img {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+   }
+
+   .squadslso-wrapper__item {
+      width: 120px;
+   }
+
+   .squadslso-wrapper__item-category {
+      padding-top: 16px;
+      font-size: 18px;
+   }
+
+   .squadslso-wrapper__item,
+   .round-img {
+      max-width: 130px;
+      height: auto;
+   }
+
+   #squadslso-wrapper {
+      grid-row-gap: 20px;
+   }
+
+   .squadslso-wrapper__item-title {
+      margin-top: 4px;
+      font-size: 12px;
+   }
+
+   .squadslso-tabs li {
+      text-align: center;
+      font-family: 'BertSans', sans-serif;
+      font-size: 16px;
+   }
+}
+
+@media (max-width:482px) {
+
+   .squadslso-wrapper__item,
+   .round-img {
+      width: 100px;
+   }
+
+   .squadslso__avatar-ul img {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+   }
+
+   .sort-select__input {
+      margin-right: 4px;
+   }
+
+   h4,
+   .squadslso-search__input::placeholder {
+      font-size: 20px;
+
+   }
+
+   /* заголовок */
+   .squadslso__wrapper-block h2 {
+      font-size: 40px;
+
+   }
+}
+
+@media (max-width:482px) {
+   .sort-layout {
+      grid-column-gap: 5px;
+
+   }
+
+   .sort-select__input {
+      padding: 4px 0px 7px 5px;
+
+   }
+   .sort-alph{
+      max-width: 212px;
+   }
+   .squadslso__avatar-hover-a {
+      background-image: none;
+   }
+}
+@media (max-width:360px) {
+
+   .squadslso-wrapper__item,
+   .round-img {
+      width: 88px;
+   }
+
+   .squadslso-wrapper__item-category {
+      padding-top: 16px;
+   }
+
+   .squadslso-wrapper__item,
+   .round-img {
+      height: auto;
+   }
+   #horizontallso ,
+   #squadslso-wrapper {
+      grid-row-gap: 20px;
+      padding: 16px;
+   }
+
+   .sort-alph {
+      background-position: calc(100% - 5px) 0.15em;
+   }
+.containerHorizontal{
+  flex-direction: column;
+}
+/* .squadslso__avatar-hover-a{
+   pointer-events: none;
+}
+.squadslso-wrapper__item:hover {
+   background: none;
+ } */
+}
+
+
+/* отступы */
+@media (max-width:1440px) {
+   .container-padding {
+      padding: 0 130px;
+
+   }
+}
+
+@media (max-width:1024px) {
+   .container-padding {
+      padding: 0 66px;
+
+   }
+}
+
+@media (max-width:768px) {
+   .container-padding {
+      padding: 0 34px;
+
+   }
+}
+
+@media (max-width:482px) {
+   .container-padding {
+      padding: 0 16px;
+
+   }
+   .squadslso-tabs li {
+      padding: 5px 14px;
+   }
+   .squadslso-tabs {
+      grid-column-gap: 6px;
+    
+    }
+    
+   /* подложка */
+   #squadslso-wrapper,
+   #horizontallso {
+      padding: 16px;
+   }
+}
+

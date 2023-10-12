@@ -1,139 +1,488 @@
-/* фото userov   */
-.participants-lso__avatar-ul,
-.participants-lso__list-ul {
-   margin: 40px 0 60px;
-   border-radius: 10px;
-   background: #FFF;
-   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
-   padding: 24px;
+*,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+}
+
+/* выравниваем по центру контейнера */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.squadslso {
+  padding: 0px 0px 80px 0px;
+}
+
+/* подложка */
+#squadslso-wrapper,
+#horizontallso {
+  margin: 40px 0 60px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  display: none;
+}
+
+/* заголовок */
+.squadslso__wrapper-block h2 {
+  color: #000;
+  font-family: 'Akrobat', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+}
+
+/* стилизация табов */
+ul,
+li {
+  list-style-type: none;
+}
+
+.squadslso-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start;
+  grid-column-gap: 8px;
+
+  margin: 40px 0;
+}
+
+.squadslso-tabs li {
+  text-align: center;
+  font-family: 'BertSans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px 20px;
+  cursor: pointer;
+
+  border: 2px solid #1C5C94;
+  color: #1C5C94;
+  background: #fff;
+  border-radius: 30px;
+
+  justify-content: center;
+
 
 }
 
-/* расположение рядов user */
-.participants-lso__avatar-ul ul {
-   display: grid;
-   grid-template-columns: repeat(6, 1fr);
+li:hover,
+li:focus,
+li:active {
+  border-radius: 30px;
+  background: #1C5C94;
+  color: #FFF;
+}
+
+.squadslso-tabs li:last-child {
+  margin-right: 0;
+}
+
+
+
+/* кнопка показать еще */
+.hide-squadslso,
+.show-squadslso {
+  display: block;
+  border: none;
+  margin: 0px auto;
+  padding: 16px 32px;
+  background-color: #39BFBF;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'BertSans', sans-serif;
+}
+
+.hide-squadslso {
+  /* display: none; */
 
 }
 
-/* отступы для блока  img и параграф */
-.participants-lso__avatar-ul-li {
-   margin: 0 10px 40px 10px;
-   position: relative;
-   border: 3px solid red;
-   width: 176px;
+/* поиск */
+.squadslso-search {
+  position: relative;
+  box-sizing: border-box;
+
+
 }
 
-.participants-lso__avatar-ul li:nth-child(6) {
-   padding-right: 0;
+.squadslso-search input {
+  color: #35383F;
+  font-family: 'BertSans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  height: 52px;
 }
 
-.participants-lso__avatar-ul li:nth-child(12) {
-   padding-right: 0;
+.sort-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.participants-lso__avatar-ul li:nth-child(18) {
-   padding-right: 0;
+.sort-select__input {
+  border: 2px solid #a3a3a3;
+  border-radius: 10px;
+  display: block;
+  font-size: 16px;
+  padding: 6px 0px 7px 16px;
+  margin-right: 8px;
 }
 
-.participants-lso__avatar-ul li:nth-child(24) {
-   padding-right: 0;
+.squadslso-search svg {
+  position: absolute;
+  top: 9px;
+  left: 16px;
 }
 
-.participants-lso__avatar-li {
-   position: relative;
+.squadslso-search__input {
+  width: 100%;
+  padding: 12px 0px 12px 60px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.squad-sort__selected {
+  font-size: 16px;
+  font-family: 'BertSans', sans-serif;
+}
+
+h4,
+.squadslso-search__input::placeholder {
+  color: #898989;
+  font-family: 'Akrobat', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+
+.sort-filters {
+  display: flex;
+}
+
+
+.sort-alph {
+  width: 218px;
+  border: none;
+  max-height: 32px;
+
+  border-radius: 10px;
+  border: 1px solid #35383F;
+  background: #FFF;
+
+  background: url('/static/images/img/arrow-down.svg')no-repeat right;
+  display: block;
+  appearance: none;
+  overflow: hidden;
+  outline: hidden;
+  background-position: calc(100% - 10px) 0.15em;
+  color: #35383F;
+  font-family: 'BertSans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#squadslso-wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+  justify-content: center;
+  /* box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08); */
+  display: none;
+}
+
+
+/* картинка селект со стрелкой */
+.sort-order {
+  border: none;
+  height: 32px;
+  width: 32px;
+  background: url('/static/images/img/participants_lso_img/arrow-list.svg')no-repeat right;
+  display: block;
+  appearance: none;
+  overflow: hidden;
+  outline: hidden;
+  /* background-position: calc(100% - 10px) 0.15em; */
+  color: #35383F;
+  font-family: 'BertSans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+}
+
+.sort-order option {
+  max-width: 150px;
+  color: #35383F;
+  font-family: 'BertSans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+}
+
+/* линия блока с кнопками и селект */
+.squadslso-sort {
+  /* max-height: 32px; */
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0px 0px 0px;
+}
+
+/* кнопки переключения блоков */
+.menu-btn-block {
+  background-image: url('/static/images/img/participants_lso_img/darhboard.svg');
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+
+
+.menu-btn-horisontallso {
+  background-image: url('/static/images/img/participants_lso_img/menu.svg');
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 0px;
+
+}
+
+.active-change {
+  background-image: url('/static/images/img/participants_lso_img/darhboard-white.png');
+
+}
+
+.active-change__menu {
+  background-image: url('/static/images/img/participants_lso_img/menu-black.png');
+
+}
+
+
+.sort-layout {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start;
+  grid-column-gap: 8px;
+}
+
+/* 000000000000000000000000000 */
+
+/* горизонтальное расположение */
+#horizontallso {
+  display: none;
+  /* padding: 60px 0px; */
+  grid-template-columns: repeat(1, auto);
+  grid-row-gap: 12px;
+
+}
+
+
+.horizontallso-item__wrapper{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  align-items: center;
+
+  padding: 4px 20px;
+
+  border-radius: 10px;
+  border: 1px solid  #B6B6B6;
+  background: #FFF;
+}
+.containerHorizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+
+}
+.horizontallso-img {
+  align-items: center;
+  width: 50px;
+  justify-content: start;
+ 
+}
+
+.horizontallso-item img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: cover;
+}
+
+.horizontallso-item p {
+  margin-left: 10px;
+ 
+}
+
+.participants-lso__list-date {
+  width: 95px;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+}
+
+/* при загрузке картинка будет подстраиваться под блок */
+.squadslso__approvals-ul img,
+.squadslso__avatar-ul img {
+  border-radius: 50%;
+  max-width: 120px;
+  height: 120px;
+  /* display: block; */
+  overflow: cover;
+}
+
+/* фотография пользователя */
+.round-img {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 0px auto;
+  /* при загрузке картинка будет подстраиваться под блок */
+
+  padding-top: 20px;
+  border-radius: 50%;
+
+
+}
+
+/* расположение в ряд карточек */
+
+
+/* ссылка на пользователя ховер */
+/* ширина блока с фото */
+.squadslso-wrapper__item {
+  margin: 0px auto;
+  width: 161px;
+  height: 230px;
+
+  position: relative;
+}
+
+.squadslso__avatar-hover-a {
+  width: 200px;
+  height: 64px;
+
+  color: #FFF;
+  text-align: center;
+  font-family: 'BertSans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 9px;
+  top: -44px;
+  left: -18px;
+
+  cursor: pointer;
+  /* display: none; */
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+/* появлния ссылки перейти в профиль */
+.squadslso-wrapper__item:hover .squadslso__avatar-hover-a {
+  display: block;
+  background-image: url('/static/images/img/participants_lso_img/go-to-profile.svg');
+  background-repeat: no-repeat;
+  
+
+  position: absolute;
+
+}
+
+/* приближение элемента при наведении */
+.squadslso-wrapper__item:hover {
+  transform: scale(1.2)
 }
 
 a {
-   text-decoration: none;
+  text-decoration: none;
 
 }
 
-.participants-lso__avatar-hover-a {
-   background-image: url('/static/images/img/participants_lso_img/go-to-profile.png');
-   background-repeat: no-repeat;
+/* текст имени */
 
-   width: 197px;
-   height: 56px;
+.squadslso-wrapper__item-title {
+  margin-top: 10px;
+  text-align: center;
+  color: #676767;
+  font-family: 'BertSans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 
-   position: absolute;
-   top: -46px;
-   left: 0;
-
-
-   color: #FFF;
-   text-align: center;
-   font-family: 'BertSans', sans-serif;
-   font-size: 16px;
-   font-weight: 500;
-   padding-top: 9.5px;
-   cursor: pointer;
-   display: none;
-}
-
-.participants-lso__avatar-li:hover .participants-lso__avatar-hover-a {
-   display: block;
-}
-
-
-.participants-lso__avatar-wrapper {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-bottom: 40px;
+  margin-top: 8px;
 
 
 }
 
+/* .squadslso-wrapper__item-category-full {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Akrobat', sans-serif;
+  margin-left: 20px;
+  margin-right: 5px;
+} */
 
-.participants-lso__avatar-ul img {
-   padding-top: 20px;
+/* текст должности */
+
+.squadslso-wrapper__item-category {
+  color: #35383F;
+  text-align: center;
+  font-family: 'BertSans', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+
+  padding-top: 32px;
 }
 
-/* пораграф с именем  */
-.participants-lso__avatar-ul p {
-   color: #35383F;
-   text-align: center;
-   font-family: 'BertSans', sans-serif;
-   font-size: 28px;
-   font-weight: 400;
-
-   padding-top: 32px;
+.show-squadslso {
+  display: block;
+  border: none;
+  margin: 0px auto;
+  padding: 16px 32px;
+  background-color: #39BFBF;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-/* пораграф с должностью*/
-.participants-lso__avatar-ul p:last-child {
-   color: #676767;
-   font-family: 'BertSans', sans-serif;
-   font-size: 16px;
-   font-weight: 400;
-   letter-spacing: -0.48px;
-
-   padding-top: 10px;
+.hide-squadslso {
+  display: none;
+  border: none;
+  margin: 0px auto;
+  padding: 16px 32px;
+  background-color: #39BFBF;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-/* кнопка */
 
-.participants-lso__avatar-button {
-   display: flex;
-   justify-content: center;
+.hide {
+  display: none;
 }
 
-.participants-lso__avatar-button button {
-   text-align: center;
-   gap: 10px;
-   border-radius: 10px;
-   background: #39BFBF;
-   padding: 16px 32px;
-   cursor: pointer;
+#error {
+  display: none;
+}
 
-   color: #FFF;
-   font-family: 'BertSans', sans-serif;
-   font-size: 16px;
-   font-weight: 600;
+.blocks {
+  grid-template-columns: 1fr;
+  grid-row-gap: 13px;
 }
 
 /* при нажатии появляется список участников */
-
-
-/* адаптив */
