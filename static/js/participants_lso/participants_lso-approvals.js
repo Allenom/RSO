@@ -250,7 +250,9 @@ function displayProducts(products) {
       .map(
         (product) => `
   <div class="squadslso-wrapper__item">
-  <a class="squadslso__avatar-hover-a" href="#">Перейти в профиль  </a>
+  <a class="squadslso__avatar-hover-a" href="#"><span>
+  Перейти в профиль</span>
+ 
     <div class="round-img">
       <img src="${product.image}" alt="${product.title}" />
     </div>
@@ -258,7 +260,8 @@ function displayProducts(products) {
       <p class="squadslso-wrapper__item-category">${product.title}</p>
       <p class="squadslso-wrapper__item-title">${product.desc}</p>
     </div>
-  
+   
+    </a>
   </div>`
       )
       .join("");

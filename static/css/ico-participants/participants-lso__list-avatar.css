@@ -63,9 +63,15 @@
 } 
 
 /* адаптив */
+@media (max-width:1311px) {
+   #squadslso-wrapper {
+    
+      gap: 0;
+   }}
 @media (max-width:1290px) {
    #squadslso-wrapper {
       grid-template-columns: repeat(5, 1fr);
+     
    }
 
 }
@@ -90,30 +96,27 @@
 
 @media (max-width:682px) {
    .squadslso__avatar-hover-a {
-      /* background-image: url('/static/images/img/participants_lso_img/go-to-profile-121.png');
-      background-repeat: no-repeat; */
-      background: none;
-      font-size: 12px;
-      /* width: 121px;
-      height: 52px; */
-      padding-top: 0px;
-      top: -14px;
-      left: -10px;
-      padding-top: 4px;
-      padding-left: 0;
+   
+
 
    }
 }
 
 @media (max-width:606px) {
    .squadslso__avatar-ul img {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       margin: 0 auto;
    }
-
+   .round-img {
+      max-height: 120px;}
    .squadslso-wrapper__item {
-      width: 120px;
+  margin: 0;
+      justify-items: center;
+      align-items: center;
+      text-align: center;
+
+      max-height: 180px;
    }
 
    .squadslso-wrapper__item-category {
@@ -121,16 +124,18 @@
       font-size: 18px;
    }
 
-   .squadslso-wrapper__item,
+   /* .squadslso-wrapper__item,
    .round-img {
       max-width: 130px;
       height: auto;
-   }
+   } */
 
    #squadslso-wrapper {
       grid-row-gap: 20px;
+     
    }
-
+   .squadslso-wrapper__item {
+   }
    .squadslso-wrapper__item-title {
       margin-top: 4px;
       font-size: 12px;
@@ -141,14 +146,23 @@
       font-family: 'BertSans', sans-serif;
       font-size: 16px;
    }
+   .squadslso__avatar-hover-a span{
+      display: none;
+   }
+   .squadslso__avatar-hover-a {
+      background: none;
+   }
+   .squadslso__avatar-hover-a::after{
+      display: none;
+   }
 }
 
 @media (max-width:482px) {
 
-   .squadslso-wrapper__item,
+   /* .squadslso-wrapper__item,
    .round-img {
       width: 100px;
-   }
+   } */
 
    .squadslso__avatar-ul img {
       width: 60px;
@@ -192,19 +206,24 @@
 }
 @media (max-width:360px) {
 
-   .squadslso-wrapper__item,
+   .squadslso-wrapper__item{
+      width: 104px;
+   }
    .round-img {
       width: 88px;
+      max-height: 88px;
+
+     
    }
 
    .squadslso-wrapper__item-category {
       padding-top: 16px;
    }
 
-   .squadslso-wrapper__item,
+   /* .squadslso-wrapper__item,
    .round-img {
       height: auto;
-   }
+   } */
    #horizontallso ,
    #squadslso-wrapper {
       grid-row-gap: 20px;
