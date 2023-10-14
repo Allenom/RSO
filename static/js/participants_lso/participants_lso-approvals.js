@@ -10,6 +10,7 @@ const squadslso = [
     peoples: 12,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: true,
   },
   {
     title: "Мария",
@@ -21,6 +22,7 @@ const squadslso = [
     peoples: 19,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: true,
   },
   {
     title: "Екатерина",
@@ -32,6 +34,7 @@ const squadslso = [
     peoples: 5,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: true,
   },
   {
     title: "Иван",
@@ -43,6 +46,7 @@ const squadslso = [
     peoples: 8,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: true,
   },
   {
     title: "Елена",
@@ -53,6 +57,7 @@ const squadslso = [
     peoples: 7,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: false,
   },
   {
     title: "Егор",
@@ -63,6 +68,7 @@ const squadslso = [
     peoples: 14,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: false,
   },
   {
     title: "Алексей",
@@ -73,6 +79,7 @@ const squadslso = [
     peoples: 12,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: false,
   },
   {
     title: "Максим",
@@ -83,6 +90,7 @@ const squadslso = [
     peoples: 22,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: false,
   },
   {
     title: "Евгения",
@@ -93,6 +101,7 @@ const squadslso = [
     peoples: 12,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: false,
   },
   {
     title: "Елена",
@@ -103,6 +112,7 @@ const squadslso = [
     peoples: 2,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: false,
   },
   {
     title: "Роланда",
@@ -113,6 +123,7 @@ const squadslso = [
     peoples: 5,
     createdAt: "13.07.2000",
     detachment: "",
+    comandir: false,
   },
   {
     title: "Екатерина",
@@ -122,6 +133,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-12.png",
     peoples: 14,
     createdAt: "13.07.2000",
+    comandir: false,
   },
   {
     title: "Вероника",
@@ -131,6 +143,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-13.png",
     peoples: 22,
     createdAt: "13.07.2000",
+    comandir: false,
   },
   {
     title: "Ирина",
@@ -140,6 +153,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-14.png",
     peoples: 10,
     createdAt: "13.07.2000",
+    comandir: false,
   },
   {
     title: "Ярослава",
@@ -149,6 +163,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-15.png",
     peoples: 4,
     createdAt: "13.07.2000",
+    comandir: false,
 
   },
   {
@@ -159,6 +174,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-16.png",
     peoples: 6,
     createdAt: "13.07.2000",
+    comandir: false,
 
   },
   {
@@ -169,6 +185,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-17.png",
     peoples: 25,
     createdAt: "13.07.2000",
+    comandir: false,
   },
   {
     title: "Анна",
@@ -178,6 +195,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-18.png",
     peoples: 11,
     createdAt: "13.07.2000",
+    comandir: false,
   },
   {
     title: "Анна",
@@ -198,6 +216,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-22.png",
     peoples: 12,
     createdAt: "13.07.2000",
+    comandir: false,
 
   },
   {
@@ -208,6 +227,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-21.png",
     peoples: 10,
     createdAt: "13.07.2000",
+    comandir: false,
 
   },
   {
@@ -218,6 +238,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-22.png",
     peoples: 12,
     createdAt: "13.07.2000",
+    comandir: false,
 
   },
   {
@@ -228,6 +249,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-22.png",
     peoples: 29,
     createdAt: "13.07.2000",
+    comandir: false,
 
   },
   {
@@ -238,6 +260,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-22.png",
     peoples: 25,
     createdAt: "13.07.2000",
+    comandir: false,
   },
 ];
 

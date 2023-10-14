@@ -1,14 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 
 /* выравниваем по центру контейнера */
-.container {
-  max-width: 1180px;
-  margin: 0 auto;
-}
-
 .squadslso {
   padding: 0px 0px 80px 0px;
 }
@@ -31,11 +22,6 @@
   font-weight: 700;
 }
 
-/* стилизация табов */
-ul,
-li {
-  list-style-type: none;
-}
 
 .squadslso-tabs {
   display: grid;
@@ -329,10 +315,6 @@ h4,
   transform: scale(1.2)
 }
 
-a {
-  text-decoration: none;
-
-}
 /* текст имени */
 .squadslso-wrapper__item-category {
   color: #35383F;
