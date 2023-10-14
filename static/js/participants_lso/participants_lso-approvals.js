@@ -6,9 +6,10 @@ const squadslso = [
     desc: "Командир",
     full: "Васильев Андрей Владимирович",
     image: "/static/images/img/participants_lso_img/foto-user-1.png",
+    logo: "/static/images/img/participants_lso_img/commander.svg",
     peoples: 12,
     createdAt: "13.07.2000",
-    post:"",
+    detachment: "",
   },
   {
     title: "Мария",
@@ -16,9 +17,10 @@ const squadslso = [
     desc: "Комиссар",
     full: "Антонова Мария Владимировна",
     image: "/static/images/img/participants_lso_img/foto-user-2.png",
+    logo: "/static/images/img/participants_lso_img/commissioner.svg",
     peoples: 19,
     createdAt: "13.07.2000",
-    post:"",
+    detachment: "",
   },
   {
     title: "Екатерина",
@@ -26,9 +28,10 @@ const squadslso = [
     desc: "Мастер",
     full: "Антонова Екатерина Владимировна",
     image: "/static/images/img/participants_lso_img/foto-user-3.png",
+    logo: "/static/images/img/participants_lso_img/master.svg",
     peoples: 5,
     createdAt: "13.07.2000",
-    post:"",
+    detachment: "",
   },
   {
     title: "Иван",
@@ -36,9 +39,10 @@ const squadslso = [
     desc: "Медик",
     full: "Гончаров Иван Олегович",
     image: "/static/images/img/participants_lso_img/artem.jpg",
+    logo: "/static/images/img/participants_lso_img/medic.svg",
     peoples: 8,
     createdAt: "13.07.2000",
-    post:"",
+    detachment: "",
   },
   {
     title: "Елена",
@@ -48,7 +52,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-5.png",
     peoples: 7,
     createdAt: "13.07.2000",
-    education: "Амурская государственная медицинская академия"
+    detachment: "",
   },
   {
     title: "Егор",
@@ -58,7 +62,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-6.png",
     peoples: 14,
     createdAt: "13.07.2000",
-    education: "Амурский государственный университет"
+    detachment: "",
   },
   {
     title: "Алексей",
@@ -68,7 +72,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-7.png",
     peoples: 12,
     createdAt: "13.07.2000",
-    education: "МГУ"
+    detachment: "",
   },
   {
     title: "Максим",
@@ -78,7 +82,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-8.png",
     peoples: 22,
     createdAt: "13.07.2000",
-    education: "Университет имени Баумана"
+    detachment: "",
   },
   {
     title: "Евгения",
@@ -88,7 +92,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-9.png",
     peoples: 12,
     createdAt: "13.07.2000",
-    education: "Амурская государственная медицинская академия"
+    detachment: "",
   },
   {
     title: "Елена",
@@ -98,6 +102,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-10.png",
     peoples: 2,
     createdAt: "13.07.2000",
+    detachment: "",
   },
   {
     title: "Роланда",
@@ -107,6 +112,7 @@ const squadslso = [
     image: "/static/images/img/participants_lso_img/foto-user-11.png",
     peoples: 5,
     createdAt: "13.07.2000",
+    detachment: "",
   },
   {
     title: "Екатерина",
@@ -279,24 +285,24 @@ function displayHorizontal(products) {
       .map(
         (product) => `
   <div class="horizontallso-item">
-  <div class="horizontallso-item__wrapper">
-  <div class="horizontallso-img">
-    <img src="${product.image}" alt="${product.title}" />
-  </div>
-  <div class="containerHorizontal"
-  <div class="squads-wrapper__item-wrapper"
-  <p class="squads-wrapper__item-category-full">${product.full}</p>
-  </div>
-  <div class="participants-lso__list-date"style="border-left:2px solid #B6B6B6; padding-right: 8px;" >
-  <p>${product.createdAt}</p>
-</div>
-</div>
-</div>
+    <div class="horizontallso-item__wrapper">
+          <div class="horizontallso-img">
+            <img 
+            src="${product.image}" alt="${product.title}" />
+            <img class="horizontallso-item__list-img-status" src="${product.logo}" alt="${product.title}">
+          </div>
+        <div class="containerHorizontal">
+          <p class="horizontallso-item__list-full"> ${product.full}</p>
+          <div class="horizontallso-item__list-date"><span style="border-left:2px solid #B6B6B6; padding-right: 8px;"></span>
+          <p>${product.createdAt}</p>
+          </div>
+        </div>
+    </div>
   </div>`
       )
       .join("");
 
-      productsContainerHorizontal.innerHTML = product_horizontal;
+    productsContainerHorizontal.innerHTML = product_horizontal;
   }
 
   else {
@@ -321,12 +327,12 @@ function setCategories() {
   ];
   //console.log(catagories);
   categoryList.innerHTML = catagories
-  .map((category) => `<li class="squadslso-tabs__item">${category}</li>`)
-  .join("");
+    .map((category) => `<li class="squadslso-tabs__item">${category}</li>`)
+    .join("");
 
   categoryList.addEventListener("click", (e) => {
     let selectedCatagory = e.target.textContent;
-    if( selectedCatagory === "Уже в отряде") {
+    if (selectedCatagory === "Уже в отряде") {
       allSquads(squadslso)
     } else {
       allSquads(
@@ -405,7 +411,7 @@ sortByDropdown.addEventListener("change", () => {
 
   const sorted = _.orderBy(squadslso, [sortByValue], sortOrderValue);
 
- allSquads(sorted);
+  allSquads(sorted);
 });
 
 sortOrderDropdown.addEventListener("change", () => {
