@@ -61,7 +61,9 @@
                         <img src="/static/images/personal-page-squad/banner-squad.png" alt="Баннер страницы отряда"
                             id="banner-pic" />
                         {% else %}
-                        <img src="/static/images/profile-settings/banner-stub.png" alt="Баннер страницы отряда(пусто)"
+                        <!-- <img src="/static/images/profile-settings/banner-stub.png" alt="Баннер страницы отряда(пусто)"
+                            id="banner-pic" /> -->
+                        <img src="/static/images/personal-page-squad/banner-squad.png" alt="Баннер страницы отряда"
                             id="banner-pic" />
                         {% endif %}
                     </div>
@@ -79,8 +81,9 @@
                         {% if user.profile.photo %}
                         <img id="profile-pic" src="/static/images/personal-page-squad/logo-squad.png" alt="Аватарка">
                         {% else %}
-                        <img id="profile-pic" src="/static/images/profile-settings/user-avatar-stub.png"
-                            alt="Аватарка(пусто)">
+                        <!-- <img id="profile-pic" src="/static/images/profile-settings/user-avatar-stub.png"
+                            alt="Аватарка(пусто)"> -->
+                        <img id="profile-pic" src="/static/images/personal-page-squad/logo-squad.png" alt="Аватарка">
                         {% endif %}
                     </div>
                     <!-- Иконки редактирования аватар -->
@@ -256,80 +259,135 @@
         <section class="squad-tabs">
             <div class="container">
                 <!--  Контейнер c вкладками   -->
-                <h3 class="squad-participants__title">Участники</h3>
                 <nav class="squad__navigation">
-                    <ul class="squad__navigation-links-list tab-header">
-                        <li data-tab-ps__navigation="1" class="squad__my-page tab-title-navigation active">
-                            <a style="background: #1C5C94;color: #ffffff;"
-                                href="/personal_page_squad/personal_page_squad/">Уже в
-                                отряде</a>
-                        </li>
-                        <li data-tab-ps__navigation="2" class="squad__personal-data tab-title-navigation">
-                            <a href="/personal_page_squad/personal_page_squad-wait-approval/">Ожидают одобрения</a>
-                        </li>
-                    </ul>
+                    <h3 class="squad-participants__title">Участники</h3>
+                    <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+                    <label class="tab-position" for="tab-btn-1">Уже в отряде</label>
+                    <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+                    <label class="position-tab" for="tab-btn-2">Ожидают одобрения</label>
+                    <div class="tab-content" id="content-1">
+                        <section class="squad-participants__list">
+                            <div class="container">
+                                <ul class="already_in_squad">
+                                    <li class="squad-participant">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant.png" alt="">
+                                            <h5 id="name_length">Андрей
+                                            </h5>
+                                            <p>Командир</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant2.png" alt="">
+                                            <h5 id="name_length2">Мария
+                                            </h5>
+                                            <p>Комиссар</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant3.png" alt="">
+                                            <h5 id="name_length3">Екатерина
+                                            </h5>
+                                            <p>Мастер</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant participant-dlt">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant4.png" alt="">
+                                            <h5 id="name_length4">Иван
+                                            </h5>
+                                            <p>Медик</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant participant-del ">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant5.png" alt="">
+                                            <h5 id="name_length5">Елена
+                                            </h5>
+                                            <p>Флагоносец</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant participant-delete">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant6.png" alt="">
+                                            <h5 id="name_length6">Анна
+                                            </h5>
+                                            <p>Боец</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="squad-participants__link">
+                                    <a href="#">Показать всех</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="tab-content" id="content-2">
+                        <section class="squad-participants__list">
+                            <div class="container">
+                                <ul class="already_in_squad">
+                                    <li class="squad-participant">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant.png" alt="">
+                                            <h5 id="name_length">Михаил
+                                            </h5>
+                                            <p>Командир</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant2.png" alt="">
+                                            <h5 id="name_length2">Марина
+                                            </h5>
+                                            <p>Комиссар</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant3.png" alt="">
+                                            <h5 id="name_length3">Маргарита
+                                            </h5>
+                                            <p>Мастер</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant participant-dlt">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant4.png" alt="">
+                                            <h5 id="name_length4">Артём
+                                            </h5>
+                                            <p>Медик</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant participant-del ">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant5.png" alt="">
+                                            <h5 id="name_length5">Алёна
+                                            </h5>
+                                            <p>Флагоносец</p>
+                                        </div>
+                                    </li>
+                                    <li class="squad-participant participant-delete">
+                                        <div class="squad-participant_box">
+                                            <img src="/static/images/personal-page-squad/squad-participant6.png" alt="">
+                                            <h5 id="name_length6">Анна
+                                            </h5>
+                                            <p>Боец</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="squad-participants__link">
+                                    <a href="#">Показать всех</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </nav>
             </div>
             </div>
         </section>
-        <section class="squad-participants__list">
-            <div class="container">
-                <ul class="already_in_squad">
-                    <li class="squad-participant">
-                        <div class="squad-participant_box">
-                            <img src="/static/images/personal-page-squad/squad-participant.png" alt="">
-                            <h5 id="name_length">Андрей
-                            </h5>
-                            <p>Командир</p>
-                        </div>
-                    </li>
-                    <li class="squad-participant">
-                        <div class="squad-participant_box">
-                            <img src="/static/images/personal-page-squad/squad-participant2.png" alt="">
-                            <h5 id="name_length2">Мария
-                            </h5>
-                            <p>Комиссар</p>
-                        </div>
-                    </li>
-                    <li class="squad-participant">
-                        <div class="squad-participant_box">
-                            <img src="/static/images/personal-page-squad/squad-participant3.png" alt="">
-                            <h5 id="name_length3">Екатерина
-                            </h5>
-                            <p>Мастер</p>
-                        </div>
-                    </li>
-                    <li class="squad-participant participant-dlt">
-                        <div class="squad-participant_box">
-                            <img src="/static/images/personal-page-squad/squad-participant4.png" alt="">
-                            <h5 id="name_length4">Иван
-                            </h5>
-                            <p>Медик</p>
-                        </div>
-                    </li>
-                    <li class="squad-participant participant-del ">
-                        <div class="squad-participant_box">
-                            <img src="/static/images/personal-page-squad/squad-participant5.png" alt="">
-                            <h5 id="name_length5">Елена
-                            </h5>
-                            <p>Флагоносец</p>
-                        </div>
-                    </li>
-                    <li class="squad-participant participant-delete">
-                        <div class="squad-participant_box">
-                            <img src="/static/images/personal-page-squad/squad-participant6.png" alt="">
-                            <h5 id="name_length6">Анна
-                            </h5>
-                            <p>Боец</p>
-                        </div>
-                    </li>
-                </ul>
-                <div class="squad-participants__link">
-                    <a href="#">Показать всех</a>
-                </div>
-            </div>
-        </section>
-    </section>
-    <script src="/static/js/personal_page_squad.js"></script>
 
-    {% endblock %}
+        <script src="/static/js/personal_page_squad.js"></script>
+
+        {% endblock %}
