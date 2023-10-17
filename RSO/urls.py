@@ -36,6 +36,10 @@ urlpatterns = [
     path("profile/my_page/", lk_page, name='profile'),
     path("profile/my_page/verification", page, {'template': 'profile/my_page/verification.html'}, name='profile_verification'),
     path("profile/my_page/data_verification", page, {'template': 'profile/my_page/data_verification.html'}, name='profile_data_verification'),
+   
+    # ЛСО
+    path("personal_page_squad/personal_page_squad/", page,  {'template': 'personal_page_squad/personal_page_squad.html'}, name='personal_page_squad'),
+    path("personal_page_squad/personal_page_squad-wait-approval/", page,  {'template': 'personal_page_squad/personal_page_squad-wait-approval.html'}, name='personal_page_squad-wait-approval'),
 
     # Настройки профиля
     path("profile/profile_settings/my_page/", ProfilePageEditView.as_view(), name='profile_settings_my_page'),
@@ -50,6 +54,7 @@ urlpatterns = [
     path("404/", page, {'template': '404.html'}, name='page_not_found'),
     path("privacy_policy/", page, {'template': 'privacy_policy.html'}, name='privacy_policy'),
     path("terms_of_use/", page, {'template': 'terms_of_use.html'}, name='terms_of_use'),
+    path("faq/", page, {'template': 'faq.html'}, name='FAQ'),
 
     # Отряды
 
@@ -57,7 +62,9 @@ urlpatterns = [
     path("squads/creation_of_squad/", page, {'template': 'squads/creation_of_squad.html'}, name='creation_of_squad'),
 
     # Участники ЛСО
-    path("structure/detachments/participants_lso/", page, {'template': 'structure/detachments/participants_lso.html'}, name='participants_lso'),
+    path("structure/detachments/mtr_invar/participants_lso/", page, {'template': 'structure/detachments/mtr_invar/participants_lso.html'}, name='participants_lso'),
 
+    #Штабы
+    path("structure/headquarters/", page, {'template': 'structure/headquarters.html'}, name='headquarters'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

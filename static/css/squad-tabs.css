@@ -1,0 +1,213 @@
+/* Табы */
+section.squad-tabs {
+    margin-bottom: 40px;
+}
+
+section.squad-tabs .container {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+}
+
+.squad-participants__title {
+    color: #212121;
+    font-family: "Akrobat";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 40px;
+
+}
+
+
+
+.squad__navigation ul {
+    list-style: none;
+    display: flex;
+    /* display: grid; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(48px, 1fr));
+    /* grid-template-rows: 48px; */
+    column-gap: 10px;
+    row-gap: 10px;
+    /* justify-content: end; */
+    justify-items: center;
+    align-content: center;
+}
+
+
+.squad__navigation a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'BertSans';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+
+/* ****************************************************************************************** */
+.squad__navigation>input[type='radio'] {
+    display: none;
+}
+
+
+#tab-btn-1:checked~#content-1,
+#tab-btn-2:checked~#content-2 {
+    display: block;
+}
+
+.tab-content {
+    display: none;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.squad__navigation>label {
+    /*  */
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "BertSans";
+    color: #1F7CC0;
+    text-decoration: none;
+    /*  */
+    padding: 6px 24px;
+    cursor: pointer;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    border: 2px solid #1F7CC0;
+    border-radius: 30px;
+}
+
+.squad__navigation>input[type="radio"]:checked+label {
+    cursor: default;
+    color: #fff;
+    background-color: #1C5C94;
+    /*  */
+    border-radius: 30px;
+    border: 2px solid #1C5C94;
+
+}
+
+nav {
+    position: relative;
+}
+
+.tab-position {
+    position: absolute;
+    top: 1px;
+    right: 255px;
+    margin-right: 8px;
+}
+
+.position-tab {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+
+/* ****************************************************************************************** */
+
+@media(max-width: 1290px) {
+    section.squad-tabs {
+        margin: 0 20px 40px;
+    }
+
+    .squad__navigation ul {
+        list-style: none;
+    }
+
+
+}
+
+@media(max-width: 1024px) {
+
+    section.squad-tabs p,
+    section.squad-tabs li a,
+    section.squad-tabs a {
+        font-size: 18px
+    }
+}
+
+@media(max-width: 800px) {
+    .squad__navigation ul {
+        list-style: none;
+    }
+
+}
+
+@media(max-width: 630px) {
+    nav {
+        position: unset;
+    }
+
+    .tab-position {
+        position: unset;
+
+    }
+
+    .position-tab {
+        position: unset;
+
+    }
+}
+
+@media(max-width: 585px) {
+    .squad__navigation a {
+        padding: 10px;
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 580px) {
+    section.squad-tabs .container {
+        flex-direction: column;
+    }
+
+    .squad__navigation {
+        margin-top: 40px;
+    }
+}
+
+@media(max-width: 496px) {
+    .squad__navigation>label {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .tabs-position {
+        margin-right: 6px;
+    }
+}
+
+@media(max-width: 405px) {
+    .squad__navigation a {
+        padding: 6px;
+    }
+
+    section.squad-tabs p,
+    section.squad-tabs li a,
+    section.squad-tabs a {
+        font-size: 16px
+    }
+
+    .squad__navigation>label {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .tabs-position {
+        margin-right: 3px;
+    }
+}
+
+@media(max-width: 356px) {
+
+    section.squad-tabs p,
+    section.squad-tabs li a,
+    section.squad-tabs a {
+        font-size: 12px
+    }
+}

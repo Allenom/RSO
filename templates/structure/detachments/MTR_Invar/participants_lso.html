@@ -1,0 +1,153 @@
+{% extends 'layout/basic.html' %}
+{% load static %}
+{% block title %}Профиль{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/ps-title.css' %}">
+<link rel="stylesheet" href="{% static 'css/ps-nav.css' %}">
+<!-- базовые обнуления -->
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<!-- отступы -->
+<link rel="stylesheet" href="{% static 'css/indent.css' %}">
+<link rel="stylesheet" href="{% static 'css/ico-participants/lso-avatar-user.css' %}">
+<link rel="stylesheet" href="{% static 'css/ico-participants/participants-lso__list-avatar.css' %}">
+<title>Участини ЛСО</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-padding">
+   <!-- Настройки профиля Хлебные крошки-->
+   <section class="ps-nav ps-participants-nav">
+      <div class="container">
+         <!-- Хлебные крошки -->
+         <nav class="breadcrumbs-container">
+            <ul itemscope itemtype="#">
+               <li itemprop="itemListElement" itemscope itemtype="#">
+                  <a href="#" title="Структура" itemprop="item">
+                     <span itemprop="name">Структура</span>
+                     <meta itemprop="position" content="0">
+                  </a>
+               </li>
+
+               </li>
+               <div class="breadcrumbs-slesh">/</div>
+               <li itemprop="itemListElement" itemscope itemtype="#">
+                  <a href="#" title="Лсо" itemprop="item">
+                     <span class="title-lso" itemprop="name">Лсо</span>
+                     <meta itemprop="position" content="0">
+                  </a>
+               </li>
+               <div class="breadcrumbs-slesh">/</div>
+               <li itemprop="itemListElement" itemscope itemtype="#">
+                  <a href="#" title="Ссо «Инвар»" itemprop="item">
+                     <span itemprop="name"><span class="title-lso">Ссо</span> «Инвар»</span>
+                     <meta itemprop="position" content="0">
+                  </a>
+               </li>
+               <div class="breadcrumbs-slesh">/</div>
+               <li itemprop="itemListElement" itemscope itemtype="profile-settings-my-page.html">
+                  <a class="active" href="#" title=" Участники отряда" itemprop="item">
+                     <span itemprop="name"> Участники отряда</span>
+                     <meta itemprop="position" content="1">
+                  </a>
+            </ul>
+         </nav>
+      </div>
+   </section>
+   <!-- класс для article class="participants-lso"  -->
+   <article class="squadslso">
+      <div class="container">
+         <section class="squadslso__wrapper-block">
+            <h2>Участники ЛСО</h2>
+
+            <!-- /* меню таб */ -->
+            <nav class="squadslso-tabs">
+               <ul class="squadslso-nav-tab">
+                  <li class="squadslso-tabs__item" onclick="filterProduct('All')">Уже в отряде</li>
+                  <li class="squadslso-tabs__item" onclick="filterProduct('Conductors')">
+                     Ожидают одобрения
+                  </li>
+               </ul>
+            </nav>
+
+
+            <!-- /* форма инпута, поиска */ -->
+            <!-- <form class="participants-lso__form" action="" >
+            <fieldset>
+               <div class="participants-lso__form-loop">
+                  <button><img src="/static/images/img/participants_lso_img/Icon_loop.svg"></button>
+                  <label for="#"><input type="text" placeholder="Например, Иванов Иван"></label>
+               </div>
+            </fieldset>
+         </form> -->
+            <!-- поиск 2 -->
+            <div class="squadslso-search">
+               <input type="text" id="search" class="squadslso-search__input" placeholder="Например, Иванов Иван" />
+               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                     d="M18.511 19.0914L24 24.8M21 12.84C21 14.5884 20.5015 16.2975 19.5675 17.7512C18.6335 19.205 17.306 20.338 15.7528 21.0071C14.1997 21.6762 12.4906 21.8512 10.8417 21.5101C9.1929 21.169 7.67835 20.3271 6.4896 19.0908C5.30085 17.8545 4.4913 16.2794 4.16333 14.5646C3.83535 12.8498 4.00368 11.0724 4.64703 9.45708C5.29037 7.84178 6.37984 6.46116 7.77766 5.48981C9.17548 4.51846 10.8189 4 12.5 4C14.7544 4 16.9164 4.93135 18.5104 6.58918C20.1045 8.247 21 10.4955 21 12.84Z"
+                     stroke="#898989" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+               </svg>
+
+            </div>
+
+            <!-- кнопки переключения в блоковых картинок в список -->
+            <div class="squadslso-sort">
+               <div class="sort-layout">
+                  <button class="menu-btn-block" onclick="changeLayout(1)"></button>
+                  <button class="menu-btn-horisontallso" alt="" onclick="changeLayout(2)"></button>
+
+               </div>
+            
+               <!-- селекты -->
+               <div class="sort-filters">
+                  <div class="sort-select">
+                     <select class="sort-select__input sort-alph" name="select">
+                        <option value="" class="squad-sort__selected">
+                           Сортировать по
+                        </option>
+                        <option value="title" class="squad-sort__selected">
+                           По алфавиту: А-Я
+                        </option>
+                        <option value="createdAt" class="squad-sort__selected">Дате создания отряда</option>
+                        ртиро <option value="peoples" class="squad-sort__selected">Количеству участников</option>
+                     </select>
+                  </div>
+
+                  <select class="sort-order">
+                     <option></option>
+                     <option value="">Сортировать по</option>
+                     <option value="asc">Возрастанию</option>
+                     <option value="desc">Убыванию</option>
+                  </select>
+
+               </div>
+            </div>
+            <!-- блок фото блоком -->
+            <div id="squadslso-wrapper" class="squadslso__avatar-ul">
+
+            </div>
+            <!-- блок фото в список -->
+            <div id="horizontallso" class="horizontallso-item">
+          
+            </div>
+
+
+            <button class="show-squadslso" id="more" onclick="showMore()">Показать еще</button>
+            <button class="hide-squadslso" id="less" onclick="showLess()">Свернуть все</button>
+         </section>
+      </div>
+   </article>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+   integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="/static/js/participants_lso/participants_lso.js"></script>
+<script src="/static/js/participants_lso/participants_lso-approvals.js"></script>
+{% endblock %}
