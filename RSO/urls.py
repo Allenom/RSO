@@ -59,10 +59,13 @@ urlpatterns = [
     # Отряды
 
     path("squads/squads/", page, {'template': 'squads/squads.html'}, name='squads'),
-    path("squads/creation_of_squad/", page, {'template': 'squads/creation_of_squad.html'}, name='creation_of_squad'),
 
     # Участники ЛСО
     path("structure/detachments/mtr_invar/participants_lso/", page, {'template': 'structure/detachments/mtr_invar/participants_lso.html'}, name='participants_lso'),
+
+    # Структура / ЛСО
+    path("structure/detachments/creation_of_detachment/", page, {'template': 'structure/detachments/creation_of_detachment.html'}, name='creation_of_detachment'),
+    path("structure/detachments/1/editing_detachment/", page, {'template': 'structure/detachments/1/editing_detachment.html'}, name='editing_detachment'),
 
     #Штабы
     path("structure/headquarters/", page, {'template': 'structure/headquarters.html'}, name='headquarters'),
