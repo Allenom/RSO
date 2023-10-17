@@ -63,5 +63,7 @@ urlpatterns = [
     # Участники ЛСО
     path("structure/detachments/mtr_invar/participants_lso/", page, {'template': 'structure/detachments/mtr_invar/participants_lso.html'}, name='participants_lso'),
 
+    #Штабы
+    path("structure/headquarters/", page, {'template': 'structure/headquarters.html'}, name='headquarters'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
