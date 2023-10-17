@@ -43,12 +43,14 @@ a {
 
 
 }
-.profile-settings-privacy{
-margin-bottom:80px;
+
+.profile-settings-privacy {
+   margin-bottom: 80px;
 }
+
 .profile-settings__drop-down-list {
    max-width: 600px;
-/*   min-height: 364px;*/
+   /*   min-height: 364px;*/
    border-radius: 10px;
    border: 1px solid #DEE2E5;
    background: #FFF;
@@ -64,8 +66,9 @@ margin-bottom:80px;
    height: 32px;
    margin-bottom: 28px;
 }
-.profile-settings__button{
-padding-top:12px;
+
+.profile-settings__button {
+   padding-top: 12px;
 }
 
 .profile-settings__title {
@@ -105,9 +108,9 @@ select {
    /* 0.35em указывает высоту */
 }
 
-option{
+option {
    color: #35383F;
-   font-family: 'BertSans',sans-serif;
+   font-family: 'BertSans', sans-serif;
    font-size: 16px;
    font-style: normal;
    font-weight: 500;
@@ -135,11 +138,11 @@ option{
 
 .profile-settings__link {
    color: #FFF;
-font-family: 'BertSans',sans-serif;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 20px;
+   font-family: 'BertSans', sans-serif;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 20px;
 }
 
 .profile-settings__button {
@@ -149,14 +152,14 @@ line-height: 20px;
 
 @media screen and (max-width: 1030px) {
    .profile-settings__drop-down-list {
-margin:0 66px;
+      margin: 0 66px;
    }
 
 }
 
 @media screen and (max-width: 768px) {
    .profile-settings__drop-down-list {
-   margin:0 34px;
+      margin: 0 34px;
       max-width: 700px;
    }
 
@@ -165,7 +168,7 @@ margin:0 66px;
 @media screen and (max-width: 625px) {
    .profile-settings__drop-down-list {
       text-align: center;
-       margin:0 66px;
+      margin: 0 66px;
    }
 
    .profile-settings__select-wrapper {
@@ -174,10 +177,12 @@ margin:0 66px;
       padding-bottom: 28px;
       text-align: center;
    }
-.profile-settings__select-wrapper:last-child {
-   margin-bottom: 0px;
 
-}
+   .profile-settings__select-wrapper:last-child {
+      margin-bottom: 0px;
+
+   }
+
    .profile-settings__title {
       padding-bottom: 12px;
    }
@@ -193,9 +198,11 @@ margin:0 66px;
    }
 
 }
+
 @media screen and (max-width: 594px) {
    .profile-settings__drop-down-list {
-   margin:0 34px;
+      margin: 0 34px;
+   }
 }
 
 @media screen and (max-width: 500px) {
@@ -211,27 +218,32 @@ margin:0 66px;
       width: 91%;
    }
 }
+
 @media screen and (max-width: 408px) {
 
    select {
       width: 89%;
    }
 }
+
 @media screen and (max-width: 354px) {
 
    select {
       width: 88%;
    }
-   .profile-settings__title{
-font-size: 16px;
+
+   .profile-settings__title {
+      font-size: 16px;
    }
 }
+
 @media screen and (max-width: 332px) {
 
    select {
       width: 86%;
    }
 }
+
 @media screen and (max-width: 293px) {
 
    select {

@@ -13,7 +13,9 @@ section.ps-title {
     color: #35383F;
     
  }
-
+.title-lso{
+ text-transform: uppercase;
+}
  /* Проверка адаптивности потом переписать */
 @media(max-width:1290px) {
     section.ps-title {
