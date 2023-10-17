@@ -1,0 +1,644 @@
+/*СТРАНИЦА - Создание ЛСО*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.is-visible {
+    display: block;
+}
+
+.no-visible {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+/* .visually-hidden {
+    position: absolute;
+  
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+  
+    white-space: nowrap;
+  
+    border: 0;
+  
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+  } */
+
+.container-creation-of-squad {
+    margin: 0 auto;
+    padding: 0 130px;
+    max-width: 1440px;
+    width: 100%;
+    background-color: #ffffff;/*переменная??*/
+
+    @media(max-width:1440px) {
+        padding: 0 66px;
+        max-width: 1312px;
+    }
+
+    @media(max-width: 1024px) {
+        padding: 0 34px;
+        max-width: 960px;
+    }
+ 
+    @media(max-width: 768px) {
+        padding: 0 16px;
+        max-width: 732px;
+    }
+
+    @media(max-width: 360px) {
+        padding: 0 16px;
+    }
+}
+
+/* Хлебные_крошки */
+section.creation-of-squad-nav {
+    padding-top: 50px;
+    margin-bottom: 20px;
+ }
+ 
+ .breadcrumbs-container ul {
+    display: flex;
+    list-style: none;
+    align-items: baseline;
+ }
+ 
+ .breadcrumbs-slesh {
+    margin: 0 4px;
+ }
+ 
+ .breadcrumbs-container a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    /* хлебные_крошки */
+    font-family: 'Akrobat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #35383F;
+ }
+ 
+ .breadcrumbs-container a.active {
+    display: block;
+    text-decoration: none;
+   /* хлебные_крошки */
+    font-family: 'Akrobat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #1F7CC0;
+ }
+
+ /* @media(max-width: 1290px) {
+   section.creation-of-squad-nav {
+        margin: 0 20px 40px;
+    } */
+/* } */
+
+/* Заголовок H1*/
+section.creation-of-squad-title {
+    margin-bottom: 25px;
+}
+ 
+section.creation-of-squad-title h1 {
+    font-family: 'Akrobat';
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #35383F;
+    
+}
+
+ /* Проверка адаптивности*/
+/* @media(max-width:1290px) {
+    section.creation-of-squad-title {
+       margin: 0 20px 40px;
+    }
+    section.creation-of-squad-title h1 {
+       font-size: 40px;
+       font-weight: 600;
+    }
+ }
+
+ @media(max-width: 360px) {
+    section.creation-of-squad-title  {
+      display: none;
+    }
+} */
+
+/*Форма создания ЛСО*/
+section.create-of-squad-form {
+    font-family: 'BertSans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    font-style: normal;
+    color: #35383F;
+}
+
+.valid-red {
+    margin: 0 0 0 4px;
+}
+
+.form-field__footnote {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    color: #939393;
+}
+
+.accordion-button {
+    padding: 16px 16px 16px 0;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.data-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field input {
+    margin-bottom: 0;
+    padding: 8px 44px 8px 20px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 21px;
+    color: #898989;
+    border: 1px solid #b6b6b6;
+}
+
+.form-field label,
+.form-field p {
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 600;
+    color: #35383F;
+}
+
+.form-field select {
+    margin-bottom: 0;
+    padding: 8px 54px 8px 20px;
+    font-weight: 400;
+    border: 1px solid #b6b6b6;
+    background-image: url("../images/icons/angel-down-form.svg");
+    background-repeat: no-repeat;
+    background-position: right 19px center;
+    appearance: none;
+}
+
+.form-field select.is-open {
+    background-image: url("../images/icons/angel-up-form.svg");
+}
+
+.select-big {
+    box-sizing: border-box;
+    width: 100%;
+    text-indent: 0;
+}
+
+.form-field--direction select {
+    border-radius: 10px;
+    min-height: 40px;
+    outline: none;
+    /* font-family: "BertSans"; */
+    /* font-size: 16px; */
+    color: #898989;
+    /* margin-bottom: 20px; */
+}
+
+.form-field__box {
+    position: relative;
+}
+
+.clear-button {
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    background-image: url("../images/icons/closed-btn.svg");
+}
+
+.add-button {
+    width: 178px;
+    font-family: 'BertSans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #35383f;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.selectize-input div.active {
+    color: #898989;
+
+    @media (max-width: 1024px) {
+        color: #898989;        
+    }
+}
+
+.about-squad {
+    border: 1px solid #b6b6b6;
+    margin-top: 8px;
+    padding: 12px 20px;
+    min-height: 101px;
+    outline: none;
+    overflow: hidden;
+    
+    text-align: left;
+    resize: none;
+    border-radius: 10px;
+    background: #FFF;
+}
+
+/*-----------------------------------------------------------------------*/
+/*СТИЛИ ДЛЯ ПОЛЕЙ СЕЛЕКТА С ПОИСКОМ*/
+
+/*стили поля селект*/
+.selectize-control.single .selectize-input.not-full,
+.selectize-control.single .selectize-input.full {
+    padding: 8px 84px 8px 20px;
+    font-size: 16px;
+    line-height: 21px;
+    color: #b6b6b6;
+    background-image: none;
+    background-color: #ffffff;
+    border: 1px solid #b6b6b6;
+    border-radius: 10px;
+    z-index: 11;
+}
+
+.squad-leader-search .selectize-control.single .selectize-input.not-full,
+.squad-leader-search .selectize-control.single .selectize-input.full {
+    display: flex;
+    padding-left: 54px;
+    /* padding: 4px 84px 4px 54px;
+    min-height: 40px; */
+}
+
+.selectize-control.single .selectize-input.full {
+    color: #898989;
+}
+
+.squad-leader-search .selectize-control.single .selectize-input::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    top: calc(50% - 12px);
+    left: 20px;
+    background-image: url("../images/icons/search-light.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*стили стрелки*/
+.selectize-control.single .selectize-input.not-full::after,
+.selectize-control.single .selectize-input.full::after,
+.selectize-control.single .selectize-input.dropdown-active::after,
+.selectize-control.single .selectize-input.dropdown-active:focus::after {
+    border: none;
+}
+
+.selectize-control.single .selectize-input.not-full::after,
+.selectize-control.single .selectize-input.full::after {
+    content: "";
+    top: calc(50% - 12px);
+    right: 20px;
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/icons/angel-down-form.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.selectize-control.single .selectize-input.dropdown-active::after {
+    background-image: url("../images/icons/angel-up-form.svg");
+}
+
+/*стили выпадающего блока с вариантами для выбора*/
+.selectize-dropdown.single {
+    position: relative;
+    margin-top: -50px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    line-height: 21px;
+    color: #35383F;
+    /* margin-top: -20px;
+    padding-top: 20px; */
+    border: 1px solid #b6b6b6;
+    border-top: none;
+    box-shadow: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.selectize-dropdown-content {
+    padding: 0 20px 20px;
+    display: grid;
+    row-gap: 12px;
+}
+
+.squad-leader-search .selectize-dropdown-content .option {
+    background-color: #ffffff;
+    border: 1px solid #b6b6b6;
+    border-radius: 10px;
+}
+
+/* .selectize-dropdown-content .option.selected {
+    display: none;
+}  */
+
+/*стили кнопки очистки поля*/
+.selectize-control.plugin-clear_button.single .clear {
+    width: 24px;
+    height: 24px;
+    top: 20px;
+    z-index: 12;
+    right: 50px;
+    opacity: 1;
+}
+
+.selectize-control.plugin-clear_button .clear::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    z-index: 13;
+    background-color: #ffffff;
+    background-image: url("../images/icons/closed-btn.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+/*-------------------------------------------------------------------*/
+
+/*Блок поиска командира отряда*/
+
+.squad-leader-item {
+    /* text-align: start; */
+    color: #35383f;
+    font-family: 'BertSans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    font-style: normal;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    width: calc(100% - 5px);
+}
+
+.squad-leader-item img {
+    width: 38px;
+    height: 38px;
+    margin-right: 11px;
+}
+
+img.squad-leader-item--logo {
+    position: absolute;
+    left: 47px;
+    bottom: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.leader-date {
+    margin-left: auto;
+    position: relative;
+    color: #1c5c94;
+    text-align: right;
+}
+
+.leader-date::before {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 16px;
+    top: calc(50% - 8px);
+    left: -8px;
+    background-color: #b6b6b6;
+}
+
+.personal-data-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 20px;
+}
+
+.date {
+    width: 95px;
+    text-align: center;
+}
+
+/*Блок добавления лого и баннера отряда*/
+
+.logo-add__box {
+    width: 144px;
+    height: 144px;
+}
+
+.logo-add__img,
+.logo-add__img .load-img {
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #C7E3FA;
+}
+
+.banner-add__img,
+.banner-add__box,
+.banner-add__img, .load-img {
+    width: 100%;
+    height: 144px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.logo-add__box,
+.banner-add__box {
+    position: relative;
+}
+
+.form-field.logo-add .logo-add__label,
+.form-field.banner-add .banner-add__label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.banner-add__box .banner-add__label {
+    border-radius: 10px;
+}
+
+.logo-add__img img,
+.banner-add__img img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/*----------------------------------------------------------------*/
+/*стили для кнопок редактирования и удаления фото*/
+.logo-add__edit-group,
+.banner-add__edit-group {
+    display: none;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url("../images/icons/pen-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.banner-add__edit-group {
+    bottom: 8px;
+    right: 8px;
+}
+
+.logo-add__input.file-selected .logo-add__edit-group,
+.banner-add__input.file-selected .banner-add__edit-group {
+    display: block;
+}
+
+.logo-add__input.file-selected .logo-add__label,
+.banner-add__input.file-selected .banner-add__label {
+    display: none;
+}
+
+.logo-add__box:hover .file-selected .logo-add__edit-group,
+.banner-add__box:hover .file-selected .banner-add__edit-group { 
+/* .file-selected .logo-add__edit-group.is-active { */
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+    width: 127px;
+    height: 58px;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-image: none;
+    background-color: #ffffff;
+}
+
+.file-selected .logo-add__label-edit,
+.file-selected .logo-add__button-clear,
+.file-selected .banner-add__label-edit,
+.file-selected .banner-add__button-clear {
+    display: none;
+    margin: 0;
+    padding: 0 8px 0 32px;
+    width: 119px;
+    height: 24px;
+    border-radius: 6px;
+    text-align: start;
+    color: #1f7cc0;
+    font-family: 'Akrobat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    font-style: normal;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: 4px;
+    cursor: pointer;
+}
+
+.logo-add__button-clear,
+.banner-add__button-clear {
+    background-image: url("/static/images/icons/basket.svg");
+}
+
+.logo-add__label-edit,
+.banner-add__label-edit {
+    background-image: url("/static/images/icons/edit_duotone_line.svg");
+}
+
+.logo-add__label-edit:hover,
+.logo-add__button-clear:hover,
+.banner-add__label-edit:hover,
+.banner-add__button-clear:hover {
+    background-color: #e2eff7;
+} 
+
+.logo-add__box:hover .file-selected .logo-add__label-edit,
+.logo-add__box:hover .file-selected .logo-add__button-clear,
+.banner-add__box:hover .file-selected .banner-add__label-edit,
+.banner-add__box:hover .file-selected .banner-add__button-clear {
+/* .file-selected .logo-add__label-edit.is-active-button,
+.file-selected .logo-add__button-clear.is-active-button { */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/*--------------------------------------------------------------------------------------*/
+/*Кнопка Создать*/
+
+.create-button-box {
+    margin: 40px 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-create-lso {
+    margin: 0;
+}
+
+/*---------------------------------------------------------------------*/
+
+label.error {
+    color: red;
+}
