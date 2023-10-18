@@ -1,12 +1,12 @@
 
 /* выравниваем по центру контейнера */
-.squadslso {
+.eventlso {
   padding: 0px 0px 80px 0px;
 }
 
 /* подложка */
-#squadslso-wrapper,
-#horizontallso {
+#eventlso-wrapper,
+#eventlso-horizontallso {
   margin: 40px 0 60px;
   border-radius: 10px;
   background: #FFF;
@@ -15,7 +15,7 @@
 }
 
 /* заголовок */
-.squadslso__wrapper-block h2 {
+.eventlso__wrapper-block h2 {
   color: #000;
   font-family: 'Akrobat', sans-serif;
   font-size: 52px;
@@ -23,7 +23,7 @@
 }
 
 
-.squadslso-tabs {
+.eventlso-tabs {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: start;
@@ -32,7 +32,7 @@
   margin: 40px 0;
 }
 
-.squadslso-tabs li {
+.eventlso-tabs li {
   text-align: center;
   font-family: 'BertSans', sans-serif;
   font-size: 20px;
@@ -51,27 +51,34 @@
 }
 
 /* поведение табов */
-li:hover,
-li:focus,
-li:active {
+
+.eventlso-tabs__item:hover
+{
   border-radius: 30px;
   background: #1C5C94;
   color: #FFF;
 }
+.eventlso-tabs__item::after {
+  content: "";
 
-.squadslso-tabs li:last-child {
+  border-radius: 30px;
+  background: #1C5C94;
+  color: #FFF;
+ 
+}
+.eventlso-tabs li:last-child {
   margin-right: 0;
 }
 
 /* поиск */
-.squadslso-search {
+.eventlso-search {
   position: relative;
   box-sizing: border-box;
 
 
 }
 
-.squadslso-search input {
+.eventlso-search input {
   color: #35383F;
   font-family: 'BertSans', sans-serif;
   font-size: 24px;
@@ -79,13 +86,13 @@ li:active {
   height: 52px;
 }
 
-.sort-select {
+.eventlso-select {
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-.sort-select__input {
+.eventlso-select__input {
   border: 2px solid #a3a3a3;
   border-radius: 10px;
   display: block;
@@ -94,26 +101,26 @@ li:active {
   margin-right: 8px;
 }
 
-.squadslso-search svg {
+.eventlso-search svg {
   position: absolute;
   top: 9px;
   left: 16px;
 }
 
-.squadslso-search__input {
+.eventlso-search__input {
   width: 100%;
-  padding: 12px 0px 12px 60px;
+  padding: 12px 0 12px 60px;
   border-radius: 10px;
   border: 1px solid black;
 }
 
-.squad-sort__selected {
+.eventlso-sort__selected {
   font-size: 16px;
   font-family: 'BertSans', sans-serif;
 }
 
 h4,
-.squadslso-search__input::placeholder {
+.eventlso-search__input::placeholder {
   color: #898989;
   font-family: 'Akrobat', sans-serif;
   font-size: 24px;
@@ -121,12 +128,12 @@ h4,
 }
 
 
-.sort-filters {
+.eventlso-filters {
   display: flex;
 }
 
 
-.sort-alph {
+.eventlso-alph {
   width: 218px;
   max-height: 32px;
 
@@ -145,7 +152,7 @@ h4,
   font-weight: 500;
 }
 
-#squadslso-wrapper {
+#eventlso-wrapper {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-column-gap: 20px;
@@ -157,7 +164,7 @@ h4,
 
 
 /* картинка селект со стрелкой */
-.sort-order {
+.eventlso-order {
   border: none;
   height: 32px;
   width: 32px;
@@ -168,7 +175,7 @@ h4,
 
 }
 
-.sort-order option {
+.eventlso-order option {
   max-width: 150px;
   color: #35383F;
   font-family: 'BertSans', sans-serif;
@@ -178,22 +185,22 @@ h4,
 }
 
 /* линия блока с кнопками и селект */
-.squadslso-sort {
+.eventlso-sort {
   display: flex;
   justify-content: space-between;
   margin: 60px 0px 0px 0px;
 }
 
 /* кнопки переключения блоков */
-.sort-layout {
+.eventlso-layout {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: start;
   grid-column-gap: 8px;
 }
 
-.menu-btn-block,
-.menu-btn-horisontallso {
+.eventlso-btn-block,
+.eventlso-btn-horisontallso {
   background-repeat: no-repeat;
   width: 32px;
   height: 32px;
@@ -201,22 +208,22 @@ h4,
   border-radius: 0px;
 }
 
-.menu-btn-block {
+.eventlso-btn-block {
   background-image: url('/static/images/img/participants_lso_img/darhboard.svg');
 }
 
 
 
-.menu-btn-horisontallso {
+.eventlso-btn-horisontallso {
   background-image: url('/static/images/img/participants_lso_img/menu.svg');
 }
 /* заменна картинок кнопок */
-.active-change {
+.active-change-eventlso {
   background-image: url('/static/images/img/participants_lso_img/darhboard-white.png');
 
 }
 
-.active-change__menu {
+.active-change__menu-eventlso {
   background-image: url('/static/images/img/participants_lso_img/menu-black.png');
 
 }
@@ -227,7 +234,7 @@ h4,
 
 
 /* при загрузке картинка будет подстраиваться под блок */
-.squadslso__avatar-ul img {
+.eventlso__avatar-ul img {
   max-width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -236,7 +243,7 @@ h4,
 }
 
 /* фотография пользователя */
-.round-img {
+.eventlso-round-img {
   width: 120px;
   height: 120px;
   display: block;
@@ -254,24 +261,24 @@ h4,
 
 /* ссылка на пользователя ховер */
 /* ширина блока с фото */
-.squadslso-wrapper__item {
-  height: 230px;
+.eventlso-wrapper__item {
+
   width: 100%;
 
   position: relative;
 
 }
 
-.squadslso__avatar-hover-a {
-  width: 100%;
+.eventlso__avatar-hover-a {
   margin: 0 auto;
   align-items: center;
+  height: 230px;
 }
 
 /* появлния ссылки перейти в профиль */
 /* картинка перейти в профиль  */
 
-.squadslso__avatar-hover-a span {
+.eventlso__avatar-hover-a span {
   max-width: 149px;
   width: 100%;
   max-height: 21px;
@@ -287,12 +294,12 @@ h4,
 
   position: absolute;
   top: -30px;
-  left: -8px;
+  left: -5px;
 
   display: none;
 }
 
-.squadslso__avatar-hover-a span::after {
+.eventlso__avatar-hover-a span::after {
   content: "";
   width: 24px;
   height: 17px;
@@ -306,17 +313,17 @@ h4,
 }
 
 /* при наведении появляется ссылка */
-.squadslso__avatar-hover-a:hover span {
+.eventlso__avatar-hover-a:hover span {
   display: block;
 }
 
 /* приближение элемента при наведении */
-.squadslso-wrapper__item:hover {
+.eventlso-wrapper__item:hover {
   transform: scale(1.2)
 }
 
 /* текст имени */
-.squadslso-wrapper__item-category {
+.eventlso-wrapper__item-category {
   color: #35383F;
   text-align: center;
   font-family: 'BertSans', sans-serif;
@@ -328,7 +335,7 @@ h4,
 
 
 /* текст должности */
-.squadslso-wrapper__item-title {
+.eventlso-wrapper__item-title {
   color: #676767;
   font-family: 'BertSans', sans-serif;
   font-size: 16px;
@@ -343,8 +350,8 @@ h4,
 /* кнопка переключение показать еще,  свернуть */
 /* при нажатии появляется список участников */
 /* кнопка показать еще */
-.hide-squadslso,
-.show-squadslso {
+.hide-eventlso,
+.show-eventlso {
   font-weight: 600;
   font-family: 'BertSans', sans-serif;
   font-size: 16px;
@@ -358,12 +365,12 @@ h4,
   cursor: pointer;
 
 }
-.show-squadslso {
+.show-eventlso {
   display: block;
 
 }
 
-.hide-squadslso {
+.hide-eventlso {
   display: none;
 
 }

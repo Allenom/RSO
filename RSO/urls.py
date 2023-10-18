@@ -34,8 +34,7 @@ urlpatterns = [
     # Профиль
     path('', redirect_to_lk_page),
     path("profile/my_page/", lk_page, name='profile'),
-    path("profile/my_page/verification", page, {'template': 'profile/my_page/verification.html'}, name='profile_verification'),
-    path("profile/my_page/data_verification", page, {'template': 'profile/my_page/data_verification.html'}, name='profile_data_verification'),
+
    
     # ЛСО
     path("personal_page_squad/personal_page_squad/", page,  {'template': 'personal_page_squad/personal_page_squad.html'}, name='personal_page_squad'),
@@ -63,5 +62,7 @@ urlpatterns = [
     # Участники ЛСО
     path("structure/detachments/mtr_invar/participants_lso/", page, {'template': 'structure/detachments/mtr_invar/participants_lso.html'}, name='participants_lso'),
 
+    # Участники мероприятия
+    path("events/1/event_participants/", page, {'template': 'events/1/event_participants.html'}, name='event_participants'),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

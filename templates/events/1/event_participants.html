@@ -2,29 +2,28 @@
 {% load static %}
 {% block title %}Профиль{% endblock %}
 {% block head %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="{% static 'css/ps-title.css' %}">
 <link rel="stylesheet" href="{% static 'css/ps-nav.css' %}">
 <!-- базовые обнуления -->
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
-<!-- отступы, Sticky Footer  -->
+<!-- отступы, Sticky Footer-->
 <link rel="stylesheet" href="{% static 'css/indent.css' %}">
-<link rel="stylesheet" href="{% static 'css/lco-participants/lso-avatar-user.css' %}">
-<link rel="stylesheet" href="{% static 'css/lco-participants/participants-lso__list-avatar.css' %}">
+<link rel="stylesheet" href="{% static 'css/event-participants/event-avatar-user.css' %}">
+<link rel="stylesheet" href="{% static 'css/event-participants/event__list-avatar.css' %}">
 <title>Участини ЛСО</title>
 {% endblock %}
 
 {% block content %}
 <div class="container-padding">
    <!-- Настройки профиля Хлебные крошки-->
-   <section class="ps-participants-nav">
+   <section class="ps-event-nav">
       <div class="container">
          <!-- Хлебные крошки -->
-         <nav class="breadcrumbs-container">
+         <nav class="breadcrumbs-container ps-event-nav-ul">
             <ul itemscope itemtype="#">
                <li itemprop="itemListElement" itemscope itemtype="#">
-                  <a href="#" title="Структура" itemprop="item">
-                     <span itemprop="name">Структура</span>
+                  <a href="#" title="Мероприятия" itemprop="item">
+                     <span itemprop="name">Мероприятия</span>
                      <meta itemprop="position" content="0">
                   </a>
                </li>
@@ -32,44 +31,38 @@
                </li>
                <div class="breadcrumbs-slesh">/</div>
                <li itemprop="itemListElement" itemscope itemtype="#">
-                  <a href="#" title="Лсо" itemprop="item">
-                     <span class="title-lso" itemprop="name">Лсо</span>
+                  <a href="#" title="Всероссийский конкурс фотографий среди студенческих отрядов" itemprop="item">
+                     <span itemprop="name">Всероссийский конкурс фотографий среди студенческих отрядов</span>
                      <meta itemprop="position" content="0">
                   </a>
                </li>
                <div class="breadcrumbs-slesh">/</div>
                <li itemprop="itemListElement" itemscope itemtype="#">
-                  <a href="#" title="Ссо «Инвар»" itemprop="item">
-                     <span itemprop="name"><span class="title-lso">Ссо</span> «Инвар»</span>
+                  <a class="active" href="#" title="Участники мероприятия" itemprop="item">
+                     <span itemprop="name">Участники мероприятия</span>
                      <meta itemprop="position" content="0">
                   </a>
                </li>
-               <div class="breadcrumbs-slesh">/</div>
-               <li itemprop="itemListElement" itemscope itemtype="profile-settings-my-page.html">
-                  <a class="active" href="#" title=" Участники отряда" itemprop="item">
-                     <span itemprop="name"> Участники отряда</span>
-                     <meta itemprop="position" content="1">
-                  </a>
             </ul>
          </nav>
       </div>
    </section>
-   <!-- класс для article class="participants-lso"  -->
-   <article class="squadslso">
+   <article class="eventlso">
       <div class="container">
-         <section class="squadslso__wrapper-block">
-            <h2>Участники ЛСО</h2>
+         <section class="eventlso__wrapper-block">
+            <h2>Участники мероприятия</h2>
 
             <!-- /* меню таб */ -->
-            <nav class="squadslso-tabs">
-               <ul class="squadslso-nav-tab">
-                  <li class="squadslso-tabs__item" onclick="filterProduct('All')">Уже в отряде</li>
-                  <li class="squadslso-tabs__item" onclick="filterProduct('Conductors')">
+            <nav class="eventlso-tabs">
+               <ul class="eventlso-nav-tab">
+                  <li class="eventlso-tabs__item" onclick="filterProduct('All')">Уже идут</li>
+                  <li  class="eventlso-tabs__item" onclick="filterProduct('Conductors')">
                      Ожидают одобрения
                   </li>
                </ul>
             </nav>
-
+    
+   
 
             <!-- /* форма инпута, поиска */ -->
             <!-- <form class="participants-lso__form" action="" >
@@ -81,8 +74,8 @@
             </fieldset>
          </form> -->
             <!-- поиск 2 -->
-            <div class="squadslso-search">
-               <input type="text" id="search" class="squadslso-search__input" placeholder="Например, Иванов Иван" />
+            <div class="eventlso-search">
+               <input type="text" id="search" class="eventlso-search__input" placeholder="Например, Иванов Иван" />
                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                      d="M18.511 19.0914L24 24.8M21 12.84C21 14.5884 20.5015 16.2975 19.5675 17.7512C18.6335 19.205 17.306 20.338 15.7528 21.0071C14.1997 21.6762 12.4906 21.8512 10.8417 21.5101C9.1929 21.169 7.67835 20.3271 6.4896 19.0908C5.30085 17.8545 4.4913 16.2794 4.16333 14.5646C3.83535 12.8498 4.00368 11.0724 4.64703 9.45708C5.29037 7.84178 6.37984 6.46116 7.77766 5.48981C9.17548 4.51846 10.8189 4 12.5 4C14.7544 4 16.9164 4.93135 18.5104 6.58918C20.1045 8.247 21 10.4955 21 12.84Z"
@@ -92,29 +85,29 @@
             </div>
 
             <!-- кнопки переключения в блоковых картинок в список -->
-            <div class="squadslso-sort">
-               <div class="sort-layout">
-                  <button class="menu-btn-block" onclick="changeLayout(1)"></button>
-                  <button class="menu-btn-horisontallso" alt="" onclick="changeLayout(2)"></button>
+            <div class="eventlso-sort">
+               <div class="eventlso-layout">
+                  <button class="eventlso-btn-block" onclick="changeLayout(1)"></button>
+                  <button class="eventlso-btn-horisontallso" alt="" onclick="changeLayout(2)"></button>
 
                </div>
-            
+
                <!-- селекты -->
-               <div class="sort-filters">
-                  <div class="sort-select">
-                     <select class="sort-select__input sort-alph" name="select">
-                        <option value="" class="squad-sort__selected">
+               <div class="eventlso-filters">
+                  <div class="eventlso-select">
+                     <select class="eventlso-select__input eventlso-alph" name="select">
+                        <option value="" class="eventlso-sort__selected">
                            Сортировать по
                         </option>
-                        <option value="title" class="squad-sort__selected">
+                        <option value="title" class="eventlso-sort__selected">
                            По алфавиту: А-Я
                         </option>
-                        <option value="createdAt" class="squad-sort__selected">Дате создания отряда</option>
-                        ртиро <option value="peoples" class="squad-sort__selected">Количеству участников</option>
+                        <option value="createdAt" class="eventlso-sort__selected">Дате создания отряда</option>
+                        ртиро <option value="peoples" class="eventlso-sort__selected">Количеству участников</option>
                      </select>
                   </div>
 
-                  <select class="sort-order">
+                  <select class="eventlso-order">
                      <option></option>
                      <option value="">Сортировать по</option>
                      <option value="asc">Возрастанию</option>
@@ -124,17 +117,19 @@
                </div>
             </div>
             <!-- блок фото блоком -->
-            <div id="squadslso-wrapper" class="squadslso__avatar-ul">
+            <div id="eventlso-wrapper" class="eventlso__avatar-ul">
 
             </div>
             <!-- блок фото в список -->
-            <div id="horizontallso" class="horizontallso-item">
-          
+            <div id="eventlso-horizontallso" class="eventlso-horizontallso-item">
+
             </div>
 
 
-            <button class="show-squadslso" id="more" onclick="showMore()">Показать еще</button>
-            <button class="hide-squadslso" id="less" onclick="showLess()">Свернуть все</button>
+
+
+            <button class="show-eventlso" id="more-eventlso" onclick="showMoreEventlso()">Показать еще</button>
+            <button class="hide-eventlso" id="less-eventlso" onclick="showLessEventlso()">Свернуть все</button>
          </section>
       </div>
    </article>
@@ -149,6 +144,6 @@
    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script src="/static/js/participants_lso/participants_lso.js"></script>
-<script src="/static/js/participants_lso/participants_lso-approvals.js"></script>
+<script src="/static/js/event_lso/event_lso-approvals.js"></script>
+<script src="/static/js/event_lso/event_lso.js"></script>
 {% endblock %}
