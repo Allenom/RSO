@@ -1,0 +1,362 @@
+{% extends 'layout/basic.html' %}
+{% load static %}
+
+{% block title %}Создание ЛСО{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+  integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<!--Стили для селекта с поиском-->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.default.min.css"
+  integrity="sha512-pTaEn+6gF1IeWv3W1+7X7eM60TFu/agjgoHmYhAfLEU8Phuf6JKiiE8YmsNC0aCgQv4192s4Vai8YZ6VNM6vyQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<link rel="stylesheet" href="{% static 'css/accardions.css' %}" />
+<link rel="stylesheet" href="{% static 'css/accordions-media.css' %}" />
+<link rel="stylesheet" href="{% static 'css/forms.css' %}" />
+<link rel="stylesheet" href="{% static 'css/creation-of-squad.css' %}">
+
+
+<!--Стили добавить если нужно-->
+{% endblock %}
+
+{% block content %}
+<div class="container-creation-of-squad">
+  <section class="creation-of-squad-nav">
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs-container">
+        <ul itemscope itemtype="#">
+          <li itemprop="itemListElement" itemscope itemtype="#">
+              <a href="/" title="Структура" itemprop="item">
+                  <span itemprop="name">Структура</span>
+                  <meta itemprop="position" content="0">
+              </a>
+          </li>
+          <div class="breadcrumbs-slesh">/</div>
+          <li itemprop="itemListElement" itemscope itemtype="#">
+              <a href="/" title="ЛСО" itemprop="item">
+                  <span itemprop="name">ЛСО</span>
+                  <meta itemprop="position" content="1">
+              </a>
+          </li>
+          <div class="breadcrumbs-slesh">/</div>
+          <li itemprop="itemListElement" itemscope itemtype="creation_of_squad.html">
+            <a class="active" title="Создание ЛСО" itemprop="item">
+              <span itemprop="name">Создание ЛСО</span>
+              <meta itemprop="position" content="2">
+            </a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+
+  <section class="creation-of-squad-title">
+      <h1>Создание ЛСО</h1>
+  </section>
+
+  <section class="creation-of-squad-content">
+    <div class="control-group">
+      <form class="create-of-squad-form" method="post" id="accordion-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="accordion" id="insurance-steps">
+
+          <div class="card">
+            <div class="accordion-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Основная информация</button>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#insurance-steps">
+              <div class="card-body">
+                <div class="data-form">
+                  <div class="form-field">
+                    <label for="name_squad">Название отряда
+                      <sup class="valid-red">*</sup>
+                    </label>
+                    <input class="name-squad" type="text" id="name-squad" name="name_squad" placeholder="Например, Монолит" required>
+                    <div class="counter form-field__footnote">
+                      <span class="current current--name-squad">0</span>&nbsp;/
+                      <span class="total">30</span>
+                    </div>
+                    <!-- <div class="error valid-red no-visible">
+                      <sup>*</sup>
+                      <span>обязательно для заполнения</span>
+                    </div> -->
+                  </div>
+                  <div class="form-field form-field--direction">
+                    <label class="control-label" for="select_direction">Выберите направление
+                      <sup class="valid-red">*</sup>
+                    </label>
+                    <select name="select_direction" id="select-direction" placeholder="Например, ССО" required class="select-direction">
+                    </select>
+                    <!-- <div class="add-direction no-visible">
+                      <input class="add-input" type="text">
+                      <button class="add-text" type="button">+</button>
+                    </div>
+                    <button type="button" class="add-button">+ Добавить направление</button>
+                    <span class="form-field__footnote">Если не нашли своё направление*</span> -->
+                    <!-- <div class="error"></div> -->
+                  </div>
+                  <div class="form-field">
+                    <label for="create_date">Дата основания
+                      <sup class="valid-red">*</sup>
+                    </label>
+                    <div class="form-field__box">
+                      <input type="date" name="create_date" id="create-date" value="" required>
+                      <button type="button" class="clear-button"></button>
+                    </div>
+                    <!-- <div class="error"></div> -->
+                  </div>
+                  <div class="form-field">
+                    <label for="select_region">Выберите регион
+                      <sup class="valid-red">*</sup>
+                    </label>
+                    <select name="select_region" id="select-region" placeholder="Например, Алтайский край" required>
+                    </select>
+                    <!-- <div class="error"></div> -->
+                  </div>
+                  <div class="form-field">
+                    <label for="city">Город</label>
+                    <div class="form-field__box">
+                      <input type="text" name="city" id="city" placeholder="Например, Барнаул">
+                      <button type="button" class="clear-button"></button>
+                    </div>
+                  </div>
+                  <div class="form-field">
+                    <label for="select_institution">Выберите учебное заведение
+                      <sup class="valid-red">*</sup>
+                    </label>
+                    <select name="select_institution" id="select-institution" placeholder="Например, Алтайский государственный медицинский университет" required>
+                    </select>
+                    <!-- <div class="error"></div> -->
+                  </div>
+                  <div class="form-field squad-leader-search">
+                    <label  for="beast">Командир отряда:
+                      <sup class="valid-red">*</sup>
+                    </label>
+                    <select id="select-beast" class="demo-default squad-leader-search__select" placeholder="Поиск по ФИО" name="beast" required>
+                    </select>                    
+                    <!-- <div class="error"></div> -->
+                  </div>
+                </div>
+
+                <div class="nav-btn__wrapper">
+                  <button class="nav-next" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    Далее
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="accordion-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Контакты</button>
+              </h5>
+            </div>
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#insurance-steps">
+              <div class="card-body">
+                <div class="data-form">
+                  <div class="form-field">
+                    <label class="" for="social-media-vk">Группа отряда ВКонтакте
+                      <!-- <sup class="valid-red">*</sup> -->
+                    </label>
+                    <div class="form-field__box">
+                      <input class="" type="text" name="social-media-vk" id="social-media-vk" placeholder="Например, https://vk.com/cco_monolit">
+                      <button type="button" class="clear-button"></button>
+                    </div>
+                    <!-- <div class="error"></div> -->
+                  </div>
+                  <div class="form-field">
+                    <label class="" for="social-media-te">Группа отряда в Телеграмме
+                      <!-- <sup class="valid-red">*</sup> -->
+                    </label>
+                    <div class="form-field__box">
+                      <input class="" type="text" name="social-media-te" id="social-media-te" placeholder="Например, https://t.me/cco_monolit">
+                      <button type="button" class="clear-button"></button>
+                    </div>
+                    <!-- <div class="error"></div> -->
+                  </div>
+                  <!-- <button class="add-social">+ Добавить соцсеть</button> -->
+
+                  <!-- <div class="form-field">
+                    <label for="">Участники отряда<sup class="valid-red">*</sup></label>
+                    <input type="text" name="search" class="" placeholder="Поиск по ФИО" required>
+                    <input type="submit" name="submit" class="submit" value="Search">
+                  </div> -->
+                </div>
+                <div class="nav-btn__wrapper">
+                  <button class="nav-prev" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Назад</button>
+                  <button class="nav-next" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Далее</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="accordion-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Оформление</button>
+              </h5>
+            </div>
+
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#insurance-steps">
+              <div class="card-body">
+                <div class="data-form">
+                  <div class="form-field">
+                    <label class="" for="squad-slogan">Девиз отряда
+                      <!-- <sup class="valid-red">*</sup> -->
+                    </label>
+                    <div class="form-field__box">
+                      <input class="" type="text" name="squad-slogan" id="squad-slogan" placeholder="Например, через тернии к звездам">
+                      <button type="button" class="clear-button"></button>
+                    </div>
+                    <!-- <div class="error"></div> -->
+                  </div>
+                  <div class="form-field">
+                    <p>Об отряде
+                      <!-- <sup class="valid-red">*</sup> -->
+                    </p>
+                    <textarea class="about-squad" name="about-squad" rows="3" placeholder="Расскажите об отряде"></textarea>
+                    <!-- <div class="error"></div> -->
+                    <div class="counter form-field__footnote">
+                      <span class="current current--about-squad">0</span>&nbsp;/
+                      <span class="total">300</span>
+                    </div>
+                  </div>
+                  <div class="form-field logo-add">
+                    <p>Добавьте логотип</p>
+                    <div class="logo-add__box">
+                      <div class="logo-add__img">
+                      </div>
+
+                      <div class="logo-add__input">
+                        <label class="logo-add__label" for="upload-logo">
+                          <svg class="logo-add__svg" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <g filter="url(#filter0_b_2686_15482)">
+                              <circle cx="24" cy="24" r="24" fill="black" fill-opacity="0.4"/>
+                              <circle cx="24" cy="24" r="23" stroke="white" stroke-width="2"/>
+                            </g>
+                            <path d="M24.1328 15.1328L24.1328 33.1328" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M15.1328 24.1328H33.1328" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <defs>
+                              <filter id="filter0_b_2686_15482" x="-36.9643" y="-36.9643" width="121.929" height="121.929" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                              <feGaussianBlur in="BackgroundImageFix" stdDeviation="18.4821"/>
+                              <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_2686_15482"/>
+                              <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_2686_15482" result="shape"/>
+                              </filter>
+                            </defs>
+                          </svg>
+                        </label>
+                        <input type="file" id="upload-logo" name="squad-logo" accept="image/*,image/jpeg" hidden />
+                        <div class="logo-add__edit-group">
+                          <label class="logo-add__label-edit" for="upload-logo">
+                            <span class="logo-add__label-text">Изменить фото</span>
+                          </label>
+                          <button class="logo-add__button-clear" type="reset">Удалить фото</button>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="form-field__footnote">Рекомендуемый размер 80х80</span>
+                  </div>
+                  <div class="form-field banner-add">
+                    <p>Добавьте баннер</p>
+                    <div class="banner-add__box">
+                      <div class="banner-add__img">
+                        <img src="/static/images/profile-settings/banner-stub.png" alt="Баннер отряда(пусто)"/>
+                      </div>
+
+                      <div class="banner-add__input">                    
+                        <label class="banner-add__label" for="upload-banner">
+                          <svg class="" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <g filter="url(#filter0_b_2686_15482)">
+                              <circle cx="24" cy="24" r="24" fill="black" fill-opacity="0.4"/>
+                              <circle cx="24" cy="24" r="23" stroke="white" stroke-width="2"/>
+                            </g>
+                            <path d="M24.1328 15.1328L24.1328 33.1328" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M15.1328 24.1328H33.1328" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <defs>
+                              <filter id="filter0_b_2686_15482" x="-36.9643" y="-36.9643" width="121.929" height="121.929" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                              <feGaussianBlur in="BackgroundImageFix" stdDeviation="18.4821"/>
+                              <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_2686_15482"/>
+                              <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_2686_15482" result="shape"/>
+                              </filter>
+                            </defs>
+                          </svg>
+                        </label>
+                        <input type="file" id="upload-banner" name="squad-banner" accept="image/*,image/jpeg" hidden />
+                        <div class="banner-add__edit-group">
+                          <label class="banner-add__label-edit" for="upload-banner">
+                            <span class="banner-add__label-text">Изменить фото</span>
+                          </label>
+                          <button class="banner-add__button-clear" type="reset">Удалить фото</button>
+                        </div>
+                      </div>
+                    </div>                    
+                    <span class="form-field__footnote">Рекомендуемый размер 1920х768</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-btn__wrapper">
+            <button class="nav-prev no-visible" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="backButton">Назад</button>
+
+            <button type="submit" class="user-data__btn button-create-lso" id="submit-btn">Создать</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $(".nav-prev").on("click", function () {
+      var preventCard = $(this).closest(".card").prev();
+    });
+    $(".nav-next").on("click", function () {
+      var nextCard = $(this).closest(".card").next();
+    });
+  });
+</script>
+<script src="/static/js/counter_creation_of_squad.js"></script>
+<script src="/static/js/input-reset.js"></script>
+<script src="/static/js/add-photo.js"></script>
+<script src="/static/js/search-squad-leader.js"></script>
+<script src="/static/js/add-direction.js"></script>
+
+<!--Скрипт для селекта с поиском-->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"
+  integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="/static/js/search-select.js"></script>
+
+<!--Валидация полей формы-->
+<!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="/static/js/validate-form.js"></script> -->
+
+{% endblock %}

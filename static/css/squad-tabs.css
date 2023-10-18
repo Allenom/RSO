@@ -5,16 +5,19 @@ section.squad-tabs {
 
 section.squad-tabs .container {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    flex-direction: column;
 }
 
 .squad-participants__title {
     color: #212121;
-    font-family: Akrobat;
+    font-family: "Akrobat";
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-bottom: 40px;
+
 }
 
 
@@ -28,7 +31,7 @@ section.squad-tabs .container {
     /* grid-template-rows: 48px; */
     column-gap: 10px;
     row-gap: 10px;
-    justify-content: end;
+    /* justify-content: end; */
     justify-items: center;
     align-content: center;
 }
@@ -43,24 +46,69 @@ section.squad-tabs .container {
     font-style: normal;
     font-weight: 500;
     line-height: 100%;
-    /* 20px */
-    color: #1C5C94;
-    padding: 10px 24px;
+}
+
+
+/* ****************************************************************************************** */
+.squad__navigation>input[type='radio'] {
+    display: none;
+}
+
+
+#tab-btn-1:checked~#content-1,
+#tab-btn-2:checked~#content-2 {
+    display: block;
+}
+
+.tab-content {
+    display: none;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.squad__navigation>label {
+    /*  */
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "BertSans";
+    color: #1F7CC0;
+    text-decoration: none;
+    /*  */
+    padding: 6px 24px;
+    cursor: pointer;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    border: 2px solid #1F7CC0;
+    border-radius: 30px;
+}
+
+.squad__navigation>input[type="radio"]:checked+label {
+    cursor: default;
+    color: #fff;
+    background-color: #1C5C94;
+    /*  */
     border-radius: 30px;
     border: 2px solid #1C5C94;
+
 }
 
-
-.squad__navigation a:hover {
-    background: #1C5C94;
-    color: #ffffff;
+nav {
+    position: relative;
 }
 
-.squad__navigation li:active {
-    border-radius: 30px;
-    background: transparent #1C5C94;
+.tab-position {
+    position: absolute;
+    top: 1px;
+    right: 255px;
+    margin-right: 8px;
 }
 
+.position-tab {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+
+/* ****************************************************************************************** */
 
 @media(max-width: 1290px) {
     section.squad-tabs {
@@ -71,20 +119,7 @@ section.squad-tabs .container {
         list-style: none;
     }
 
-    .squad__navigation a {
-        display: block;
-        text-decoration: none;
-        text-align: center;
-        font-family: 'BertSans';
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%;
-        /* 20px */
-        color: #1C5C94;
-        border-radius: 30px;
-        border: 2px solid #1C5C94;
-    }
+
 }
 
 @media(max-width: 1024px) {
@@ -103,6 +138,22 @@ section.squad-tabs .container {
 
 }
 
+@media(max-width: 630px) {
+    nav {
+        position: unset;
+    }
+
+    .tab-position {
+        position: unset;
+
+    }
+
+    .position-tab {
+        position: unset;
+
+    }
+}
+
 @media(max-width: 585px) {
     .squad__navigation a {
         padding: 10px;
@@ -116,14 +167,20 @@ section.squad-tabs .container {
     }
 
     .squad__navigation {
-        display: flex;
-    }
-
-    .squad__navigation {
         margin-top: 40px;
     }
 }
 
+@media(max-width: 496px) {
+    .squad__navigation>label {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .tabs-position {
+        margin-right: 6px;
+    }
+}
 
 @media(max-width: 405px) {
     .squad__navigation a {
@@ -134,6 +191,15 @@ section.squad-tabs .container {
     section.squad-tabs li a,
     section.squad-tabs a {
         font-size: 16px
+    }
+
+    .squad__navigation>label {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .tabs-position {
+        margin-right: 3px;
     }
 }
 

@@ -64,5 +64,11 @@ urlpatterns = [
 
     # Участники мероприятия
     path("events/1/event_participants/", page, {'template': 'events/1/event_participants.html'}, name='event_participants'),
+    # Структура / ЛСО
+    path("structure/detachments/creation_of_detachment/", page, {'template': 'structure/detachments/creation_of_detachment.html'}, name='creation_of_detachment'),
+    path("structure/detachments/1/editing_detachment/", page, {'template': 'structure/detachments/1/editing_detachment.html'}, name='editing_detachment'),
+
+    #Штабы
+    path("structure/headquarters/", page, {'template': 'structure/headquarters.html'}, name='headquarters'),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

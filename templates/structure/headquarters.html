@@ -1,0 +1,270 @@
+{% extends 'layout/basic.html' %}
+{% load static %}
+{% block title %}Штаб{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/headquarters.css' %}">
+<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+<link rel="stylesheet" href="{% static 'css/about-squad.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Настройки профиля Хлебные крошки-->
+<section class="headquarters-wrapper">
+    <section class="ps-nav">
+        <div class="container">
+            <!-- Хлебные крошки -->
+            <nav class="breadcrumbs-container">
+                <ul itemscope itemtype="#">
+                    <li itemprop="itemListElement" itemscope itemtype="#">
+                        <a href="/" title="Структура" itemprop="item">
+                            <span itemprop="name">Структура</span>
+                            <meta itemprop="position" content="0">
+                        </a>
+                    </li>
+                    <div class="breadcrumbs-slesh">/</div>
+                    <li itemprop="itemListElement" itemscope itemtype="#">
+                        <a href="#" title="Штабы" itemprop="item">
+                            <span itemprop="name">Штабы</span>
+                            <meta itemprop="position" content="1">
+                        </a>
+                    </li>
+                    <div class="breadcrumbs-slesh">/</div>
+                    <li itemprop="itemListElement" itemscope itemtype="headquarters.html">
+                        <a class="active" href="/structure/headquarters/" title="Штаб" itemprop="item">
+                            <span itemprop="name">Штаб СО КГПИ</span>
+                            <meta itemprop="position" content="2">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Настройки профиля H2 -->
+    <section class="ps-title">
+        <div class="container">
+            <h2>Штаб</h2>
+        </div>
+    </section>
+
+
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <!-- Штаб Баннер -->
+        <section class="ps-baner">
+            <div class="container">
+                <!-- Баннер Страница Штабы -->
+                <div class="headquarters-metric">
+                    <div class="headquarters-metric__top">
+                        <div class="headquarters-metric__top-img-wrapper">
+                            <!-- Заглушка Баннер -->
+                            {% if user.profile.banner %}
+                            <img src="/static/images/profile-settings/banner-stub.png" alt="Баннер страницы отряда"
+                                id="banner-pic" />
+                            {% else %}
+                            <img src="/static/images/profile-settings/banner-stub.png"
+                                alt="Баннер страницы отряда(пусто)" id="banner-pic" />
+                            {% endif %}
+                        </div>
+                    </div>
+                    <!-- Иконки редактирования баннер -->
+                    <div class="headquarters-metric__baner-add">
+                        <!--Иконка Добавить аватар -->
+                        <!-- Иконка Изменить аватар  -->
+                        <label for="upload-banner"><img src="/static/images/icons/plus.svg" alt="" /></label>
+                        <input type="#" id="upload-banner" name="banner" accept="image/*" hidden />
+                    </div>
+                    <div class="headquarters-metric__avatar-wrapper">
+                        <div class="headquarters-metric__avatar">
+                            <!-- Аватар пользователя  -->
+                            {% if user.profile.photo %}
+                            <img id="profile-pic" src="/static/images/headquarters/headquarters-ava.png" alt="Аватарка">
+                            {% else %}
+                            <!-- <img id="profile-pic" src="/static/images/profile-settings/user-avatar-stub.png"
+                                alt="Аватарка(пусто)"> -->
+                            <img id="profile-pic" src="/static/images/headquarters/headquarters-ava.png" alt="Аватарка">
+
+                            {% endif %}
+                        </div>
+                        <!-- Иконки редактирования аватар -->
+                        <div class="headquarters-metric__avatar-add">
+                            <!--Иконка Добавить аватар -->
+                            <!-- <img src="/static/images/icons/plus.svg" alt=""> -->
+                            <!-- Иконка Изменить аватар  -->
+                            <label for="upload-avatar"><img src="/static/images/icons/pen-circle.svg" alt="" /></label>
+                            <input type="#" id="upload-avatar" name="photo" accept="image/*" hidden />
+                        </div>
+                    </div>
+                    <div class="headquarters-metric__bottom">
+                        <!-- Данные пользователя  -->
+                        <div class="headquarters-data__wrapper">
+                            <div class="headquarters-data__name">
+                                <h4>Штаб КГПИ</h4>
+                            </div>
+                            <div class="headquarters-data__list-wrapper">
+                                <div class="headquarters-data__slogan">
+                                    <p>Через тернии к звездам!</p>
+                                </div>
+                                <ul class="headquarters-data__list">
+                                    <li class="headquarters-data__university">
+                                        <p>Коми государственный педагогический институт</p>
+                                    </li>
+                                    <li class="headquarters-data__introductions">
+                                        <p>Дата создания штаба</p>
+                                        <img src="/static/images/icons/calendar.svg" alt="">
+                                        <time datetime="2022-09-10">10.09.2022</time>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <!-- Контакты пользователя  -->
+                            <div class="headquarters-data__contacts-wrapper">
+                                <!-- ссылки на соцсети -->
+                                <div class="headquarters-data__contacts">
+                                    <div class="headquarters-data__participant-counter">
+                                        <span>356 участников</p></span>
+                                    </div>
+                                    <div class="headquarters-data__social-network">
+                                        <div class="headquarters-data__link-vk">
+                                            <a href="https://vk.com" target="_blank">
+                                                <img src="/static/images/icons/vk-blue.svg">
+                                            </a>
+                                        </div>
+                                        <div class="headquarters-data__link-telegram">
+                                            <a href="https://t.me" target="_blank">
+                                                <img src="/static/images/icons/telegram-blue.svg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="headquarters-data__link-share-link">
+                                            <a href="#" target="_blank">
+                                                <img src="/static/images/icons/to-share-link.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn__save-reset">
+                                    <label for="my_photo_save"></label>
+                                    <input class="btn__save" id="my_photo_save" type="submit" name="my_photo_save"
+                                        value="Редактировать штаб">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-headquarters">
+            <div class="container">
+                <h3>Описание штаба</h3>
+                <p>Основной целью деятельности Штаба является развитие деятельности студенческих отрядов в Университете.
+                    Развитие традиций движения, организация обучения руководителей студенческих отрядов, организация
+                    досуговых мероприятий и поддержка творческих коллективов.</p>
+
+            </div>
+            </div>
+        </section>
+
+        <section class="headquarters-management">
+            <div class="container">
+                <h3>Руководство штаба</h3>
+                <div class="headquarters-management__container">
+                    <div class="manager-card">
+                        <div class="manager-card__avatar">
+                            <img src="/static/images/headquarters/manager.png" alt="аватар">
+                        </div>
+                        <div class="manager-card__box">
+                            <h5>Александрова Вероника Александровна</h5>
+                            <p>Командир</p>
+                        </div>
+                    </div>
+
+                    <div class="manager-card position-card">
+                        <div class="manager-card__avatar ">
+                            <img src="/static/images/headquarters/manager2.png" alt="аватар">
+                        </div>
+                        <div class="manager-card__box">
+                            <h5>Александров Александр Александрович</h5>
+                            <p>Комиссар</p>
+                        </div>
+                    </div>
+
+                    <div class="manager-card card-orientation">
+                        <div class="manager-card__avatar">
+                            <img src="/static/images/headquarters/manager3.png" alt="аватар">
+                        </div>
+                        <div class="manager-card__box">
+                            <h5>Александрова Катерина Александровна</h5>
+                            <p>Мастер-методист</p>
+                        </div>
+                    </div>
+
+                    <div class="manager-card card-position">
+                        <div class="manager-card__avatar">
+                            <img src="/static/images/headquarters/manager4.png" alt="аватар">
+                        </div>
+                        <div class="manager-card__box">
+                            <h5>Петрова Александра Александровна</h5>
+                            <p>Медик</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="headquarters-detachments">
+            <div class="container">
+                <h3>Отряды штаба</h3>
+                <div class="headquarters-detachments__container">
+                    <div class="squad-card">
+                        <div class="squad-card__avatar">
+                            <img src="/static/images/headquarters/squad-ava.png" alt="аватар">
+                        </div>
+                        <h5>Сервисные</h5>
+                    </div>
+
+                    <div class="squad-card">
+                        <div class="squad-card__avatar">
+                            <img src="/static/images/headquarters/squad-ava2.png" alt="аватар">
+                        </div>
+                        <h5>Проводников</h5>
+                    </div>
+
+                    <div class="squad-card">
+                        <div class="squad-card__avatar">
+                            <img src="/static/images/headquarters/squad-ava3.png" alt="аватар">
+                        </div>
+                        <h5>Медицинские</h5>
+                    </div>
+
+                    <div class="squad-card squad-position">
+                        <div class="squad-card__avatar">
+                            <img src="/static/images/headquarters/squad-ava4.png" alt="аватар">
+                        </div>
+                        <h5>Стороительные</h5>
+                    </div>
+
+                    <div class="squad-card">
+                        <div class="squad-card__avatar">
+                            <img src="/static/images/headquarters/squad-ava5.png" alt="аватар">
+                        </div>
+                        <h5>Сельскохозяйственные</h5>
+                    </div>
+
+                    <div class="squad-card">
+                        <div class="squad-card__avatar">
+                            <img src="/static/images/headquarters/squad-ava6.png" alt="аватар">
+                        </div>
+                        <h5>Педагогические</h5>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+</section>
+
+
+{% endblock %}
