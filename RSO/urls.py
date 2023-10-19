@@ -70,5 +70,5 @@ urlpatterns = [
 
     #Штабы
     path("structure/headquarters/", page, {'template': 'structure/headquarters.html'}, name='headquarters'),
-
+    path("structure/headquarters-all/", page, {'template': 'structure/headquarters-all.html'}, name='headquarters-all'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
