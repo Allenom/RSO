@@ -37,6 +37,13 @@
 }
 
 .squads-banner__btn {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  color: #35383f;
+
   height: 64px;
   border-radius: 10px;
   background-color: #ffffff;
