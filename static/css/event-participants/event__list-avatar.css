@@ -23,7 +23,7 @@
    
 }
 
-.containerHorizontalEvent {
+.containerHorizontalEventlso {
    display: flex;
    align-items: center;
    justify-content: space-between;
@@ -173,7 +173,7 @@
       font-size: 16px;
    }
 
-   .containerHorizontalEvent {
+   .containerHorizontalEventlso {
       align-items: flex-start;
       flex-direction: column;
    }

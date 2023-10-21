@@ -323,19 +323,19 @@ function displayHorizontalEventlso(products) {
       .map(
         (product) => `
   <div class="eventlso-horizontallso-item">
-    <div class="eventlso-horizontallso-item__wrapper">
+        <div class="eventlso-horizontallso-item__wrapper">
           <div class="eventlso-horizontallso-img">
             <img 
             src="${product.image}" alt="${product.title}" />
             <img class="eventlso-horizontallso-item__list-img-status" src="${product.logo}" alt="${product.title}">
           </div>
-        <div class="containerHorizontalEventlso">
-          <p class="eventlso-horizontallso-item__list-full"> ${product.full}</p>
-          <div class="eventlso-horizontallso-item__list-date"><span style="border-left:2px solid #B6B6B6; padding-right: 8px;"></span>
-          <p>${product.createdAt}</p>
+          <div class="containerHorizontalEventlso">
+            <p class="eventlso-horizontallso-item__list-full"> ${product.full}</p>
+            <div class="eventlso-horizontallso-item__list-date"><span style="border-left:2px solid #B6B6B6; padding-right: 8px;"></span>
+                <p>${product.createdAt}</p>
+            </div>
           </div>
         </div>
-    </div>
   </div>`
       )
       .join("");
