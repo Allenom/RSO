@@ -7,7 +7,7 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 from RSO import settings
-from .models import Profile, Region
+from .models import Profile, Region, Detachment, Area
 
 
 # class UserEditForm(forms.ModelForm):
@@ -244,3 +244,21 @@ class ProfilePrivacyEditForm(forms.ModelForm):
 #                 code="password_incorrect",
 #             )
 #         return old_password
+
+class CreateDetachmentForm(forms.ModelForm):
+    area = forms.ModelChoiceField(queryset=Area.objects.all(), label='Направление')
+
+    class Meta:
+        model = Detachment
+        fields = '__all__'
+        widgets = {
+            'about': forms.Textarea(attrs={'rows': 3}),
+            'slogan': forms.TextInput(attrs={'placeholder': 'Введите девиз'}),
+            'founding_date': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+    def clean_commander(self):
+        commander = self.cleaned_data['commander']
+        if commander and commander.unit_set.exclude(pk=self.instance.pk).exists():
+            raise forms.ValidationError('Этот профиль уже является командиром другой структурной единицы.')
+        return commander

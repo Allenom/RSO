@@ -172,9 +172,19 @@ class Unit(models.Model):
         verbose_name_plural = 'структурные единицы'
         verbose_name = 'Структурная единица'
 
+class Area(models.Model):
+    name = models.CharField(max_length=50, blank=False, verbose_name='Название направления')
+    # Направления определяются админом/ЦШ или же региональными штабами? Точно должно быть отдельной сущностью.
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'направления'
+        verbose_name = 'Направление'
 
 class Detachment(Unit):
-    area = models.CharField(max_length=50, blank=True, default='', verbose_name='Направление')
+    area = models.ForeignKey(Area, null=False, blank=False, on_delete=models.PROTECT, verbose_name='Направление')
 
     # регион
     # institution = models.ForeignKey('Institution', null=True, blank=True, on_delete=models.PROTECT,
