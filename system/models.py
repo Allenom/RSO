@@ -18,6 +18,7 @@ class Profile(models.Model):
     date_of_birth = models.DateField(verbose_name='Дата рождения')
     telephone = models.CharField(max_length=30, blank=True, default='+7', verbose_name='Телефон')
     # detachment
+    detachment = models.ForeignKey('Detachment', blank=True, null=True, on_delete=models.PROTECT, verbose_name='Отряд')
     # Направление ЛСО
     study_institution = models.CharField(max_length=40, blank=True, default='', verbose_name='Образовательная организация')
     study_faculty = models.CharField(max_length=40, blank=True, default='', verbose_name='Факультет')
@@ -186,6 +187,11 @@ class Area(models.Model):
 class Detachment(Unit):
     area = models.ForeignKey(Area, null=False, blank=False, on_delete=models.PROTECT, verbose_name='Направление')
 
+    commander = models.OneToOneField(User, null=True, blank=True, on_delete=models.SET_NULL, verbose_name='Командир')
+
+    def clean(self):
+        if not self.commander:
+            raise ValidationError('Отряд должен иметь командира.')
     # регион
     # institution = models.ForeignKey('Institution', null=True, blank=True, on_delete=models.PROTECT,
     #                                verbose_name='Учебное заведение')
