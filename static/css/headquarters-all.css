@@ -87,6 +87,8 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
+   display: inline-block;
+  border-radius: 0px;
 }
 
 .menu-btn {
@@ -95,6 +97,8 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
+   display: inline-block;
+  border-radius: 0px;
 }
 
 .active-change {
@@ -245,6 +249,7 @@ margin: 60px 0px 20px 0px;
   text-transform: uppercase;
   font-size: 20px;
   font-family: 'Akrobat';
+  color: #1E1E1E;
 }
 
 .headquarters-wrapper__item-category-full {
@@ -253,12 +258,14 @@ margin: 60px 0px 20px 0px;
   font-family: 'Akrobat';
   margin-left: 20px;
   margin-right: 5px;
+  color: #1E1E1E;
 }
 
 .headquarters-wrapper__item-title {
   text-align: center;
   font-size: 20px;
   font-family: 'Akrobat';
+  color: #1E1E1E;
 }
 .show-headquarters {
   display: block;
@@ -295,3 +302,16 @@ margin: 60px 0px 20px 0px;
   grid-template-columns: 1fr;
   grid-row-gap: 13px;
 }
+
+.district {
+  width: 193px;
+}
+
+.regional {
+  width: 227px;
+}
+
+.local {
+  width: 186px;
+}
+

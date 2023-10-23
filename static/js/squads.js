@@ -234,7 +234,7 @@ function displayProducts(products) {
     const product_details = products
       .map(
         (product) => `
-  <div class="squads-wrapper__item">
+  <a href="/personal_page_squad/personal_page_squad/" class="squads-wrapper__item">
     <div class="round-img">
       <img src="${product.image}" alt="${product.title}" />
     </div>
@@ -242,7 +242,7 @@ function displayProducts(products) {
       <p class="squads-wrapper__item-category">${product.desc}</p>
       <p class="squads-wrapper__item-title">${product.title}</p>
     </div>
-  </div>`
+  </a>`
       )
       .join("");
 
@@ -258,7 +258,7 @@ function displayHorizontal(products) {
     const product_horizontal = products
       .map(
         (product) => `
-  <div class="horizontal-item">
+  <a href="/personal_page_squad/personal_page_squad/" class="horizontal-item">
   <div class="horizontal-img">
     <img src="${product.image}" alt="${product.title}" />
   </div>
@@ -266,7 +266,7 @@ function displayHorizontal(products) {
     <p class="squads-wrapper__item-category-full">${product.full}</p>
     <p class="squads-wrapper__item-title">${product.title}</p>
   </div>
-  </div>`
+  </a>`
       )
       .join("");
 

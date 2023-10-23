@@ -1,6 +1,6 @@
 const headquarters = [
   {
-    desc: "СОП-1",
+    desc: "Штаб КГПИ",
     category: "Строительные",
     full: "Штаб СО Коми государственного педагогического института",
     image: "/static/images/logo/squad-logo.png",
@@ -19,7 +19,7 @@ const headquarters = [
   },
   {
     category: "Медицинские",
-    desc: "ССО",
+    desc: "ШОО-1",
     full: "Штаб СО Новосибирского Государственного Педагогического Университета",
     image: "/static/images/logo/squad-logo.png",
     peoples: 5,
@@ -199,7 +199,6 @@ const headquarters = [
   },
 ];
 
-
 const productsContainer = document.querySelector("#headquarters-wrapper");
 
 const productsContainerHorizontal = document.querySelector("#horizontal");
@@ -209,7 +208,7 @@ function displayProducts(products) {
     const product_details = products
       .map(
         (product) => `
-  <div class="headquarters-wrapper__item">
+  <a href="/structure/headquarters/" class="headquarters-wrapper__item">
     <div class="round-img">
       <img src="${product.image}" alt="${product.title}" />
     </div>
@@ -232,14 +231,14 @@ function displayHorizontal(products) {
     const product_horizontal = products
       .map(
         (product) => `
-  <div class="horizontal-item">
+  <a href="/structure/headquarters/" class="horizontal-item">
   <div class="horizontal-img">
     <img src="${product.image}" alt="${product.title}" />
   </div>
   <div class="containerHorizontal">
     <p class="headquarters-wrapper__item-category-full">${product.full}</p>
   </div>
-  </div>`
+  </a>`
       )
       .join("");
 
@@ -278,59 +277,26 @@ function changeLayout(val) {
 
 const sortByDropdown = document.querySelector(".sort-alph");
 const sortOrderDropdown = document.querySelector(".sort-order");
-const EducationList = document.querySelector(".district-check")
-const sortOrderButton = document.querySelector(".sort-orderr");
-
-
-function setEducations() {
-  const allEducations = headquarters.map((product) => product.education);
-  const educations = [
-    "Окружной штаб",
-    ...allEducations.filter((product, index) => {
-      return allEducations.indexOf(product) === index;
-    }),
-  ];
-  EducationList.innerHTML = educations
-    .map(
-      (education) =>
-        `<option class="squad-sort__selected">${education}</option>`
-    )
-    .join("");
-
-  EducationList.addEventListener("change", (e) => {
-    const selectedEducation = e.target.value;
-    selectedEducation === "Окружной штаб"
-      ? allheadquarters(headquarters)
-      : allheadquarters(
-        headquarters.filter((product) => product.education == selectedEducation)
-        );
-  });
-}
-
-//concat
 
 
 
 sortByDropdown.addEventListener("change", () => {
   const sortByValue = sortByDropdown.value; // price or ram value
-  const sortOrderValue = sortOrderButton; // asc or desc value
-  // const sortByEduc = EducationList.value
+  const sortOrderValue = sortOrderDropdown.value; // asc or desc value
 
   const sorted = _.orderBy(headquarters, [sortByValue], sortOrderValue);
 
  allheadquarters(sorted);
 });
 
-sortOrderButton.addEventListener("click", () => {
+sortOrderDropdown.addEventListener("change", () => {
   const event = new Event("change");
   const sortByValue = sortByDropdown.value;
-  // const sortByEduc= sortByDropdown.value;
 
   if (sortByValue) {
     sortByDropdown.dispatchEvent(event);
   }
 });
-
 
 const txtSearch = document.querySelector("#search");
 txtSearch.addEventListener("keyup", (e) => {
@@ -347,4 +313,3 @@ txtSearch.addEventListener("keyup", (e) => {
 });
 
 allheadquarters(headquarters);
-setEducations();
