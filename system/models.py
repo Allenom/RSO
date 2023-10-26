@@ -184,10 +184,9 @@ class Area(models.Model):
         verbose_name_plural = 'направления'
         verbose_name = 'Направление'
 
+
 class Detachment(Unit):
     area = models.ForeignKey(Area, null=False, blank=False, on_delete=models.PROTECT, verbose_name='Направление')
-
-    commander = models.OneToOneField(User, null=True, blank=True, on_delete=models.SET_NULL, verbose_name='Командир')
 
     def clean(self):
         if not self.commander:

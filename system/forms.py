@@ -3,6 +3,8 @@ from django.contrib.auth.forms import PasswordChangeForm, UserChangeForm, Userna
 from django.contrib.auth.models import User
 from django import forms
 
+from django.db.models import Q
+
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
@@ -245,7 +247,8 @@ class ProfilePrivacyEditForm(forms.ModelForm):
 #             )
 #         return old_password
 
-class CreateDetachmentForm(forms.ModelForm):
+
+class DetachmentCreateForm(forms.ModelForm):
     class Meta:
         model = Detachment
         fields = '__all__'
@@ -257,9 +260,15 @@ class CreateDetachmentForm(forms.ModelForm):
 
     def clean_commander(self):
         commander = self.cleaned_data['commander']
-        if commander and commander.unit_set.exclude(pk=self.instance.pk).exists():
-            raise forms.ValidationError('Вы уже являетесь командиром другого отряда.')
+        if commander:
+            # Проверяем, является ли профиль командиром в другом отряде
+            other_detachment_commander = Q(detachment__commander=commander)
+            # Исключаем текущий отряд из проверки
+            other_detachment_commander = other_detachment_commander.exclude(pk=self.instance.pk)
+            if other_detachment_commander():
+                raise forms.ValidationError('Профиль уже является командиром другого отряда.')
         return commander
+
 
 class DetachmentEditForm(forms.ModelForm):
     class Meta:
@@ -273,6 +282,11 @@ class DetachmentEditForm(forms.ModelForm):
 
     def clean_commander(self):
         commander = self.cleaned_data['commander']
-        if commander and commander.unit_set.exclude(pk=self.instance.pk).exists():
-            raise forms.ValidationError('Вы уже являетесь командиром другого отряда.')
+        if commander:
+            # Проверяем, является ли профиль командиром в другом отряде
+            other_detachment_commander = Q(detachment__commander=commander)
+            # Исключаем текущий отряд из проверки
+            other_detachment_commander = other_detachment_commander.exclude(pk=self.instance.pk)
+            if other_detachment_commander():
+                raise forms.ValidationError('Профиль уже является командиром другого отряда.')
         return commander
