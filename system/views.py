@@ -4,17 +4,19 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView, PasswordContextMixin
 from django.db import transaction
+from django.http import Http404
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
-from django.views.generic import CreateView, UpdateView, FormView, TemplateView
+from django.views.generic import CreateView, UpdateView, FormView, TemplateView, DetailView
 
+from system import models
 from system.forms import CreateUserForm, ProfilePrivacyEditForm, UserPasswordEditForm, UserPersonalEditForm, \
-    ProfilePersonalEditForm, ProfilePageEditForm
-from system.models import Profile
+    ProfilePersonalEditForm, ProfilePageEditForm, DetachmentCreateForm, DetachmentEditForm
+from system.models import Profile, Detachment
 
 
 def page(request, template):
@@ -121,6 +123,40 @@ class ProfilePageEditView(LoginRequiredMixin, UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user.profile
+
+
+class DetachmentCreateView(LoginRequiredMixin, CreateView):
+    template_name = 'detachment/create.html'
+    form_class = DetachmentCreateForm
+    success_url = '/success/'  #URL, на который пользователь будет перенаправлен после успешного создания отряда
+
+    def form_valid(self, form):
+        form.instance.commander = self.request.user.profile
+        return super(DetachmentCreateView, self).form_valid(form)
+
+
+class DetachmentUpdateView(LoginRequiredMixin, UpdateView):
+    template_name = 'detachment/edit.html'
+    form_class = DetachmentEditForm
+    model = Detachment
+    success_url = '/success/'  #URL, на который пользователь будет перенаправлен после успешного создания отряда
+
+    def get_queryset(self):
+        return Detachment.objects.filter(commander=self.request.user.profile)
+
+
+class DetachmentPersonalView(LoginRequiredMixin, DetailView):
+
+    model = Detachment
+    template_name = 'personal_page_squad.html'
+
+    def get_object(self, queryset=None):
+        # Отряд, где пользователь - командир или где он является участником
+        detachment = Detachment.objects.filter(
+            models.Q(commander=self.request.user) | models.Q(unitparticipants__user=self.request.user)).first()
+        if detachment is None:
+            raise Http404("Отряд не найден")
+        return detachment
 
 
 # class UserSystemEditView(TemplateView):

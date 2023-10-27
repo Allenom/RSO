@@ -18,6 +18,7 @@ class Profile(models.Model):
     date_of_birth = models.DateField(verbose_name='Дата рождения')
     telephone = models.CharField(max_length=30, blank=True, default='+7', verbose_name='Телефон')
     # detachment
+    detachment = models.ForeignKey('Detachment', blank=True, null=True, on_delete=models.PROTECT, verbose_name='Отряд')
     # Направление ЛСО
     study_institution = models.CharField(max_length=40, blank=True, default='', verbose_name='Образовательная организация')
     study_faculty = models.CharField(max_length=40, blank=True, default='', verbose_name='Факультет')
@@ -172,10 +173,24 @@ class Unit(models.Model):
         verbose_name_plural = 'структурные единицы'
         verbose_name = 'Структурная единица'
 
+class Area(models.Model):
+    name = models.CharField(max_length=50, blank=False, verbose_name='Название направления')
+    # Направления определяются админом/ЦШ или же региональными штабами? Точно должно быть отдельной сущностью.
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'направления'
+        verbose_name = 'Направление'
+
 
 class Detachment(Unit):
-    area = models.CharField(max_length=50, blank=True, default='', verbose_name='Направление')
+    area = models.ForeignKey(Area, null=False, blank=False, on_delete=models.PROTECT, verbose_name='Направление')
 
+    def clean(self):
+        if not self.commander:
+            raise ValidationError('Отряд должен иметь командира.')
     # регион
     # institution = models.ForeignKey('Institution', null=True, blank=True, on_delete=models.PROTECT,
     #                                verbose_name='Учебное заведение')
