@@ -258,16 +258,16 @@ class DetachmentCreateForm(forms.ModelForm):
             'founding_date': forms.DateInput(attrs={'type': 'date'}),
         }
 
-    def clean_commander(self):
-        commander = self.cleaned_data['commander']
-        if commander:
-            # Проверяем, является ли профиль командиром в другом отряде
-            other_detachment_commander = Q(detachment__commander=commander)
-            # Исключаем текущий отряд из проверки
-            other_detachment_commander = other_detachment_commander.exclude(pk=self.instance.pk)
-            if other_detachment_commander():
-                raise forms.ValidationError('Профиль уже является командиром другого отряда.')
-        return commander
+    # def clean_commander(self):
+    #     commander = self.cleaned_data['commander']
+    #     if commander:
+    #         # Проверяем, является ли профиль командиром в другом отряде
+    #         other_detachment_commander = Q(detachment__commander=commander)
+    #         # Исключаем текущий отряд из проверки
+    #         other_detachment_commander = other_detachment_commander.exclude(pk=self.instance.pk)
+    #         if other_detachment_commander():
+    #             raise forms.ValidationError('Профиль уже является командиром другого отряда.')
+    #     return commander
 
 
 class DetachmentEditForm(forms.ModelForm):

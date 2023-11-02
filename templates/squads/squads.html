@@ -18,6 +18,11 @@
 {% endblock %}
 
 {% block content %}
+  <a href="/structure/detachments/create">Создать новый отряд</a>
+
+  {% for detachment in detachments %}
+    {{detachment.name}} <a href="/structure/detachments/{{detachment.id}}">Перейти к {{detachment.name}}</a>
+  {% endfor %}
 
     <section class="squads">
       <div class="container-squats">

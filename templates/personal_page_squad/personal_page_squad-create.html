@@ -1,13 +1,13 @@
 {% extends 'layout/basic.html' %}
-{% block title %}Редактирование отряда{% endblock %}
+{% block title %}Создание отряда{% endblock %}
 
 {% block content %}
 <div class="container">
-  <h1>Редактирование отряда</h1>
+  <h1>Создание отряда</h1>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Сохранить изменения</button>
+    <button type="submit">Создать отряд</button>
   </form>
 </div>
 {% endblock %}

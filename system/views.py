@@ -23,6 +23,18 @@ def page(request, template):
     return render(request, template)
 
 
+def detachments_list(request):
+    detachments = Detachment.objects.all
+    context = {"detachments": detachments}
+    return render(request, "squads/squads.html", context)
+
+
+def detachment(request, detachment_id):
+    detachment = Detachment.objects.filter(id=detachment_id)
+    context = {'detachment': detachment}
+    return render(request, 'personal_page_squad/personal_page_squad.html', context)
+
+
 def redirect_to_lk_page(request):
     return redirect('/profile/my_page/')
 
@@ -126,17 +138,22 @@ class ProfilePageEditView(LoginRequiredMixin, UpdateView):
 
 
 class DetachmentCreateView(LoginRequiredMixin, CreateView):
-    template_name = 'detachment/create.html'
+
     form_class = DetachmentCreateForm
-    success_url = '/success/'  #URL, на который пользователь будет перенаправлен после успешного создания отряда
+    success_url = reverse_lazy("structure/detachments")
+    template_name = 'personal_page_squad/personal_page_squad-create.html'
 
     def form_valid(self, form):
-        form.instance.commander = self.request.user.profile
+        # if self.request.user.profile.position == '':
+        #     return render(self.request, self.template_name)
+        detachment = form.save()
+        detachment.save()
+        self.success_url = reverse_lazy("detachment", kwargs={"detachment_id": detachment.id})
         return super(DetachmentCreateView, self).form_valid(form)
 
 
 class DetachmentUpdateView(LoginRequiredMixin, UpdateView):
-    template_name = 'detachment/edit.html'
+    template_name = 'personal_page_squad-edit.html'
     form_class = DetachmentEditForm
     model = Detachment
     success_url = '/success/'  #URL, на который пользователь будет перенаправлен после успешного создания отряда

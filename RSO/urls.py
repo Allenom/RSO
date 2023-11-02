@@ -19,7 +19,8 @@ from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.urls import path, reverse_lazy
 
 from RSO import settings
-from system.views import SignUp, lk_page, ProfilePrivacyEditView, page, ProfilePersonalEditView, ProfilePageEditView, redirect_to_lk_page
+from system.views import SignUp, lk_page, ProfilePrivacyEditView, page, ProfilePersonalEditView, ProfilePageEditView, \
+    redirect_to_lk_page, detachments_list, DetachmentCreateView, detachment
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,6 +40,9 @@ urlpatterns = [
     # ЛСО
     path("personal_page_squad/personal_page_squad/", page,  {'template': 'personal_page_squad/personal_page_squad.html'}, name='personal_page_squad'),
     path("personal_page_squad/personal_page_squad-wait-approval/", page,  {'template': 'personal_page_squad/personal_page_squad-wait-approval.html'}, name='personal_page_squad-wait-approval'),
+    path("structure/detachments", detachments_list, name='detachments'), # TODO Название
+    path("structure/detachments/create", DetachmentCreateView.as_view(), name='detachment_create'),
+    path("structure/detachments/<int:detachment_id>/", detachment, name='detachment'),
 
     # Настройки профиля
     path("profile/profile_settings/my_page/", ProfilePageEditView.as_view(), name='profile_settings_my_page'),
