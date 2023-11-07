@@ -19,6 +19,7 @@ from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.urls import path, reverse_lazy
 
 from RSO import settings
+from system import views
 from system.views import SignUp, lk_page, ProfilePrivacyEditView, page, ProfilePersonalEditView, ProfilePageEditView, \
     redirect_to_lk_page, detachments_list, DetachmentCreateView, detachment
 
@@ -35,9 +36,11 @@ urlpatterns = [
     # Профиль
     path('', redirect_to_lk_page),
     path("profile/my_page/", lk_page, name='profile'),
+    path('api/profiles/', views.create_profile, name='create_profile'),
+    path('api/profiles/<int:pk>/', views.update_profile, name='update_profile'),
+    path('api/profiles/<int:pk>/', views.delete_profile, name='delete_profile'),
 
-   
-    # ЛСО
+                  # ЛСО
     path("personal_page_squad/personal_page_squad/", page,  {'template': 'personal_page_squad/personal_page_squad.html'}, name='personal_page_squad'),
     path("personal_page_squad/personal_page_squad-wait-approval/", page,  {'template': 'personal_page_squad/personal_page_squad-wait-approval.html'}, name='personal_page_squad-wait-approval'),
     path("structure/detachments", detachments_list, name='detachments'), # TODO Название

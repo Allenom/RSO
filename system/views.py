@@ -1,104 +1,44 @@
-from django.contrib.auth import update_session_auth_hash
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
-from django.contrib.auth.views import PasswordChangeView, PasswordContextMixin
 from django.db import transaction
 from django.http import Http404
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.utils.translation import gettext_lazy as _
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_protect
-from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic import CreateView, UpdateView, FormView, TemplateView, DetailView
+from rest_framework.decorators import api_view
 
 from system import models
 from system.forms import CreateUserForm, ProfilePrivacyEditForm, UserPasswordEditForm, UserPersonalEditForm, \
     ProfilePersonalEditForm, ProfilePageEditForm, DetachmentCreateForm, DetachmentEditForm
 from system.models import Profile, Detachment
 
-
+from .serializers import ProfileSerializer, DetachmentSerializer
 def page(request, template):
     return render(request, template)
 
 
 def detachments_list(request):
-    detachments = Detachment.objects.all
-    context = {"detachments": detachments}
-    return render(request, "squads/squads.html", context)
+    detachments = Detachment.objects.all()
+    serializer = DetachmentSerializer(detachments, many=True)
+    return render(request, "squads/squads.html", {"detachments": serializer.data})
 
 
 def detachment(request, detachment_id):
-    detachment = Detachment.objects.filter(id=detachment_id)
-    context = {'detachment': detachment}
-    return render(request, 'personal_page_squad/personal_page_squad.html', context)
+    try:
+        detachment = Detachment.objects.get(id=detachment_id)
+        serializer = DetachmentSerializer(detachment)
+        return render(request, 'personal_page_squad/personal_page_squad.html', {'detachment': serializer.data})
+    except Detachment.DoesNotExist:
+        raise Http404("Отряд не найден")
 
 
 def redirect_to_lk_page(request):
     return redirect('/profile/my_page/')
 
 
-def lk_page(request):
-    if not request.user.is_authenticated:
-        return redirect('/login/?next=/profile/my_page/')
-    context = {}
-
-    return render(request, 'profile/my_page.html', context)
-
-
-class SignUp(CreateView):
-    form_class = CreateUserForm
-    success_url = reverse_lazy("login")
-    template_name = "registration.html"
-
-    def form_valid(self, form):
-        c = {'form': form, }
-        user = form.save(commit=False)
-        # Cleaned(normalized) data
-        # institution = form.cleaned_data['institution']
-        region = form.cleaned_data['region']
-        telephone = form.cleaned_data['telephone']
-        password = form.cleaned_data['password']
-        patronymic = form.cleaned_data['patronymic']
-        repeat_password = form.cleaned_data['repeat_password']
-        date_of_birth = form.cleaned_data['date_of_birth']
-        if password != repeat_password:
-            form.add_error('repeat_password', "Пароли не совпадают")
-            return render(self.request, self.template_name, c)
-        user.set_password(password)
-        user.save()
-
-        # Create UserProfile model
-        Profile.objects.create(user=user, region=region, telephone=telephone, patronymic=patronymic,
-                               date_of_birth=date_of_birth)
-
-        return super(SignUp, self).form_valid(form)
-
-
-class ProfilePrivacyEditView(LoginRequiredMixin, UpdateView):
-    form_class = ProfilePrivacyEditForm
-    template_name = "profile/profile_settings/privacy.html"
-    model = Profile
-    success_url = reverse_lazy("profile_settings_privacy")
-
-    # @method_decorator(login_required)
-    # def form_valid(self, form):
-    #     if form.is_valid():
-    #         form.save()
-    #     return super(ProfilePrivacyEditView, self).form_valid(form)
-
-    def get_object(self, queryset=None):
-        return self.request.user.profile
-
-
 class ProfilePersonalEditView(LoginRequiredMixin, UpdateView):
-    login_url = "/login/"
-
     template_name = 'profile/profile_settings/personal.html'
     form_class = ProfilePersonalEditForm
     success_url = reverse_lazy('profile_settings_personal')
-    model = Profile
 
     def get_object(self, queryset=None):
         return self.request.user.profile
@@ -125,56 +65,75 @@ class ProfilePersonalEditView(LoginRequiredMixin, UpdateView):
         return super(ProfilePersonalEditView, self).form_valid(form)
 
 
-class ProfilePageEditView(LoginRequiredMixin, UpdateView):
-    login_url = "/login/"
-
-    template_name = 'profile/profile_settings/my_page.html'
-    form_class = ProfilePageEditForm
-    success_url = reverse_lazy('profile_settings_my_page')
-    model = Profile
-
-    def get_object(self, queryset=None):
-        return self.request.user.profile
-
-
 class DetachmentCreateView(LoginRequiredMixin, CreateView):
-
     form_class = DetachmentCreateForm
     success_url = reverse_lazy("structure/detachments")
     template_name = 'personal_page_squad/personal_page_squad-create.html'
 
     def form_valid(self, form):
-        # if self.request.user.profile.position == '':
-        #     return render(self.request, self.template_name)
         detachment = form.save()
-        detachment.save()
-        self.success_url = reverse_lazy("detachment", kwargs={"detachment_id": detachment.id})
-        return super(DetachmentCreateView, self).form_valid(form)
+        serializer = DetachmentSerializer(detachment)
+        return render(self.request, "personal_page_squad.html", {"detachment": serializer.data})
 
 
 class DetachmentUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'personal_page_squad-edit.html'
     form_class = DetachmentEditForm
     model = Detachment
-    success_url = '/success/'  #URL, на который пользователь будет перенаправлен после успешного создания отряда
+    success_url = '/success/'  # URL, на который пользователь будет перенаправлен после успешного создания отряда
 
     def get_queryset(self):
         return Detachment.objects.filter(commander=self.request.user.profile)
 
 
 class DetachmentPersonalView(LoginRequiredMixin, DetailView):
-
     model = Detachment
     template_name = 'personal_page_squad.html'
 
     def get_object(self, queryset=None):
-        # Отряд, где пользователь - командир или где он является участником
         detachment = Detachment.objects.filter(
             models.Q(commander=self.request.user) | models.Q(unitparticipants__user=self.request.user)).first()
         if detachment is None:
             raise Http404("Отряд не найден")
-        return detachment
+        serializer = DetachmentSerializer(detachment)
+        return serializer.datat
 
+
+@api_view(['POST'])
+def create_profile(request):
+    if request.method == 'POST':
+        serializer = ProfileSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT'])
+def update_profile(request, pk):
+    try:
+        profile = Profile.objects.get(pk=pk)
+    except Profile.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'PUT':
+        serializer = ProfileSerializer(profile, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['DELETE'])
+def delete_profile(request, pk):
+    try:
+        profile = Profile.objects.get(pk=pk)
+    except Profile.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'DELETE':
+        profile.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 # class UserSystemEditView(TemplateView):
 #     template_name = 'profile/profile_settings/system.html'

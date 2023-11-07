@@ -1,0 +1,87 @@
+<template>
+  <div>
+    <!-- Форма для создания профиля -->
+    <form @submit.prevent="createProfile">
+      <!-- Добавьте поля для ввода данных профиля -->
+      <input v-model="newProfile.username" placeholder="Username" required>
+      <input v-model="newProfile.first_name" placeholder="First Name" required>
+      <input v-model="newProfile.last_name" placeholder="Last Name" required>
+      <button type="submit">Create Profile</button>
+    </form>
+
+    <!-- Список профилей и кнопки для редактирования/удаления -->
+    <div v-for="profile in profiles" :key="profile.id">
+      {{ profile.username }}
+      {{ profile.first_name }}
+      {{ profile.last_name }}
+      <button @click="editProfile(profile)">Edit</button>
+      <button @click="deleteProfile(profile.id)">Delete</button>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      newProfile: {
+        username: '',
+        first_name: '',
+        last_name: '',
+        // Добавьте другие поля профиля, как требуется
+      },
+      profiles: [],
+    };
+  },
+  mounted() {
+    // Получите список профилей при загрузке компонента
+    this.fetchProfiles();
+  },
+  methods: {
+    fetchProfiles() {
+      // Получите список профилей с сервера
+      axios.get('/api/profiles/') // Замените это на ваш путь к API
+        .then(response => {
+          this.profiles = response.data;
+        })
+        .catch(error => {
+          console.error('Error fetching profiles:', error);
+        });
+    },
+    createProfile() {
+      // Отправьте POST-запрос для создания нового профиля
+      axios.post('/api/profiles/', this.newProfile) // Замените это на ваш путь к API
+        .then(response => {
+          // Обновите список профилей после успешного создания
+          this.fetchProfiles();
+          // Очистите форму
+          this.newProfile = {
+            username: '',
+            first_name: '',
+            last_name: '',
+          };
+        })
+        .catch(error => {
+          console.error('Error creating profile:', error);
+        });
+    },
+    editProfile(profile) {
+      // Перенаправьте пользователя на страницу редактирования профиля с использованием ID профиля
+      this.$router.push(`/edit-profile/${profile.id}`);
+    },
+    deleteProfile(profileId) {
+      // Отправьте DELETE-запрос для удаления профиля
+      axios.delete(`/api/profiles/${profileId}/`) // Замените это на ваш путь к API
+        .then(response => {
+          // Обновите список профилей после успешного удаления
+          this.fetchProfiles();
+        })
+        .catch(error => {
+          console.error('Error deleting profile:', error);
+        });
+    },
+  },
+};
+</script>

@@ -19,7 +19,16 @@ class Profile(models.Model):
     date_of_birth = models.DateField(verbose_name='Дата рождения')
     telephone = models.CharField(max_length=30, blank=True, default='+7', verbose_name='Телефон')
     # detachment
+
+    UNIT_TYPES = [
+        ('detachment', 'Отряд'),
+        ('other_unit', 'Другая структурная единица'),
+        # Добавьте другие типы структурных единиц по мере необходимости
+    ]
+    unit_type = models.CharField(max_length=20, choices=UNIT_TYPES, default='detachment',
+                                 verbose_name='Тип структурной единицы')
     detachment = models.ForeignKey('Detachment', blank=True, null=True, on_delete=models.PROTECT, verbose_name='Отряд')
+
     # Направление ЛСО
     study_institution = models.CharField(max_length=40, blank=True, default='', verbose_name='Образовательная организация')
     study_faculty = models.CharField(max_length=40, blank=True, default='', verbose_name='Факультет')
@@ -106,25 +115,31 @@ class Profile(models.Model):
                                      verbose_name='Кто видит мои фотографии')
 
     # ---Для несовершеннолетних---
-    # ---На будущее---
-    # membership_fee = models.BooleanField(default=False, verbose_name='Членский взнос оплачен')
-    #
-    # detachment = models.ForeignKey('Detachment', blank=True, null=True, on_delete=models.PROTECT, verbose_name='Отряд')
-    # POSITIONS = [('', 'Без должности'), ('Комиссар', 'Комиссар'), ('Мастер-методист', 'Мастер-методист'),
-    #              ('Специалист', 'Специалист'), ('Командир', 'Командир')]
-    # position = models.CharField(max_length=20, blank=True, choices=POSITIONS, default='', verbose_name='Должность')
-    #
-    # @property
-    # def position_output(self):
-    #     # Если должность в отряде то ЕЁ, инче если оплачен членский БОЕЦ, иначе КАНДИДАТ
-    #     # return ''.join([self.detachment.name, ' Боец'])
-    #     if self.position == '':
-    #         if self.membership_fee:
-    #             return 'Боец'
-    #         else:
-    #             return 'Кандидат'
-    #     else:
-    #         return self.position
+    membership_fee = models.BooleanField(default=False, verbose_name='Членский взнос оплачен')
+
+    detachment = models.ForeignKey('Detachment', blank=True, null=True, on_delete=models.PROTECT, verbose_name='Отряд')
+    POSITIONS = [('', 'Без должности'), ('Комиссар', 'Комиссар'), ('Мастер-методист', 'Мастер-методист'),
+                 ('Специалист', 'Специалист'), ('Командир', 'Командир')]
+    position = models.CharField(max_length=20, blank=True, choices=POSITIONS, default='', verbose_name='Должность')
+
+    @property
+    def position_output(self):
+        # Если должность в отряде то ЕЁ, инче если оплачен членский БОЕЦ, иначе КАНДИДАТ
+        # return ''.join([self.detachment.name, ' Боец'])
+        if self.unit_type == 'detachment':
+            if self.position == '':
+                if self.membership_fee:
+                    return 'Боец'
+                else:
+                    return 'Кандидат'
+            else:
+                return self.position
+        elif self.unit_type == 'other_unit':
+            if self.position == '':
+                return 'Специалист'
+            else:
+                return self.position
+
 
     def __str__(self):
         # return 'Профиль пользователя {}'.format(self.user.username)
